@@ -16,4 +16,4 @@ With installed surge client (`npm i surge --global`) run
 gulp deploy
 ```
 
-Note: you need to have access to specific surge account (ask Dan Srb).
+Note: you need to have access to surge account (just ask Dan Srb).
