@@ -1,0 +1,23 @@
+{
+  "name": "webkurz.pyladies.cz",
+  "version": "1.0.0",
+  "description": "Kurz webového frontendu pro PyLadies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PyLadiesCZ/webkurz.pyladies.cz.git"
+  },
+  "author": "Daniel Srb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PyLadiesCZ/webkurz.pyladies.cz/issues"
+  },
+  "homepage": "https://github.com/PyLadiesCZ/webkurz.pyladies.cz#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-surge": "^0.1.0"
+  }
+}
