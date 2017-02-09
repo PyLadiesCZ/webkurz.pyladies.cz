@@ -66,7 +66,7 @@ gulp.task('develop', ['distprep'], function(){
 		]
 	});
 
-	gulp.watch('src/sass/index.scss', ['csscompile']);
+	gulp.watch('src/sass/*.scss', ['csscompile']);
 	gulp.watch('src/js/*.js', ['jsconcat']);
 });
 
