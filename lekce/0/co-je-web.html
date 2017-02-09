@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Úvod: PyLadies: Kurz webového frontendu</title>
+    <link rel="stylesheet" href="/dist/index.css">
+</head>
+<body>
+
+<div class="container is-fluid">
+    <h1 class="title is-1 c-main-title"><a href="/">PyLadies: Kurz webového frontendu</a></h1>
+    <h2 class="subtitle is-3">Lekce 0</h2>
+
+    <div class="tabs is-large">
+        <ul>
+            <li><a href="o-kurzu">O kurzu</a></li>
+            <li><a href="co-je-web">Co je web a jak funguje</a></li>
+            <li><a href="html">HTML</a></li>
+            <li><a href="zdroje">Zdroje</a></li>
+            <li><a href="css">CSS</a></li>
+        </ul>
+    </div>
+
+    <div class="tile is-ancestor">
+        <div class="tile">
+            <div class="tile is-vertical">
+                <div class="tile is-vertical" data-markdown="co-je-web.md"></div>
+                <div class="tile">
+                    <div class="tile is-parent">
+                        <a href="html" class="tile is-child notification is-info has-text-right">
+                            další kapitola <em>HTML</em>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/dist/all.js"></script>
+</body>
+</html>
+

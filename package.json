@@ -24,10 +24,12 @@
     "bulma": "^0.3.1",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
     "gulp-copy": "^1.0.0",
     "gulp-postcss": "^6.3.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
-    "gulp-surge": "^0.1.0"
+    "gulp-surge": "^0.1.0",
+    "highlight.js": "^9.9.0"
   }
 }

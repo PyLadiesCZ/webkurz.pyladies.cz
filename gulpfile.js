@@ -7,11 +7,17 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
 var surge = require('gulp-surge');
+var concat = require('gulp-concat');
 
 
 
 gulp.task('cssclean', function(){
-	return gulp.src('dist/css', { read: false }).pipe(clean());
+	return gulp.src('dist/*.css', { read: false }).pipe(clean());
+});
+
+
+gulp.task('jsclean', function(){
+	return gulp.src('dist/*.js', { read: false }).pipe(clean());
 });
 
 
@@ -29,25 +35,53 @@ gulp.task('csscompile', ['cssclean'], function(){
 
 
 
-gulp.task('develop', ['csscompile'], function(){
-	browserSync.init({
-		server: {
-			baseDir: './'
-		},
-		port:3030,
-		files: ['*.html', 'dist/**/*.css', 'dist/**/*.js']
-	});
-
-	gulp.watch('src/sass/index.scss', ['csscompile']);
+gulp.task('jsconcat', ['jsclean'], function(){
+	return gulp.src([
+		'src/js/highlight.pack.js',
+		'src/js/jquery-3.1.1.min.js',
+		// 'src/js/toc.min.js',
+		'src/js/marked.js',
+		'src/js/flat-file.js'
+	])
+		.pipe(concat('all.js'))
+		.pipe(gulp.dest('dist'));
 });
 
 
 
-gulp.task('deploy', ['csscompile'], function(){
+gulp.task('develop', ['distprep'], function(){
+	browserSync.init({
+		server: {
+			baseDir: './',
+			serveStaticOptions: {
+				extensions: ['html']
+			}
+		},
+		port: 3030,
+		files: [
+			'*.html',
+			'lekce/**/*.(html|md)',
+			'dist/**/*.css',
+			'dist/**/*.js'
+		]
+	});
+
+	gulp.watch('src/sass/index.scss', ['csscompile']);
+	gulp.watch('src/js/*.js', ['jsconcat']);
+});
+
+
+gulp.task('distprep', ['csscompile', 'jsconcat']);
+
+
+
+gulp.task('deploy', ['distprep'], function(){
 	return surge({
 		project: './',
 		domain: 'webkurz.pyladies.cz'
 	})
 });
+
+
 
 gulp.task('default', ['develop']);
