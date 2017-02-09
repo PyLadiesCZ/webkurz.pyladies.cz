@@ -1,0 +1,39 @@
+a.notification {
+    text-decoration: underline;
+
+    &:hover {
+        color: $white;
+        background-color: $grey-dark;
+    }
+}
+
+.tile {
+    a {
+        text-decoration: underline;
+    }
+}
+
+.is-dark,
+.is-primary,
+.is-info,
+.is-success,
+.is-danger {
+    &,
+    .content {
+        a {
+            color: $white;
+
+            &:hover {
+                color: $grey-lighter;
+            }
+        }
+    }
+}
+
+.is-warning .content a {
+    color: $black;
+
+    &:hover {
+        color: $grey-dark;
+    }
+}

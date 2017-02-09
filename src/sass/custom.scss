@@ -1,0 +1,62 @@
+// custom shit
+.c-main-title a {
+    text-decoration: underline;
+    text-decoration-color: $grey-lighter;
+}
+
+.c-slide-inter { background-color: $grey-light; }
+
+.c-slide-task {
+    background-color: lighten($green, 30%);
+    color: $black;
+}
+
+.content {
+    font-size: $size-medium;
+
+    q { font-style: italic; }
+
+    kbd {
+        padding: 2px 5px;
+        min-width: 1.5em;
+        text-align: center;
+        display: inline-block;
+        background: #0D6AB7;
+        color: #fff;
+        line-height: 105%;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+
+    .c-url {
+        text-align: left;
+        font-size: 0;
+        font-family: $family-monospace;
+        font-weight: bold;
+
+        b {
+            font-size: $size-5;
+            display: inline-block;
+        }
+    }
+
+    code {
+        font-size: 1em;
+        line-height: 1.05;
+        padding: 0.1em 0.2em;
+        color: $black-bis;
+        font-weight: $weight-bold;
+    }
+
+    pre {
+        tab-size: 4;
+        white-space: pre-wrap;
+    }
+
+    pre code {
+        font-size: $size-large;
+        padding: 0.5em;
+        font-weight: normal;
+
+    }
+}
