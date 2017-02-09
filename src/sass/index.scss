@@ -1,0 +1,48 @@
+// Colors
+$orange: hsl(14, 100%, 53%);
+$yellow: hsl(48, 100%, 67%);
+$green: hsl(141, 71%, 48%);
+$turquoise: hsl(176, 67%, 35%);
+$blue: hsl(217, 71%, 53%);
+$purple: hsl(271, 100%, 71%);
+$red: hsl(348, 100%, 61%);
+
+@import './node_modules/bulma/bulma.sass';
+
+a.notification {
+    text-decoration: underline;
+
+    &:hover {
+        color: $white;
+        background-color: $grey-dark;
+    }
+}
+
+a {
+    text-decoration: underline;
+}
+
+.is-dark,
+.is-primary,
+.is-info,
+.is-success,
+.is-danger {
+    &,
+    .content {
+        a {
+            color: $white;
+
+            &:hover {
+                color: $grey-lighter;
+            }
+        }
+    }
+}
+
+.is-warning .content a {
+    color: $black;
+
+    &:hover {
+        color: $grey-dark;
+    }
+}

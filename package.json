@@ -4,6 +4,8 @@
   "description": "Kurz webového frontendu pro PyLadies",
   "main": "index.js",
   "scripts": {
+    "develop": "gulp develop",
+    "deploy": "gulp deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +19,15 @@
   },
   "homepage": "https://github.com/PyLadiesCZ/webkurz.pyladies.cz#readme",
   "devDependencies": {
+    "autoprefixer": "^6.7.2",
+    "browser-sync": "^2.18.7",
+    "bulma": "^0.3.1",
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-copy": "^1.0.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
     "gulp-surge": "^0.1.0"
   }
 }
