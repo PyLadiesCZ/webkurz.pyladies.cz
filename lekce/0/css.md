@@ -25,11 +25,12 @@ Je více způsobů jak aplikovat CSS, my použijeme nejběžnější a nejprakti
 
 Takto vypadá jeden _rule-set_, v CSS píšeme rulesety jeden za druhým.
 
-<pre class="c-text-md fragment" contenteditable data-fragment-index="10"><code class="lang-css" data-noescape><span class="fragment" data-fragment-index="20">selektor</span><span class="fragment" data-fragment-index="30"> { </span>
-	<span class="fragment" data-fragment-index="40">vlastnost</span><span class="fragment" data-fragment-index="50">:</span><span class="fragment" data-fragment-index="60"> hodnota</span><span class="fragment" data-fragment-index="70">;</span><span class="fragment" data-fragment-index="100">
-	property: value;</span> /* tohle je komentar v CSS */
-<span class="fragment" data-fragment-index="80">}</span>
-</code></pre>
+```css
+selektor { 
+    vlastnost: hodnota;
+    property: value; /* tohle je komentar v CSS */
+}
+```
 
 _Selektor_ je část, kterou říkáme, čemu (tj. jakému elementu, příp. skupině elementů) chceme měnit vlastnosti: selektujeme = vybíráme.
 
@@ -47,11 +48,12 @@ Ve složených závorkách jsou jednotlivé _deklarace_. V příkladu jsou dvě,
 
 Zkusme si rovnou obarvit text.
 
-<pre class="c-text-md fragment" contenteditable data-fragment-index="10"><code class="lang-css" data-noescape><span class="fragment" data-fragment-index="20">p</span><span class="fragment" data-fragment-index="30"> { </span>
-	<span class="fragment" data-fragment-index="40">color</span><span class="fragment" data-fragment-index="50">:</span><span class="fragment" data-fragment-index="60"> white</span><span class="fragment" data-fragment-index="70">;</span><span class="fragment" data-fragment-index="100">
-	background-color: black;</span>
-<span class="fragment" data-fragment-index="80">}</span>
-</code></pre>
+```css
+p { 
+    color: white;
+    background-color: black;
+}
+```
 
 Selektor říká, co chceme měnit, v tomto případě odstavec. Deklarace pak říká, kterou vlastnost chceme měnit, a také na jakou hodnotu. V tomto případě nastavujeme barvu textu na bílou a barvu pozadí na černou (aby text byl vůbec vidět).
 
