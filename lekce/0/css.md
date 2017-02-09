@@ -1,10 +1,10 @@
 # CSS
 
-CSS je jazyk popisující vzhled a někdy i chování elementů webové stránky.
+CSS je jazyk popisující vzhled a někdy i chování _elementů_ webové stránky.
 
-Elementy jsou také všechny části stránky, které už umíš definovat pomocí tagů v HTML, takže třeba nadpisy, odstavce ale i celé body.
+Elementy jsou části stránky, které už umíš definovat pomocí tagů v HTML, takže třeba nadpisy, odstavce ale i celé body.
 
-V HTML je zanesen obsah stránky a také je v něm popsáno, jaká je struktura tohoto obsahu. Dále se v něm definuje, jaké má stránka obsahovat obrázky a případné další součásti. Naproti tomu CSS říká, jak mají jednotlivé prvky stránky vypadat, tedy jaká bude jejich forma. Díky tomu dochází k oddělení formy od obsahu, i když v praxi se ta hranice občas stírá.
+V HTML je obsah stránky a také je v něm popsáno, jaká je struktura tohoto obsahu. Dále se v něm definuje, jaké má stránka obsahovat obrázky a případné další součásti. Naproti tomu CSS říká, jak mají jednotlivé prvky stránky vypadat, tedy jaká bude jejich forma. Díky tomu dochází k oddělení formy od obsahu, i když v praxi se ta hranice občas stírá.
 
 ----
 
