@@ -155,7 +155,7 @@ Dodržuj pořadí nadpisů: nenech se svést tím, jak vizuálně vypadají (po 
 
 Zkus si přidat i pár nadpisů (pozor na správnou hierarchii).
 
-**Tip:** Protože psaní tagů znamená psaní spousty znaků, vznikla syntaxe _Emmet_. Editor _Atom_ (a spousta dalších editorů) ji má zabudovanou nebo si jde stáhnout plugin/extension/balíček s Emmetem. Abys napsala nadpis první úrovně, stačí napsat `h1` a zmáčknout <kbd>Tab</kbd>. Vše, co je potřeba, aby z toho byl tag, se ti doplní samo. _Emmet_ toho samozřejmě umí usnadnit víc, ale tohle je asi nejdůležitější.
+**Tip:** Protože psaní tagů znamená psaní spousty znaků, vznikl _Emmet_. Editor _Atom_ (a spousta dalších editorů) ho má zabudovaný nebo si jde stáhnout plugin/extension/balíček s Emmetem. Abys napsala nadpis první úrovně, stačí napsat `h1` a zmáčknout <kbd>Tab</kbd>. Vše, co je potřeba, aby z toho byl tag, se ti doplní samo. _Emmet_ toho samozřejmě umí usnadnit víc, ale tohle je asi nejdůležitější.
 
 <!-- todo: doplnit info o důležitosti nadpisů pro přístupnost -->
 
