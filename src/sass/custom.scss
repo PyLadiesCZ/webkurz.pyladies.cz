@@ -59,4 +59,19 @@
         font-weight: normal;
         margin-bottom: 1em;
     }
+
+    details {
+        padding: 0.75em;
+        margin-bottom: 1em;
+    }
+
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        outline: 0 none;
+        user-select: none;
+    }
+
+    details[open] { background-color: hsla(0, 0%, 100%, 0.5); }
+
 }

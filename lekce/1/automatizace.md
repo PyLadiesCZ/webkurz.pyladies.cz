@@ -1,131 +1,146 @@
 # Automatizace	
 
-You can write everything front-end related manually. You don't even need anything else than a basic text editor.
+Celý web můžeš napsat ručně a nepotřebuješ k tomu nic jiného, než základní textový editor, ale jsou tu nástroje, které ti ušetří spoustu času a i když dá nějakou práci se je naučit a nakonfigurovat, dlouhodobě se to vyplatí. 
 
-But the right tools can save incredible amount of time and even though it takes some time to learn them and to set them up, it's well worth for proffesionals.
+Rozchodíme si tedy základní automatizaci, která ti ušetří ruční opakování stále stejných úkolů.
 
 ----
 
-## Introduction to Front end devstack
+## Automatické obnovení stránky 
 
-### What will be the result?
+Nejčastějším úkonem při psaní frontendu je asi obnovování stránky v prohlížeči. Po každé změně se musíš přepnout do prohlížeče a stránku obnovit. To je nejen otravné, ale i pomalé.
 
-We're going to set up a base for front-end development environment, that will save you probably hours of repetitive work just in the duration of this course.
-
-And we'll do that with only one task, that will free you from endless page reloading in browser to see your changes.
-
-During the course, we'll add more and more automation to your work, because our time and brains are too precious to waste them on something, that computers can already do better and faster.
-
+Nástroj, který umí stránku obnovit za tebe tak, že v podstatě okamžitě po uložení změnu uvidíš se jmenuje _Browsersync_.
 
 ---
 
-## Node.js and npm
+## _Node.js_ a _npm_
 
 ----
 
 ### Node.js
 
-Node.js is a Javascript runtime to run programs written in Javascript programming language on your computer (not in a browser).
+Protože je _Browsersync_ napsaný v _Javascriptu_, potřebuješ si nejdřív nainstalovat prostředí pro jeho běh na tvém počítači, které se jmenuje _Node.js_.
 
-----
+Stáhni si a nainstaluj si nejnovější _Node.js_ (aktuálně 7.5.0) z [oficiálních stránek](https://nodejs.org/).
 
+Pokud používáš pro instalace balíčkovací systém (apt-get, Homebrew apod.), můžeš si Node.js nainstalovat přes něj ([najdi si návod pro ten tvůj](https://nodejs.org/en/download/package-manager/)).
 
-### Install Node.js
-
-Download and install the lastest *Node.js* (7.4.0) from the [official website](https://nodejs.org/en/).
 
 ----
 
 ### npm
 
-Along with *Node.js* you installed its package manager *npm*.
+Společně s _Node.js_ se ti nainstaloval i jeho balíčkovací systém (package manager) _npm_.
 
-You can use it to install software packages that use *Node.js* to run.
-
-Best way is to save information about used packages is to save them in `package.json` file.
-
-----
-
-
-### Create `package.json`
-
-1.  Open Command Prompt / Terminal
-1.  Navigate to the folder we created
-1.  Open Command Prompt as an Administrator (PC) / Terminal (Mac)
-1.  On command line type `npm init`
-1.  Just follow the instruction and the *package.json* file will be created.
+Používá se na instalaci balíčků (programů) pro _Node.js_. Taky je s jeho pomocí můžeš aktualizovat a odinstalovávat.
 
 ---
 
-
-## Gulp
-
-----
-
-Gulp is a software, that runs tasks to save developer's time.
-
-These tasks are written in javascript.
+## Instalce _Gulp_
 
 ----
 
+Teď už bychom mohli nainstalovat _Browsersync_ a přes _Node.js_ ho spustit. Není to ale tak pohodlné jako využít _Gulp_, který je určen právě na spouštění takových úkolů.
 
-### Install the *gulp* command using *npm*
+Nainstaluj si tedy nejprve příkaz *gulp* pomocí *npm*:
+
+V té samé příkazové řádce, kterou už máš spuštěnou (na Windows jako Administrátor) spusť příkaz `install` takto.
 
 ```shell
 npm install gulp-cli -g
 ```
 
-`-g` parameter makes the installation global, which means you don't have to install it again and again in every project
+Parametr `-g` jeho instalaci udělá globální, to znamená, že gulp bude dostupný všude v tvém systému a nebudeš ho muset instalovat znovu. 
 
-On Mac you might need it to prefix this with *sudo* command.
+Na Macu je potřeba v tomto případě, tedy při globální instalaci, před celý příkaz dát ještě `sudo`.
 
-On Windows, close the Command Prompt and open it again as an Administrator. It's necessary because Command Prompt isn't aware of changes made during the installation.
+Je možné, že při instalaci uvidíš nějaká varování `WARN …`, to je v pořádku. Problém je pouze pokdu se objeví chyba `ERR …`. V tom případě se zeptej kouče.
 
-----
+Po instalaci na Windows je potřeba zavřít a otevřít příkazovou řádku (raději znovu jako Administrátor). Je to nutné, protože o změnách, které proběhly v systému, ta otevřená nemá tušení.
 
 
-### Install *gulp* as a *devDependency*
+Instalaci si můžeš ověřit pomocí spuštění příkazu `gulp`, tohle by měl být výsledek:
 
 ```shell
-npm install gulp -D
+gulp
+[11:55:00] Local gulp not found in …
+[11:55:02] Try running: npm install gulp
 ```
 
-`-D` parameter saves it to `package.json` we created earlier as a *devDependency*
+Je třeba ještě nainstalovat lokální Gulp.
+
+---
+
+## `package.json`
+
+Informace o tom, jaké balíčky má pro daný projekt _npm_ nainstalovat se ukládají do souboru `package.json`. Je nejprve nutné ho vytvořit.
 
 ----
 
-### gulpfile.js
+Mohla bys ho napsat ručně, je to textový soubor, ale znamenalo by to naučit se dost o jeho struktuře a nebudeme to potřebovat. Proto je snazší použít příkaz `init`, který na to v _npm_ je. 
 
-When you run `gulp` command, it looks for `gulpfile.js` and searches it for tasks to run.
+1. Příkazovou řádku už máš otevřenou.
+1. Otevři v ní složku, kde je tvůj `index.html`.
+1. Zadej příkaz `npm init`.
+1. Vyplň jednotlivé hodnoty. Na většině teď nezáleží, stačí potvrdit výchozí hodnotu Enterem. 
+1. Nakonec ti ukáže jak *package.json* bude vypadat a potvrď opět Enterem jeho vytvoření.
+
+---
+
+## Instalace lokálního Gulpu
 
 ----
 
+```shell
+npm install gulp --save-dev
+```
 
-### Create gulpfile.js
+Parametr `--save-dev` zajistí, že se uloží informace do `package.json`. To se bude hodit později, až budeš chtít stejné balíčky použít v jiném projektu.
+
+Všimni si, že ti vedle `index.html` přibyla složka `node_modules`, do které _npm_ ukládá všechny nainstalované balíčky. Pokud bys používala pro takový projekt _git_, určitě si přidej `node_modules` do `.gitignore`, je to spousta dat, která verzovat v gitu nechceš.
+
+---
+
+## `gulpfile.js`
+
+Když spustíš příkaz `gulp`, hledá soubor `gulpfile.js` ve stejné složce, aby zjistil, jaké jsou v něm zadané úkoly a spustil je.
+
+----
+
+Vytvoř si `gulpfile.js` ve stejné složce jako už máš `index.html`.
+
+Úkoly v Gulpu se píšou v Javascriptu, kterému se budeme věnovat v jedné z příštích lekcí, tak si zatím zkopíruj tuhle předpřipravenou konfiguraci, není potřeba rozumět každé závorce. Přesto v něm najdeš komentáře, které vysvětlují, co se v něm zhruba děje.
 
 ```javascript
-    // this is a javascript line comment, everything after two slashes is not doing anything
-    // line comments end with end of the line, so the next line is not commented out and is executed
+// Tenhle řádek je řádkový komentář v Javascriptu
+// cokoli za // nic nedělá 
 
-    // load gulp
-    var gulp = require('gulp');
+// načteme gulp
+var gulp = require('gulp');
 
-    // define a task
-    gulp.task(
-        // name of the task
-        'default', // task named default is ran by default
-        // the second parameter is a function that contains everything that the task will do
-        function() {
-            console.log('Hello World'); // this just prints 'Hello world'
-        }
-    );
+// nadefinujeme úkol
+gulp.task(
+	
+	// nadefinujeme jméno úkolu
+	'default', // úkol, který se jmenuje default se spouští implicitně
+	
+	// další parametr je funkce, která obsahuje vše, co má daný úkol udělat
+	function() {
+		 // zatím do ní dáme jen javascriptový ekvivalent print,
+		 // vypíše do konzole Hello World
+		console.log('Hello World');
+	}
+);
 ```
 
-Now you can run your first *gulp* task.
+Teď si můžeš spustit první úkol v gulpu.
 
 ```shell
 gulp
 ```
+
+Vypsání _Hello World_ je dobré pro kontrolu, že vše funguje jak má, ale teď ho konečně nahradíme spuštěním _Browserync_.
 
 ---
 
@@ -133,70 +148,59 @@ gulp
 
 ----
 
-Browsersync is a software to make development faster and easier by refreshing browser automatically or injecting CSS.
 
-----
+### Instalace 
 
-
-### Install Browserync and save it to `package.json`
+Už známým příkazem nainstaluj Browsersync a ulož informaci do `package.json` 
 
 ```shell
-npm install browser-sync -D
+npm install browser-sync --save-dev
 ```
-
-Check `package.json`. You should se there line with browser-sync.
 
 ----
 
+### _Browsersync_ do `gulpfile.js`
 
-### Add *Browsersync* to `gulpfile.js`
+Abys mohla spustit _Browsersync_ pomocí _gulpu_, musíme ho přidat do `gulpfile.js`
 
-To run *Browsersync* with *gulp*, you need to add to the `gulpfile.js`
 
-#### First load it
+Nejdříve ho načti
 
 ```javascript
 var browserSync = require('browser-sync').create();
 ```
 
-#### Simply replace console.log… with the following code.
+A pak umísti celé spuštění Browsersyncu místo `console.log('Hello World')`
 
 ```javascript
-browserSync.init({ // initalize Browsersync
-        // set what files be served
-        server: {
-            baseDir: './' // serve from folder that this file is located
-        },
-        files: ['*.html'] // watch for changes all files named *anything*.css and *anything*.html in the same folder `gulpfile.js` is located
-    });
+browserSync.init({ // inicializace Browsersync
+	// nastavit jaké soubory se budou používat
+	server: {
+		baseDir: './' // ./ znamená stejná složka, ve které se nachází gulpfile.js
+	},
+	files: ['*.html'] // zde se definují soubory, jejichž změnu má browsersync sledovat
+});
 ```
 
-----
+Soubory ke sledování jsou pole (array), syntaxe je stejná jako list v Pythonu.
 
-#### If you're unsure about the result, your `gulpfile.js` content should look like this
+`*` znamená cokoli, takže bude sledovat změny v `index.html` i `necojineho.html`
 
+
+Pokud si nejdi jistá, celý výsledek má vypadat takto (tento má vynechány komentáře).
 
 ```javascript
-// this is a javascript line comment, everything after two slashes is not doing anything
-// line comments end with end of the line, so the next line is not commented out and is executed
-
-// load gulp
 var gulp = require('gulp');
-// load Browsersync
 var browserSync = require('browser-sync').create();
 
-// define a task
 gulp.task(
-    // name of the task
-    'default', // task named default is ran by default
-    // the second parameter is a function that contains everything that the task will do
+	'default',
     function() {
-        browserSync.init({ // initalize Browsersync
-            // set what files be served
+        browserSync.init({
             server: {
-                baseDir: './' // serve from folder that this file is located
+                baseDir: './'
             },
-            files: ['*.html'] // watch for changes all files named *anything*.css and *anything*.html in the same folder `gulpfile.js` is located
+            files: ['*.html']
         });
     }
 );
@@ -204,43 +208,45 @@ gulp.task(
 
 ----
 
-### Run Browsersync
+### Spusť Browsersync
 
-Because we added Browsersync to the default task, all that is needed is to run
+Protože máš Browserync jako výchozí (default) úkol, stačí spustit takto 
 
 ```shell
 gulp
 ```
 
-* position windows so you can see both editor and the browser
-* try changing heading color
-* try changing heading text
+Otevře ti automaticky v tvém výchozím prohlížeči adresu, typicky http://localhost:3000.
+
+Uspořádej si okna editoru a prohlížeče tak, abys viděla obě a zkus si něco změnit změnit v `index.html`. Změny by se měly projevit okamžitě po uložení souboru.
+
+Pokud máš i další soubory, například `example.html`, najdeš ho na adrese `http://localhost:3000/example.html`.
+
+Pro ukončení běhu _gulpu_ zmáčkni <kbd>ctrl+c</kbd> v příkazové řádce.
 
 ----
 
-### Usage
+<!-- .slide: data-state="c-slide-task" -->
 
-Now you can just run `gulp` and browser will open with appropriate address which is *http://localhost:3000*
+### Cvičení
 
-It will show you your `index.html` because if no file is specified, `index.html` is shown.
+Přidej si do sledování kromě HTML souborů i CSS soubory.
 
-You can open any file you have in the folder and *Browsersync* will work with it.
+<details>
+  <summary>Řešení</summary>
+  <p>Tam, kde máš v `gulpfile.js` napsáno `['*.html']` přidej ještě CSS soubory takto: `['*.html','*.css']`
+</p>
+</details>
 
-Example: `example.html` will be available at *http://localhost:3000/example.html*.
-
-Press <kbd>ctrl+c</kbd> or <kbd>cmd+c</kbd> to stop *gulp* from running.
+Zkus si teď něco změnit v tvém CSS souboru. Browserync dokonce ani neobnovuje celou stránku, ale jen vymění CSS za nové.
 
 ----
 
-### Repeatibility
 
-You can share and reuse package.json file for your other projects: just type `npm install` wherever you place (copy) the file to install everything needed. Then just run `gulp`
+## Opakovatelnost
 
----
+Tvůj `package.json` si můžeš zkopírovat do jakéhokoli projektu a jen napsat `npm install` a vše potřebné se nainstaluje. Stejně tak si zkopíruješ `gulpfile.js` a pak už stačí spustit `gulp` a vše bude fungovat stejně.
 
+Lze tak vše snadno sdílet se spolupracovníky pomocí gitu. Pokud by se stalo, že kolegyně přidá nový balíček, stačí opět napsat `npm install` a vše potřebné se nainstaluje.
 
-# Automatizace 2: CSS
-
-Automatické znovunačítání HTML při změně je fajn, ale co Browsersync umí opravdu skvěle, je vložení změněného CSS a to dokonce bez obnovování celé stránky.
-  
-Aby to fungovalo, stačí tam, kde máš v `gulpfile.js` napsáno `['*.html']` přidat ještě CSS soubory takto: `['*.html','*.css']` Takhle se v Javascriptu definuje další položka pole (array), je to vlastně stejné jako seznam (list) v Pythonu. 
+ 
