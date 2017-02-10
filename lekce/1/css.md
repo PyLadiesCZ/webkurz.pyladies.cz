@@ -4,7 +4,7 @@ Posledně jsme si ukázali z CSS jen malou část. Dnes si znalosti CSS rozší�
 
 ---
 
-## Výchozí styly (User Agent stylesheet)
+## Výchozí styly prohlížeče (User Agent stylesheet)
 
 ----
 
@@ -31,7 +31,6 @@ p {
 	text-align: center; /* nebo left nebo right */
 }
 ```
-<!-- .element: class="c-text-sm stretch" contenteditable="true" -->
 
 ----
 
@@ -64,8 +63,9 @@ Zkus si zjistit a ověřit dědičnost vlastností, které jsme už probírali, 
 Velikost písma můžeš nastavit pomocí spousty jednotek zatím si vystačíme s pixely (`px`) a procenty `%`, kdy se velikost určuje dle velikosti písma rodiče.
 
 ```css
-font-size: 20px;
-font-size: 150%;
+h1 { font-size: 20px; }
+
+p { font-size: 150%; }
 ```
 
 ---
@@ -106,7 +106,7 @@ V tvém dokumentu `index.html` obal několik prvků do `<div>` a dej mu nějaké
 
 ----
 
-# Jak odlišit elementy? <!-- .element: class="c-sr-only" -->
+### Jak odlišit elementy?
 
 ```html
 <p>A víte, že…?</p>
@@ -114,14 +114,12 @@ V tvém dokumentu `index.html` obal několik prvků do `<div>` a dej mu nějaké
 <p>Ještě jeden odstavec</p>
 
 ```
-<!-- .element: class="c-text-md" contenteditable="true" -->
 
 Co kdybych chtěl zobrazit text odstavců modře?
 
 ```css
 p { color: blue; }
 ```
-<!-- .element: class="c-text-md fragment" contenteditable="true" -->
 
 Ale co kdybych chtěl udělat jen první odstavec modrý?
 
@@ -133,21 +131,17 @@ Ale co kdybych chtěl udělat jen první odstavec modrý?
 <p>Ještě jeden odstavec</p>
 
 ```
-<!-- .element: class="c-text-md" contenteditable="true" -->
-
 … a v CSS se zapíše s tečkou na začátku
-
 
 ```css
 .tip { color: blue; }
 ```
-<!-- .element: class="c-text-md fragment" contenteditable="true" -->
 
 ----
 
-# Třída platí pro více elementů <!-- .element: class="c-sr-only" -->
+### Třída lze použít pro více elementů
 
-Třídu můžeš přiřadit libovolnému počtu značek.
+Třídu můžeš přiřadit libovolnému počtu prvků.
 
 
 ```html
@@ -158,12 +152,10 @@ Třídu můžeš přiřadit libovolnému počtu značek.
 <p>Ještě jeden odstavec</p>
 
 ```
-<!-- .element: class="c-text-md" contenteditable="true" -->
 
 ```css
 .tip { color: blue; }
 ```
-<!-- .element: class="c-text-md" contenteditable="true" -->
 
 Třída se tedy použije pokud má nějaký prvek speciální vlastnosti nebo se skupina vlastností opakuje a chceme si tak ušetřit opakovaný zápis v CSS.
 
@@ -177,43 +169,42 @@ Tříd můžeme jednomu prvku přiřadit více najednou, oddělujeme je mezerou.
 .tip { color: red; }
 .cool { background-color: skyblue; }
 ```
-<!-- .element: class="c-text-md " contenteditable="true" -->
 
 ```html
 <p class="tip">Jsem Tip</p>
 <p class="cool">Já jsem cool</p>
 <p class="cool tip">Já jsem oboje, heč.</p>
 ```
-<!-- .element: class="c-text-md " contenteditable="true" -->
-
 
 ----
 
 <!-- .slide: data-state="c-slide-task" -->
 
-#### Cvičení
+### Cvičení
 
 Zkus si změnit stylování v tvém dokumentu pomocí elementů na stylování pouze pomocí tříd.  
 
 ---
 
-# [Box-model](https://devdocs.io/css/css_box_model/introduction_to_the_css_box_model)
+# Box-model
 
 Na stránce je každý element reprezentovaný jako obdélníková krabice. Tvar nemusí být vidět, ale je tam.
 
 ----
 
-<!-- .slide: data-state="c-slide-video" -->
-
 Podívej se na video, které velmi zpomaleně zachycuje vykreslování stránky v prohlížeči, tak jak si ji postupně skládá, je tam spousta krabic. 
 
 <iframe data-autoplay width="100%" height="400px" src="https://www.youtube.com/embed/ZTnIxIA5KGw" frameborder="0" allowfullscreen></iframe>
 
-----
+---
 
 ## [box-sizing](https://devdocs.io/css/box-sizing)
 
-`box-sizing` je vlastnost, která určuje jaký druh box-modelu použít. Ve většině případů chceš použít ten, který není v CSS v prohlížeči jako výchozí, proto hned na začátek svého CSS dej tento kód.
+----
+
+`box-sizing` je vlastnost, která určuje jaký druh box-modelu použít. 
+
+Ve většině případů chceš bohužel použít ten, který není v CSS v prohlížeči jako výchozí, proto hned na začátek tvého CSS dej následující kód.
 
 
 ```css
@@ -223,114 +214,142 @@ Podívej se na video, které velmi zpomaleně zachycuje vykreslování stránky 
 	box-sizing: border-box; 
 }
 ```
-<!-- .element: class="c-text-md" contenteditable="true" -->
 
 Vysvětlení jaký je rozdíl nechme na později, teď jen chceme aby to prohlížeč vykresloval tak, jak potřebujeme.
 
-----
+Hvězdička `*` je selektor, který znamená libovolný element. Co znamená ten zápis dál, si řekneme později.
+
+---
 
 ## Výška a šířka
 
+Každá krabice na webu má dva rozměry: šířku a výšku. 
+
+----
+
 ```css
-img {
+div {
 	width: 300px;
 	height: 100px;
 }
 ```
-<!-- .element: class="c-text-md " contenteditable="true" -->
 
 <img src="box-model-width-height.svg">
 
-----
+---
 
 ## Ohraničení
 
 Rámeček kolem prvku.
 
+----
+
 ```css
-img {
+div {
 	border-width: 2px;
 	border-style: solid; /* taky dotted, dashed nebo inset */
 	border-color: black;
 }
 ```
 
-<!-- .element: class="c-text-xs fragment" contenteditable="true" -->
-
 Zkrácený zápis (tzv. shorthand):
 
 ```css
-img {
+div {
 	border: 2px solid black;
 }
 
 ```
-<!-- .element: class="c-text-sm fragment" contenteditable="true" -->
 
-<img class="fragment" src="box-model-border.svg">
+<img src="box-model-border.svg">
 
 
-----
+---
 
 ## Odsazení obsahu od okraje (od rámečku)
 
-Je to vlastně taková „vycpávka“. 
+Je to „vycpávka“. 
+
+----
 
 ```css
-.tip {
+div {
 	padding: 25px;
 }
 ```
-<!-- .element: class="c-text-md " contenteditable="true" -->
 
 <img src="box-model-padding.svg">
 
 Jedna hodnota nastaví shodné odsazení na všech 4 stranách prvku.
 
-----
+---
 
 ## Odsazení od ostatních prvků
 
 Určuje to, jak daleko mají být ostatní prvky od rámečku (i kdyby byl nulový).
 
+----
+
 ```css
-.tip {
+div {
 	margin: 10px;
 }
 ```
-<!-- .element: class="c-text-md " contenteditable="true" -->
 
 <img src="box-model-margin.svg">
 
-Pozor na slučování hodnot, kdy se aplikuje jen větší ze dvou hodnot.
+### Slučování odsazení (margin collapsing)
 
-----
+Ke slučování hodnot margin-top a margin-bottom dochází v některých případech a znamená to, že se aplikuje jen větší ze dvou hodnot nebo pokud jsou stejné, tak jen libovolná z nich.
+
+```html
+<p>Spodní margin tohoto odstavce se sloučí s…</p>
+<p>… s horním marginem tohoto odstavce.</p>
+
+```
+
+```css
+p { margin: 20px; }
+```
+
+Výsledná mezera mezi odstavci nebude 40px, ale 20px.
+
+Pokud by ale odstavce měly např. nastaveny nějaký `padding` nebo `border`, ke slučování nedojde. Jsou i další okolnosti za kterých ke slučování nedochází, ale o těch jsme si zatím neříkali. Důležité je o tomto chování vědět a případně si zjistit víc, pokud bude potřeba. Třeba v [https://www.sitepoint.com/web-foundations/collapsing-margins/](tomto článku Collapsing Margins na Sitepoint.com).
+
+---
 
 ## Shrnutí
 
-<img src="box-model-all.svg">
+----
 
 Všechny prvky na stránce bez ohledu na vizuální tvar jsou krabice/boxy.
 
+<img src="box-model-all.svg">
 
-Vlastnost `width` určuje, jak má být prvek široký *včetně* ohraničení (`border`) a výplně (`padding`)
+Vlastnosti `width` a `height` určují, jak má být prvek široký a vysoký *včetně* ohraničení (`border`) a výplně (`padding`), to platí v případě, že prvky mají nastaveno `box-sizing: border-box;`. 
 
-`margin` se do šířky nezapočítává, ale ovlivňuje, kolik místa prvek ve výsledku zabere.
+Pokud ne, tak `width` i `height` znamenají jen velikost místa pro obsah a jak ohraničení (`border`), tak výplně (`padding`) velikost elementu zvětšují. Toto výchozí chování je obvykle nežádoucí, proto ho na začátku CSS měníme.
+
+`margin` se do šířky ani výšky nezapočítává, ale ovlivňuje, kolik místa prvek ve výsledku zabere.
 
 <!--
 **Pozor při výpočtech**: nezpomeňte násobit dvěma, pokud 
 	`margin: 5px;` ubere na šířku (resp. výšku) úhrnem `10 px` => vlevo a vpravo (resp. nahoře a dole). Platí i pro `padding` a `border`.
 -->
 
+---
+
+## Druhy elementů (vlastnost `display`)
+
 ----
 
-## Blokové elementy
+### Blokové elementy
 
 Zaberou celou dostupnou šířku => řadí se pod sebe, lze jim nastavovat hodnoty margin, padding atd.
 
 ----
 
-## Řádkové elementy
+### Řádkové elementy
 
 * zaberou jen tolik místa, kolik potřebují
 * nejsou samostatně na řádku => řadí se za sebou jako slova ve větě
@@ -339,7 +358,7 @@ Zaberou celou dostupnou šířku => řadí se pod sebe, lze jim nastavovat hodno
 
 ----
 
-## Řádkově-blokové elementy
+### Řádkově-blokové elementy
 
 * hybrid: řádkový s některými vlastnostmi blokového
 * řadí se za sebou, ale lze mu nastavit šířku, výšku a okraje
@@ -347,7 +366,7 @@ Zaberou celou dostupnou šířku => řadí se pod sebe, lze jim nastavovat hodno
 
 ----
 
-## Typ elementu v&nbsp;CSS
+### Typ elementu v&nbsp;CSS
 
 ```css
 a { display: block; }
@@ -356,7 +375,6 @@ div { display: inline; }
 
 li { display: inline-block; }
 ```
-<!-- .element: class="c-text-md stretch" contenteditable="true" -->
 
 * každý element má výchozí typ
 * pomocí CSS lze ale změnit chování prvku na jiný typ
@@ -364,7 +382,7 @@ li { display: inline-block; }
 
 <!-- .slide: data-state="c-slide-task" -->
 
-#### Cvičení
+### Cvičení
 
 Zkus nastavit všechny vlastnosti pro jeden element.
 
@@ -388,7 +406,6 @@ Při psaní CSS jsou způsoby, jak si ušetřit opakování znovu a znovu.
 h1,
 h2 { color: green; }
 ```
-<!-- .element: class="c-text-lg" contenteditable="true" -->
 
 Selektor říká: _všechny nadpisy h1 a všechny nadpisy h2_ 
 
@@ -405,7 +422,6 @@ Někdy potřebuješ nastavit vlastnosti jen prvkům v určité části stránky,
 ```css
 .tip h2 { color: blue; }
 ```
-<!-- .element: class="c-text-lg" contenteditable="true" -->
 
 Selektor říká: _všechny nadpisy h2, pokud je nějaký jejich rodič libovolný element s třídou h2_
 
@@ -464,24 +480,29 @@ Platí poslední nastavená hodnota vlastnosti.
 
 ----
 
-## Na specificitě selektoru víc
+## Na specificitě selektoru záleží víc
 
-Předchozí pravidla platí pro selektory se stejnou _specificitou_. Co to je?
-
-Specificita je vlastně síla selektoru. Čím více tříd selektor má, tím silnejší je.
+Specificita je síla selektoru. Pokud nějakou vlastnost nastavuješ v CSS víckrát tomu samému elementu, tak platí hodnota nastavená pomocí silnějšího (specifičtějšího) selektoru. Teprve pokud je specificita selektorů stejná, aplikuje se pravidlo o tom, že platí poslední nastavená hodnota. 
+ 
+Silnější selektor má více tříd, než selektor slabší.
 
 Pokud mají dva selektory stejný počet tříd, tak je silnější ten s větším počtem tagů.
 
+
+Pokud budeme mít takovéhle HTML, …
 ```html
 <div>
     <p class="tip">obsah</p>
 </div>
 ```
+… tak element odstavce lze vybrat pomocí těchto tří selektorů:
 
 ```css
-p.tip { color: red; }
+.tip { color: red; }
 p { color: green; }
 div p { color: blue; }
 ```
+
+
 
 Specificita může být ještě složitější, ale my bychom si zatím měli vystačit s tímto.
