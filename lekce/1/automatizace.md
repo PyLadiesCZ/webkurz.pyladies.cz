@@ -1,16 +1,12 @@
-<!-- .slide: data-state="c-slide-inter" -->
-
 # Automatizace	
-
-## Introduction to Front end devstack
-
-----
 
 You can write everything front-end related manually. You don't even need anything else than a basic text editor.
 
 But the right tools can save incredible amount of time and even though it takes some time to learn them and to set them up, it's well worth for proffesionals.
 
 ----
+
+## Introduction to Front end devstack
 
 ### What will be the result?
 
@@ -21,7 +17,7 @@ And we'll do that with only one task, that will free you from endless page reloa
 During the course, we'll add more and more automation to your work, because our time and brains are too precious to waste them on something, that computers can already do better and faster.
 
 
-----
+---
 
 ## Node.js and npm
 
@@ -59,7 +55,7 @@ Best way is to save information about used packages is to save them in `package.
 1.  On command line type `npm init`
 1.  Just follow the instruction and the *package.json* file will be created.
 
-----
+---
 
 
 ## Gulp
@@ -131,7 +127,7 @@ Now you can run your first *gulp* task.
 gulp
 ```
 
-----
+---
 
 ## Browsersync
 
@@ -240,3 +236,11 @@ Press <kbd>ctrl+c</kbd> or <kbd>cmd+c</kbd> to stop *gulp* from running.
 
 You can share and reuse package.json file for your other projects: just type `npm install` wherever you place (copy) the file to install everything needed. Then just run `gulp`
 
+---
+
+
+# Automatizace 2: CSS
+
+Automatické znovunačítání HTML při změně je fajn, ale co Browsersync umí opravdu skvěle, je vložení změněného CSS a to dokonce bez obnovování celé stránky.
+  
+Aby to fungovalo, stačí tam, kde máš v `gulpfile.js` napsáno `['*.html']` přidat ještě CSS soubory takto: `['*.html','*.css']` Takhle se v Javascriptu definuje další položka pole (array), je to vlastně stejné jako seznam (list) v Pythonu. 

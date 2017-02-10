@@ -1,29 +1,24 @@
-<!-- .slide: data-state="c-slide-inter" -->
-
-# Automatizace 2: CSS
-
-Automatické znovunačítání HTML při změně je fajn, ale co Browsersync umí opravdu skvěle, je vložení změněného CSS a to dokonce bez obnovování celé stránky.
-  
-Aby to fungovalo, stačí tam, kde máš v `gulpfile.js` napsáno `['*.html']` přidat ještě CSS soubory takto: `['*.html','*.css']` Takhle se v Javascriptu definuje další položka pole (array), je to vlastně stejné jako seznam (list) v Pythonu. 
-
-----
-<!-- .slide: data-state="c-slide-inter" -->
-
 # CSS
 
-----
+Posledně jsme si ukázali z CSS jen malou část. Dnes si znalosti CSS rozšíříme.
+
+---
 
 ## Výchozí styly (User Agent stylesheet)
+
+----
 
 Každý prohlížeč má v sobě zabudované výchozí CSS.
 
 Proto každý HTML dokument „bez CSS“ má nadpisy, které jsou tučně a větším písmem než odstavce. 
 
-Tvoje CSS se aplikuje až za nimi a tak vlastně přepisujete vlastnosti zabudované v prohlížeči.
+Tvoje CSS se aplikuje až za nimi a tak vlastně přepisuješ vlastnosti zabudované v prohlížeči.
 
-----
+---
 
 ## Vlastnosti textu
+
+----
 
 ```css
 p {
@@ -68,15 +63,18 @@ Zkus si zjistit a ověřit dědičnost vlastností, které jsme už probírali, 
 
 Velikost písma můžeš nastavit pomocí spousty jednotek zatím si vystačíme s pixely (`px`) a procenty `%`, kdy se velikost určuje dle velikosti písma rodiče.
 
+```css
+font-size: 20px;
+font-size: 150%;
+```
 
-<pre class="c-text-xl fragment" contenteditable><code class="lang-css stretch" data-noescape>
-<span class="fragment">font-size: 20px;</span>
-<span class="fragment">font-size: 150%;</span>
-</code></pre>
+---
+
+## Barva pozadí
 
 ----
 
-## Barva pozadí
+Barvu pozadí už nastavit umíš: 
 
 ```css
 p {
@@ -84,7 +82,7 @@ p {
 }
 ```
 
-Co ale když chceš přidat pozadí pod několik elementů zároveň? K tomu, je potřeba přidat extra prvek.
+Co ale když chceš přidat pozadí pod několik elementů zároveň? K tomu je potřeba přidat extra prvek.
 Protože tento prvek nemá žádný jiný význam, použij `<div>`, prvek bez významu.
 
 ```html
@@ -102,11 +100,13 @@ Protože tento prvek nemá žádný jiný význam, použij `<div>`, prvek bez v�
 
 V tvém dokumentu `index.html` obal několik prvků do `<div>` a dej mu nějaké pěkné pozadí nebo třeba všem nastav jiné písmo jen s pomocí dědičnosti.
 
-----
+---
 
 ## Třídy
 
-# Problém: jak odlišit elementy <!-- .element: class="c-sr-only" -->
+----
+
+# Jak odlišit elementy? <!-- .element: class="c-sr-only" -->
 
 ```html
 <p>A víte, že…?</p>
@@ -124,8 +124,6 @@ p { color: blue; }
 <!-- .element: class="c-text-md fragment" contenteditable="true" -->
 
 Ale co kdybych chtěl udělat jen první odstavec modrý?
-
-# Řešení: jak odlišit elementy <!-- .element: class="c-sr-only" -->
 
 Řešením je přidat třídu, která umožňuje se zaměřit v CSS přesněji. Třída se v HTML přidává jako atribut `class`…
 
@@ -197,9 +195,7 @@ Tříd můžeme jednomu prvku přiřadit více najednou, oddělujeme je mezerou.
 
 Zkus si změnit stylování v tvém dokumentu pomocí elementů na stylování pouze pomocí tříd.  
 
-----
-
-<!-- .slide: data-state="c-slide-inter" -->
+---
 
 # [Box-model](https://devdocs.io/css/css_box_model/introduction_to_the_css_box_model)
 
@@ -209,11 +205,9 @@ Na stránce je každý element reprezentovaný jako obdélníková krabice. Tvar
 
 <!-- .slide: data-state="c-slide-video" -->
 
-## Video <!-- .element: class="c-sr-only" -->
+Podívej se na video, které velmi zpomaleně zachycuje vykreslování stránky v prohlížeči, tak jak si ji postupně skládá, je tam spousta krabic. 
 
-Podívej se na video, které velmi zpomaleně zachycuje vykreslování stránky v prohlížeči, tak jak si ji postupně skládá. 
-
-<iframe data-autoplay class="stretch" src="https://www.youtube.com/embed/ZTnIxIA5KGw" frameborder="0" allowfullscreen></iframe>
+<iframe data-autoplay width="100%" height="400px" src="https://www.youtube.com/embed/ZTnIxIA5KGw" frameborder="0" allowfullscreen></iframe>
 
 ----
 
@@ -245,7 +239,7 @@ img {
 ```
 <!-- .element: class="c-text-md " contenteditable="true" -->
 
-<img src="img/box-model-width-height.svg" style="border:0 none;box-shadow:none;">
+<img src="box-model-width-height.svg">
 
 ----
 
@@ -273,7 +267,7 @@ img {
 ```
 <!-- .element: class="c-text-sm fragment" contenteditable="true" -->
 
-<img class="fragment" src="img/box-model-border.svg" style="border:0 none;box-shadow:none;">
+<img class="fragment" src="box-model-border.svg">
 
 
 ----
@@ -289,7 +283,7 @@ Je to vlastně taková „vycpávka“.
 ```
 <!-- .element: class="c-text-md " contenteditable="true" -->
 
-<img src="img/box-model-padding.svg" style="border:0 none;box-shadow:none;">
+<img src="box-model-padding.svg">
 
 Jedna hodnota nastaví shodné odsazení na všech 4 stranách prvku.
 
@@ -306,7 +300,7 @@ Určuje to, jak daleko mají být ostatní prvky od rámečku (i kdyby byl nulov
 ```
 <!-- .element: class="c-text-md " contenteditable="true" -->
 
-<img src="img/box-model-margin.svg" style="border:0 none;box-shadow:none;">
+<img src="box-model-margin.svg">
 
 Pozor na slučování hodnot, kdy se aplikuje jen větší ze dvou hodnot.
 
@@ -314,7 +308,7 @@ Pozor na slučování hodnot, kdy se aplikuje jen větší ze dvou hodnot.
 
 ## Shrnutí
 
-<img src="img/box-model-all.svg" style="border:0 none;box-shadow:none;">
+<img src="box-model-all.svg">
 
 Všechny prvky na stránce bez ohledu na vizuální tvar jsou krabice/boxy.
 
@@ -376,11 +370,13 @@ Zkus nastavit všechny vlastnosti pro jeden element.
 
 Zkus mu změnit hodnotu display z block na ostatní. Při inline rámeček a další vlastnosti „zmizí“. 
 
-----
+---
 
 ## Pokročilé selektory
 
-Základní selektor, tedy to, co napíšeš v CSS před složené závorky, už znáš. Často se ale hodí použít i komplexnější varianty, které umožňují jednodušeji nebo přesněji zacílit na elementy, které potřebuješ nastylovat.
+Základní jednoduchý selektor, tedy to, co napíšeš v CSS před složené závorky, už znáš. 
+
+Často se ale hodí použít i komplexnější varianty, které umožňují jednodušeji nebo přesněji zacílit na elementy, které potřebuješ nastylovat.
 
 ----
 
@@ -404,7 +400,7 @@ Jednotlivé selektory odděluj čárkou.
 
 ### Kontextový selektor
 
-Někdy potřebuješ nastavit nějaké vlastnosti jen prvkům v určité části stránky, na to se hodí kontextový selektor. 
+Někdy potřebuješ nastavit vlastnosti jen prvkům v určité části stránky, na to se hodí kontextový selektor. 
 
 ```css
 .tip h2 { color: blue; }
@@ -417,65 +413,75 @@ Obarví se nadpisy 2. úrovně na modro, pokud jsou v prvku s třídou `.tip`
 
 Samozřejmě to funguje i jen pro tagy nebo jen pro třídy. A taky lze definovat více zanořených prvků, ale tomu se radši vyhni. Není to dobrá praxe a přináší to spíš problémy.
 
-----
-
-# Jak se aplikují styly?
-
-Zjednodušíme si zatím situaci tím, že všechno CSS máme jen v jednom souboru a nikde jinde.
-
-## Na pořadí záleží
-
-<pre class="c-text-md fragment" contenteditable data-fragment-index="10"><code class="stretch lang-css" data-noescape><span class="fragment">p {
-	color: red;
-	background-color: pink;
-}</span>
-
-<span class="fragment">p { color: green; }</span></code></pre>
-
-Platí poslední nastavená hodnota vlastnosti.
-
-----
-
-## Na specificitě selektoru
-
-Předchozí pravidla platí pro selektory se stejnou specificitou. Co to je?
-
-Specificita je vlastně síla selektoru. Čím více tříd, tím silnejší selektor je.
-
-Pokud mají dva selektory stejný počet tříd, tak je silnější ten s větším počtem tagů.
-
-<pre class="c-text-md fragment" data-fragment-index="10" contenteditable><code class="lang-html" data-noescape><span class="fragment" data-fragment-index="10">&lt;div&gt;
-	&lt;p class="tip"&gt;obsah&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-<pre class="c-text-md fragment" contenteditable data-fragment-index="30"><code class="stretch lang-css" data-noescape><span class="fragment" data-fragment-index="30">p.tip { color: red; }</span><span class="fragment" data-fragment-index="40">
-p { color: green; }</span>
-<span class="fragment" data-fragment-index="50">div p { color: blue; }</span></code></pre>
-
-Specificita může být ještě složitější, ale my bychom si zatím měli vystačit s tímto.
-
-----
-
-<!-- .slide: data-state="c-slide-inter" -->
+---
 
 ## Pseudotřídy
 
 Pseudotřídy vybírají prvky v různých stavech.
 
-# Ukázka <!-- .element: class="c-sr-only" -->
+----
 
-<pre class="c-text-md fragment" contenteditable><code class="lang-css stretch" data-noescape>a { color: navy; }<span class="fragment">
+```css
+a { color: navy; }
 
 a:link {color: blue;} /* nenavštívený */
 
 a:visited {color: purple;} /* navštívený */
 
-a:hover {color: red;} /* najetí myší */<span class="c-extra">
+a:hover {color: red;} /* najetí myší */
 
 a:focus {color: green;} /* aktivace klávesnicí */
 
-a:active {color: yellow;} /* při kliknutí */</span></span>
-</code></pre>
+a:active {color: yellow;} /* při kliknutí */
+```
 
 Zatímco třídy si definuješ jako autor kódu ty, pseudotřídy jsou dané.
 
 Narozdíl od tříd se zapisují jen do CSS, na HTML není třeba sahat.
+
+Je potřeba dodržet pořadí jejich zápisu v CSS, aby fungovaly správně.
+
+---
+
+# Jak se aplikují styly
+
+Zjednodušíme si zatím situaci tím, že všechno CSS máme jen v jednom souboru a nikde jinde.
+
+----
+
+## Na pořadí záleží
+
+```css
+p {
+	color: red;
+	background-color: pink;
+}
+
+p { color: green; }
+```
+
+Platí poslední nastavená hodnota vlastnosti.
+
+----
+
+## Na specificitě selektoru víc
+
+Předchozí pravidla platí pro selektory se stejnou _specificitou_. Co to je?
+
+Specificita je vlastně síla selektoru. Čím více tříd selektor má, tím silnejší je.
+
+Pokud mají dva selektory stejný počet tříd, tak je silnější ten s větším počtem tagů.
+
+```html
+<div>
+    <p class="tip">obsah</p>
+</div>
+```
+
+```css
+p.tip { color: red; }
+p { color: green; }
+div p { color: blue; }
+```
+
+Specificita může být ještě složitější, ale my bychom si zatím měli vystačit s tímto.
