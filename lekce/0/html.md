@@ -4,7 +4,7 @@
 
 Protože je pro psaní HTML potřeba některé méně obvyklé znaky, máš na stole pomůcku pro jejich nalezení na klávesnici. Spoustu z nich už asi znáš, ale pro jistotu je máš takto po ruce. 
 
-<figure class="image"><img src="keyboard-cs-html.svg" class="c-sr-only" width="100%" style="border:1px solid black;" alt="mapa klávesnice se zvýrazněnými znaky"></figure>
+<figure class="image"><img src="keyboard-cs-html.svg" class="c-sr-only" width="100%" style="border:1px solid black;max-height:70vh;width:auto;" alt="mapa klávesnice se zvýrazněnými znaky"></figure>
 
 Na české klávesnici je zásadní klávesa <kbd>AltGr</kbd> s kterou napíšeš většinu znaků.
 
