@@ -41,7 +41,7 @@ Používá se na instalaci balíčků (programů) pro _Node.js_. Taky je s jeho 
 
 ----
 
-Teď už bychom mohli nainstalovat _Browsersync_ a přes _Node.js_ ho spustit. Není to ale tak pohodlné jako využít _Gulp_, který je určen právě na spouštění takových úkolů.
+Teď už bys mohla nainstalovat _Browsersync_ a přes _Node.js_ ho spustit. Není to ale tak pohodlné jako využít _Gulp_, který je určen právě na spouštění takových úkolů.
 
 Nainstaluj si tedy nejprve příkaz *gulp* pomocí *npm*:
 
