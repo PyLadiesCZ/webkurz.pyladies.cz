@@ -17,7 +17,7 @@ Tak jako má Python stále používanou verzi 2, tak i jazyky kolem webu se měn
 
 ## Frontedista, kodér, webmaster
 
-To jsou asi nejčastější české názvy pro specialistu, který se zabývá právě frontendem. Často se obejde bez hlubší znalosti programování a spousta programátorů naopak zná frontend jen povrchně. a proto jsou často v týmech zastoupeny obě role. V tomhle kurzu si roli frontendistky vyzkoušíš, což ti kromě možnosti si sama dát něco na web, umožní i lépe porozumět lépe práci někoho, s kým třeba budeš jako programátorka spolupracovat.
+To jsou asi nejčastější české názvy pro specialistu, který se zabývá právě frontendem. Často se obejde bez hlubší znalosti programování a spousta programátorů naopak zná frontend jen povrchně. A proto jsou často v týmech zastoupeny obě role. V tomhle kurzu si roli frontendistky vyzkoušíš, což ti kromě možnosti si sama dát něco na web, umožní i lépe porozumět práci někoho, s kým třeba budeš jako programátorka spolupracovat.
 
 Pro úplnost doplním, že existují i tzv. full-stack vývojáři, kteří umí velmi dobře oboje, ale ti opravdu dobří v obojím jsou velmi vzácní.
 
