@@ -24,4 +24,12 @@ Aktuálnější je třeba [Je čas](http://jecas.cz/), kde kromě relativně akt
 
 ## Nástroje
 
+[Validátor HTML od W3C](https://validator.w3.org/nu/) slouží k ověření, že máš HTML správně napsané. 
+
+Na rozdíl od Pythonu, kde se program ukončí, totiž prohlížeč klidně zobrazí kód, který není úplně OK. Například se snaží uhodnout, kde ukončit neuzavřené tagy apod. To samozřejmě nemůže být nikdy 100% a pak se můžeš dočkat nepříjemných překvapení v tom, jak stránka funguje. Proto je dobré mít HTML validní a občas si to ověřit.
+ 
+Do validátoru můžeš zkopírovat celé HTML nebo nahrát soubor z tvého počítače nebo mu dát adresu, kde je stránka ublikovaná na internetu. 
+
+Pokud si nainsaluješ [extenzi do Chrome](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) nebo [do Firefoxu](https://addons.mozilla.org/en-US/firefox/addon/web-developer/) _Webdeveloper Toolbar_ najdeš v ní sekci _Tools_ možnost _Validate local HTML_, která ti rovnou otevře výsledek validátoru s právě otevřenou stránkou ať už je na serveru nebo jen u tebe na počítači.
+
 [caniuse.com](http://caniuse.com) je nástroj, který ti poví, jestli je dobrý nápad nějakou vlastnost použít, protože má přehled o tom, které browsery ji podporují a kolik lidí je používá.
