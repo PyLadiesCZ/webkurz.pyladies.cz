@@ -10,7 +10,7 @@ V HTML je obsah stránky a také je v něm popsáno, jaká je struktura tohoto o
 
 ## Připojení CSS
 
-Je více způsobů jak aplikovat CSS, my použijeme nejběžnější a nejpraktičtější, a to samostatný CSS soubor, připojený pomocí tagu `<link>` v hlavičce (`<head>`).
+Je více způsobů, jak aplikovat CSS. My použijeme nejběžnější a nejpraktičtější, a to samostatný CSS soubor, připojený pomocí tagu `<link>` v hlavičce (`<head>`).
 
 ```html
 <link rel="stylesheet" href="nazevsouboru.css">
@@ -34,9 +34,9 @@ selektor {
 
 _Selektor_ je část, kterou říkáme, čemu (tj. jakému elementu, příp. skupině elementů) chceme měnit vlastnosti: selektujeme = vybíráme.
 
-Ve složených závorkách jsou jednotlivé _deklarace_. V příkladu jsou dvě, každá na svém řádku. Taková úprava opět není nutné, ale vhodná, stejně jako odsazení. Každá deklarace se skládá ze dvou částí:
+Ve složených závorkách jsou jednotlivé _deklarace_. V příkladu jsou dvě, každá na svém řádku. Taková úprava opět není nutná, ale vhodná, stejně jako odsazení. Každá deklarace se skládá ze dvou částí:
 
-1. _vlastnost_ je jedna ze standardem definovaných vlastností třeba barva nebo velikost písma.
+1. _vlastnost_ je jedna ze standardem definovaných vlastností, třeba barva nebo velikost písma.
 1. _hodnota_ se píše za název vlastnosti a dvojtečku, každá vlastnost má různé povolené hodnoty, za hodnotu vždy piš středník.
 
 
