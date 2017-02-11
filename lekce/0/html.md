@@ -6,7 +6,7 @@ Protože jsou pro psaní HTML potřeba některé méně obvyklé znaky, máš na
 
 <figure class="image"><img src="keyboard-cs-html.svg" class="c-sr-only" width="100%" style="border:1px solid black;max-height:70vh;width:auto;" alt="mapa klávesnice se zvýrazněnými znaky"></figure>
 
-Na české klávesnici je zásadní klávesa <kbd>AltGr</kbd> , s kterou napíšeš většinu znaků.
+Na české klávesnici je zásadní klávesa <kbd>AltGr</kbd>, s kterou napíšeš většinu znaků.
 
 Pokud se k tobě výtisk z nějakého důvodu nedostal, můžeš si [stáhnout PDF s klávesnicí](klavesnice-a4.pdf) a vytisknout si ji sama.
 
