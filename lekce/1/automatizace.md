@@ -10,7 +10,7 @@ Rozchodíme si tedy základní automatizaci, která ti ušetří ruční opakov�
 
 Nejčastějším úkonem při psaní frontendu je asi obnovování stránky v prohlížeči. Po každé změně se musíš přepnout do prohlížeče a stránku obnovit. To je nejen otravné, ale i pomalé.
 
-Nástroj, který umí stránku obnovit za tebe tak, že v podstatě okamžitě po uložení změnu uvidíš se jmenuje _Browsersync_.
+Nástroj, který umí stránku obnovit za tebe tak, že v podstatě okamžitě po uložení změnu uvidíš, se jmenuje _Browsersync_.
 
 ---
 
@@ -37,7 +37,7 @@ Používá se na instalaci balíčků (programů) pro _Node.js_. Taky je s jeho 
 
 ---
 
-## Instalce _Gulp_
+## Instalace _Gulp_
 
 ----
 
@@ -45,7 +45,7 @@ Teď už bychom mohli nainstalovat _Browsersync_ a přes _Node.js_ ho spustit. N
 
 Nainstaluj si tedy nejprve příkaz *gulp* pomocí *npm*:
 
-V té samé příkazové řádce, kterou už máš spuštěnou (na Windows jako Administrátor) spusť příkaz `install` takto.
+V té samé příkazové řádce, kterou už máš spuštěnou (na Windows jako Administrátor), spusť příkaz `install` takto.
 
 ```shell
 npm install gulp-cli -g
@@ -74,7 +74,7 @@ Je třeba ještě nainstalovat lokální Gulp.
 
 ## `package.json`
 
-Informace o tom, jaké balíčky má pro daný projekt _npm_ nainstalovat se ukládají do souboru `package.json`. Je nejprve nutné ho vytvořit.
+Informace o tom, jaké balíčky má pro daný projekt _npm_ nainstalovat, se ukládají do souboru `package.json`. Je nejprve nutné ho vytvořit.
 
 ----
 
@@ -104,11 +104,11 @@ Všimni si, že ti vedle `index.html` přibyla složka `node_modules`, do které
 
 ## `gulpfile.js`
 
-Když spustíš příkaz `gulp`, hledá soubor `gulpfile.js` ve stejné složce, aby zjistil, jaké jsou v něm zadané úkoly a spustil je.
+Když spustíš příkaz `gulp`, hledá soubor `gulpfile.js` ve stejné složce, aby zjistil, jaké jsou v něm zadané úkoly, a spustil je.
 
 ----
 
-Vytvoř si `gulpfile.js` ve stejné složce jako už máš `index.html`.
+Vytvoř si `gulpfile.js` ve stejné složce, kde máš `index.html`.
 
 Úkoly v Gulpu se píšou v Javascriptu, kterému se budeme věnovat v jedné z příštích lekcí, tak si zatím zkopíruj tuhle předpřipravenou konfiguraci, není potřeba rozumět každé závorce. Přesto v něm najdeš komentáře, které vysvětlují, co se v něm zhruba děje.
 
@@ -187,7 +187,7 @@ Soubory ke sledování jsou pole (array), syntaxe je stejná jako list v Pythonu
 `*` znamená cokoli, takže bude sledovat změny v `index.html` i `necojineho.html`
 
 
-Pokud si nejdi jistá, celý výsledek má vypadat takto (tento má vynechány komentáře).
+Pokud si nejsi jistá, celý výsledek má vypadat takto (tento má vynechány komentáře).
 
 ```javascript
 var gulp = require('gulp');
