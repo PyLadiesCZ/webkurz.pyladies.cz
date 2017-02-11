@@ -18,7 +18,7 @@ Je potřeba dělat weby tak, aby se načítaly dostatečně rychle i na pomalej�
 
 #### Uživatel má dostupnou pouze starší technologii
 
-Oomalý a starý počítač se starší verzí prohlížeče, možná dokonce s malým displejem. Je potřeba dělat weby tak, aby fungovaly i těmto uživatelům.
+Pomalý a starý počítač se starší verzí prohlížeče, možná dokonce s malým displejem. Je potřeba dělat weby tak, aby fungovaly i těmto uživatelům.
 
 #### Uživatel si web prohlíží na mobilním zařízení 
 
@@ -26,7 +26,7 @@ A třeba mu na displej svítí slunce nebo jede v autobuse. Je potřeba dělat w
 
 #### Uživatel není člověk
 
-Ano vaše stránky navštěvují i roboti, třeba ten od Google. Je potřeba dělat weby tak, aby se k nim roboti dostali a v důsledku toho pak i lidé, kteří používají výsledky jejich práce.
+Ano, vaše stránky navštěvují i roboti, třeba ten od Google. Je potřeba dělat weby tak, aby se k nim roboti dostali a v důsledku toho pak i lidé, kteří používají výsledky jejich práce.
 
 #### Uživatel má nějaké postižení 
 
@@ -181,7 +181,7 @@ Většina serverů je standardně nastavená tak, že pokud není specifikováno
 
 Když si prohlížeč stáhne HTML, přečte si ho a nakreslí podle něj stránku.
 
-Většinou se během čtení dozví, že pro to potřebuje ještě další soubory, například obrázky, a tak si stejným způsobem jako o HTML řekne i o ně. Na některé soubory se s vykreslováním čeká a jiné se do stránky vložím, prostě až se je povede stáhnout.
+Většinou se během čtení dozví, že pro to potřebuje ještě další soubory, například obrázky, a tak si stejným způsobem jako o HTML řekne i o ně. Na některé soubory se s vykreslováním čeká a jiné se do stránky vloží, prostě až se je podaří stáhnout.
 
 ---
 
