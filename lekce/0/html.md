@@ -2,11 +2,11 @@
 
 <!-- .slide: data-background="img/keyboard-cs-html.svg" -->
 
-Protože je pro psaní HTML potřeba některé méně obvyklé znaky, máš na stole pomůcku pro jejich nalezení na klávesnici. Spoustu z nich už asi znáš, ale pro jistotu je máš takto po ruce. 
+Protože jsou pro psaní HTML potřeba některé méně obvyklé znaky, máš na stole pomůcku pro jejich nalezení na klávesnici. Spoustu z nich už asi znáš, ale pro jistotu je máš takto po ruce. 
 
 <figure class="image"><img src="keyboard-cs-html.svg" class="c-sr-only" width="100%" style="border:1px solid black;max-height:70vh;width:auto;" alt="mapa klávesnice se zvýrazněnými znaky"></figure>
 
-Na české klávesnici je zásadní klávesa <kbd>AltGr</kbd> s kterou napíšeš většinu znaků.
+Na české klávesnici je zásadní klávesa <kbd>AltGr</kbd> , s kterou napíšeš většinu znaků.
 
 Pokud se k tobě výtisk z nějakého důvodu nedostal, můžeš si [stáhnout PDF s klávesnicí](klavesnice-a4.pdf) a vytisknout si ji sama.
 
@@ -105,23 +105,23 @@ Pro dnešní cvičení si nejdřív vytvoř složku.
 
 Zkus si sama vložit kód výše do HTML dokumentu `index.html`.
 
-Otevři si `index.html` v prohlížeči. Obvykle jsou typu html přiřazeny k otevření v prohlížeči, takže stačí jen otevřít. Adresa bude něco jako `file:///C:/pyladiesweb1/index.html`, to je základní a nejsnazší způsob jak zobrazit HTML, které máš na disku. Výhodou je, že není potřeba žádná další konfigurace a spouštění serveru. Chvíli si s tím vystačíme, ale pozor, některé pokročilejší funkce při tomto zobrazení fungovat nebudou. Zatím to nevadí.
+Otevři si `index.html` v prohlížeči. Obvykle jsou soubory typu html přiřazeny k otevření v prohlížeči, takže stačí jen otevřít. Adresa bude něco jako `file:///C:/pyladiesweb1/index.html`, to je základní a nejsnazší způsob jak zobrazit HTML, které máš na disku. Výhodou je, že není potřeba žádná další konfigurace a spouštění serveru. Chvíli si s tím vystačíme, ale pozor, některé pokročilejší funkce při tomto zobrazení fungovat nebudou. Zatím to nevadí.
  
 Pokud uděláš nějakou změnu v HTML, je potřeba otevřenou stránku v prohlížeči obnovit pomocí klávesové zkratky <kbd>F5</kbd> nebo <kbd>Ctrl + R</kbd> (Windows, Linux) nebo <kbd>Command + R</kbd> (Mac). 
 
-V praxi frontendisti používají spíš variantu, která s jistotou načte vše znovu, protože prohlížeč si zobrazenou stránku a související soubory ukládá do vyrovnávací paměti (cache, čti keš) aby je nemusel pokaždé stahovat a po obyčejném obnovení se může stát, že se použije neaktuální soubor. Tato varianta se dá udělat pomocí kliknutí na ikonu zatímco držíš <kbd>Shift</kbd> nebo lépe <kbd>Ctrl + F5</kbd> či <kbd>Ctrl + Shift + R</kbd> (Windows, Linux) nebo na Macu <kbd>Command + Shift + R</kbd>.
+V praxi frontendisti používají spíš variantu, která s jistotou načte vše znovu, protože prohlížeč si zobrazenou stránku a související soubory ukládá do vyrovnávací paměti (cache, čti keš), aby je nemusel pokaždé stahovat, a po obyčejném obnovení se může stát, že se použije neaktuální soubor. Tato varianta se dá udělat pomocí kliknutí na ikonu zatímco držíš <kbd>Shift</kbd> nebo lépe <kbd>Ctrl + F5</kbd> či <kbd>Ctrl + Shift + R</kbd> (Windows, Linux) nebo na Macu <kbd>Command + Shift + R</kbd>.
 
 Všimni si, že i na Windows jsou lomítka normální `/`, nikoli zpětná, jako `\` při práci se soubory a složkami. Obecně v HTML a dalších webových jazycích v cestách nikdy zpětná lomítka nepoužívej. Prohlížeč si tam dá správná a nebudeš mít problém, až to budeš vystavovat na internet.
 
 Také si všimni, že z posloupnosti mezer a zalomení řádku se stane jediná mezera: text se „slije“. V HTML na whitespace znacích (mezery, tabulátory, nové řádky) prostě moc nezáleží.
 
-Přesto si dej na formátování kódu (odsazování, odřádkování) záležet, jinak se v tom u jen trochu komplexnějšího souboru nejde vyznat. Neuděláš chybu, když budeš dávat jeden tag na řádek, a odsadíš vše, co je zanořeno.
+Přesto si dej na formátování kódu (odsazování, odřádkování) záležet, jinak se v tom u jen trochu komplexnějšího souboru nejde vyznat. Neuděláš chybu, když budeš dávat jeden tag na řádek a odsadíš vše, co je zanořeno.
 
 ----
 
 ### Nadpisy
 
-Další základní tagy, které se používají pro strukturování textu, jsou nadpisy. Mají 6 úrovní, proto za `h` (jako heading) je ještě číslo určující jejich úroveň od 1 do 6. `h1` je nejvyšší úrovně a `h6` nejnižší.
+Další základní tagy, které se používají pro strukturování textu, jsou nadpisy. Mají 6 úrovní, proto za `h` (jako heading) je ještě číslo určující úroveň nadpisu od 1 do 6. `h1` je nejvyšší úrovně a `h6` nejnižší.
 
 Obvykle je `h1` na stránce jeden a je v něm název toho, o čem daná stránka je. Například v e-shopu na stránce s detailem produktu v něm bude název tohoto produktu. Na zpravodajském webu na stránce s článkem v něm zase bude titulek článku, apod.
 
@@ -180,7 +180,7 @@ Nenech se zmást tím, že jedno se zobrazuje <span style="font-style:italic;">k
 
 ### Odkaz
 
-Odkaz je to, co z textu dělá hypertext a pro web je to tedy jeden z nejdůležitějších tagů. Jeho název `<a>` pochází z anglického _anchor_. Anglicky je to také buď _link_ nebo _hyperlink_.
+Odkaz je to, co z textu dělá hypertext, a pro web je to tedy jeden z nejdůležitějších tagů. Jeho název `<a>` pochází z anglického _anchor_. Anglicky je to také buď _link_ nebo _hyperlink_.
 
 ```html
 <a href="https://www.google.com/">
@@ -189,12 +189,12 @@ Odkaz je to, co z textu dělá hypertext a pro web je to tedy jeden z nejdůlež
 ```
 <!-- .element: class="c-text-md stretch" contenteditable="true" -->
 
-Protože někde musíme definovat nejen, jaká část obsahu je odkazem, ale i kam ten odkaz vlastně vede, použijeme poprvé tzv. atribut. Obecně s pomocí atributů definujeme prohlížeči další data k tagu. V tomto případě se atribut jmenuje `href` a jeho hodnotou je to, co je v uvozovkách, tedy `https://www.google.com/`. Atributy se vždy píšou pouze do otevíracího tagu.
+Protože někde musíme definovat nejen to, jaká část obsahu je odkazem, ale i kam ten odkaz vlastně vede, použijeme poprvé tzv. atribut. Obecně s pomocí atributů definujeme prohlížeči další data k tagu. V tomto případě se atribut jmenuje `href` a jeho hodnotou je to, co je v uvozovkách, tedy `https://www.google.com/`. Atributy se vždy píšou pouze do otevíracího tagu.
 
 
 Mluvnická vsuvka: prosím nepoužívej pro _odkaz_ slova jako _prolink_ nebo _proklik_. 
 První je bastard z korporací, který není daleko od paskvilů jako je _dovykomunikovat_.
-Druhý je zavedené slovo, které má ale jiný význam, používají ho lidé z reklamy, protože dnes se často na webu platí pouze za ty reklamy, na které uživatel klikne a jako proklik se označuje právě ta akce.
+Druhý je zavedené slovo, které má ale jiný význam, používají ho lidé z reklamy, protože dnes se často na webu platí pouze za ty reklamy, na které uživatel klikne, a jako proklik se označuje právě ta akce.
 
 Vím, že to takhle špatně říká spousta lidí a že to asi za pár let stejně v ÚJČ zahrnou do slovníku spisovné češtiny, ale mezi odborníky by se to dít nemělo.
 
@@ -255,7 +255,7 @@ Všimni si, že stále používáme jen `/` a nikdy `\`.
 ```
 <!-- .element: class="c-text-md" contenteditable="true" -->
 
-Pokud obrázek nemá žádný smysluplný obsah (např. grafické prvky typu čára) alt se definuje jako prázdný řetězec: `alt=""`
+Pokud obrázek nemá žádný smysluplný obsah (např. grafické prvky typu čára), alt se definuje jako prázdný řetězec: `alt=""`
 
 ----
 
@@ -276,7 +276,7 @@ Nejčastěji se používají tyto:
 
 #### Licence obrázků
 
-Ne každý obrázek na internetu smíš použít, aby to bylo v souladu s právem. Přitom těch, které lze skoro libovolně použít je spousta. Lze je hledat přímo na Google tak, že si pod „Nástroje“ / „Tools“ omezíš hledání na ty s právy k použití: jen nekomerční.
+Ne každý obrázek na internetu smíš použít, aby to bylo v souladu s právem. Přitom těch, které lze skoro libovolně použít, je spousta. Lze je hledat přímo na Google tak, že si pod „Nástroje“ / „Tools“ omezíš hledání na ty s právy k použití: jen nekomerční.
 
 ----
 
@@ -284,13 +284,13 @@ Ne každý obrázek na internetu smíš použít, aby to bylo v souladu s práve
 
 #### Cvičení
 
-Zkus si přidat dva obrázky. Jeden nalinkuj z cizího webu, druhý si stáhni do stejné složky, kde máš `index.html` nalinkuj ho odsud. Můžeš si zkusit i variantu se složkou, pokud je čas.
+Zkus si přidat dva obrázky. Jeden nalinkuj z cizího webu, druhý si stáhni do stejné složky, kde máš `index.html`, a nalinkuj ho odsud. Můžeš si zkusit i variantu se složkou, pokud je čas.
 
 ---
 
 ## HTML hlavička
 
-Zatím jsme se zabývali obsahem `<body>`, ale vraťme se ještě k obsahu `<head>`, který se „nezobrazuje“, zato obsahuje data, která ovlivňují vzhled a chování stránky celé.
+Zatím jsme se zabývali obsahem `<body>`, ale vraťme se ještě k obsahu `<head>`. Ten se „nezobrazuje“, zato obsahuje data, která ovlivňují vzhled a chování celé stránky.
 
 ----
 
@@ -312,7 +312,7 @@ Protože je z titulku často vidět jen prvních pár znaků, je dobré to nejd�
 
 ### Definice kódování
 
-Protože jsou ruzné způsoby jakým jsou textové soubory _kódovány_, je potřeba prohlížeči pro jistotu říct, v jakém kodování je soubor napsaný. S největší pravděpodobností je tvůj soubor v kódování _UTF-8_. Je dobré definovat kódování jako první, v některých prohlížečích to zabrání špatnému zobrazení `<title>`
+Protože jsou ruzné způsoby, jakými jsou textové soubory _kódovány_, je potřeba prohlížeči pro jistotu říct, v jakém kódování je soubor napsaný. S největší pravděpodobností je tvůj soubor v kódování _UTF-8_. Je dobré definovat kódování jako první, v některých prohlížečích to zabrání špatnému zobrazení `<title>`
 
 ```html
 <head>
@@ -338,7 +338,7 @@ Definuj svému HTML kódování a název stránky.
 
 Tagů je přes sto, ale skoro libovolný web uděláš i se znalostí jen části z nich.
 
-Uvádím většinu z nich tady pro úplnost, ale nemusíš se jimi zatím zabývat, v průběhu kurzu si o těch, které budeme používat vždy vše podstatné povíme.
+Uvádím většinu z nich tady pro úplnost, ale nemusíš se jimi zatím zabývat, v průběhu kurzu si o těch, které budeme používat, vždy vše podstatné povíme.
 
 ----
 
