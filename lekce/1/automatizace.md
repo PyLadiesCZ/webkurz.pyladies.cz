@@ -45,7 +45,7 @@ Teď už bychom mohli nainstalovat _Browsersync_ a přes _Node.js_ ho spustit. N
 
 Nainstaluj si tedy nejprve příkaz *gulp* pomocí *npm*:
 
-V té samé příkazové řádce, kterou už máš spuštěnou (na Windows jako Administrátor), spusť příkaz `install` takto.
+Otevři si příkazovou řádku (na Windows jako Administrátor), a spusť příkaz `install` takto.
 
 ```shell
 npm install gulp-cli -g
