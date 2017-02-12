@@ -96,7 +96,6 @@ Ostatně většina metodik pro psaní CSS doporučuje v maximální míře stylo
 ```css
 /* takto ne */
 body .tip .jaja { color: blue; }
-
 ```
 
 I zde platí ze _Zen of Python_: <q>Simple is better than complex.</q> a <q>Flat is better than nested</q>.
