@@ -66,7 +66,7 @@
         margin-bottom: 1em;
 
         &::before {
-            @include c-side-mark("ukázka");
+            @include c-side-mark("výsledek");
             background-color: lightyellow;
         }
     }
