@@ -30,6 +30,20 @@
     p.tip { color: deepskyblue; }
 }
 
+.example-multiple-classes-1 {
+    .tip { color: red; }
+
+    .cool { background-color: skyblue; }
+}
+
+.example-multiple-classes-2 {
+    .tip { color: red; }
+
+    .cool { background-color: skyblue; }
+
+    .tip.cool { text-align: center; }
+}
+
 .example-link {
     a { color: navy; }
 
@@ -65,12 +79,6 @@
         background-color: green;
         vertical-align: middle;
     }
-}
-
-.example-multiple-classes {
-    .tip { color: red; }
-
-    .cool { background-color: skyblue; }
 }
 
 .example-specificity {

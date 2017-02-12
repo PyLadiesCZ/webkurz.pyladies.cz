@@ -111,12 +111,32 @@ Tříd můžeme jednomu prvku přiřadit více najednou, oddělujeme je mezerou.
 <div class="tip cool">To je toho, já taky.</div>
 ```
 
-<div class="c-example example-multiple-classes">
+<div class="c-example example-multiple-classes-1">
 <p class="tip">Jsem Tip</p>
 <p class="cool">Já jsem cool</p>
 <p class="cool tip">Já jsem oboje, heč.</p>
 <div class="tip cool">To je toho, já taky.</div>
 </div>
+
+Aby toho nebylo málo, lze také vybrat pouze prvky, které mají třídy zároveň.
+
+Když pro stejné HTML napíšeme tohle CSS 
+```css
+.tip { color: red; }
+
+.cool { background-color: skyblue; }
+
+.tip.cool { text-align: center; }
+```
+
+<div class="c-example example-multiple-classes-2">
+<p class="tip">Jsem Tip</p>
+<p class="cool">Já jsem cool</p>
+<p class="cool tip">Já jsem oboje, heč.</p>
+<div class="tip cool">To je toho, já taky.</div>
+</div>
+
+Tak se vycentruje text pouze pro elementy, které mají obě třídy zároveň. A opět platí, že na pořadí nezaleží. 
 
 ----
 
