@@ -91,6 +91,8 @@ div h2 { color: red; }
 
 A taky lze definovat více zanořených prvků, ale tomu se radši vyhni. Nesnaž se kopírovat strukturu HTML do selektorů, není to dobrá praxe a přináší to spíš problémy, protože při každé změně HTML pak musíš měnit i CSS. 
 
+Ostatně většina metodik pro psaní CSS doporučuje v maximální míře stylovat pouze přes třídy i kdyby vícenásobné.
+
 ```css
 /* takto ne */
 body .tip .jaja { color: blue; }
