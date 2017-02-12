@@ -23,22 +23,29 @@ Je více způsobů, jak aplikovat CSS. My použijeme nejběžnější a nejprakt
 
 ## Anatomie CSS
 
-Takto vypadá jeden _rule-set_, v CSS píšeme rulesety jeden za druhým.
+Musíš říct 3 věci: _kdo_ se má změnit, _co_ se na něm má změnit a _jak_ se to má změnit. V CSS to řekneš takto: 
+
+```css
+kdo { 
+    co: jak;
+}
+```
+
+Výše je jen jeden _rule-set_, v CSS píšeme rulesety jeden za druhým.
 
 ```css
 selektor { 
     vlastnost: hodnota;
-    property: value; /* tohle je komentar v CSS */
+	property: value; /* tohle je komentar v CSS */
 }
 ```
 
-_Selektor_ je část, kterou říkáme, čemu (tj. jakému elementu, příp. skupině elementů) chceme měnit vlastnosti: selektujeme = vybíráme.
+_Selektor_ je část, kterou říkáme, _kdo_ se má změnit, tedy jakému elementu chceme něco měnit.
 
 Ve složených závorkách jsou jednotlivé _deklarace_. V příkladu jsou dvě, každá na svém řádku. Taková úprava opět není nutná, ale vhodná, stejně jako odsazení. Každá deklarace se skládá ze dvou částí:
 
-1. _vlastnost_ je jedna ze standardem definovaných vlastností, třeba barva nebo velikost písma.
-1. _hodnota_ se píše za název vlastnosti a dvojtečku, každá vlastnost má různé povolené hodnoty, za hodnotu vždy piš středník.
-
+1. _vlastnost_ říká _co_ chceš změnit a je to jedna ze standardem definovaných vlastností, třeba barva nebo velikost písma.
+1. _hodnota_ říká _jak_ chceš změnit _vlastnost_ a píše se za název vlastnosti a dvojtečku, každá vlastnost má různé povolené hodnoty, za hodnotu vždy piš středník.
 
 ----
 
