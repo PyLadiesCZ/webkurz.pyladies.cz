@@ -1,5 +1,6 @@
 # webkurz.pyladies.cz
 
+
 ## Install
 
 With node.js installed run
@@ -12,6 +13,7 @@ sudo npm i gulp-cli -g
 npm i
 ```
 
+
 ## Development
 
 Enjoy automatic refreshing of everything by running.
@@ -19,6 +21,17 @@ Enjoy automatic refreshing of everything by running.
 ```shell
 gulp develop
 ```
+
+## Content writing
+
+There is no automatic generation of pages. You have to specify which .md file get's loaded where and all the links.
+
+Top sections are divided by `\n---\n` while subsections are divided by `\n----\n`.
+ 
+For tasks add `<!-- .slide: data-state="c-slide-task" -->` at the beggining of the section.
+
+Put HTML examples into `<div class="c-example example-foo">` where `example-foo` is a name of your choice and add styling to `examples.scss` file.
+
 
 
 ## Deployment
