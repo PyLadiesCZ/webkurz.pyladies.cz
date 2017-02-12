@@ -1,3 +1,12 @@
+.example-mutliple-selectors {
+    h1,
+    h2 { color: green; }
+}
+
+.example-context-selectors {
+    .tip h2 { color: blue; }
+}
+
 .example-classes-1 {
     p { color: blue; }
 }
