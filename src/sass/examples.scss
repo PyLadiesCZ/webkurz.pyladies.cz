@@ -1,3 +1,12 @@
+.example-overriding {
+    p {
+        color: red;
+        background-color: pink;
+    }
+
+    p { color: green; }
+}
+
 .example-mutliple-selectors {
     h1,
     h2 { color: green; }
