@@ -46,7 +46,7 @@ Na rozdíl od Pythonu, kde se program ukončí, totiž prohlížeč klidně zobr
  
 Do validátoru můžeš zkopírovat celé HTML nebo nahrát soubor z tvého počítače nebo mu dát adresu, kde je stránka ublikovaná na internetu. 
 
-Pokud si nainsaluješ [extenzi do Chrome](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) nebo [do Firefoxu](https://addons.mozilla.org/en-US/firefox/addon/web-developer/) _Webdeveloper Toolbar_ najdeš v ní sekci _Tools_ možnost _Validate local HTML_, která ti rovnou otevře výsledek validátoru s právě otevřenou stránkou ať už je na serveru nebo jen u tebe na počítači.
+Pokud si nainstaluješ [rozšíření do Chrome](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) nebo [do Firefoxu](https://addons.mozilla.org/en-US/firefox/addon/web-developer/) _Webdeveloper Toolbar_ najdeš v ní sekci _Tools_ možnost _Validate local HTML_, která ti rovnou otevře výsledek validátoru s právě otevřenou stránkou ať už je na serveru nebo jen u tebe na počítači.
 
 
 ### [caniuse.com](http://caniuse.com) 
