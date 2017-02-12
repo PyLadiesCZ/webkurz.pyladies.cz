@@ -54,3 +54,17 @@
 
     .cool { background-color: skyblue; }
 }
+
+.example-specificity {
+    .tip { color: red; }
+
+    p {
+        color: green;
+        background-color: lightgray;
+    }
+
+    div p {
+        color: blue;
+        font-style: italic;
+    }
+}
