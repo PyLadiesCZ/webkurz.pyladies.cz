@@ -92,6 +92,8 @@
 
     .lang-json:before { @include c-side-mark('json'); }
 
+    .lang-django:before { @include c-side-mark('jinja2'); }
+
     pre {
         tab-size: 4;
         white-space: pre-wrap;
