@@ -94,3 +94,14 @@
         font-style: italic;
     }
 }
+
+.example-box-model-1 {
+    img {
+        width: 50%;
+        height: 100px;
+    }
+
+    .prvni { background-color: yellow; }
+
+    .druhy { background-color: lightblue; }
+}

@@ -1,6 +1,57 @@
+## Druhy elementů (vlastnost `display`)
+
+----
+
+### Blokové elementy
+
+Zaberou celou dostupnou šířku => řadí se pod sebe, lze jim nastavovat hodnoty margin, padding atd.
+
+----
+
+### Řádkové elementy
+
+* zaberou jen tolik místa, kolik potřebují
+* nejsou samostatně na řádku => řadí se za sebou jako slova ve větě
+* nejde jim nastavit některé vlastnosti z box modelu (šířka, výška, horní/dolní okraj)
+* na tvojí stránce jsou to například odkazy, nebo důležitý text  (`strong`)
+
+----
+
+### Řádkově-blokové elementy
+
+* hybrid: řádkový s některými vlastnostmi blokového
+* řadí se za sebou, ale lze mu nastavit šířku, výšku a okraje
+* na vaší stránce se tak chovají obrázky
+
+----
+
+### Typ elementu v&nbsp;CSS
+
+```css
+a { display: block; }
+
+div { display: inline; }
+
+li { display: inline-block; }
+```
+
+* každý element má výchozí typ
+* pomocí CSS lze ale změnit chování prvku na jiný typ
+----
+
+<!-- .slide: data-state="c-slide-task" -->
+
+### Cvičení
+
+Zkus nastavit všechny vlastnosti pro jeden element.
+
+Zkus mu změnit hodnotu display z block na ostatní. Při inline rámeček a další vlastnosti „zmizí“. 
+
+---
+
 # Box-model
 
-Na stránce je každý element reprezentovaný jako obdélníková krabice. Tvar nemusí být vidět, ale vždy tam je.
+Na stránce je každý element reprezentovaný jako obdélníková krabice. Tvar nemusí být vidět, výchozí pozadí většiny prvků je průhledné (`transparent`), ale vždy tam je.
 
 ----
 
@@ -29,13 +80,13 @@ Ve většině případů chceš bohužel použít ten, který není v CSS v proh
 
 Vysvětlení jaký je rozdíl nechme na později, teď jen chceme aby to prohlížeč vykresloval tak, jak potřebujeme.
 
-Hvězdička `*` je selektor, který znamená libovolný element. Co znamená ten zápis dál, si řekneme později.
+Hvězdička `*` je selektor, který znamená libovolný, tedy každý, element. Co znamená ten zápis dál, si řekneme později.
 
 ---
 
 ## Výška a šířka
 
-Každá krabice na webu má dva rozměry: šířku a výšku. 
+Každá krabice na webu má dva rozměry: šířku a výšku. Ta je ve výchozím stavu dynamická: přizpůsobuje se obsahu. Je ale možné je nastavit pomocí CSS.
 
 ----
 
@@ -47,6 +98,38 @@ div {
 ```
 
 <img src="box-model-width-height.svg">
+
+
+### `overflow`
+
+Pokud si nastavíš dostatečně malé rozměry, zjistíš, že text přetekl ven. To je sice překvapivé, ale správné chování. Přece nechceš schovávat před uživatelem obsah. Pokud je to ale tvůj záměr, tak pomocí `overflow: hidden;` obsah můžeš skrýt, to se hodí v případě, že počítáš se zobrazením obsahu jiným způsobem. Pokud ne a trváš na fixní velikosti, `overflow: auto;` zobrazí scrollbary v případě, že je obsah větší než se vejde do elementu.
+
+### Pevné vs. fluidní rozměry
+
+Aplikovat pevné rozměry můžeš, ale je třeba si dát si pozor jak se vše vejde. Proto je často lepší nastavit fluidní rozměry v `%`, kde `100%` znamená stejný rozměr jako má rodič.  
+
+
+```css
+img {
+	width: 50%;
+	height: 100px;
+}
+
+.prvni { background-color: yellow; }
+
+.druhy { background-color: lightblue; }
+```
+
+
+```html
+<img class="prvni" src="prvni.png" alt="první">
+<img class="druhy" src="druhy.png" alt="druhý">
+```
+
+<div class="c-example example-box-model-1">
+	<img class="prvni" src="prvni.png" alt="první">
+	<img class="druhy" src="druhy.png" alt="druhý">
+</div>
 
 ---
 
@@ -126,7 +209,7 @@ p { margin: 20px; }
 
 Výsledná mezera mezi odstavci nebude 40px, ale 20px.
 
-Pokud by ale odstavce měly např. nastaveny nějaký `padding` nebo `border`, ke slučování nedojde. Jsou i další okolnosti za kterých ke slučování nedochází, ale o těch jsme si zatím neříkali. Důležité je o tomto chování vědět a případně si zjistit víc, pokud bude potřeba. Třeba v [https://www.sitepoint.com/web-foundations/collapsing-margins/](tomto článku Collapsing Margins na Sitepoint.com).
+Pokud by ale odstavce měly např. nastaveny nějaký `padding` nebo `border`, ke slučování nedojde. Jsou i další vlastnosti, které ovlivňují za kterých ke slučování nedochází, ale o těch jsme si zatím neříkali. Důležité je o tomto chování vědět a případně si zjistit víc, pokud bude potřeba. Třeba v [https://www.sitepoint.com/web-foundations/collapsing-margins/](tomto článku Collapsing Margins na Sitepoint.com).
 
 ---
 
@@ -148,54 +231,3 @@ Pokud ne, tak `width` i `height` znamenají jen velikost místa pro obsah a jak 
 **Pozor při výpočtech**: nezpomeň násobit dvěma, pokud 
 	`margin: 5px;` ubere na šířku (resp. výšku) úhrnem `10 px` => vlevo a vpravo (resp. nahoře a dole). Platí i pro `padding` a `border`.
 -->
-
----
-
-## Druhy elementů (vlastnost `display`)
-
-----
-
-### Blokové elementy
-
-Zaberou celou dostupnou šířku => řadí se pod sebe, lze jim nastavovat hodnoty margin, padding atd.
-
-----
-
-### Řádkové elementy
-
-* zaberou jen tolik místa, kolik potřebují
-* nejsou samostatně na řádku => řadí se za sebou jako slova ve větě
-* nejde jim nastavit některé vlastnosti z box modelu (šířka, výška, horní/dolní okraj)
-* na tvojí stránce jsou to například odkazy, nebo důležitý text  (`strong`)
-
-----
-
-### Řádkově-blokové elementy
-
-* hybrid: řádkový s některými vlastnostmi blokového
-* řadí se za sebou, ale lze mu nastavit šířku, výšku a okraje
-* na vaší stránce se tak chovají obrázky
-
-----
-
-### Typ elementu v&nbsp;CSS
-
-```css
-a { display: block; }
-
-div { display: inline; }
-
-li { display: inline-block; }
-```
-
-* každý element má výchozí typ
-* pomocí CSS lze ale změnit chování prvku na jiný typ
-----
-
-<!-- .slide: data-state="c-slide-task" -->
-
-### Cvičení
-
-Zkus nastavit všechny vlastnosti pro jeden element.
-
-Zkus mu změnit hodnotu display z block na ostatní. Při inline rámeček a další vlastnosti „zmizí“. 
