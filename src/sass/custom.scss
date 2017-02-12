@@ -79,14 +79,18 @@
         font-weight: $weight-bold;
     }
 
-    .lang-css:before { @include c-side-mark("CSS"); }
+    .lang-css:before { @include c-side-mark('CSS'); }
 
-    .lang-html:before { @include c-side-mark("HTML"); }
+    .lang-html:before { @include c-side-mark('HTML'); }
 
     .lang-javascript:before,
-    .lang-js:before { @include c-side-mark("js"); }
+    .lang-js:before { @include c-side-mark('js'); }
 
-    .lang-shell:before { @include c-side-mark("shell"); }
+    .lang-shell:before { @include c-side-mark('shell'); }
+
+    .lang-python:before { @include c-side-mark('python'); }
+
+    .lang-json:before { @include c-side-mark('json'); }
 
     pre {
         tab-size: 4;
