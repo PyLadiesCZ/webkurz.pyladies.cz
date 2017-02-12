@@ -19,18 +19,18 @@ i jakýkoliv jiným jazykem.
 
 ## Co je v dynamických stránkách možné?
 
-Stránka může...
+Stránka může…
 
 - reagovat na to, že uživatel někam klikne, někde něco vyplní, odešle.
 - vypisovat něco z databáze, přidávat do ní, odebírat.
-- díky programovacímu jazyku vědět, jaký je aktuální čas, den, měsíc, rok...
+- díky programovacímu jazyku vědět, jaký je aktuální čas, den, měsíc, rok…
 - cokoliv jiného! Z různých zdrojů může naše stránka zjišťovat třeba aktuální počasí nebo kurzovní lístek, a podle toho se měnit.
 
 ----
 
 ## Framework
 
-Generování webových stránek usnadňuje _webový framework_. Python jich má více, mezi nejznámější patří [Django][] a [Flask][]. Pokud se budete v budoucnu o tvorbu webů zajímat hlouběji, rozhodně se podívejte na Django ([DjangoGirls mají pěkné výukové materiály][dg-tutorial]), ale pro naše účely použijeme Flask, protože je nejrychlejší na pochopení. Na Flasku je také postavena většina webů české Python komunity, jako [python.cz][], [pyvo.cz][], [pyladies.cz][], ...
+Generování webových stránek usnadňuje _webový framework_. Python jich má více, mezi nejznámější patří [Django][] a [Flask][]. Pokud se budete v budoucnu o tvorbu webů zajímat hlouběji, rozhodně se podívejte na Django ([DjangoGirls mají pěkné výukové materiály][dg-tutorial]), ale pro naše účely použijeme Flask, protože je nejrychlejší na pochopení. Na Flasku je také postavena většina webů české Python komunity, jako [python.cz][], [pyvo.cz][], [pyladies.cz][], …
 
 [Django]: https://www.djangoproject.com/
 [Flask]: http://flask.pocoo.org/
@@ -48,7 +48,7 @@ Generování webových stránek usnadňuje _webový framework_. Python jich má 
 Vytvořte si ve složce se svým projektem _virtualenv_, aktivujte si jej a nainstalujte si
 `flask`:
 
-```
+```shell
 (venv)$ python -m pip install flask
 ```
 
@@ -68,7 +68,7 @@ if __name__ == '__main__':
 
 A je to. Zkusme si náš zbrusu nový, Pythonem poháněný web spustit:
 
-```bash
+```shell
 (env)$ python web.py
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
  * Restarting with stat
@@ -168,10 +168,10 @@ Klidně bychom mohli udělat něco jako:
 ```python
 @app.route('/')
 def index():
-    return '<html><head><title>...'
+    return '<html><head><title>…'
 ```
 
-...ale asi by to nebylo příliš příjemné. Lepší je použít _šablony_:
+… ale asi by to nebylo příliš příjemné. Lepší je použít _šablony_:
 
 ```python
 from flask import render_template
@@ -285,7 +285,7 @@ URL z názvu cílové funkce a jejích parametrů:
 
 ```python
 from flask import url_for
-...
+…
 url_for('user_profile', user_name='benabraham')  # vrátí /users/benabraham
 ```
 
@@ -509,11 +509,11 @@ Do každé šablony pro samostatnou stránku potom můžeme nahoru naše menu vl
 <!DOCTYPE HTML>
 <html>
   <head>
-    ...
+    …
   </head>
   <body>
     {% include '_menu.html' %}
-    ...
+    …
   </body>
 </html>
 ```
