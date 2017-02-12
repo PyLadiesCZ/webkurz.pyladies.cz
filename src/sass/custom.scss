@@ -65,7 +65,7 @@
         position: relative;
         margin-bottom: 1em;
 
-        &:before {
+        &::before {
             @include c-side-mark("ukázka");
             background-color: lightyellow;
         }
@@ -79,20 +79,20 @@
         font-weight: $weight-bold;
     }
 
-    .lang-css:before { @include c-side-mark('CSS'); }
+    .lang-css::before { @include c-side-mark('CSS'); }
 
-    .lang-html:before { @include c-side-mark('HTML'); }
+    .lang-html::before { @include c-side-mark('HTML'); }
 
-    .lang-javascript:before,
-    .lang-js:before { @include c-side-mark('js'); }
+    .lang-javascript::before,
+    .lang-js::before { @include c-side-mark('js'); }
 
-    .lang-shell:before { @include c-side-mark('shell'); }
+    .lang-shell::before { @include c-side-mark('shell'); }
 
-    .lang-python:before { @include c-side-mark('python'); }
+    .lang-python::before { @include c-side-mark('python'); }
 
-    .lang-json:before { @include c-side-mark('json'); }
+    .lang-json::before { @include c-side-mark('json'); }
 
-    .lang-django:before { @include c-side-mark('jinja2'); }
+    .lang-django::before { @include c-side-mark('jinja2'); }
 
     pre {
         tab-size: 4;
