@@ -52,6 +52,8 @@ Zjednodušíme si zatím situaci tím, že všechno CSS máme jen v jednom soubo
 
 ## Na pořadí záleží
 
+Platí poslední nastavená hodnota vlastnosti.
+
 ```css
 p {
 	color: red;
@@ -60,8 +62,6 @@ p {
 
 p { color: green; }
 ```
-
-Platí poslední nastavená hodnota vlastnosti.
 
 <div class="c-example example-overriding">
 <p>Jakou mám barvu?</p>
