@@ -1,0 +1,56 @@
+.example-classes-1 {
+    p { color: blue; }
+}
+
+.example-classes-2 {
+    .tip { color: blue; }
+}
+
+.example-classes-3 {
+    h1.tip { color: blue; }
+
+    p.tip { color: deepskyblue; }
+}
+
+.example-link {
+    a { color: navy; }
+
+    a:link { color: blue; }
+    /* nenavštívený */
+
+    a:visited { color: purple; }
+    /* navštívený */
+
+    a:hover { color: red; }
+    /* najetí myší */
+
+    a:focus { color: green; }
+    /* aktivace klávesnicí nebo myší */
+
+    a:active { color: yellow; }
+    /* při kliknutí nebo aktivaci jiným způsobem */
+
+}
+
+.example-before-after {
+    p::before {
+        content: '☎';
+        color: red;
+        margin-right: 0.3em;
+    }
+
+    p::after {
+        content: '';
+        height: 1em;
+        width: 10em;
+        display: inline-block;
+        background-color: green;
+        vertical-align: middle;
+    }
+}
+
+.example-multiple-classes {
+    .tip { color: red; }
+
+    .cool { background-color: skyblue; }
+}

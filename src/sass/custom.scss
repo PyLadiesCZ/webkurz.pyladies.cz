@@ -40,6 +40,37 @@
         }
     }
 
+    @mixin c-side-mark($content) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -1em-0.2em;
+        line-height: 1em;
+        font-size: 0.8rem;
+        font-family: $family-primary;
+        color: $grey-light;
+        background-color: $white;
+        text-align: right;
+        transform: rotate(-90deg) translate(-100%);
+        transform-origin: 0 0;
+        content: $content;
+        padding: 0.2em 0.6em;
+    }
+
+    .c-example {
+        font-size:2rem;
+        font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+        background-color: lightyellow;
+        padding: 1em;
+        position: relative;
+        margin-bottom: 1em;
+
+        &:before {
+            @include c-side-mark("ukázka");
+            background-color: lightyellow;
+        }
+    }
+
     code {
         font-size: 1em;
         line-height: 1.05;
@@ -48,9 +79,19 @@
         font-weight: $weight-bold;
     }
 
+    .lang-css:before { @include c-side-mark("CSS"); }
+
+    .lang-html:before { @include c-side-mark("HTML"); }
+
+    .lang-javascript:before,
+    .lang-js:before { @include c-side-mark("js"); }
+
+    .lang-shell:before { @include c-side-mark("shell"); }
+
     pre {
         tab-size: 4;
         white-space: pre-wrap;
+        position: relative;
     }
 
     pre code {
