@@ -1,0 +1,353 @@
+# Formuláře
+
+Jak vytvořit opravdovou webovou aplikaci - tedy stránku, která umí
+komunikovat s uživatelem a měnit se podle toho, co jí pošle.
+
+----
+
+## Formuláře v HTML
+
+K tomu, aby mohl uživatel něco stránce poslat, se používají _formuláře_. Jedná
+se o speciální sadu tagů v HTML. Základem jsou `<form>` a `<input>`:
+
+```html
+<form action="" method="POST">
+  <input type="text" name="email">
+  <input type="submit" value="Odeslat">
+</form>
+```
+
+Tímto zápisem na stránku dostaneme formulář, který obsahuje jedno políčko a jedno tlačítko. Prvek `<form>`
+budete v prohlížeči hledat marně, v základu je totiž neviditelný a jen pomyslně seskupuje `<input>` prvky, které
+se mají odesílat společně. Co naopak vidět lze, je že prvek `<input>`, jenž představuje vstup od uživatele,
+může nabývat poměrně rozličných podob podle toho, jaký má typ.
+
+---
+
+### Odesílací tlačítko
+
+----
+
+Prvek `input` typu `submit` je trochu speciální, představuje totiž tlačítko k odeslání formuláře. Když na něj
+uživatel klikne, tak vše, co do té doby do formuláře vyplnil, prohlížeč vezme a odešle na server. Tlačítku se dá nastavit vlastní popisek přes atribut `value`:
+
+```html
+<input type="submit" value="Jdu do toho!">
+```
+
+---
+
+### Jména políček
+
+----
+
+Jak si můžete v našem prvním příkladu formuláře všimnout, pole pro zadání e-mailu má atribut `name` s hodnotou `email`.
+To je velmi důležité pro to, abychom mohli na straně serveru s daty něco dělat. Představte si
+formulářová data jako Python slovník. Hodnoty, které uživatel vepíše do políček, budeme moci získat
+přes jejich jména z atributu `name`.
+
+```html
+<form action="" method="POST">
+  Jméno: <input type="text" name="first_name"><br>
+  Příjmení: <input type="text" name="last_name"><br>
+  <input type="submit" value="Odeslat">
+</form>
+```
+
+Představme si, že do uvedeného formuláře zadáme `Jára` jako jméno a `Cimrman` jako příjmení.
+Kdybychom jej potom odeslali tlačítkem, na serveru obržíme něco, co bude připomínat následující slovník:
+
+```python
+{
+  'first_name': 'Jára',
+  'last_name': 'Cimrman',
+}
+```
+
+---
+
+### Kam budeme odesílat?
+
+----
+
+Formuláři můžeme přidat atribut `action`, který upřesňuje, kam se mají poslat vyplněná data:
+
+```html
+<form action="/kontaktni-formular" method="POST">
+    …
+</form>
+```
+
+Tento formulář pošle svá data na cestu `/kontaktni-formular`, kde si je bude moci
+vyzvednout a zpracovat náš server napsaný v Pythonu. Pokud necháme atribut `action` prázdný, odešle se formulář na tutéž stránku, na níž
+se nachází.
+
+```html
+<form action="" method="POST">
+    …
+</form>
+```
+
+Jestliže se uvedený formulář bude nacházet na cestě `/kontakt`, bude se na ni také odesílat.
+
+---
+
+### Jak budeme odesílat?
+
+----
+
+Formulář můžeme nechat odesílat dvěma různými metodami. Metoda se nastavuje přes atribut
+`method` a je lepší nenechávat prohlížeč na pochybách a vždy ji uvést.
+
+Když odešleme formulář metodou `GET`, objeví se všechno, co jsme do něj vyplnili, v adrese cílové stránky
+jako _parametry_ za otazníkem.
+
+```html
+<form action="/vyhledavani" method="GET">
+    <input type="text" name="vyraz">
+    <input type="submit" value="Hledat">
+</form>
+```
+
+Napíšeme-li do políčka v uvedeném formuláři slovo `PyLadies` a pak klikneme na tlačítko, dostaneme se na cestu `/vyhledavani?vyraz=PyLadies`. Klidně bychom mohli místo formuláře rovnou udělat odkaz na `/vyhledavani?vyraz=PyLadies` a výsledek by byl stejný. Rozdíl je jen v tom, že odkaz je ve stránce napevno, kdežto formulář odesílaný pomocí `GET` umožňuje uživateli našich stránek výslednou adresu sestrojit z toho, co zadá do políček.
+
+`GET` je totiž způsob, jak server poprosit o jakoukoliv běžnou stránku. Doteď jsme tuto metodu používali, jen jsme o tom netušili. Když jsme třeba do adresního řádku napsali `http://127.0.0.1:5000/kontakt` (nebo klikli na odkaz), náš prohlížeč poslal serveru _požadavek_ `GET /kontakt`. Jak si za chvíli ukážeme, ve Flasku v základu každá cesta reaguje zrovna na požadavky `GET`, aniž by se to muselo někam psát, takže vše fungovalo a my jsme doteď nemuseli o metodách vůbec nic vědět.
+
+Metoda `GET` se určitě někdy hodí i u formulářů, například když chceme mít na stránkách vyhledávání, ale většinou chceme použít jinou metodu, zvanou `POST`:
+
+```html
+<form action="/kontaktni-formular" method="POST">
+    <input type="text" name="email">
+    <input type="submit" value="Odeslat">
+</form>
+```
+
+Takto odesílaný formulář nijak výslednou cestu neovlivňuje, takže se na cílovou stránku
+zpětně nedá nijak odkázat. Veškerá data pošle jako kdyby "tajně", někde bokem.
+Může díky tomu odesílat hesla nebo mnohem více dat, než by se vešlo na adresní řádek prohlížeče.
+
+---
+
+## Formuláře a Flask
+
+----
+
+Zatím jsme si ukazovali jak napsat formuláře v prostém HTML, ale takový formulář
+v základu nic nedělá. Data sice odešle, ale není nic, co by je zpracovalo a udělalo
+s nimi něco užitečného. Pojďme si tedy konečně ukázat, jak data odchytit na straně
+serveru a něco s nimi v Pythonu provést.
+
+V naší Flask aplikaci z minulé lekce si vytvoříme novou cestu a šablonu s formulářem:
+
+```python
+@app.route('/teplota')
+def temperature():
+    return render_template('temperature.html')
+```
+
+```html
+<!DOCTYPE HTML>
+<html>
+  <head><title>Převodník teplot</title></head>
+  <body>
+    <h1>Převodník teplot</h1>
+    <form action="" method="POST">
+        <input type="text" name="farenheit">°F
+        <input type="submit" value="Převést na °C">
+    </form>
+  </body>
+</html>
+```
+
+Naše stránka bude vhodná pro PyLadies, které se dostaly na stáž do USA a rády
+by věděly, jestli 42°F na teploměru znamená, že si mají vzít svetr, nebo jim stačí
+tričko.
+
+---
+
+### Povolujeme přijímání hodnot z formuláře
+
+----
+
+Spistíme si přes `python web.py` server a zobrazíme si náš formulář v prohlížeči.
+
+Když si zkusíme náš nový formulář odeslat, tak zjistíme, že nám Flask vrátí chybu
+_405 Method Not Allowed_. Tím se nám snaží naznačit, že pro cestu
+`/teplota` jsme nepovolili metodu `POST`, kterou formulář odesíláme. Všechny
+běžné stránky fungují přes `GET`, takže tato metoda je ve Flasku na každé
+cestě povolená od základu, ale `POST` musíme přidat. Dělá se to následovně:
+
+```python
+@app.route('/teplota', methods=['GET', 'POST'])
+def temperature():
+    return render_template('temperature.html')
+```
+
+Když odešleme formulář nyní, už bude fungovat. Tedy jak se to vezme -
+sice nedostaneme chybu, ale vypadá to, jako by se po odeslání vlastně vůbec
+nic nedělo. To je proto, že funkce `temperature()` opravdu zatím s daty nic
+nedělá a vrátí vždy znovu jen náš formulář.
+
+---
+
+### Zpracováváme přijaté hodnoty
+
+----
+
+Vzorec pro výpočet stupňů Celsia ze stupňů Farenheita je `C = (F - 32) * 5 / 9`.
+Na převod stupňů si napíšeme samostatnou funkci:
+
+```python
+def to_celsius(farenheit):
+    return (farenheit - 32) * 5 / 9
+```
+
+Abychom se dostali k vyplněným údajům, musíme si z Flasku importovat
+objekt `request`. Ten obsahuje slovník `form`, v němž se po odeslání formuláře
+nachází všechny vyplněné hodnoty z políček.
+
+```python
+from flask import request
+
+@app.route('/teplota', methods=['GET', 'POST'])
+def temperature():
+    form = request.form
+
+    if form.get('farenheit'):
+        farenheit = int(form['farenheit'])
+        celsius = to_celsius(farenheit)
+    else:
+        farenheit = None
+        celsius = None
+    return render_template('temperature.html',
+                           farenheit=farenheit, celsius=celsius)
+```
+
+Protože funkce `temperature()` se vykoná i když formulář jen poprvé načítáme
+a ještě jsme jej neodeslali, musíme počítat také s tím, že se ve slovníku `form` nemusí
+nacházet vůbec nic. Proto nejdříve přes `form.get()` kontrolujeme, zda
+máme k dispozici hodnotu ve farenheitech. Že se má objevit pod klíčem `farenheit` víme díky tomu, že políčko ve formuláři má `name="farenheit"`.
+
+Pokud je hodnota přítomna, převedeme ji do stupňů Celsia. Protože podobně jako
+u programů v konzoli i zde dostáváme vstup od uživatele v podobě řetězce, musíme
+nejdříve počet stupňů přetypovat na číslo funkcí `int()`.
+
+Jestliže jsme žádné Farenheity neobdrželi, nastavíme proměnné pro obě teplotní škály
+na `None`. Následně výsledky poskytneme šabloně.
+
+---
+
+### Zobrazujeme výsledky
+
+----
+
+Sice už počítáme stupně Celsia, ale uživatel se zatím pořád nemá jak o výsledku dovědět.
+Musíme jej zobrazit v šabloně. Opět je potřeba počítat i s možností, kdy ještě nebylo
+nic odesláno.
+
+```html
+<h1>Převodník teplot</h1>
+
+{% if celsius is number %}
+  <h2>Výsledek</h2>
+  <p>
+    Pokud máš na teploměru {{ farenheit }}°F,
+    tak to znamená, že je {{ celsius|int }}°C.
+  </p>
+{% endif %}
+
+<form action="" method="POST">
+    <input type="text" name="farenheit">°F
+    <input type="submit" value="Převést na °C">
+</form>
+```
+
+Přidali jsme podmínku, kde zjišťujeme, zda máme k dispozici nějaký výsledek. Jinja2 nám v podmínkách umožňuje jednoduše otestovat, co přesně se nachází v proměnné. Jedním z takových testů je `is number`, který zaručí, že výsledek budeme uživateli prezentovat pouze pokud máme v `celsius` uloženo nějaké číslo.
+
+----
+<!-- .slide: data-state="c-slide-task" -->
+
+#### Otázka k zamyšlení
+
+Proč nám v podmínce nestačí `{% if celsius %}`?
+
+<details>
+  <summary>Řešení</summary>
+  <p>
+    Pokud by výsledkem bylo nula stupňů Celsia (zkuste zadat 32°F), podmínka by neprošla a nic by se nezobrazilo.
+    V Pythonu (a v šablonovacím jazyku Jinja2 také) se totiž `if 0` vyhodnotí stejně jako `if False`.
+  </p>
+</details>
+
+----
+
+Při vypisování počtu stupňů celsia využíváme filtr `int`, který dělá totéž co funkce `int` v Pythonu - převede
+vstup na celé číslo. Díky tomu budeme místo vypočítané hodnoty -5.555555555555555°C zobrazovat čitelnější a užitečnější variantu: -5°C
+
+---
+
+### Funkční formulář
+
+----
+
+A je to! Teď už umíme navrhnout v HTML jednoduchý formulář, odeslat jej na server a tam zpracovat vyplněná data. Umíme data vložit do šablony, tam je nějak hezky odprezentovat uživateli, a výsledné HTML odeslat zpátky do prohlížeče.
+
+Pokud se vám to zdá složité, tak vězte, že to složité opravdu je! Na druhou stranu, právě díky formulářům může web komunikovat s uživatelem a není to jen pasivní médium jako noviny, rádio nebo televize.
+
+Webové stránky jsou formuláři často přímo prošpikované, takže se jim nelze vyhnout. Na druhou stranu ale nejsme první lidé na planetě Zemi, kteří s formuláři zápasí. Webové frameworky se proto většinou snaží jejich tvorbu zjednodušit. Django má v tomto ohledu zabudovanou [spoustu nástrojů](django-forms), k Flasku se nejčastěji doinstaluje knihovna [WTForms][].
+
+[django-forms]: https://docs.djangoproject.com/en/1.10/topics/forms/
+[WTForms]: https://flask-wtf.readthedocs.io/
+
+----
+<!-- .slide: data-state="c-slide-task" -->
+
+#### Cvičení
+
+Zkuste na novou stránku doplnit formulář, který bude převádět stupně Celsia na stupně Farenheita.
+Až za námi zase přiletí Washingtonská PyLady [Jackie Kazil](https://github.com/jackiekazil), jistě
+jej ocení.
+
+---
+
+## Další formulářové tagy
+
+----
+
+Tuto sekci dopíše Dan. Pokud ji nedopsal, tak se podívejte na [Jak psát web](https://www.jakpsatweb.cz/html/formulare.html), všechno to tam je.
+
+----
+<!-- .slide: data-state="c-slide-task" -->
+
+#### Cvičení
+
+Existují národy, které pro zápis svého jazyka nepoužívají latinku, ale jiné písmo. Asi se vám vybaví Čína nebo Japonsko, ale i v Evropě se jich několik najde - např. Řecko nebo Rusko. Když chceme uvést řecké nebo ruské slovo v českém textu, musíme ho takzvaně _transliterovat_, tedy nějakým způsobem foneticky přepsat do latinky. Díky tomu pak můžeme psát Tolstoj a ne Толстой.
+
+V Pythonu je k tomuto účelu knihovna [transliterate][], kterou lze nainstalovat standardním způsobem:
+
+```shell
+(venv)$ python -m pip install transliterate
+```
+
+S ní potom můžeme dělat následující převody (ukázka v interaktivním Pythonu):
+
+```python
+>>> from transliterate import translit
+>>> translit('Jagr', 'ru')
+Ягр
+>>> translit('Ягр', 'ru', reversed=True)
+Jagr
+```
+
+Jak víme z [ruských hokejových dresů Jaromíra Jágra][jagr], tato transliterace je správně. Na stránce knihovny jsou další příklady a lze tam zjistit i kódy jiných jazyků, které umí knihovna převádět.
+
+Zkuste vytvořit formulář, který od uživatele přijme libovolně dlouhý text (tag `<textarea>`), nechá jej vybrat jazyk (tag `<select>` nebo `<input type="radio">`), směr transliterace (jestli převádíme z latinky nebo do latinky - opět se bude hodit `<select>` nebo `<input type="radio">`), a po odeslání text podle zadaných parametrů převede a zobrazí uživateli výsledek.
+
+Jako zdroj zkušebních textů můžete použít [řecké][wiki-el] nebo [ruské][wiki-ru] články na Wikipedii.
+
+[transliterate]: https://pypi.python.org/pypi/transliterate/
+[jagr]: https://www.google.cz/search?q=jagr+russia+jersey&source=lnms&tbm=isch
+[wiki-el]: https://el.wikipedia.org/wiki/%CE%91%CE%B8%CE%AE%CE%BD%CE%B1
+[wiki-ru]: https://ru.wikipedia.org/wiki/%D0%AF%D0%B3%D1%80,_%D0%AF%D1%80%D0%BE%D0%BC%D0%B8%D1%80
+
+---

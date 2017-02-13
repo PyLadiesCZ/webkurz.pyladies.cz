@@ -78,8 +78,12 @@ A je to. Zkusme si náš zbrusu nový, Pythonem poháněný web spustit:
 
 Na zmíněné adrese http://127.0.0.1:5000/ bychom měli v prohlížeči vidět použitý text.
 
+<div class="c-example example-overriding">
+PyLadies jsou nejlepší!
+</div>
+
 Pomocí `app.run()` jsme aplikaci spustili na lokálním počítači. Parametrem `debug`
-Flasku říkáme, že chceme zjednodušit debugování. Díky tomu uvidíme případné výjimky
+Flasku říkáme, že chceme zjednodušit _debugování_ (tzn. hledání a opravování chyb). Díky tomu uvidíme případné výjimky
 přímo v prohlížeči a náš _vývojový server_ se bude sám obnovovat, pokud něco změníme v souboru `web.py`.
 Abychom ale změnu viděli i v prohlížeči, budeme muset stránku vždy obnovit (tzn. dotázat
 se našeho serveru na její aktuální podobu). Jak je zmíněno i v konzoli, server lze vypnout
@@ -154,7 +158,7 @@ def user_profile(user_name):
 Jak můžete vidět, v našem příkladu jsme použili velmi sofistikovanou databázi, Python slovník. Část cesty jsme si pojmenovali a ohraničili lomenými závorkami: `'/users/<user_name>'` Tím jsme dali
 Flasku najevo, že je proměnná a její hodnoty chceme dostávat jako parametr funkce.
 
-Když tedy v prohlížeči otevřeme adresu http://127.0.0.1:5000/users/zuzejk, objeví se nám řetězec `zuzejk` v proměnné `user_name` a my s ním můžeme dále pracovat. Protože klíč `zuzejk` v našem slovníku je, vypíšeme profil dané PyLady. Kdybychom do adresy vepsali uživatelské jméno, které v databázi není, např. http://127.0.0.1:5000/users/nesmysl, zavolá naše aplikace funkci `abort` z Flasku a vrátí chybu _404 - Not Found_. To je standardní způsob, jak dát na internetu druhé straně najevo, že se v daných místech nic nenachází.
+Když tedy v prohlížeči otevřeme adresu http://127.0.0.1:5000/users/zuzejk, objeví se nám řetězec `zuzejk` v proměnné `user_name` a my s ním můžeme dále pracovat. Protože klíč `zuzejk` v našem slovníku je, vypíšeme profil dané PyLady. Kdybychom do adresy vepsali uživatelské jméno, které v databázi není, např. http://127.0.0.1:5000/users/nesmysl, zavolá naše aplikace funkci `abort` z Flasku a vrátí chybu _404 Not Found_. To je standardní způsob, jak dát na internetu druhé straně najevo, že se v daných místech nic nenachází.
 
 ---
 
@@ -418,11 +422,11 @@ def hello(name):
 ```
 
 Nějaký zákeřný útočník by mohl zkusit do naší stránky vložit JavaScript tak,
-že ho zkusí vepsat jako své jméno: `/hello/<script>alert("Bu bu bu")` Jenže
+že ho zkusí vepsat jako součást svého jména: `/hello/<img src="." onerror="alert('Bu bu bu!')">` Jenže
 Jinja2 nás ochrání a výsledné HTML bude následující:
 
 ```html
-<p>Ahoj &lt;script&gt;alert(&#34;Bu bu bu&#34;)!</p>
+<p>Ahoj &lt;img src=&#34;.&#34; onerror=&#34;alert(&#39;Bu bu bu!&#39;)&#34;&gt;!</p>
 ```
 
 ----
@@ -430,8 +434,13 @@ Jinja2 nás ochrání a výsledné HTML bude následující:
 
 #### Cvičení pro odvážné
 
-Zkuste si vytvořit HTML stránku, která obsahuje `<p>Ahoj <script>alert("Bu bu bu")!</p>`
-a otevřte si ji v prohlížeči.
+Zkuste si vytvořit HTML stránku, která obsahuje následující kód a otevřte si ji v prohlížeči.
+
+```html
+<p>
+    Ahoj <img src="." onerror="alert('Bu bu bu!')">!
+</p>
+```
 
 ----
 
