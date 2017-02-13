@@ -17,6 +17,13 @@ se o speciální sadu tagů v HTML. Základem jsou `<form>` a `<input>`:
 </form>
 ```
 
+<div class="c-example">
+<form action="" method="POST">
+  <input type="text" name="email">
+  <input type="submit" value="Odeslat">
+</form>
+</div>
+
 Tímto zápisem na stránku dostaneme formulář, který obsahuje jedno políčko a jedno tlačítko. Prvek `<form>`
 budete v prohlížeči hledat marně, v základu je totiž neviditelný a jen pomyslně seskupuje `<input>` prvky, které
 se mají odesílat společně. Co naopak vidět lze, je že prvek `<input>`, jenž představuje vstup od uživatele,
@@ -34,6 +41,10 @@ uživatel klikne, tak vše, co do té doby do formuláře vyplnil, prohlížeč 
 ```html
 <input type="submit" value="Jdu do toho!">
 ```
+
+<div class="c-example">
+<input type="submit" value="Jdu do toho!">
+</div>
 
 ---
 
@@ -159,6 +170,14 @@ def temperature():
 </html>
 ```
 
+<div class="c-example">
+<h1>Převodník teplot</h1>
+<form action="" method="POST">
+    <input type="text" name="farenheit">°F
+    <input type="submit" value="Převést na °C">
+</form>
+</div>
+
 Naše stránka bude vhodná pro PyLadies, které se dostaly na stáž do USA a rády
 by věděly, jestli 42°F na teploměru znamená, že si mají vzít svetr, nebo jim stačí
 tričko.
@@ -283,6 +302,19 @@ Proč nám v podmínce nestačí `{% if celsius %}`?
 
 Při vypisování počtu stupňů celsia využíváme filtr `int`, který dělá totéž co funkce `int` v Pythonu - převede
 vstup na celé číslo. Díky tomu budeme místo vypočítané hodnoty -5.555555555555555°C zobrazovat čitelnější a užitečnější variantu: -5°C
+
+<div class="c-example">
+<h1>Převodník teplot</h1>
+<h2>Výsledek</h2>
+<p>
+  Pokud máš na teploměru 42°F,
+  tak to znamená, že je 5°C.
+</p>
+<form action="" method="POST">
+    <input type="text" name="farenheit">°F
+    <input type="submit" value="Převést na °C">
+</form>
+</div>
 
 ---
 
