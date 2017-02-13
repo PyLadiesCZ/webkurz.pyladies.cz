@@ -95,13 +95,164 @@
     }
 }
 
-.example-box-model-1 {
-    img {
+.example-block-elements {
+    div { background-color: orange; }
+
+    p { background-color: cyan; }
+}
+
+.example-inline-elements {
+    span { background-color: orange; }
+
+    strong { background-color: cyan; }
+}
+
+.example-overflow,
+.example-overflow-hidden,
+.example-overflow-auto {
+    div {
+        background-color: orange;
+        width: 500px;
+        height: 110px;
+    }
+}
+
+.example-overflow-hidden {
+    div { overflow: hidden; }
+}
+
+.example-overflow-auto {
+    div { overflow: auto; }
+}
+
+.example-fluid {
+    div {
         width: 50%;
         height: 100px;
+        background-color: orange;
     }
 
-    .prvni { background-color: yellow; }
+    p {
+        width: 400px;
+        height: 100px;
+        background-color: cyan;
+    }
+}
 
-    .druhy { background-color: lightblue; }
+.example-inline-dimensions {
+    span {
+        width: 100%;
+        height: 100px;
+        background-color: cyan;
+        margin-top: 1000px;
+        margin-bottom: 1000px;
+        padding-bottom: 50px;
+    }
+}
+
+.example-border-simple {
+    div {
+        border: 2px solid black;
+    }
+}
+
+.example-border {
+    div {
+        background-color: silver;
+        border-top: 20px solid red;
+        border-bottom-width: 10px;
+        border-bottom-style: dotted;
+        border-bottom-color: black;
+    }
+}
+
+.example-padding-simple {
+    div {
+        border: 2px solid black;
+        padding: 25px;
+    }
+}
+
+.example-padding-2 {
+    div {
+        border: 2px solid black;
+        padding: 10px 100px;
+    }
+}
+
+.example-padding-3 {
+    div {
+        border: 2px solid black;
+        padding: 10px 100px 50px;
+    }
+}
+
+.example-padding-4 {
+    div {
+        border: 2px solid black;
+        padding: 10px 100px 50px 200px;
+    }
+}
+
+.example-margin-1 {
+    div {
+        border: 2px solid black;
+        padding: 25px;
+        margin: 40px;
+    }
+}
+
+.example-margin-2 {
+    p {
+        background-color: cyan;
+        margin: 40px;
+    }
+}
+
+.example-inline2block {
+    span {
+        display: block;
+        background-color: yellow;
+        margin-bottom: 20px;
+    }
+}
+
+.example-block2inline {
+    div {
+        display: inline;
+        background-color: yellow;
+        margin: 20px;
+    }
+}
+
+.example-inline-block {
+    p {
+        display: inline-block;
+        width: 40%;
+        background-color: yellow;
+        margin: 5%;
+    }
+}
+
+.example-display-none-visibility-hidden {
+    span { visibility: hidden; }
+
+    p { display: none; }
+}
+
+.example-content-box {
+    div {
+        box-sizing: content-box;
+    }
+}
+
+.example-content-box,
+.example-border-box {
+    div {
+        background-color: yellow;
+        display: inline-block;
+        width: 50%;
+        border: 10px solid black;
+        padding: 10px;
+    }
 }

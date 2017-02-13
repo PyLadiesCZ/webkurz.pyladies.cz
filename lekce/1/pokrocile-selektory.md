@@ -115,3 +115,14 @@ Prvky lze také vybírat podle atributu (`img[alt]`), či hodnot atributů (`img
 Jde také pomocí pseudotříd vybrat každý druhý (`:nth-child(2n)`) nebo třetí nebo prostě n-tý prvek, to se může hodit třeba na stylování proužkovaných tabulek.
 
 Pokud tě zajímají, podívej se na [český](http://jecas.cz/css-selektory) nebo [anglický](https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector) přehled selektorů.
+
+
+---
+
+## Úprava nastavení `box-sizing`
+
+Protože teď už znáš jak pseudoelementy, tak vícenásobné selektory, uprav si nastavení `box-sizing` na začátku tvého CSS tak, aby zahrnovalo i všechny generované prvky.
+
+*, 
+*::before, 
+*::after { box-sizing: border-box; }
