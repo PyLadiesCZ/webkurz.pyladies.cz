@@ -536,7 +536,7 @@ Možná sis všimla, že šířka i výška elementu zahrnuje i `padding` a `bor
 
 To ale platí pouze pro elementy s `box-sizing: border-box;`. 
 
-Pokud by tam byla výchozí hodnota, tedy `content-box`, tak by `width` a `height` byly rozměr pouze obsahu a hodnoty `padding` a `border` by prvek zvětšovaly.
+Pokud by tam byla výchozí hodnota, tedy `content-box`, tak by `width` a `height` byly rozměr pouze obsahu a hodnoty `padding` a `border` by prvek zvětšovaly a to je většinou chování, které se v praxi nehodí, proto ten reset na začátku.
  
 ```css
 div { 
