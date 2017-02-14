@@ -30,7 +30,7 @@ se o speciální sadu tagů v HTML. Základem jsou `<form>` a `<input>`:
 </form>
 </div>
 
-Tohle je HTML formulář, který obsahuje jedno políčko s popiskem a jedno tlačítko. 
+Tímto zápisem na stránku dostaneme formulář, který obsahuje jedno políčko s popiskem a jedno tlačítko.
 
 Prvek `<form>`
 budeš v prohlížeči hledat marně, v základu je totiž neviditelný a jen seskupuje `<input>` prvky, které se mají odesílat společně. 
@@ -126,7 +126,7 @@ Jestliže se uvedený formulář bude nacházet na cestě `/kontakt`, bude se na
 Formulář můžeš nechat odesílat dvěma různými metodami. Metoda se nastavuje přes atribut
 `method` a je lepší nenechávat prohlížeč na pochybách a vždy ji uvést.
 
-Když uživatel odešle formulář metodou `get`, objeví se všechno, co do něj vyplnil, v adrese cílové stránky
+Když uživatel odešle formulář metodou `GET`, objeví se všechno, co do něj vyplnil, v adrese cílové stránky
 jako _parametry_ za otazníkem.
 
 ```html
@@ -136,11 +136,11 @@ jako _parametry_ za otazníkem.
 </form>
 ```
 
-Napíše-li do políčka v uvedeném formuláři slovo `PyLadies` a pak klikne na tlačítko, dostane se na cestu `/vyhledavani?vyraz=PyLadies`. Klidně bys mohla místo formuláře rovnou udělat odkaz na `/vyhledavani?vyraz=PyLadies` a výsledek by byl stejný. Rozdíl je jen v tom, že odkaz je ve stránce napevno, kdežto formulář odesílaný pomocí `get` umožňuje uživateli výslednou adresu „sestrojit“ z toho, co zadá do políček.
+Napíše-li do políčka v uvedeném formuláři slovo `PyLadies` a pak klikne na tlačítko, dostane se na cestu `/vyhledavani?vyraz=PyLadies`. Klidně bys mohla místo formuláře rovnou udělat odkaz na `/vyhledavani?vyraz=PyLadies` a výsledek by byl stejný. Rozdíl je jen v tom, že odkaz je ve stránce napevno, kdežto formulář odesílaný pomocí `GET` umožňuje uživateli výslednou adresu „sestrojit“ z toho, co zadá do políček.
 
-`get` je totiž způsob, jak server poprosit o jakoukoliv běžnou stránku. Doteď jsi tuto metodu používala, jen jsi o tom netušila. Když jsi třeba do adresního řádku napsala `http://127.0.0.1:5000/kontakt` (nebo klikla na odkaz), prohlížeč poslal serveru _požadavek_ `get /kontakt`. Jak si za chvíli ukážeme, ve Flasku v základu každá cesta reaguje právě na požadavky `get`, aniž by se to muselo někam psát, takže vše fungovalo a o metodách jsi  nepotřebovala vědět.
+`get` je totiž způsob, jak server poprosit o jakoukoliv běžnou stránku. Doteď jsi tuto metodu používala, jen jsi o tom netušila. Když jsi třeba do adresního řádku napsala `http://127.0.0.1:5000/kontakt` (nebo klikla na odkaz), prohlížeč poslal serveru _požadavek_ `GET /kontakt`. Jak si za chvíli ukážeme, ve Flasku v základu každá cesta reaguje právě na požadavky `get`, aniž by se to muselo někam psát, takže vše fungovalo a o metodách jsi  nepotřebovala vědět.
 
-Metoda `get` se určitě někdy hodí i u formulářů, například když chceš mít na stránkách vyhledávání, ale pro odesílání dat chceš použít jinou metodu, zvanou `post`:
+Metoda `GET` se určitě někdy hodí i u formulářů, například když chceš mít na stránkách vyhledávání, ale pro odesílání dat chceš použít jinou metodu, zvanou `POST`:
 
 ```html
 <form action="/kontaktni-formular" method="post">
@@ -152,6 +152,9 @@ Metoda `get` se určitě někdy hodí i u formulářů, například když chceš
 Takto odesílaný formulář nijak výslednou cestu neovlivňuje, takže se na cílovou stránku
 zpětně nedá nijak odkázat. Veškerá data pošle „tajně“, někde bokem.
 Může díky tomu odesílat hesla nebo mnohem více dat, než by se vešlo na adresní řádek prohlížeče.
+
+Většinou je jedno, zda je název metody napsán velkými nebo malými písmeny. V kontextu serverového
+zpracování je zvykem psát je velkými, v HTML šablonách se ale ustálilo psát je malými.
 
 ---
 
@@ -208,13 +211,13 @@ Spusť si přes `python web.py` server a zobraz si formulář v prohlížeči.
 
 Když si zkusíš formulář odeslat, tak zjistíš, že Flask vrátí chybu
 _405 Method Not Allowed_. Tím se ti snaží naznačit, že pro cestu
-`/teplota` jsi nepovolila metodu `post`, kterou se formulář odesílá. 
-Všechny běžné stránky fungují přes `get`, takže tato metoda je ve Flasku 
-na každé cestě povolená od základu, ale `post` musíš přidat.
+`/teplota` jsi nepovolila metodu `POST`, kterou se formulář odesílá. 
+Všechny běžné stránky fungují přes `GET`, takže tato metoda je ve Flasku 
+na každé cestě povolená od základu, ale `POST` musíš přidat.
 Dělá se to následovně:
 
 ```python
-@app.route('/teplota', methods=['get', 'post'])
+@app.route('/teplota', methods=['GET', 'POST'])
 def temperature():
     return render_template('temperature.html')
 ```
@@ -245,7 +248,7 @@ nachází všechny vyplněné hodnoty z políček.
 ```python
 from flask import request
 
-@app.route('/teplota', methods=['get', 'post'])
+@app.route('/teplota', methods=['GET', 'POST'])
 def temperature():
     form = request.form
 
@@ -362,7 +365,7 @@ jistě jej ocení.
 
 ----
 
-Nejčastěji používanými druhy, kromě textového `type="text"` jsou: 
+Nejčastěji používanými druhy, kromě textového `type="text"` jsou:
 
 
 ### `type="password`
@@ -372,7 +375,7 @@ Nejčastěji používanými druhy, kromě textového `type="text"` jsou:
 
 ### `type="checkbox`
 
-<input type="checkbox" checked> zatržítko pro výběr jedné nebo více hodnot zároveň 
+<input type="checkbox" checked> zatržítko pro výběr jedné nebo více hodnot zároveň
 
 
 ### `type="radio`
@@ -385,29 +388,29 @@ Nejčastěji používanými druhy, kromě textového `type="text"` jsou:
 <input type="file"> pro vložení souboru
 
 
-### `<textarea>` 
+### `<textarea>`
 
 Stejně jako následující prvek se už nejedná o změnu pomocí parametru `type`, ale o&nbsp;samostatný párový tag.
 
-Používá se pro víceřádkový text 
+Používá se pro víceřádkový text
 <br><textarea>Moje první haiku
 je první.</textarea>
 
 
-### `<select>` 
+### `<select>`
 
 Pro výběr z jedné <select><option>Možnost</option><option>Jiná možnost<option>Taky možnost</option></select> nebo více <select multiple style="vertical-align:top;"><option>Možnost</option><option>Jiná možnost<option>Taky možnost</option></select> předdefinovaných položek.
 
 
 ### Atributy
 
-Každý druh formulářového prvku má mnoho možných atributů: vždy se podívej do nějaké reference. 
+Každý druh formulářového prvku má mnoho možných atributů: vždy se podívej do nějaké reference.
 
-V HTML 5 jich ještě spousta přibyla, hodně z nich má spojitost s validací, tedy ověřením toho, zda vstup, který uživatel zadal, je opravdu to, co zadat měl. 
+V HTML 5 jich ještě spousta přibyla, hodně z nich má spojitost s validací, tedy ověřením toho, zda vstup, který uživatel zadal, je opravdu to, co zadat měl.
 
 
 ### Nové typy v HTML5
- 
+
 V HTML5 jsou nově i speciální prvky např. pro datum, barvu, e-mail, číslo apod. Podpora v prohlížečích se liší, proto je dobré si ji před jejich použitím ověřit na [Can I use](http://caniuse.com). Velmi praktické bývají na mobilních zařízeních s virtuální klávesnicí, kde třeba u `type=number` zobrazí klávesnici jen s čísly.
 
 ---
