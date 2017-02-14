@@ -21,7 +21,7 @@ gulp.task('runserver', function(){
 gulp.task('default', ['runserver'], function(){
     browserSync({
         proxy: {
-          target: '127.0.0.1:5000'
+            target: '127.0.0.1:5000'
         },
         files: [
         	'templates/*.*',
