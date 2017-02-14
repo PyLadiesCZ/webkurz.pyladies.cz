@@ -20,12 +20,14 @@ gulp.task('runserver', function(){
 
 gulp.task('default', ['runserver'], function(){
     browserSync({
-        proxy: '127.0.0.1:5000'
+        proxy: {
+          target: '127.0.0.1:5000'
+        },
+        files: [
+        	'templates/*.*',
+        	'static/*.*'
+        	]
     });
-    gulp.watch([
-        'templates/*.*',
-        'static/*.*',
-    ], browserSync.reload);
 });
 ```
 
@@ -39,3 +41,5 @@ něco změní, automaticky obnoví stránku i v prohlížeči.
 
 Nyní už nebudeme naši Flask aplikaci pouštět přes `python web.py`, ale napíšeme pouze `gulp`.
 Mělo by se vše správně načíst a naše stránka rovnou otevřít v prohlížeči.
+
+Poznámka: aby Browsersync fungoval, musí mít stránka alespoň tag `<body></body>`.
