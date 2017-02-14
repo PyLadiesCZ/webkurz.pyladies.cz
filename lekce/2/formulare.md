@@ -11,7 +11,7 @@ K tomu, aby mohl uživatel něco stránce poslat, se používají _formuláře_.
 se o speciální sadu tagů v HTML. Základem jsou `<form>` a `<input>`:
 
 ```html
-<form action="" method="POST">
+<form action="" method="post">
   <label>
     e-mail
     <input type="text" name="email">
@@ -21,7 +21,7 @@ se o speciální sadu tagů v HTML. Základem jsou `<form>` a `<input>`:
 ```
 
 <div class="c-example">
-<form action="" method="POST">
+<form action="" method="post">
   <label>
     e-mail
     <input type="text" name="email">
@@ -71,7 +71,7 @@ formulářová data jako Python slovník. Hodnoty, které uživatel vepíše do 
 přes jejich jména z atributu `name`.
 
 ```html
-<form action="" method="POST">
+<form action="" method="post">
   <label>
   	Jméno <input type="text" name="first_name">
   </label>
@@ -100,7 +100,7 @@ Kdybychom jej potom odeslali tlačítkem, na serveru obržíme něco, co bude p�
 Formuláři můžeme přidat atribut `action`, který upřesňuje, kam se mají poslat vyplněná data:
 
 ```html
-<form action="/kontaktni-formular" method="POST">
+<form action="/kontaktni-formular" method="post">
     …
 </form>
 ```
@@ -110,7 +110,7 @@ vyzvednout a zpracovat náš server napsaný v Pythonu. Pokud necháme atribut `
 se nachází.
 
 ```html
-<form action="" method="POST">
+<form action="" method="post">
     …
 </form>
 ```
@@ -126,24 +126,24 @@ Jestliže se uvedený formulář bude nacházet na cestě `/kontakt`, bude se na
 Formulář můžeme nechat odesílat dvěma různými metodami. Metoda se nastavuje přes atribut
 `method` a je lepší nenechávat prohlížeč na pochybách a vždy ji uvést.
 
-Když odešleme formulář metodou `GET`, objeví se všechno, co jsme do něj vyplnili, v adrese cílové stránky
+Když odešleme formulář metodou `get`, objeví se všechno, co jsme do něj vyplnili, v adrese cílové stránky
 jako _parametry_ za otazníkem.
 
 ```html
-<form action="/vyhledavani" method="GET">
+<form action="/vyhledavani" method="get">
     <input type="text" name="vyraz">
     <input type="submit" value="Hledat">
 </form>
 ```
 
-Napíšeme-li do políčka v uvedeném formuláři slovo `PyLadies` a pak klikneme na tlačítko, dostaneme se na cestu `/vyhledavani?vyraz=PyLadies`. Klidně bychom mohli místo formuláře rovnou udělat odkaz na `/vyhledavani?vyraz=PyLadies` a výsledek by byl stejný. Rozdíl je jen v tom, že odkaz je ve stránce napevno, kdežto formulář odesílaný pomocí `GET` umožňuje uživateli našich stránek výslednou adresu sestrojit z toho, co zadá do políček.
+Napíšeme-li do políčka v uvedeném formuláři slovo `PyLadies` a pak klikneme na tlačítko, dostaneme se na cestu `/vyhledavani?vyraz=PyLadies`. Klidně bychom mohli místo formuláře rovnou udělat odkaz na `/vyhledavani?vyraz=PyLadies` a výsledek by byl stejný. Rozdíl je jen v tom, že odkaz je ve stránce napevno, kdežto formulář odesílaný pomocí `get` umožňuje uživateli našich stránek výslednou adresu sestrojit z toho, co zadá do políček.
 
-`GET` je totiž způsob, jak server poprosit o jakoukoliv běžnou stránku. Doteď jsme tuto metodu používali, jen jsme o tom netušili. Když jsme třeba do adresního řádku napsali `http://127.0.0.1:5000/kontakt` (nebo klikli na odkaz), náš prohlížeč poslal serveru _požadavek_ `GET /kontakt`. Jak si za chvíli ukážeme, ve Flasku v základu každá cesta reaguje zrovna na požadavky `GET`, aniž by se to muselo někam psát, takže vše fungovalo a my jsme doteď nemuseli o metodách vůbec nic vědět.
+`get` je totiž způsob, jak server poprosit o jakoukoliv běžnou stránku. Doteď jsme tuto metodu používali, jen jsme o tom netušili. Když jsme třeba do adresního řádku napsali `http://127.0.0.1:5000/kontakt` (nebo klikli na odkaz), náš prohlížeč poslal serveru _požadavek_ `get /kontakt`. Jak si za chvíli ukážeme, ve Flasku v základu každá cesta reaguje zrovna na požadavky `get`, aniž by se to muselo někam psát, takže vše fungovalo a my jsme doteď nemuseli o metodách vůbec nic vědět.
 
-Metoda `GET` se určitě někdy hodí i u formulářů, například když chceme mít na stránkách vyhledávání, ale většinou chceme použít jinou metodu, zvanou `POST`:
+Metoda `get` se určitě někdy hodí i u formulářů, například když chceme mít na stránkách vyhledávání, ale většinou chceme použít jinou metodu, zvanou `post`:
 
 ```html
-<form action="/kontaktni-formular" method="POST">
+<form action="/kontaktni-formular" method="post">
     <input type="text" name="email">
     <input type="submit" value="Odeslat">
 </form>
@@ -178,7 +178,7 @@ def temperature():
   <head><title>Převodník teplot</title></head>
   <body>
     <h1>Převodník teplot</h1>
-    <form action="" method="POST">
+    <form action="" method="post">
         <input type="text" name="farenheit">°F
         <input type="submit" value="Převést na °C">
     </form>
@@ -188,7 +188,7 @@ def temperature():
 
 <div class="c-example">
 <h1>Převodník teplot</h1>
-<form action="" method="POST">
+<form action="" method="post">
     <input type="text" name="farenheit">°F
     <input type="submit" value="Převést na °C">
 </form>
@@ -208,12 +208,12 @@ Spistíme si přes `python web.py` server a zobrazíme si náš formulář v pro
 
 Když si zkusíme náš nový formulář odeslat, tak zjistíme, že nám Flask vrátí chybu
 _405 Method Not Allowed_. Tím se nám snaží naznačit, že pro cestu
-`/teplota` jsme nepovolili metodu `POST`, kterou formulář odesíláme. Všechny
-běžné stránky fungují přes `GET`, takže tato metoda je ve Flasku na každé
-cestě povolená od základu, ale `POST` musíme přidat. Dělá se to následovně:
+`/teplota` jsme nepovolili metodu `post`, kterou formulář odesíláme. Všechny
+běžné stránky fungují přes `get`, takže tato metoda je ve Flasku na každé
+cestě povolená od základu, ale `post` musíme přidat. Dělá se to následovně:
 
 ```python
-@app.route('/teplota', methods=['GET', 'POST'])
+@app.route('/teplota', methods=['get', 'post'])
 def temperature():
     return render_template('temperature.html')
 ```
@@ -244,7 +244,7 @@ nachází všechny vyplněné hodnoty z políček.
 ```python
 from flask import request
 
-@app.route('/teplota', methods=['GET', 'POST'])
+@app.route('/teplota', methods=['get', 'post'])
 def temperature():
     form = request.form
 
@@ -291,7 +291,7 @@ nic odesláno.
   </p>
 {% endif %}
 
-<form action="" method="POST">
+<form action="" method="post">
     <input type="text" name="farenheit">°F
     <input type="submit" value="Převést na °C">
 </form>
@@ -326,7 +326,7 @@ vstup na celé číslo. Díky tomu budeme místo vypočítané hodnoty -5.555555
   Pokud máš na teploměru 42°F,
   tak to znamená, že je 5°C.
 </p>
-<form action="" method="POST">
+<form action="" method="post">
     <input type="text" name="farenheit">°F
     <input type="submit" value="Převést na °C">
 </form>
