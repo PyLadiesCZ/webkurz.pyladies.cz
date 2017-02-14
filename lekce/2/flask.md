@@ -1,19 +1,19 @@
 # Flask
 
-Aneb jak nám může s webovými stránkami pomoci Python.
+Aneb jak může s webovými stránkami pomoci Python.
 
 ----
 
 ## Statické a dynamické stránky
 
-Zatím jsme se učili tvořit webové stránky, na kterých mohou být texty nebo obrázky,
+Zatím jsi dělala webové stránky, na kterých mohou být texty nebo obrázky,
 tedy tzv. _statické stránky_. Takové stránky slouží především k informačním účelům -
 něco na ně napíšeme, aby si to mohl někdo jiný zase přečíst.
 
-Pokud ale chceme, aby stránky dokázaly reagovat na své okolí, musíme je generovat
-nějakým programovacím jazykem. Takovým stránkám se říká _dynamické_. My si ukážeme,
-jak v tomto ohledu použít Python, ale v zásadě je možné stránky generovat
-i jakýkoliv jiným jazykem.
+Pokud ale chceš, aby stránky dokázaly reagovat na své okolí, musíme je generovat
+nějakým programovacím jazykem. Takovým stránkám se říká _dynamické_. Ukážeme si,
+jak na to použít Python, ale v zásadě je možné stránky generovat i jakýmkoliv 
+jiným jazykem.
 
 ----
 
@@ -30,7 +30,7 @@ Stránka může…
 
 ## Framework
 
-Generování webových stránek usnadňuje _webový framework_. Python jich má více, mezi nejznámější patří [Django][] a [Flask][]. Pokud se budete v budoucnu o tvorbu webů zajímat hlouběji, rozhodně se podívejte na Django ([DjangoGirls mají pěkné výukové materiály][dg-tutorial]), ale pro naše účely použijeme Flask, protože je nejrychlejší na pochopení. Na Flasku je také postavena většina webů české Python komunity, jako [python.cz][], [pyvo.cz][], [pyladies.cz][], …
+Generování webových stránek usnadňuje _webový framework_. Python jich má více, mezi nejznámější patří [Django][] a [Flask][]. Pokud se budeš v budoucnu o tvorbu webů zajímat dál, rozhodně se podívej na Django ([DjangoGirls mají pěkné výukové materiály][dg-tutorial]), ale pro naše účely použijeme Flask, protože je nejrychlejší na pochopení. Na Flasku je také postavena většina webů české Python komunity, jako [python.cz][], [pyvo.cz][], [pyladies.cz][], …
 
 [Django]: https://www.djangoproject.com/
 [Flask]: http://flask.pocoo.org/
@@ -45,14 +45,14 @@ Generování webových stránek usnadňuje _webový framework_. Python jich má 
 
 ----
 
-Vytvořte si ve složce se svým projektem _virtualenv_, aktivujte si jej a nainstalujte si
+Vytvoř si ve složce se svým projektem _virtualenv_, aktivuj si jej a nainstaluj si
 `flask`:
 
 ```shell
 (venv)$ python -m pip install flask
 ```
 
-Následující kód si uložte do souboru. Pojmenujme ho např. `web.py`:
+Následující kód si ulož do souboru. Pojmenuj ho např. `web.py`:
 
 ```python
 from flask import Flask
@@ -66,7 +66,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-A je to. Zkusme si náš zbrusu nový, Pythonem poháněný web spustit:
+A je to. Zkus si svůj zbrusu nový, Pythonem poháněný web spustit:
 
 ```shell
 (env)$ python web.py
@@ -76,21 +76,21 @@ A je to. Zkusme si náš zbrusu nový, Pythonem poháněný web spustit:
  * Debugger pin code: 189-972-345
 ```
 
-Na zmíněné adrese http://127.0.0.1:5000/ bychom měli v prohlížeči vidět použitý text.
+Na zmíněné adrese http://127.0.0.1:5000/ bys měla v prohlížeči vidět použitý text.
 
 <div class="c-example">
 PyLadies jsou nejlepší!
 </div>
 
-Pomocí `app.run()` jsme aplikaci spustili na lokálním počítači. Parametrem `debug`
-Flasku říkáme, že chceme zjednodušit _debugování_ (tzn. hledání a opravování chyb). Díky tomu uvidíme případné výjimky
-přímo v prohlížeči a náš _vývojový server_ se bude sám obnovovat, pokud něco změníme v souboru `web.py`.
-Abychom ale změnu viděli i v prohlížeči, budeme muset stránku vždy obnovit (tzn. dotázat
-se našeho serveru na její aktuální podobu). Jak je zmíněno i v konzoli, server lze vypnout
+Pomocí `app.run()` jsi aplikaci spustila na lokálním počítači. Parametrem `debug`
+Flasku říkáš, že chceš zjednodušit _debugování_ (tzn. hledání a opravování chyb). Díky tomu uvidíš případné výjimky
+přímo v prohlížeči a tvůj _vývojový server_ se bude sám obnovovat, pokud něco změníš v souboru `web.py`.
+Abys ale změnu viděla i v prohlížeči, budeš muset stránku vždy obnovit (tzn. dotázat
+se tvého serveru na její aktuální podobu). Jak je zmíněno i v konzoli, server lze vypnout
 pomocí <kbd>Ctrl + C</kbd>.
 
-V případě reálného nasazení bychom aplikaci předali nějakému plnohodnotnému webovému serveru.
-Režim `debug` bychom v tom případě nezapínali, kvůli bezpečnosti a dopadům na výkon.
+V případě reálného nasazení bys aplikaci předala nějakému plnohodnotnému webovému serveru.
+Režim `debug` bys v tom případě nezapínala kvůli bezpečnosti i dopadům na výkon.
 
 ---
 
@@ -98,8 +98,8 @@ Režim `debug` bychom v tom případě nezapínali, kvůli bezpečnosti a dopad�
 
 ----
 
-V příkladu jsme vytvořili flaskovou aplikaci (`app`) a pomocí dekorátoru
-`@app.route` jsme vytvořili takzvanou _routu_ (cestu). Říkáme tím, že na adrese
+Podle příkladu sis vytvořila flaskovou aplikaci (`app`) a pomocí dekorátoru
+`@app.route` jsi vytvořila takzvanou _routu_ (cestu). Říkáš tím, že na adrese
 `/` bude k dispozici obsah, který vrátí definovaná funkce.
 Více různých cest lze vytvořit jednoduše přidáním další funkce:
 
@@ -126,10 +126,10 @@ PyLadies přijdou, když si v nouzi, když tě Python ze sna vzbouzí, zavolat j
 
 ----
 
-Když vytváříme dynamický web, ne vždy známe všechny cesty dopředu, abychom
-ke každé zvlášť mohli přiřadit funkci.
+Když vytváříš dynamický web, ne vždy znáš všechny cesty dopředu, abys
+ke každé zvlášť mohla přiřadit funkci.
 
-Dejme tomu, že chceme mít samostatnou stránku o každé PyLady a přitom máme
+Dejme tomu, že chceš mít samostatnou stránku o každé PyLady a přitom máš
 seznam všech PyLadies v nějaké databázi. Situaci lze vyřešit pomocí cest s proměnnou částí:
 
 ```python
@@ -155,16 +155,16 @@ def user_profile(user_name):
     '''.format(name=user['name'], color=user['color'])
 ```
 
-Jak můžete vidět, v našem příkladu jsme použili velmi sofistikovanou databázi, Python slovník. Část cesty jsme si pojmenovali a ohraničili lomenými závorkami: `'/users/<user_name>'` Tím jsme dali
+Jak můžeš vidět, v našem příkladu jsme použili velmi „sofistikovanou“ databázi, Python slovník. Část cesty jsme si pojmenovali a ohraničili lomenými závorkami: `'/users/<user_name>'` Tím jsme dali
 Flasku najevo, že je proměnná a její hodnoty chceme dostávat jako parametr funkce.
 
-Když tedy v prohlížeči otevřeme adresu http://127.0.0.1:5000/users/zuzejk, objeví se nám řetězec `zuzejk` v proměnné `user_name` a my s ním můžeme dále pracovat. Protože klíč `zuzejk` v našem slovníku je, vypíšeme profil dané PyLady.
+Když tedy v prohlížeči otevřeš adresu http://127.0.0.1:5000/users/zuzejk, objeví se řetězec `zuzejk` v proměnné `user_name` a můžeš s ním dále pracovat. Protože klíč `zuzejk` v našem slovníku je, vypíše se profil dané PyLady.
 
 <div class="c-example">
 PyLady Zuzka! Oblíbená barva: zelená
 </div>
 
-Kdybychom do adresy vepsali uživatelské jméno, které v databázi není, např. http://127.0.0.1:5000/users/nesmysl, zavolá naše aplikace funkci `abort` z Flasku a vrátí chybu _404 Not Found_. To je standardní způsob, jak dát na internetu druhé straně najevo, že se v daných místech nic nenachází.
+Kdybys do adresy vepsala uživatelské jméno, které v databázi není, např. http://127.0.0.1:5000/users/nesmysl, zavolá aplikace funkci `abort` z Flasku a vrátí chybu _404 Not Found_. To je standardní způsob, jak dát na internetu druhé straně najevo, že se v daných místech nic nenachází.
 
 ---
 
