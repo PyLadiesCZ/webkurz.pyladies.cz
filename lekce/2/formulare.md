@@ -380,22 +380,20 @@ Pro hesla, je jako `text`, ale místo znaků jsou vidět jen nějaké zástupné
 <input type="password" value="velice tajne heslo">
 </div>
 
-<input type="checkbox" checked> zatržítko pro výběr jedné nebo více hodnot zároveň
-
 ### `type="checkbox"`
 
 Zaškrtávátko pro výběr jedné nebo více hodnot zároveň.
 
 ```html
-Oblíbené barvy:<br>
-žlutá <input type="checkbox"><br>
-červená <input type="checkbox" checked><br>
+<p>Oblíbené barvy</p>
+<div><label><input type="checkbox" value="yellow" checked> žlutá</label></div>
+<div><label><input type="checkbox" value="red" checked> červená</label></div>
 ```
 
 <div class="c-example">
-Oblíbené barvy:<br>
-žlutá <input type="checkbox"><br>
-červená <input type="checkbox" checked><br>
+<p>Oblíbené barvy</p>
+<div><label><input type="checkbox" value="yellow" checked> žlutá</label></div>
+<div><label><input type="checkbox" value="red" checked> červená</label></div>
 </div>
 
 ### `type="radio"`
@@ -404,17 +402,17 @@ Zaškrtávátko pro výběr jediné hodnoty. Smysl má, pokud se použijí nejm�
 že mají stejný atribut `name`.
 
 ```html
-Velikost trička:<br>
-S <input type="radio" name="demo"><br>
-M <input type="radio" name="demo" checked><br>
-L <input type="radio" name="demo"><br>
+<p>Velikost trička</p>
+<div><label><input type="radio" name="demo">S</label></div>
+<div><label><input type="radio" name="demo" checked>M</label></div>
+<div><label><input type="radio" name="demo">L</label></div>
 ```
 
 <div class="c-example">
-Velikost trička:<br>
-S <input type="radio" name="demo">
-M <input type="radio" name="demo" checked>
-L <input type="radio" name="demo">
+<p>Velikost trička</p>
+<div><label><input type="radio" name="demo"> S</label></div>
+<div><label><input type="radio" name="demo" checked> M</label></div>
+<div><label><input type="radio" name="demo"> L</label></div>
 </div>
 
 
