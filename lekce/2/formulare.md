@@ -33,12 +33,12 @@ se o speciální sadu tagů v HTML. Základem jsou `<form>` a `<input>`:
 Tímto zápisem na stránku dostaneme formulář, který obsahuje jedno políčko s popiskem a jedno tlačítko.
 
 Prvek `<form>`
-budete v prohlížeči hledat marně, v základu je totiž neviditelný a jen pomyslně seskupuje `<input>` prvky, které se mají odesílat společně.
+budeš v prohlížeči hledat marně, v základu je totiž neviditelný a jen seskupuje `<input>` prvky, které se mají odesílat společně. 
 
-Co naopak vidět lze, je že prvek `<input>`, jenž představuje vstup od uživatele,
+Co naopak vidět můžeš, je že prvek `<input>`, který představuje vstup od uživatele,
 může nabývat poměrně rozličných podob podle toho, jaký má `type`.
-
-Všimni si, že při kliknutí na text popisku („e-mail“) se objeví kurzor v `inputu`.
+ 
+Všimni si, že při kliknutí na text popisku („e-mail“) se objeví kurzor v `inputu`. 
 
 Způsob zápisu `<label>` tak, jak ho vidíš, je jeden ze dvou možných. Ten druhý si ukážeme později.
 
@@ -49,7 +49,7 @@ Způsob zápisu `<label>` tak, jak ho vidíš, je jeden ze dvou možných. Ten d
 ----
 
 Prvek `input` typu `submit` je trochu speciální, představuje totiž tlačítko k odeslání formuláře. Když na něj
-uživatel klikne, tak vše, co do té doby do formuláře vyplnil, prohlížeč vezme a odešle na server. Tlačítku se dá nastavit vlastní popisek přes atribut `value`:
+uživatel klikne, tak vše, co do té doby do formuláře vyplnil, prohlížeč vezme a odešle na server. Tlačítku budeš chtít nastavit vlastní popisek přes atribut `value`:
 
 ```html
 <input type="submit" value="Jdu do toho!">
@@ -65,9 +65,9 @@ uživatel klikne, tak vše, co do té doby do formuláře vyplnil, prohlížeč 
 
 ----
 
-Jak si můžete v našem prvním příkladu formuláře všimnout, pole pro zadání e-mailu má atribut `name` s hodnotou `email`.
-To je velmi důležité pro to, abychom mohli na straně serveru s daty něco dělat. Představte si
-formulářová data jako Python slovník. Hodnoty, které uživatel vepíše do políček, budeme moci získat
+Jak si můžeš v prvním příkladu formuláře všimnout, pole pro zadání e-mailu má atribut `name` s hodnotou `email`.
+To je velmi důležité pro to, abys mohla na straně serveru s daty něco dělat. Představ si
+formulářová data jako Python slovník. Hodnoty, které uživatel vepíše do políček, budeš moci získat
 přes jejich jména z atributu `name`.
 
 ```html
@@ -82,8 +82,8 @@ přes jejich jména z atributu `name`.
 </form>
 ```
 
-Představme si, že do uvedeného formuláře zadáme `Jára` jako jméno a `Cimrman` jako příjmení.
-Kdybychom jej potom odeslali tlačítkem, na serveru obržíme něco, co bude připomínat následující slovník:
+Představ si, že do uvedeného formuláře uživatel zadá `Jára` jako jméno a `Cimrman` jako příjmení.
+Kdyby jej potom odeslali tlačítkem, na serveru obržíš něco, co bude připomínat následující slovník:
 
 ```python
 {
@@ -93,11 +93,11 @@ Kdybychom jej potom odeslali tlačítkem, na serveru obržíme něco, co bude p�
 ```
 ---
 
-### Kam budeme odesílat?
+### Kam odesílat?
 
 ----
 
-Formuláři můžeme přidat atribut `action`, který upřesňuje, kam se mají poslat vyplněná data:
+Formuláři můžeš přidat atribut `action`, který upřesňuje, kam se mají poslat vyplněná data:
 
 ```html
 <form action="/kontaktni-formular" method="post">
@@ -105,8 +105,8 @@ Formuláři můžeme přidat atribut `action`, který upřesňuje, kam se mají 
 </form>
 ```
 
-Tento formulář pošle svá data na cestu `/kontaktni-formular`, kde si je bude moci
-vyzvednout a zpracovat náš server napsaný v Pythonu. Pokud necháme atribut `action` prázdný, odešle se formulář na tutéž stránku, na níž
+Takový formulář pošle svá data na cestu `/kontaktni-formular`, kde si je bude moci
+vyzvednout a zpracovat náš server napsaný v Pythonu. Pokud necháme atribut `action` prázdný, odešle se formulář na tutéž stránku, na které 
 se nachází.
 
 ```html
@@ -119,14 +119,14 @@ Jestliže se uvedený formulář bude nacházet na cestě `/kontakt`, bude se na
 
 ---
 
-### Jak budeme odesílat?
+### Jak odesílat?
 
 ----
 
-Formulář můžeme nechat odesílat dvěma různými metodami. Metoda se nastavuje přes atribut
+Formulář můžeš nechat odesílat dvěma různými metodami. Metoda se nastavuje přes atribut
 `method` a je lepší nenechávat prohlížeč na pochybách a vždy ji uvést.
 
-Když odešleme formulář metodou `GET`, objeví se všechno, co jsme do něj vyplnili, v adrese cílové stránky
+Když uživatel odešle formulář metodou `GET`, objeví se všechno, co do něj vyplnil, v adrese cílové stránky
 jako _parametry_ za otazníkem.
 
 ```html
@@ -136,11 +136,11 @@ jako _parametry_ za otazníkem.
 </form>
 ```
 
-Napíšeme-li do políčka v uvedeném formuláři slovo `PyLadies` a pak klikneme na tlačítko, dostaneme se na cestu `/vyhledavani?vyraz=PyLadies`. Klidně bychom mohli místo formuláře rovnou udělat odkaz na `/vyhledavani?vyraz=PyLadies` a výsledek by byl stejný. Rozdíl je jen v tom, že odkaz je ve stránce napevno, kdežto formulář odesílaný pomocí `GET` umožňuje uživateli našich stránek výslednou adresu sestrojit z toho, co zadá do políček.
+Napíše-li do políčka v uvedeném formuláři slovo `PyLadies` a pak klikne na tlačítko, dostane se na cestu `/vyhledavani?vyraz=PyLadies`. Klidně bys mohla místo formuláře rovnou udělat odkaz na `/vyhledavani?vyraz=PyLadies` a výsledek by byl stejný. Rozdíl je jen v tom, že odkaz je ve stránce napevno, kdežto formulář odesílaný pomocí `GET` umožňuje uživateli výslednou adresu „sestrojit“ z toho, co zadá do políček.
 
-`GET` je totiž způsob, jak server poprosit o jakoukoliv běžnou stránku. Doteď jsme tuto metodu používali, jen jsme o tom netušili. Když jsme třeba do adresního řádku napsali `http://127.0.0.1:5000/kontakt` (nebo klikli na odkaz), náš prohlížeč poslal serveru _požadavek_ `GET /kontakt`. Jak si za chvíli ukážeme, ve Flasku v základu každá cesta reaguje zrovna na požadavky `GET`, aniž by se to muselo někam psát, takže vše fungovalo a my jsme doteď nemuseli o metodách vůbec nic vědět.
+`get` je totiž způsob, jak server poprosit o jakoukoliv běžnou stránku. Doteď jsi tuto metodu používala, jen jsi o tom netušila. Když jsi třeba do adresního řádku napsala `http://127.0.0.1:5000/kontakt` (nebo klikla na odkaz), prohlížeč poslal serveru _požadavek_ `GET /kontakt`. Jak si za chvíli ukážeme, ve Flasku v základu každá cesta reaguje právě na požadavky `get`, aniž by se to muselo někam psát, takže vše fungovalo a o metodách jsi  nepotřebovala vědět.
 
-Metoda `GET` se určitě někdy hodí i u formulářů, například když chceme mít na stránkách vyhledávání, ale většinou chceme použít jinou metodu, zvanou `POST`:
+Metoda `GET` se určitě někdy hodí i u formulářů, například když chceš mít na stránkách vyhledávání, ale pro odesílání dat chceš použít jinou metodu, zvanou `POST`:
 
 ```html
 <form action="/kontaktni-formular" method="post">
@@ -150,7 +150,7 @@ Metoda `GET` se určitě někdy hodí i u formulářů, například když chceme
 ```
 
 Takto odesílaný formulář nijak výslednou cestu neovlivňuje, takže se na cílovou stránku
-zpětně nedá nijak odkázat. Veškerá data pošle jako kdyby "tajně", někde bokem.
+zpětně nedá nijak odkázat. Veškerá data pošle „tajně“, někde bokem.
 Může díky tomu odesílat hesla nebo mnohem více dat, než by se vešlo na adresní řádek prohlížeče.
 
 Většinou je jedno, zda je název metody napsán velkými nebo malými písmeny. V kontextu serverového
@@ -162,12 +162,12 @@ zpracování je zvykem psát je velkými, v HTML šablonách se ale ustálilo ps
 
 ----
 
-Zatím jsme si ukazovali jak napsat formuláře v prostém HTML, ale takový formulář
-v základu nic nedělá. Data sice odešle, ale není nic, co by je zpracovalo a udělalo
+Zatím jsme si ukazovali jak napsat formuláře v prostém HTML, ale takový formulář 
+vlastně nic nedělá. Data sice odešle, ale není nic, co by je zpracovalo a udělalo
 s nimi něco užitečného. Pojďme si tedy konečně ukázat, jak data odchytit na straně
 serveru a něco s nimi v Pythonu provést.
 
-V naší Flask aplikaci z minulé lekce si vytvoříme novou cestu a šablonu s formulářem:
+V naší Flask aplikaci z minulé lekce si vytvoř novou cestu a šablonu s formulářem:
 
 ```python
 @app.route('/teplota')
@@ -197,7 +197,7 @@ def temperature():
 </form>
 </div>
 
-Naše stránka bude vhodná pro PyLadies, které se dostaly na stáž do USA a rády
+Stránka bude užitečná pro PyLadies, které se dostaly na stáž do USA a rády
 by věděly, jestli 42°F na teploměru znamená, že si mají vzít svetr, nebo jim stačí
 tričko.
 
@@ -207,13 +207,14 @@ tričko.
 
 ----
 
-Spistíme si přes `python web.py` server a zobrazíme si náš formulář v prohlížeči.
+Spusť si přes `python web.py` server a zobraz si formulář v prohlížeči.
 
-Když si zkusíme náš nový formulář odeslat, tak zjistíme, že nám Flask vrátí chybu
-_405 Method Not Allowed_. Tím se nám snaží naznačit, že pro cestu
-`/teplota` jsme nepovolili metodu `POST`, kterou formulář odesíláme. Všechny
-běžné stránky fungují přes `GET`, takže tato metoda je ve Flasku na každé
-cestě povolená od základu, ale `POST` musíme přidat. Dělá se to následovně:
+Když si zkusíš formulář odeslat, tak zjistíš, že Flask vrátí chybu
+_405 Method Not Allowed_. Tím se ti snaží naznačit, že pro cestu
+`/teplota` jsi nepovolila metodu `POST`, kterou se formulář odesílá. 
+Všechny běžné stránky fungují přes `GET`, takže tato metoda je ve Flasku 
+na každé cestě povolená od základu, ale `POST` musíš přidat.
+Dělá se to následovně:
 
 ```python
 @app.route('/teplota', methods=['GET', 'POST'])
@@ -221,19 +222,19 @@ def temperature():
     return render_template('temperature.html')
 ```
 
-Když odešleme formulář nyní, už bude fungovat. Tedy jak se to vezme -
-sice nedostaneme chybu, ale vypadá to, jako by se po odeslání vlastně vůbec
+Když odešleš formulář nyní, už bude fungovat. Tedy jak se to vezme –
+sice nedostaneš chybu, ale vypadá to, jako by se po odeslání vlastně vůbec
 nic nedělo. To je proto, že funkce `temperature()` opravdu zatím s daty nic
 nedělá a vrátí vždy znovu jen náš formulář.
 
 ---
 
-### Zpracováváme přijaté hodnoty
+### Zpracování přijaté hodnoty
 
 ----
 
 Vzorec pro výpočet stupňů Celsia ze stupňů Farenheita je `C = (F - 32) * 5 / 9`.
-Na převod stupňů si napíšeme samostatnou funkci:
+Na převod stupňů si napiš samostatnou funkci:
 
 ```python
 def to_celsius(farenheit):
@@ -261,17 +262,17 @@ def temperature():
                            farenheit=farenheit, celsius=celsius)
 ```
 
-Protože funkce `temperature()` se vykoná i když formulář jen poprvé načítáme
-a ještě jsme jej neodeslali, musíme počítat také s tím, že se ve slovníku `form` nemusí
-nacházet vůbec nic. Proto nejdříve přes `form.get()` kontrolujeme, zda
-máme k dispozici hodnotu ve farenheitech. Že se má objevit pod klíčem `farenheit` víme díky tomu, že políčko ve formuláři má `name="farenheit"`.
+Protože funkce `temperature()` se vykoná i když se formulář jen poprvé načítá
+a ještě nebyl odeslán, musíš počítat také s tím, že se ve slovníku `form` nemusí
+nacházet vůbec nic. Proto se nejdřív přes `form.get()` kontroluje, zda
+je k dispozici hodnota ve farenheitech. Že se má objevit pod klíčem `farenheit` víš díky tomu, že políčko ve formuláři má `name="farenheit"`.
 
-Pokud je hodnota přítomna, převedeme ji do stupňů Celsia. Protože podobně jako
-u programů v konzoli i zde dostáváme vstup od uživatele v podobě řetězce, musíme
+Pokud je hodnota přítomna, převede se do stupňů Celsia. Protože podobně jako
+u programů v konzoli i zde dostáváš vstup od uživatele v podobě řetězce, musíš
 nejdříve počet stupňů přetypovat na číslo funkcí `int()`.
 
-Jestliže jsme žádné Farenheity neobdrželi, nastavíme proměnné pro obě teplotní škály
-na `None`. Následně výsledky poskytneme šabloně.
+Jestliže program žádné Farenheity neobdržel, nastaví se proměnné pro obě teplotní škály
+na `None`. Následně výsledky dostane šablona.
 
 ---
 
@@ -279,9 +280,8 @@ na `None`. Následně výsledky poskytneme šabloně.
 
 ----
 
-Sice už počítáme stupně Celsia, ale uživatel se zatím pořád nemá jak o výsledku dovědět.
-Musíme jej zobrazit v šabloně. Opět je potřeba počítat i s možností, kdy ještě nebylo
-nic odesláno.
+Sice už počítáš stupně Celsia, ale uživatel se zatím pořád nemá jak o výsledku dovědět.
+Musíš ho zobrazit v šabloně. Opět je počítej i s možností, kdy ještě nebylo nic odesláno.
 
 ```html
 <h1>Převodník teplot</h1>
@@ -300,14 +300,14 @@ nic odesláno.
 </form>
 ```
 
-Přidali jsme podmínku, kde zjišťujeme, zda máme k dispozici nějaký výsledek. Jinja2 nám v podmínkách umožňuje jednoduše otestovat, co přesně se nachází v proměnné. Jedním z takových testů je `is number`, který zaručí, že výsledek budeme uživateli prezentovat pouze pokud máme v `celsius` uloženo nějaké číslo.
+Přidali jsme podmínku, kde se zjištuje, zda je k dispozici nějaký výsledek. Jinja2 v podmínkách umožňuje jednoduše otestovat, co přesně se nachází v proměnné. Jedním z takových testů je `is number`, který zaručí, že výsledek bude uživateli prezentován pouze pokud je v `celsius` uloženo nějaké číslo.
 
 ----
 <!-- .slide: data-state="c-slide-task" -->
 
 #### Otázka k zamyšlení
 
-Proč nám v podmínce nestačí `{% if celsius %}`?
+Proč v podmínce nestačí `{% if celsius %}`?
 
 <details>
     <summary>Řešení</summary>
@@ -319,7 +319,7 @@ Proč nám v podmínce nestačí `{% if celsius %}`?
 
 ----
 
-Při vypisování počtu stupňů celsia využíváme filtr `int`, který dělá totéž co funkce `int` v Pythonu - převede
+Při vypisování počtu stupňů celsia se využívá filtr `int`, který dělá totéž co funkce `int` v Pythonu – převede
 vstup na celé číslo. Díky tomu budeme místo vypočítané hodnoty -5.555555555555555°C zobrazovat čitelnější a užitečnější variantu: -5°C
 
 <div class="c-example">
@@ -341,9 +341,9 @@ vstup na celé číslo. Díky tomu budeme místo vypočítané hodnoty -5.555555
 
 ----
 
-A je to! Teď už umíme navrhnout v HTML jednoduchý formulář, odeslat jej na server a tam zpracovat vyplněná data. Umíme data vložit do šablony, tam je nějak hezky odprezentovat uživateli, a výsledné HTML odeslat zpátky do prohlížeče.
+A je to! Teď už umíš navrhnout v HTML jednoduchý formulář, odeslat jej na server a tam zpracovat vyplněná data. Umíš data vložit do šablony, tam je nějak hezky odprezentovat uživateli, a výsledné HTML odeslat zpátky do prohlížeče.
 
-Pokud se vám to zdá složité, tak vězte, že to složité opravdu je! Na druhou stranu, právě díky formulářům může web komunikovat s uživatelem a není to jen pasivní médium jako noviny, rádio nebo televize.
+Pokud se ti to zdá složité, tak věz, že to složité opravdu je! Na druhou stranu, právě díky formulářům může web komunikovat s uživatelem a není to jen pasivní médium jako noviny, rádio nebo televize.
 
 Webové stránky jsou formuláři často přímo prošpikované, takže se jim nelze vyhnout. Na druhou stranu ale nejsme první lidé na planetě Zemi, kteří s formuláři zápasí. Webové frameworky se proto většinou snaží jejich tvorbu zjednodušit. Django má v tomto ohledu zabudovanou [spoustu nástrojů](django-forms), k Flasku se nejčastěji doinstaluje knihovna [WTForms][].
 
@@ -355,9 +355,9 @@ Webové stránky jsou formuláři často přímo prošpikované, takže se jim n
 
 #### Cvičení
 
-Zkuste na novou stránku doplnit formulář, který bude převádět stupně Celsia na stupně Farenheita.
-Až za námi zase přiletí Washingtonská PyLady [Jackie Kazil](https://github.com/jackiekazil), jistě
-jej ocení.
+Zkus na novou stránku doplnit formulář, který bude převádět stupně Celsia na stupně Farenheita.
+Až za námi zase přiletí Washingtonská PyLady [Jackie Kazil](https://github.com/jackiekazil),
+jistě jej ocení.
 
 ---
 
