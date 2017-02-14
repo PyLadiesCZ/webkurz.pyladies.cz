@@ -487,7 +487,7 @@ p {
 
 Všimni si, že `margin` je už stejný na šířku i na výšku pixelů, v tomto případě nedochází ke slučování.
 
-Také není náhoda, že jsme vymazali jakoukoli mezeru mezi prvky, protože jinak by se při menších hodnotách zobrazila a marginy by nebyly tak jak čekáš. Jde to vyřešit i v&nbsp;CSS, ale ne úplně snadno a teď si tím nemusíme zabývat. 
+Také není náhoda, že mezi prvky není ani jedna mezera, protože jinak by se při menších velikostech marginů zobrazila a výsledek by vypadal jinak. Jde to vyřešit i v&nbsp;CSS, ale ne úplně snadno a teď si tím nemusíme zabývat. Jak řešit layouty (rozložení prvků na stránce) probereme na poslední hodině.
 
 ----
 
