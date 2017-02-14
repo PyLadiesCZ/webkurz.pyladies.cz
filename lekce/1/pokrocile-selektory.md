@@ -123,6 +123,8 @@ Pokud tě zajímají, podívej se na [český](http://jecas.cz/css-selektory) ne
 
 Protože teď už znáš jak pseudoelementy, tak vícenásobné selektory, uprav si nastavení `box-sizing` na začátku tvého CSS tak, aby zahrnovalo i všechny generované prvky.
 
+```css
 *, 
 *::before, 
 *::after { box-sizing: border-box; }
+```
