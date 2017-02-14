@@ -12,21 +12,21 @@ se o speciální sadu tagů v HTML. Základem jsou `<form>` a `<input>`:
 
 ```html
 <form action="" method="post">
-  <label>
-    e-mail
-    <input type="text" name="email">
-  </label>
-  <input type="submit" value="Odeslat">
+    <label>
+        e-mail
+        <input type="text" name="email">
+    </label>
+    <input type="submit" value="Odeslat">
 </form>
 ```
 
 <div class="c-example">
 <form action="" method="post">
-  <label>
-    e-mail
-    <input type="text" name="email">
-  </label>
-  <input type="submit" value="Odeslat">
+    <label>
+        e-mail
+        <input type="text" name="email">
+    </label>
+    <input type="submit" value="Odeslat">
 </form>
 </div>
 
@@ -72,13 +72,13 @@ přes jejich jména z atributu `name`.
 
 ```html
 <form action="" method="post">
-  <label>
-  	Jméno <input type="text" name="first_name">
-  </label>
-  <label>
-  	Příjmení <input type="text" name="last_name">
-  </label>
-  <input type="submit" value="Odeslat">
+    <label>
+        Jméno <input type="text" name="first_name">
+    </label>
+    <label>
+        Příjmení <input type="text" name="last_name">
+    </label>
+    <input type="submit" value="Odeslat">
 </form>
 ```
 
@@ -175,22 +175,22 @@ def temperature():
 ```html
 <!DOCTYPE HTML>
 <html>
-  <head><title>Převodník teplot</title></head>
-  <body>
-    <h1>Převodník teplot</h1>
-    <form action="" method="post">
-        <input type="text" name="farenheit">°F
-        <input type="submit" value="Převést na °C">
-    </form>
-  </body>
+    <head><title>Převodník teplot</title></head>
+    <body>
+        <h1>Převodník teplot</h1>
+        <form action="" method="post">
+            <input type="text" name="farenheit">°F
+            <input type="submit" value="Převést na °C">
+        </form>
+    </body>
 </html>
 ```
 
 <div class="c-example">
 <h1>Převodník teplot</h1>
 <form action="" method="post">
-    <input type="text" name="farenheit">°F
-    <input type="submit" value="Převést na °C">
+	<input type="text" name="farenheit">°F
+	<input type="submit" value="Převést na °C">
 </form>
 </div>
 
@@ -284,11 +284,11 @@ nic odesláno.
 <h1>Převodník teplot</h1>
 
 {% if celsius is number %}
-  <h2>Výsledek</h2>
-  <p>
-    Pokud máš na teploměru {{ farenheit }}°F,
-    tak to znamená, že je {{ celsius|int }}°C.
-  </p>
+    <h2>Výsledek</h2>
+    <p>
+        Pokud máš na teploměru {{ farenheit }}°F,
+        tak to znamená, že je {{ celsius | int }}°C.
+    </p>
 {% endif %}
 
 <form action="" method="post">
@@ -307,11 +307,11 @@ Přidali jsme podmínku, kde zjišťujeme, zda máme k dispozici nějaký výsle
 Proč nám v podmínce nestačí `{% if celsius %}`?
 
 <details>
-  <summary>Řešení</summary>
-  <p>
-    Pokud by výsledkem bylo nula stupňů Celsia (zkuste zadat 32°F), podmínka by neprošla a nic by se nezobrazilo.
-    V Pythonu (a v šablonovacím jazyku Jinja2 také) se totiž `if 0` vyhodnotí stejně jako `if False`.
-  </p>
+    <summary>Řešení</summary>
+    <p>
+        Pokud by výsledkem bylo nula stupňů Celsia (zkuste zadat 32°F), podmínka by neprošla a nic by se nezobrazilo.
+        V Pythonu (a v šablonovacím jazyku Jinja2 také) se totiž `if 0` vyhodnotí stejně jako `if False`.
+    </p>
 </details>
 
 ----
@@ -320,16 +320,16 @@ Při vypisování počtu stupňů celsia využíváme filtr `int`, který dělá
 vstup na celé číslo. Díky tomu budeme místo vypočítané hodnoty -5.555555555555555°C zobrazovat čitelnější a užitečnější variantu: -5°C
 
 <div class="c-example">
-<h1>Převodník teplot</h1>
-<h2>Výsledek</h2>
-<p>
-  Pokud máš na teploměru 42°F,
-  tak to znamená, že je 5°C.
-</p>
-<form action="" method="post">
-    <input type="text" name="farenheit">°F
-    <input type="submit" value="Převést na °C">
-</form>
+    <h1>Převodník teplot</h1>
+    <h2>Výsledek</h2>
+    <p>
+        Pokud máš na teploměru 42°F,
+        tak to znamená, že je 5°C.
+    </p>
+    <form action="" method="post">
+        <input type="text" name="farenheit">°F
+        <input type="submit" value="Převést na °C">
+    </form>
 </div>
 
 ---

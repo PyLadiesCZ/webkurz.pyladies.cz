@@ -14,18 +14,18 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var exec = require('child_process').exec;
 
-gulp.task('runserver', function() {
-  var proc = exec('python web.py');
+gulp.task('runserver', function(){
+	var proc = exec('python web.py');
 });
 
-gulp.task('default', ['runserver'], function() {
-  browserSync({
-    proxy: '127.0.0.1:5000'
-  });
-  gulp.watch([
-    'templates/*.*',
-    'static/*.*',
-  ], browserSync.reload);
+gulp.task('default', ['runserver'], function(){
+	browserSync({
+		proxy: '127.0.0.1:5000'
+	});
+	gulp.watch([
+		'templates/*.*',
+		'static/*.*',
+	], browserSync.reload);
 });
 ```
 
