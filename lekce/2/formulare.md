@@ -368,24 +368,59 @@ jistě jej ocení.
 Nejčastěji používanými druhy, kromě textového `type="text"` jsou:
 
 
-### `type="password`
+### `type="password"`
 
-<input type="password" value="password"> pro hesla, je jako `text`, ale místo znaků jsou vidět jen nějaké zástupné znaky
+Pro hesla, je jako `text`, ale místo znaků jsou vidět jen nějaké zástupné znaky.
 
+```html
+<input type="password" value="velice tajne heslo">
+```
 
-### `type="checkbox`
+<div class="c-example">
+<input type="password" value="velice tajne heslo">
+</div>
 
 <input type="checkbox" checked> zatržítko pro výběr jedné nebo více hodnot zároveň
 
+### `type="checkbox"`
 
-### `type="radio`
+Zaškrtávátko pro výběr jedné nebo více hodnot zároveň.
 
-<input type="radio" name="demo" checked> <input type="radio" name="demo"> radio pro výběr jediné hodnoty, smysl má, pokud se použijí nejméně dvě společně
+```html
+Oblíbené barvy:<br>
+žlutá <input type="checkbox"><br>
+červená <input type="checkbox" checked><br>
+```
+
+<div class="c-example">
+Oblíbené barvy:<br>
+žlutá <input type="checkbox"><br>
+červená <input type="checkbox" checked><br>
+</div>
+
+### `type="radio"`
+
+Zaškrtávátko pro výběr jediné hodnoty. Smysl má, pokud se použijí nejméně dvě společně. "Společně" znamená,
+že mají stejný atribut `name`.
+
+```html
+Velikost trička:<br>
+S <input type="radio" name="demo"><br>
+M <input type="radio" name="demo" checked><br>
+L <input type="radio" name="demo"><br>
+```
+
+<div class="c-example">
+Velikost trička:<br>
+S <input type="radio" name="demo">
+M <input type="radio" name="demo" checked>
+L <input type="radio" name="demo">
+</div>
 
 
-### `type="file`
+### `type="file"`
 
-<input type="file"> pro vložení souboru
+<input type="file">
 
 
 ### `<textarea>`
