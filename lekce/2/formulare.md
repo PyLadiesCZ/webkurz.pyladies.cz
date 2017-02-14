@@ -418,22 +418,71 @@ Zaškrtávátko pro výběr jediné hodnoty. Smysl má, pokud se použijí nejm�
 
 ### `type="file"`
 
-<input type="file">
+Používá se pro nahrávání souborů. Je zde uveden spíše pro úplnost. Abys jej
+mohla ve formuláři opravdu použít a soubory zpracovat, je potřeba [trocha
+speciálního zacházení][file-upload] jak na straně HTML, tak na straně serveru.
 
+```html
+<input type="file">
+```
+
+<div class="c-example">
+<input type="file">
+</div>
+
+[file-upload]: http://flask.pocoo.org/docs/0.12/patterns/fileuploads/
 
 ### `<textarea>`
 
 Stejně jako následující prvek se už nejedná o změnu pomocí parametru `type`, ale o&nbsp;samostatný párový tag.
+Používá se pro zadání víceřádkového, libovolně dlouhého textu.
 
-Používá se pro víceřádkový text
-<br><textarea>Moje první haiku
+```html
+<textarea>Moje první haiku
 je první.</textarea>
+```
 
+<div class="c-example">
+<textarea>Moje první haiku
+je první.</textarea>
+</div>
 
 ### `<select>`
 
-Pro výběr z jedné <select><option>Možnost</option><option>Jiná možnost<option>Taky možnost</option></select> nebo více <select multiple style="vertical-align:top;"><option>Možnost</option><option>Jiná možnost<option>Taky možnost</option></select> předdefinovaných položek.
+Podobně jako `<input type="radio">` umožňuje výběr z více možností. Místo
+zaškrtávátek vykreslí takzvané _drop-down menu_.
 
+```html
+<select>
+    <option>Možnost</option>
+    <option>Jiná možnost</option>
+    <option>Taky možnost</option>
+</select>
+```
+
+<div class="c-example">
+<select><option>Možnost</option><option>Jiná možnost<option>Taky možnost</option></select>
+</div>
+
+Tag `<select>` lze přepnout do režimu, který připomíná `<input type="checkbox">`
+a který umožňuje vybrat více možností najednou.
+
+```html
+<select multiple>
+    <option>Možnost</option>
+    <option>Jiná možnost</option>
+    <option>Taky možnost</option>
+</select>
+```
+
+<div class="c-example">
+<select multiple><option>Možnost</option><option>Jiná možnost<option>Taky možnost</option></select>
+</div>
+
+Více možností lze vybrat, pokud uživatel přidrží klávesu <kbd>Ctrl</kbd> (na macOS <kbd>Cmd</kbd>).
+To ale běžný uživatel internetu vůbec neví, takže na ovládací prvek `<select multiple>` většinou spíše
+kouká jako puk a neví, co s ním dělat (popřípadě vybere jen jednu možnost). Proto je lepší se této variantě
+spíše vyhnout.
 
 ### Atributy
 
@@ -444,7 +493,17 @@ V HTML 5 jich ještě spousta přibyla, hodně z nich má spojitost s validací,
 
 ### Nové typy v HTML5
 
-V HTML5 jsou nově i speciální prvky např. pro datum, barvu, e-mail, číslo apod. Podpora v prohlížečích se liší, proto je dobré si ji před jejich použitím ověřit na [Can I use](http://caniuse.com). Velmi praktické bývají na mobilních zařízeních s virtuální klávesnicí, kde třeba u `type=number` zobrazí klávesnici jen s čísly.
+V HTML5 jsou nově i speciální prvky např. pro datum, barvu, e-mail, číslo apod. Podpora v prohlížečích se liší, proto je dobré si ji před jejich použitím ověřit na [Can I use](http://caniuse.com). Velmi praktické bývají na mobilních zařízeních s virtuální klávesnicí, kde třeba u `type="number"` zobrazí klávesnici jen s čísly.
+
+```html
+<input type="number">
+```
+
+<div class="c-example">
+<input type="number">
+</div>
+
+Pokud si ukázku otevřeš na mobilu a zkusíš do ní psát, nejspíš ti bude nabídnuta číselná klávesnice. Na počítači se ti prohlížeč může také pokusit zjednodušit psaní čísel. Pokud to neumí (např. nějaké starší verze prohlížečů), bude se v něm prvek chovat jako by to byl obyčejný `<input type="text">`.
 
 ---
 
