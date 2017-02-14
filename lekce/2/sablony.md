@@ -11,7 +11,7 @@ def index():
     return '<html><head><title>…'
 ```
 
-… ale asi by to nebylo příliš příjemné. Lepší je použít _šablony_:
+… ale asi by to nebylo příliš praktické. Lepší je použít _šablony_:
 
 ```python
 from flask import render_template
@@ -21,7 +21,7 @@ def index():
     return render_template('index.html')
 ```
 
-Pak je potřeba si vedle našeho souboru `web.py` vytvořit složku `templates`
+Pak je potřeba si vedle souboru `web.py` vytvořit složku `templates`
 a v ní `index.html`:
 
 ```html
@@ -42,8 +42,8 @@ Na adrese http://127.0.0.1:5000 teď bude o něco zábavnější verze úvodní 
 <p>PyLadies jsou <strong>nejlepší</strong>!</p>
 </div>
 
-Zatím jsme ale šablony vlastně moc nepoužili. To, co se běžně myslí pod pojmem šablony,
-je totiž _šablonovací jazyk_, který se dá vkládat přímo do HTML a umožňuje v něm používat
+Zatím jsi ale šablony vlastně moc nepoužila. To, co se běžně myslí pod pojmem šablony,
+je totiž _šablonovací jazyk_, který se dá kombinovat přímo s HTML a umožňuje v něm používat
 základní programování, jako podmínky nebo cykly. Ukažme si to na seznamu PyLadies:
 
 ```python
@@ -53,7 +53,7 @@ def users():
     return render_template('users.html', user_names=user_names)
 ```
 
-V souboru `templates/users.html` budeme mít:
+V souboru `templates/users.html` je:
 
 ```html
 <!DOCTYPE HTML>
@@ -70,7 +70,7 @@ V souboru `templates/users.html` budeme mít:
 </html>
 ```
 
-Na http://127.0.0.1:5000/users nám přibude seznam všech PyLadies, které máme v databázi.
+Na http://127.0.0.1:5000/users přibude seznam všech PyLadies, které máme v databázi.
 
 <div class="c-example">
 <h1>Seznam PyLadies</h1>
@@ -81,8 +81,8 @@ Na http://127.0.0.1:5000/users nám přibude seznam všech PyLadies, které mám
 </ul>
 </div>
 
-Vždy, když chceme v šabloně použít nějaká data, musíme jí je poslat přes parametry funkce `render_template()`,
-stejně jako jsme to udělali s `user_names`. Šablona jinak nemá o zbytku našeho programu nejmenší ponětí.
+Vždy, když chceš v šabloně použít nějaká data, musíš jí je poslat přes parametry funkce `render_template()`,
+stejně jako jsi to udělala s `user_names`. Šablona jinak nemá o zbytku programu nejmenší ponětí.
 
 ----
 <!-- .slide: data-state="c-slide-task" -->
@@ -109,7 +109,7 @@ def users():
     '''.format(ul)
 ```
 
-Jak vidíte, vypadalo by to ošklivě! Nikdy se touto cestou nevydávejte.
+Jak vidíš, vypadalo by to ošklivě! Nikdy se touto cestou nevydávej.
 
 ----
 
@@ -122,7 +122,9 @@ if __name__ == '__main__':
 ```
 
 Šablonovacích jazyků je více. Ten, který používá Flask, se nazývá [Jinja2][] a je poměrně oblíbený. Syntaxe
-s `{{ proměnná }}` a `{% program %}` je ale velmi rozšířená a můžete se s ní setkat i v mnoha dalších šablonovacích jazycích. Například Django má svůj [vlastní šablonovací jazyk][django-templates], ale na první pohled vypadá úplně stejně.
+s `{{ proměnná }}` a `{% program %}` je ale velmi rozšířená a můžete se s ní setkat i v mnoha dalších
+šablonovacích jazycích. Například Django má svůj [vlastní šablonovací jazyk][django-templates], 
+ale na první pohled vypadá úplně stejně.
 
 [Jinja2]: http://jinja.pocoo.org/docs/templates/
 [django-templates]: https://docs.djangoproject.com/en/1.10/topics/templates/#the-django-template-language
@@ -144,11 +146,11 @@ url_for('user_profile', user_name='benabraham')
 # vrátí /users/benabraham
 ```
 
-Možná si říkáte, proč tu cestu prostě nevytvořit ručně, ale mohli bychom narazit
-na problém, pokud cestu později změníme.
+Možná si říkáš, proč tu cestu prostě nevytvořit ručně, ale mohla bys narazit
+na problém, pokud cestu později změníš.
 
 Funkci `url_for()` lze použít i přímo v šablonách. Pojďme přidat odkazy do
-našeho seznamu PyLadies:
+seznamu PyLadies:
 
 ```html
 <h1>Seznam PyLadies</h1>
@@ -163,7 +165,7 @@ našeho seznamu PyLadies:
 </ul>
 ```
 
-Tímto bychom měli na stránce http://127.0.0.1:5000/users získat seznam PyLadies,
+Tímto bys měla na stránce http://127.0.0.1:5000/users získat seznam PyLadies,
 kde každá položka bude zároveň odkazem na profilovou stránku dané PyLady.
 
 <div class="c-example">
@@ -182,18 +184,17 @@ kde každá položka bude zároveň odkazem na profilovou stránku dané PyLady.
 ----
 
 Jak jsme si ukázali ve cvičení pro masochisty, je dobré oddělit _programování_
-v Pythonu od _zobrazování výsledku_ v HTML. Jenže co když si potřebujeme i při
+v Pythonu od _zobrazování výsledku_ v HTML. Jenže co když si potřebuješ i při
 tom zobrazování trochu pomoci?
 
 Od toho jsou tu filtry. Filtr je funkce, kterou lze použít v šabloně pro nějakou
-užitečnou transformaci. Jinja2 má spoustu filtrů rovnou zabudovaných, např. `upper`:
+užitečnou transformaci. Jinja2 má spoustu filtrů rovnou zabudovaných, např. `capitalize`:
 
 ```html
-{{ user_name|upper }}
+{{ user_name|capitalize }}
 ```
 
-Místo `zuzejk` tato značka vypíše `ZUZEJK`. Pojďme si pohrát s profily
-jednotlivých PyLadies:
+Místo `zuzejk` tato značka vypíše `Zuzejk`. Pohrajme si s profily jednotlivých PyLadies:
 
 ```python
 @app.route('/users/<user_name>')
@@ -208,14 +209,14 @@ def user_profile(user_name):
     return render_template('user_profile.html', user=user)
 ```
 
-Do `user_profile.html` ve složce `templates` si uložíme následující šablonu:
+Do `user_profile.html` ve složce `templates` si ulož následující šablonu:
 
 ```html
 <!DOCTYPE HTML>
 <html>
-	<head><title>PyLady: {{ user.name|upper }}</title></head>
+	<head><title>PyLady: {{ user.name|capitalize }}</title></head>
 	<body>
-		<h1>PyLady: {{ user.name|upper }}</h1>
+		<h1>PyLady: {{ user.name|capitalize }}</h1>
 		<p>Oblíbená barva: {{ user.color }}</p>
 		<hr>
 		<p><a href="{{ url_for('users') }}">Zpět na seznam</a></p>
@@ -223,12 +224,11 @@ Do `user_profile.html` ve složce `templates` si uložíme následující šablo
 </html>
 ```
 
-Jak vidíme, v Jinja2 se k atributům slovníku přistupuje přes tečku. Jména PyLadies
-prohnaná přes `upper` filtry budou vypsaná velkými písmeny. Zakomponovali jsme také
+Jak vidíš, v Jinja2 se k atributům slovníku přistupuje přes tečku. Jména PyLadies
+prohnaná přes `capitalize` filtry budou s prvním písmenem verzálkou. Zakomponovali jsme také
 odkaz zpět na seznam.
 
-Můžeme si ale přidávat i vlastní filtry. Řekněme, že máme v databázi rok narození,
-ale chceme zobrazovat věk:
+Můžeš si ale přidávat i vlastní filtry. Když budeš mít v databázi rok narození, ale chceš zobrazovat věk:
 
 ```python
 pyladies_db = {
@@ -238,7 +238,7 @@ pyladies_db = {
 }
 ```
 
-Napíšeme si filtr, který načte rok a vrátí aktuální věk:
+Filtr, který načte rok a vrátí aktuální věk můžeš napsat takto:
 
 ```python
 import datetime
@@ -252,7 +252,7 @@ def calculate_age(year):
 V šabloně:
 
 ```html
-<h1>PyLady: {{ user.name|upper }}</h1>
+<h1>PyLady: {{ user.name|capitalize }}</h1>
 <ul>
 	<li>Oblíbená barva: {{ user.color }}</li>
 	<li>Věk: {{ user.born|age }}</li>
@@ -260,7 +260,7 @@ V šabloně:
 ```
 
 <div class="c-example">
-<h1>PyLady: ZUZKA</h1>
+<h1>PyLady: Zuzka</h1>
 <ul>
 	<li>Oblíbená barva: zelená</li>
 	<li>Věk: 597</li>
@@ -273,11 +273,10 @@ V šabloně:
 
 ----
 
-V textu, který se vkládá do šablon, jsou automaticky nahrazeny znaky, které
-mají v HTML speciální význam. Zabraňuje se tak bezpečnostním rizikům, kdy se vstup od uživatele interpretuje
-jako HTML.
+V textu, který se vkládá do šablon, jsou automaticky nahrazeny znaky, které mají v HTML speciální význam. 
+Zabraňuje se tak bezpečnostním rizikům, kdy se vstup od uživatele interpretuje jako HTML.
 
-Představte si, že bychom měli následující routu a šablonu:
+Představ si, že bys měla následující routu a šablonu:
 
 ```python
 @app.route('/hello/<name>')
@@ -289,7 +288,7 @@ def hello(name):
 <p>Ahoj {{ name }}!</p>
 ```
 
-Nějaký zákeřný útočník by mohl zkusit do naší stránky vložit JavaScript tak,
+Nějaký zákeřný útočník by mohl zkusit do stránky vložit JavaScript tak,
 že ho zkusí vepsat jako součást svého jména: `/hello/<img src="." onerror="alert('Bu bu bu!')">` Jenže
 Jinja2 nás ochrání a výsledné HTML bude následující:
 
@@ -312,12 +311,17 @@ Zkuste si vytvořit HTML stránku, která obsahuje následující kód a otevřt
 
 ----
 
+### Vložení HTML do stránky
 
 Někdy je ovšem potřeba do stránky opravdu HTML vložit.
 To se dá zajistit dvěma způsoby. Nejjednodušší je vestavěný filtr `safe`.
 
-Představme si, že v proměnné `april_date` máme řetězec `1. dubna`. Pokud bychom si zmenšili okno prohlížeče
-a náš text `1. dubna` by se na stránce ocitl na konci řádku, mohl by se škaredě zalomit tak, že `1.` zůstane na jednom řádku a `dubna` skočí na druhý. To se špatně čte. HTML nám umožňuje zabránit zalamování tím, že místo běžné mezery použijeme značku `&nbsp;` (tzv. _entitu_) pro [nedělitelnou mezeru][nbsp]. Můžeme si tedy datum uložit jako `1.&nbsp;dubna`. Jenže pokud budeme chtít takový text vypsat v šabloně, Jinja2 nás opět ochrání:
+Představ si, že v proměnné `april_date` máš řetězec `1. dubna`. Pokud by sis dostatečně zmenšila okno prohlížeče
+a text `1. dubna` by se na stránce ocitl na konci řádku, mohl by se škaredě zalomit tak, že `1.` zůstane
+na jednom řádku a `dubna` skočí na druhý. To se špatně čte. HTML nám umožňuje zabránit zalamování tím, 
+že místo běžné mezery použijeme značku `&nbsp;` (tzv. _entitu_) pro [nedělitelnou mezeru][nbsp]. 
+Můžeš si tedy datum uložit jako `1.&nbsp;dubna`. Jenže pokud budeš chtít takový text vypsat v šabloně, 
+Jinja2 nás opět ochrání:
 
 [nbsp]: https://cs.wikipedia.org/wiki/Nezlomiteln%C3%A1_mezera
 
@@ -331,11 +335,11 @@ Výsledné HTML bude `Apríl je 1.&amp;nbsp;dubna` a v prohlížeči se zobrazí
 Apríl je {{ april_date|safe }}
 ```
 
-Nejlepší je ale opravdu nemíchat HTML s našimi daty ještě před tím, než je vypíšeme.
-Data bychom měli ukládat jako běžný text a nedělitelné mezery přidat až v šabloně.
+Nejlepší je ale opravdu nemíchat HTML s daty ještě před tím, než je vypíšeš.
+Data by se měla ukládat jako běžný text a nedělitelné mezery je nejlepší přidat až v šabloně.
 
-Napíšeme si na to tedy vlastní filtr. Jenže jak v něm označit výsledek jako „bezpečný”?
-Můžeme použít třídu [jinja2.Markup](http://jinja.pocoo.org/docs/api/#jinja2.Markup):
+Napiš si na to tedy vlastní filtr. Jenže jak v něm označit výsledek jako „bezpečný“?
+Můžeš použít třídu [jinja2.Markup](http://jinja.pocoo.org/docs/api/#jinja2.Markup):
 
 ```python
 from jinja2 import Markup
@@ -353,22 +357,33 @@ Tento filtr dostane text a běžné mezery v něm nahradí za nedělitelné meze
 Apríl je {{ '1. dubna'|nowrap }}
 ```
 
+----
+
+#### Entity
+
+Entity prohlížeč _zobrazí_, jako by tam byly znaky, které mají v HTML speciální význam (`<`, `>`, `&` atd.) 
+nebo by se špatně psaly. Zobrazí je, ale nechová se k nim jako by tam opravdu byly, 
+proto se z nich nestanou například tagy. Entita vždy začíná `&` a končí `;` 
+
+Některé se dají zapsat také písmeny. Třeba nedělitelná mezera jako `&nbsp;` (zkratka z&nbsp;_Non-Breaking SPace_) 
+a pro některé existuje jen číselná varianta (pro nedělitelnou mezeru je to `&#160;`.
+
 ---
 
 ## Kombinování šablon
 
 ----
 
-Chceme-li jednotlivým stránkám dát společné logo, menu, nebo patičku s kontaktními
-informacemi, museli bychom mít tyto části nakopírované do každé šablony. To je
-celkem otravné a navíc to vede k chybám. Pokud bychom dělali změny, mohli bychom
+Chceš-li jednotlivým stránkám dát společné logo, menu, nebo patičku s kontaktními
+informacemi, musela bys mít tyto části nakopírované do každé šablony. To je
+celkem otravné a navíc to vede k chybám. Pokud bys dělala změny, mohla bys
 je zapomenout zanést do jedné ze šablon.
 
-Jinja2 nám v tomto ohledu velmi zjednodušuje život. Nejčastěji se takové
+Jinja2 v tomto ohledu velmi zjednodušuje život. Nejčastěji se takové
 situace řeší přes [dědění šablon][tpl-inheritance], ale to je na delší vysvětlování,
 tak si pro začátek ukažme alespoň `include`, tedy [vkládání šablon do sebe][tpl-include].
 
-Vytvořme šablonu `_menu.html`, kam dáme menu našich stránek. Šablony, které
+Vytvoř si šablonu `_menu.html`, kam dáš jen menu. Šablony, které
 nepředstavují samostatné stránky, je dobrým zvykem pojmenovávat s podtržítkem na začátku.
 
 ```html
@@ -380,7 +395,7 @@ nepředstavují samostatné stránky, je dobrým zvykem pojmenovávat s podtrž�
 </p>
 ```
 
-Do každé šablony pro samostatnou stránku potom můžeme nahoru naše menu vložit:
+Do každé šablony pro samostatnou stránku potom můžeš nahoru vložit menu:
 
 ```html
 <!DOCTYPE HTML>
@@ -395,7 +410,7 @@ Do každé šablony pro samostatnou stránku potom můžeme nahoru naše menu vl
 </html>
 ```
 
-Takto si můžeme do budoucna ušetřit hodně práce.
+Takto si můžeš do budoucna ušetřit hodně práce.
 
 [tpl-inheritance]: http://jinja.pocoo.org/docs/templates/#template-inheritance
 [tpl-include]: http://jinja.pocoo.org/docs/templates/#include
@@ -406,29 +421,31 @@ Takto si můžeme do budoucna ušetřit hodně práce.
 
 ----
 
-Pouhé HTML je sice větší zábava než prostý text, ale pořád tomu něco chybí.
+V HTML je stránka sice zajímavější než jako prostý text, ale pořád tomu něco chybí.
 Většinou chceme do stránky přidat i CSS a obrázky. Jelikož CSS ani obrázky
-nepotřebujeme nijak generovat, ale stačí nám jen vzít je jako soubor a poslat
-je uživateli do prohlížeče, nazýváme je v kontextu dynamických webových stránek
+nepotřebujeme nijak generovat, ale stačí je vzít jako soubor a poslat
+uživateli do prohlížeče, nazýváme je v kontextu dynamických webových stránek
 _statickými soubory_.
 
-Podobně jako máme ve Flasku složku na šablony pojmenovanou `templates`, uděláme
-si vedle ní složku i na statické soubory, `static`. Z Pythonu nebo z šablony se
-pak na soubory v této složce můžeme odkázat následovně:
+Podobně jako máš ve Flasku složku na šablony pojmenovanou `templates`, udělej 
+si vedle ní složku i na statické soubory, `static`. Z Pythonu nebo ze šablony se
+pak na soubory v této složce můžeš odkázat následovně:
 
 ```python
 url_for('static', filename='style.css')
 ```
 
-Připojit ke stránce CSS můžeme tedy tak, že do šablony naší stránky přidáme
+Připojit ke stránce CSS můžeš tedy tak, že do šablony stránky přidáš
 do hlavičky následující řádek:
 
 ```html
 <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 ```
 
-Načteme-li stránku v prohlížeči, bude předpokládat, že v souboru `static/style.css`
-najde svoje CSS. S obrázky to funguje obdobně:
+Prohlížeč tak dostane v `href` vygenerovanou cestu `static/style.css`
+kde CSS najde, pokud ho tam umístíš. 
+
+S obrázky to funguje obdobně:
 
 ```html
 <img src="{{ url_for('static', filename='daniel.jpg') }}">
