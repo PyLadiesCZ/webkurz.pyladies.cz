@@ -78,8 +78,12 @@ A je to. Zkusme si náš zbrusu nový, Pythonem poháněný web spustit:
 
 Na zmíněné adrese http://127.0.0.1:5000/ bychom měli v prohlížeči vidět použitý text.
 
+<div class="c-example">
+PyLadies jsou nejlepší!
+</div>
+
 Pomocí `app.run()` jsme aplikaci spustili na lokálním počítači. Parametrem `debug`
-Flasku říkáme, že chceme zjednodušit debugování. Díky tomu uvidíme případné výjimky
+Flasku říkáme, že chceme zjednodušit _debugování_ (tzn. hledání a opravování chyb). Díky tomu uvidíme případné výjimky
 přímo v prohlížeči a náš _vývojový server_ se bude sám obnovovat, pokud něco změníme v souboru `web.py`.
 Abychom ale změnu viděli i v prohlížeči, budeme muset stránku vždy obnovit (tzn. dotázat
 se našeho serveru na její aktuální podobu). Jak je zmíněno i v konzoli, server lze vypnout
@@ -100,10 +104,6 @@ V příkladu jsme vytvořili flaskovou aplikaci (`app`) a pomocí dekorátoru
 Více různých cest lze vytvořit jednoduše přidáním další funkce:
 
 ```python
-@app.route('/')
-def index():
-    return 'PyLadies jsou nejlepší!'
-
 @app.route('/kontakt')
 def contact():
     return '''
@@ -115,6 +115,10 @@ def contact():
 
 Nově přidaná routa bude na adrese http://127.0.0.1:5000/kontakt vracet
 text, který popisuje, jak snadné je kontaktovat PyLadies.
+
+<div class="c-example">
+PyLadies přijdou, když si v nouzi, když tě Python ze sna vzbouzí, zavolat jen stačí heslo: PyLady, úú!
+</div>
 
 ---
 
@@ -154,7 +158,13 @@ def user_profile(user_name):
 Jak můžete vidět, v našem příkladu jsme použili velmi sofistikovanou databázi, Python slovník. Část cesty jsme si pojmenovali a ohraničili lomenými závorkami: `'/users/<user_name>'` Tím jsme dali
 Flasku najevo, že je proměnná a její hodnoty chceme dostávat jako parametr funkce.
 
-Když tedy v prohlížeči otevřeme adresu http://127.0.0.1:5000/users/zuzejk, objeví se nám řetězec `zuzejk` v proměnné `user_name` a my s ním můžeme dále pracovat. Protože klíč `zuzejk` v našem slovníku je, vypíšeme profil dané PyLady. Kdybychom do adresy vepsali uživatelské jméno, které v databázi není, např. http://127.0.0.1:5000/users/nesmysl, zavolá naše aplikace funkci `abort` z Flasku a vrátí chybu _404 - Not Found_. To je standardní způsob, jak dát na internetu druhé straně najevo, že se v daných místech nic nenachází.
+Když tedy v prohlížeči otevřeme adresu http://127.0.0.1:5000/users/zuzejk, objeví se nám řetězec `zuzejk` v proměnné `user_name` a my s ním můžeme dále pracovat. Protože klíč `zuzejk` v našem slovníku je, vypíšeme profil dané PyLady.
+
+<div class="c-example">
+PyLady Zuzka! Oblíbená barva: zelená
+</div>
+
+Kdybychom do adresy vepsali uživatelské jméno, které v databázi není, např. http://127.0.0.1:5000/users/nesmysl, zavolá naše aplikace funkci `abort` z Flasku a vrátí chybu _404 Not Found_. To je standardní způsob, jak dát na internetu druhé straně najevo, že se v daných místech nic nenachází.
 
 ---
 
@@ -197,6 +207,11 @@ a v ní `index.html`:
 
 Na adrese http://127.0.0.1:5000 teď bude o něco zábavnější verze úvodní stránky.
 
+<div class="c-example">
+<h1>PyLadies</h1>
+<p>PyLadies jsou <strong>nejlepší</strong>!</p>
+</div>
+
 Zatím jsme ale šablony vlastně moc nepoužili. To, co se běžně myslí pod pojmem šablony,
 je totiž _šablonovací jazyk_, který se dá vkládat přímo do HTML a umožňuje v něm používat
 základní programování, jako podmínky nebo cykly. Ukažme si to na seznamu PyLadies:
@@ -226,6 +241,15 @@ V souboru `templates/users.html` budeme mít:
 ```
 
 Na http://127.0.0.1:5000/users nám přibude seznam všech PyLadies, které máme v databázi.
+
+<div class="c-example">
+<h1>Seznam PyLadies</h1>
+<ul>
+  <li>zuzejk</li>
+  <li>lspdv</li>
+  <li>benabraham</li>
+</ul>
+</div>
 
 Vždy, když chceme v šabloně použít nějaká data, musíme jí je poslat přes parametry funkce `render_template()`,
 stejně jako jsme to udělali s `user_names`. Šablona jinak nemá o zbytku našeho programu nejmenší ponětí.
@@ -286,7 +310,8 @@ URL z názvu cílové funkce a jejích parametrů:
 ```python
 from flask import url_for
 …
-url_for('user_profile', user_name='benabraham')  # vrátí /users/benabraham
+url_for('user_profile', user_name='benabraham')
+# vrátí /users/benabraham
 ```
 
 Možná si říkáte, proč tu cestu prostě nevytvořit ručně, ale mohli bychom narazit
@@ -310,6 +335,15 @@ našeho seznamu PyLadies:
 
 Tímto bychom měli na stránce http://127.0.0.1:5000/users získat seznam PyLadies,
 kde každá položka bude zároveň odkazem na profilovou stránku dané PyLady.
+
+<div class="c-example">
+<h1>Seznam PyLadies</h1>
+<ul>
+  <li><a href="http://127.0.0.1:5000/zuzejk">zuzejk</a></li>
+  <li><a href="http://127.0.0.1:5000/lspdv">lspdv</a></li>
+  <li><a href="http://127.0.0.1:5000/benabraham">benabraham</a></li>
+</ul>
+</div>
 
 ---
 
@@ -395,6 +429,14 @@ V šabloně:
 <ul>
 ```
 
+<div class="c-example">
+<h1>PyLady: ZUZKA</h1>
+<ul>
+  <li>Oblíbená barva: zelená</li>
+  <li>Věk: 597</li>
+<ul>
+</div>
+
 ---
 
 #### Escaping
@@ -418,11 +460,11 @@ def hello(name):
 ```
 
 Nějaký zákeřný útočník by mohl zkusit do naší stránky vložit JavaScript tak,
-že ho zkusí vepsat jako své jméno: `/hello/<script>alert("Bu bu bu")` Jenže
+že ho zkusí vepsat jako součást svého jména: `/hello/<img src="." onerror="alert('Bu bu bu!')">` Jenže
 Jinja2 nás ochrání a výsledné HTML bude následující:
 
 ```html
-<p>Ahoj &lt;script&gt;alert(&#34;Bu bu bu&#34;)!</p>
+<p>Ahoj &lt;img src=&#34;.&#34; onerror=&#34;alert(&#39;Bu bu bu!&#39;)&#34;&gt;!</p>
 ```
 
 ----
@@ -430,8 +472,13 @@ Jinja2 nás ochrání a výsledné HTML bude následující:
 
 #### Cvičení pro odvážné
 
-Zkuste si vytvořit HTML stránku, která obsahuje `<p>Ahoj <script>alert("Bu bu bu")!</p>`
-a otevřte si ji v prohlížeči.
+Zkuste si vytvořit HTML stránku, která obsahuje následující kód a otevřte si ji v prohlížeči.
+
+```html
+<p>
+    Ahoj <img src="." onerror="alert('Bu bu bu!')">!
+</p>
+```
 
 ----
 
