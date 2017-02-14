@@ -26,7 +26,7 @@ gulp.task('default', ['runserver'], function(){
         files: [
         	'templates/*.*',
         	'static/*.*'
-        	]
+		]
     });
 });
 ```
