@@ -444,5 +444,3 @@ Jako zdroj zkušebních textů můžete použít [řecké][wiki-el] nebo [ruské
 [jagr]: https://www.google.cz/search?q=jagr+russia+jersey&source=lnms&tbm=isch
 [wiki-el]: https://el.wikipedia.org/wiki/%CE%91%CE%B8%CE%AE%CE%BD%CE%B1
 [wiki-ru]: https://ru.wikipedia.org/wiki/%D0%AF%D0%B3%D1%80,_%D0%AF%D1%80%D0%BE%D0%BC%D0%B8%D1%80
-
----
