@@ -10,13 +10,13 @@ Zatím jsme si ukázali z CSS jen malou část. Dnes si znalosti CSS rozšíří
 
 ```css
 p {
-	font-style: italic;  /* nebo normal */
+    font-style: italic;  /* nebo normal */
 
-	font-weight: bold; /* nebo normal */
+    font-weight: bold; /* nebo normal */
 
-	font-family: sans-serif; /* nebo serif */
+    font-family: sans-serif; /* nebo serif */
 
-	text-align: center; /* nebo left nebo right */
+    text-align: center; /* nebo left nebo right */
 }
 ```
 
@@ -56,8 +56,8 @@ Platí poslední nastavená hodnota vlastnosti.
 
 ```css
 p {
-	color: red;
-	background-color: pink;
+    color: red;
+    background-color: pink;
 }
 
 p { color: green; }

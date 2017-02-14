@@ -44,19 +44,19 @@ Obarví se nadpisy 2. úrovně na modro, pokud jsou v prvku s třídou `.tip`
 ```html
 <h2>Já jsem výchozí barvou</h2>
 <div class="tip">
-	<h2>Já jsem modrý</h2>
-	<div>
-		<h2>Já, já, já jsem taky modrý</h2>
-	</div>
+    <h2>Já jsem modrý</h2>
+    <div>
+        <h2>Já, já, já jsem taky modrý</h2>
+    </div>
 </div>
 ```
 <div class="c-example example-context-selectors">
 <h2>Já jsem výchozí barvou</h2>
 <div class="tip">
-	<h2>Já jsem modrý</h2>
-	<div>
-		<h2>Já, já, já jsem taky modrý</h2>
-	</div>
+    <h2>Já jsem modrý</h2>
+    <div>
+        <h2>Já, já, já jsem taky modrý</h2>
+    </div>
 </div>
 </div>
 
@@ -72,20 +72,20 @@ div h2 { color: red; }
 ```html
 <h2>Já jsem výchozí barvou</h2>
 <div class="tip">
-	<h2 class="nadpis">Já jsem modrý</h2>
-	<div>
-		<h2 class="nadpis">Já, já, já jsem taky modrý</h2>
-	</div>
+    <h2 class="nadpis">Já jsem modrý</h2>
+    <div>
+        <h2 class="nadpis">Já, já, já jsem taky modrý</h2>
+    </div>
 </div>
 ```
 
 <div class="c-example example-context-selectors">
 <h2>Já jsem výchozí barvou</h2>
 <div class="tip">
-	<h2 class="nadpis">Já jsem modrý</h2>
-	<div>
-		<h2 class="nadpis">Já, já, já jsem taky modrý</h2>
-	</div>
+    <h2 class="nadpis">Já jsem modrý</h2>
+    <div>
+        <h2 class="nadpis">Já, já, já jsem taky modrý</h2>
+    </div>
 </div>
 </div>
 

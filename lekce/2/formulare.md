@@ -192,8 +192,8 @@ def temperature():
 <div class="c-example">
 <h1>Převodník teplot</h1>
 <form action="" method="post">
-	<input type="text" name="farenheit">°F
-	<input type="submit" value="Převést na °C">
+    <input type="text" name="farenheit">°F
+    <input type="submit" value="Převést na °C">
 </form>
 </div>
 

@@ -1,4 +1,4 @@
-# Automatizace	
+# Automatizace    
 
 Celý web můžeš napsat ručně a nepotřebuješ k tomu nic jiného, než základní textový editor, ale jsou tu nástroje, které ti ušetří spoustu času a i když dá nějakou práci se je naučit a nakonfigurovat, dlouhodobě se to vyplatí. 
 
@@ -121,16 +121,16 @@ var gulp = require('gulp');
 
 // nadefinujeme úkol
 gulp.task(
-	
-	// nadefinujeme jméno úkolu
-	'default', // úkol, který se jmenuje default se spouští implicitně
-	
-	// další parametr je funkce, která obsahuje vše, co má daný úkol udělat
-	function() {
-		 // zatím do ní dáme jen javascriptový ekvivalent print,
-		 // vypíše do konzole Hello World
-		console.log('Hello World');
-	}
+    
+    // nadefinujeme jméno úkolu
+    'default', // úkol, který se jmenuje default se spouští implicitně
+    
+    // další parametr je funkce, která obsahuje vše, co má daný úkol udělat
+    function() {
+         // zatím do ní dáme jen javascriptový ekvivalent print,
+         // vypíše do konzole Hello World
+        console.log('Hello World');
+    }
 );
 ```
 
@@ -174,11 +174,11 @@ A pak umísti celé spuštění Browsersyncu místo `console.log('Hello World')`
 
 ```javascript
 browserSync.init({ // inicializace Browsersync
-	// nastavit jaké soubory se budou používat
-	server: {
-		baseDir: './' // ./ znamená stejná složka, ve které se nachází gulpfile.js
-	},
-	files: ['*.html'] // zde se definují soubory, jejichž změnu má browsersync sledovat
+    // nastavit jaké soubory se budou používat
+    server: {
+        baseDir: './' // ./ znamená stejná složka, ve které se nachází gulpfile.js
+    },
+    files: ['*.html'] // zde se definují soubory, jejichž změnu má browsersync sledovat
 });
 ```
 
@@ -194,7 +194,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 
 gulp.task(
-	'default',
+    'default',
     function() {
         browserSync.init({
             server: {

@@ -36,7 +36,7 @@ Výše je jen jeden _rule-set_, v CSS píšeme rulesety jeden za druhým.
 ```css
 selektor { 
     vlastnost: hodnota;
-	property: value; /* tohle je komentar v CSS */
+    property: value; /* tohle je komentar v CSS */
 }
 ```
 

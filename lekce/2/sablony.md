@@ -155,13 +155,13 @@ seznamu PyLadies:
 ```html
 <h1>Seznam PyLadies</h1>
 <ul>
-	{% for user_name in user_names %}
-		<li>
-			<a href="{{ url_for('user_profile', user_name=user_name) }}">
-				{{ user_name }}
-			</a>
-		</li>
-	{% endfor %}
+    {% for user_name in user_names %}
+        <li>
+            <a href="{{ url_for('user_profile', user_name=user_name) }}">
+                {{ user_name }}
+            </a>
+        </li>
+    {% endfor %}
 </ul>
 ```
 
@@ -171,9 +171,9 @@ kde každá položka bude zároveň odkazem na profilovou stránku dané PyLady.
 <div class="c-example">
 <h1>Seznam PyLadies</h1>
 <ul>
-	<li><a href="http://127.0.0.1:5000/zuzejk">zuzejk</a></li>
-	<li><a href="http://127.0.0.1:5000/lspdv">lspdv</a></li>
-	<li><a href="http://127.0.0.1:5000/benabraham">benabraham</a></li>
+    <li><a href="http://127.0.0.1:5000/zuzejk">zuzejk</a></li>
+    <li><a href="http://127.0.0.1:5000/lspdv">lspdv</a></li>
+    <li><a href="http://127.0.0.1:5000/benabraham">benabraham</a></li>
 </ul>
 </div>
 
@@ -214,13 +214,13 @@ Do `user_profile.html` ve složce `templates` si ulož následující šablonu:
 ```html
 <!DOCTYPE HTML>
 <html>
-	<head><title>PyLady: {{ user.name|capitalize }}</title></head>
-	<body>
-		<h1>PyLady: {{ user.name|capitalize }}</h1>
-		<p>Oblíbená barva: {{ user.color }}</p>
-		<hr>
-		<p><a href="{{ url_for('users') }}">Zpět na seznam</a></p>
-	</body>
+    <head><title>PyLady: {{ user.name|capitalize }}</title></head>
+    <body>
+        <h1>PyLady: {{ user.name|capitalize }}</h1>
+        <p>Oblíbená barva: {{ user.color }}</p>
+        <hr>
+        <p><a href="{{ url_for('users') }}">Zpět na seznam</a></p>
+    </body>
 </html>
 ```
 
@@ -254,16 +254,16 @@ V šabloně:
 ```html
 <h1>PyLady: {{ user.name|capitalize }}</h1>
 <ul>
-	<li>Oblíbená barva: {{ user.color }}</li>
-	<li>Věk: {{ user.born|age }}</li>
+    <li>Oblíbená barva: {{ user.color }}</li>
+    <li>Věk: {{ user.born|age }}</li>
 <ul>
 ```
 
 <div class="c-example">
 <h1>PyLady: Zuzka</h1>
 <ul>
-	<li>Oblíbená barva: zelená</li>
-	<li>Věk: 597</li>
+    <li>Oblíbená barva: zelená</li>
+    <li>Věk: 597</li>
 <ul>
 </div>
 
@@ -305,7 +305,7 @@ Zkuste si vytvořit HTML stránku, která obsahuje následující kód a otevřt
 
 ```html
 <p>
-	Ahoj <img src="." onerror="alert('Bu bu bu!')">!
+    Ahoj <img src="." onerror="alert('Bu bu bu!')">!
 </p>
 ```
 
@@ -388,10 +388,10 @@ nepředstavují samostatné stránky, je dobrým zvykem pojmenovávat s podtrž�
 
 ```html
 <p>
-	<strong>Menu:</strong>
-	<a href="{{ url_for('index') }}">Hlavní stránka</a> -
-	<a href="{{ url_for('users') }}">Seznam</a> -
-	<a href="{{ url_for('contact') }}">Kontakty</a>
+    <strong>Menu:</strong>
+    <a href="{{ url_for('index') }}">Hlavní stránka</a> -
+    <a href="{{ url_for('users') }}">Seznam</a> -
+    <a href="{{ url_for('contact') }}">Kontakty</a>
 </p>
 ```
 
@@ -400,13 +400,13 @@ Do každé šablony pro samostatnou stránku potom můžeš nahoru vložit menu:
 ```html
 <!DOCTYPE HTML>
 <html>
-	<head>
-		…
-	</head>
-	<body>
-		{% include '_menu.html' %}
-		…
-	</body>
+    <head>
+        …
+    </head>
+    <body>
+        {% include '_menu.html' %}
+        …
+    </body>
 </html>
 ```
 

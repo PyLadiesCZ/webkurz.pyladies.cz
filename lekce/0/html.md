@@ -26,7 +26,7 @@ HTML budeme psát ve verzi 5, která má v&nbsp;současnosti velmi dobrou podpor
 
 ```html
 <názevtagu>
-	Obsah tagu
+    Obsah tagu
 </názevtagu>
 ```
 <!-- .element: class="c-text-xl stretch" contenteditable="true" -->
@@ -48,12 +48,12 @@ Každý HTML dokument má mít základní strukturu.
 ```html
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<!-- vlastnosti stránky -->
-	</head>
-	<body>
-		<!-- samotný obsah stránky -->
-	</body>
+    <head>
+        <!-- vlastnosti stránky -->
+    </head>
+    <body>
+        <!-- samotný obsah stránky -->
+    </body>
 </html>
 ```
 <!-- .element: class="c-text-md stretch" contenteditable="true" -->
@@ -85,12 +85,12 @@ Jedním z nejčastěji používaných tagů je odstavec textu. Podobně jako u j
 
 ```html
 <p>
-	PyLadies jsou (mezinárodní) aktivita, 
-	která se snaží přiblížit IT ženám a 
-	ženy k IT. K tomu využívá programovací 
-	jazyk Python, který je perfektní pro 
-	výukové účely a zároveň je po něm velká 
-	poptávka na trhu práce.
+    PyLadies jsou (mezinárodní) aktivita, 
+    která se snaží přiblížit IT ženám a 
+    ženy k IT. K tomu využívá programovací 
+    jazyk Python, který je perfektní pro 
+    výukové účely a zároveň je po něm velká 
+    poptávka na trhu práce.
 </p>
 ```
 <!-- .element: class="c-text-md stretch" contenteditable="true" -->
@@ -300,7 +300,7 @@ Zobrazuje se na záložce v prohlížeči ‒ jediný z `<head>` je přímo vid�
 
 ```html
 <head>
-	<title>Název stránky</title>
+    <title>Název stránky</title>
 </head>
 ```
 <!-- .element: class="c-text-xl stretch" contenteditable="true" -->
@@ -316,8 +316,8 @@ Protože jsou ruzné způsoby, jakými jsou textové soubory _kódovány_, je po
 
 ```html
 <head>
-	<meta charset="UTF-8">
-	<title>Název stránky</title>
+    <meta charset="UTF-8">
+    <title>Název stránky</title>
 </head>
 ```
 <!-- .element: class="c-text-xl stretch" contenteditable="true" -->

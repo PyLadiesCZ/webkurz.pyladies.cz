@@ -17,11 +17,11 @@ Patří mezi ně `<p>`, `<h1>` a další nadpisy a taky `<div>`.
 
 ```css
 div {
-	background-color: orange;
+    background-color: orange;
 }
 
 p {
-	background-color: cyan;
+    background-color: cyan;
 }
 ```
 
@@ -49,11 +49,11 @@ Je zakázáno do řádkových elementů vkládat blokové.
 
 ```css
 span {
-	background-color: orange;
+    background-color: orange;
 }
 
 strong {
-	background-color: cyan;
+    background-color: cyan;
 }
 ```
 
@@ -128,9 +128,9 @@ Pokud si nastavíš dostatečně malé rozměry, zjistíš, že text přetekl ve
 
 ```css
 div {
-	background-color: orange;
-	width: 500px;
-	height: 110px;
+    background-color: orange;
+    width: 500px;
+    height: 110px;
 }
 ```
 
@@ -165,15 +165,15 @@ Aplikovat pevné rozměry můžeš, ale je třeba si dát si pozor jak se vše v
 
 ```css
 div {
-	width: 50%;
-	height: 100px;
-	background-color: orange;
+    width: 50%;
+    height: 100px;
+    background-color: orange;
 }
 
 p {
-	width: 400px;
-	height: 100px;
-	background-color: cyan;
+    width: 400px;
+    height: 100px;
+    background-color: cyan;
 }
 ```
 
@@ -199,10 +199,10 @@ To se dělá pomocí _přidání_ vlastností `max-width` a `min-width` pro ší
 
 ```css
 div {
-	background-color: cyan;
-	width: 50%;
-	min-width: 100px;
-	max-width: 300px;
+    background-color: cyan;
+    width: 50%;
+    min-width: 100px;
+    max-width: 300px;
 }
 ```
 
@@ -226,9 +226,9 @@ Rámeček má 3 základní vlastnosti:
 
 ```css
 div {
-	border-width: 2px;
-	border-style: solid; /* taky dotted, dashed nebo inset */
-	border-color: black;
+    border-width: 2px;
+    border-style: solid; /* taky dotted, dashed nebo inset */
+    border-color: black;
 }
 ```
 
@@ -236,7 +236,7 @@ To samé se dá zapsat zkráceným zápisem (tzv. shorthand)
 
 ```css
 div {
-	border: 2px solid black;
+    border: 2px solid black;
 }
 
 ```
@@ -252,13 +252,13 @@ Pomocí vlastností `border-top` `border-right` `border-bottom` nebo `border-lef
 
 ```css
 div {
-	background-color: silver;
-	
-	border-top: 20px solid red;
-	
-	border-bottom-width: 10px;
-	border-bottom-style: dotted;
-	border-bottom-color: black;
+    background-color: silver;
+    
+    border-top: 20px solid red;
+    
+    border-bottom-width: 10px;
+    border-bottom-style: dotted;
+    border-bottom-color: black;
 }
 ```
 
@@ -277,8 +277,8 @@ Obvykle se nastavuje, aby obsah nebyl „nalepený“ na viditelný rámeček ne
 
 ```css
 div {
-	border: 2px solid black;
-	padding: 25px;
+    border: 2px solid black;
+    padding: 25px;
 }
 ```
 <div class="c-example example-padding-simple"><div>Můj obsah není nalepený</div></div>
@@ -291,8 +291,8 @@ Další možností je využít shorthand, který umožnuje zapsat všechny hodno
 
 ```css
 div {
-	border: 2px solid black;
-	padding: 10px 100px;
+    border: 2px solid black;
+    padding: 10px 100px;
 }
 ```
 
@@ -302,8 +302,8 @@ Pokud uvedeš 3 hodnoty
 
 ```css
 div {
-	border: 2px solid black;
-	padding: 10px 100px 50px;
+    border: 2px solid black;
+    padding: 10px 100px 50px;
 }
 ```
 
@@ -313,8 +313,8 @@ A pro úplnost i všechny 4
 
 ```css
 div {
-	border: 2px solid black;
-	padding: 10px 100px 50px 200px;
+    border: 2px solid black;
+    padding: 10px 100px 50px 200px;
 }
 ```
 
@@ -324,11 +324,11 @@ Poslední zápis je totéž, jako tento:
 
 ```css
 div {
-	border: 2px solid black;
-	padding-top: 10px;
-	padding-right: 100px; 
-	padding-bottom: 50px;
-	padding-left: 200px;
+    border: 2px solid black;
+    padding-top: 10px;
+    padding-right: 100px; 
+    padding-bottom: 50px;
+    padding-left: 200px;
 }
 ```
 
@@ -344,9 +344,9 @@ Určuje to, jak daleko mají být ostatní prvky od rámečku (i kdyby byl nulov
 
 ```css
 div {
-	border: 2px solid black;
-	padding: 25px;
-	margin: 40px;
+    border: 2px solid black;
+    padding: 25px;
+    margin: 40px;
 }
 ```
 
@@ -375,12 +375,12 @@ Co se stane, když zkusíš nastavit tyhle vlastnosti řádkovému elementu?
 
 ```css
 span {
-	width: 100%;
-	height: 100px;
-	background-color: cyan;
-	margin-top: 1000px;
-	margin-bottom: 1000px;
-	padding-bottom: 50px;
+    width: 100%;
+    height: 100px;
+    background-color: cyan;
+    margin-top: 1000px;
+    margin-bottom: 1000px;
+    padding-bottom: 50px;
 }
 ```
 
@@ -419,9 +419,9 @@ Lze jim nastavit všechny vlastnosti z box-modelu.
 
 ```css
 span { 
-	display: block;
-	background-color: yellow;
-	margin-bottom: 20px;
+    display: block;
+    background-color: yellow;
+    margin-bottom: 20px;
 }
 ```
 
@@ -444,9 +444,9 @@ Nejde jim pak nastavit některé vlastnosti: šířku, výšku, `margin-top` a `
 
 ```css
 div {
-	display: inline;
-	background-color: yellow;
-	margin: 20px;
+    display: inline;
+    background-color: yellow;
+    margin: 20px;
 }
 ```
 
@@ -469,10 +469,10 @@ Libovolný element se začne chovat jako řádkový s některými vlastnostmi bl
 
 ```css
 p {
-	display: inline-block;
-	width:30%;
-	background-color: yellow;
-	margin: 10%;
+    display: inline-block;
+    width:30%;
+    background-color: yellow;
+    margin: 10%;
 }
 ```
 
@@ -502,13 +502,13 @@ Jedná se sice o jinou vlastnost, ale hodí se ji zmínit, protože dělá něco
 
 ```css
 span { 
-	visibility: hidden;
-	background-color: yellow;
+    visibility: hidden;
+    background-color: yellow;
 }
 
 p { 
-	display: none;
-	background-color: red;
+    display: none;
+    background-color: red;
 }
 ```
 
@@ -540,11 +540,11 @@ Pokud by tam byla výchozí hodnota, tedy `content-box`, tak by `width` a `heigh
  
 ```css
 div { 
-	background-color: yellow;
-	display: inline-block;
-	width: 50%;
-	border: 10px solid black;
-	padding: 10px;
+    background-color: yellow;
+    display: inline-block;
+    width: 50%;
+    border: 10px solid black;
+    padding: 10px;
 }
 ```
 

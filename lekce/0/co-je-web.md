@@ -51,64 +51,64 @@ URL je zkratka z Uniform Resource Locator a určuje unikátní umístění zdroj
 ### Části URL
 
 <p class="c-url">
-	<b style="color:#999;">
-		<span class="fragment" data-fragment-index="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doména 3. řádu</span>
-		<span class="fragment" data-fragment-index="65">&nbsp;složka</span>
-		<span class="fragment" data-fragment-index="128">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dva parametry</span>
-	</b><br>
-	<br>
-	<b style="color:#999;">
-		<span class="fragment" data-fragment-index="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▼</span>
-		<span class="fragment" data-fragment-index="65">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▼</span>
-		<span class="fragment" data-fragment-index="128">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▼</span>
-	</b>
-	<br>
-	<b class="fragment" data-fragment-index="10" style="color:black;">http</b>
-	<b class="fragment" data-fragment-index="20" style="color:black;">://</b>
-	<span class="fragment" data-fragment-index="30" >
-		<b style="color:#0DA6F2;">www</b>
-		<b style="color:black;">.</b>
-		<b style="color:#0A85C2;">pyladies</b>
-		<b style="color:black;">.</b>
-		<b style="color:#086391;">cz</b>
-	</span>
-	<b class="fragment" data-fragment-index="50" style="color:black;">/</b>
-	<b class="fragment" data-fragment-index="60" style="color:#E000AE;">folder</b>
-	<b class="fragment" data-fragment-index="70" style="color:black;">/</b>
-	<span class="fragment" data-fragment-index="80" >
-		<b style="color:#E000AE;">file</b>
-		<b style="color:#E000AE;">.</b>
-		<b style="color:#E000AE;">html</b>
-	</span>
-	<b class="fragment" data-fragment-index="90" style="color:black;">?</b>
-	<span class="fragment" data-fragment-index="100">
-		<b style="color:green;">a</b>
-		<b style="color:darkgreen;">=</b>
-		<b style="color:lime;">10</b>
-	</span>
-	<b class="fragment" data-fragment-index="110"  style="color:black;">&amp;</b>
-	<span class="fragment" data-fragment-index="120">
-		<b style="color:green;">b</b>
-		<b style="color:darkgreen;">=</b>
-		<b style="color:lime;">ten</b>
-	</span>
-	<b class="fragment" data-fragment-index="130"  style="color:orange;"><b style  ="color:darkorange;">#anchor</b></b>
-	<br>
-	<b style="color:#999;">
-		<span class="fragment" data-fragment-index="15">▲</span>
-		<span class="fragment" data-fragment-index="42">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▲</span>
-		<span class="fragment" data-fragment-index="43">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▲</span>
-		<span class="fragment" data-fragment-index="85">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▲</span>
-		<span class="fragment" data-fragment-index="135">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▲</span>
-	</b>
-	<br>
-	<b style="color:#999;">
-		<span class="fragment" data-fragment-index="15">protokol</span>
-		<span class="fragment" data-fragment-index="42">&nbsp; doména</span>
-		<span class="fragment" data-fragment-index="43">&nbsp; TLD</span>
-		<span class="fragment" data-fragment-index="85">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; soubor</span>
-		<span class="fragment" data-fragment-index="135">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fragment</span>
-	</b>
+    <b style="color:#999;">
+        <span class="fragment" data-fragment-index="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doména 3. řádu</span>
+        <span class="fragment" data-fragment-index="65">&nbsp;složka</span>
+        <span class="fragment" data-fragment-index="128">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dva parametry</span>
+    </b><br>
+    <br>
+    <b style="color:#999;">
+        <span class="fragment" data-fragment-index="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▼</span>
+        <span class="fragment" data-fragment-index="65">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▼</span>
+        <span class="fragment" data-fragment-index="128">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▼</span>
+    </b>
+    <br>
+    <b class="fragment" data-fragment-index="10" style="color:black;">http</b>
+    <b class="fragment" data-fragment-index="20" style="color:black;">://</b>
+    <span class="fragment" data-fragment-index="30" >
+        <b style="color:#0DA6F2;">www</b>
+        <b style="color:black;">.</b>
+        <b style="color:#0A85C2;">pyladies</b>
+        <b style="color:black;">.</b>
+        <b style="color:#086391;">cz</b>
+    </span>
+    <b class="fragment" data-fragment-index="50" style="color:black;">/</b>
+    <b class="fragment" data-fragment-index="60" style="color:#E000AE;">folder</b>
+    <b class="fragment" data-fragment-index="70" style="color:black;">/</b>
+    <span class="fragment" data-fragment-index="80" >
+        <b style="color:#E000AE;">file</b>
+        <b style="color:#E000AE;">.</b>
+        <b style="color:#E000AE;">html</b>
+    </span>
+    <b class="fragment" data-fragment-index="90" style="color:black;">?</b>
+    <span class="fragment" data-fragment-index="100">
+        <b style="color:green;">a</b>
+        <b style="color:darkgreen;">=</b>
+        <b style="color:lime;">10</b>
+    </span>
+    <b class="fragment" data-fragment-index="110"  style="color:black;">&amp;</b>
+    <span class="fragment" data-fragment-index="120">
+        <b style="color:green;">b</b>
+        <b style="color:darkgreen;">=</b>
+        <b style="color:lime;">ten</b>
+    </span>
+    <b class="fragment" data-fragment-index="130"  style="color:orange;"><b style  ="color:darkorange;">#anchor</b></b>
+    <br>
+    <b style="color:#999;">
+        <span class="fragment" data-fragment-index="15">▲</span>
+        <span class="fragment" data-fragment-index="42">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▲</span>
+        <span class="fragment" data-fragment-index="43">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▲</span>
+        <span class="fragment" data-fragment-index="85">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▲</span>
+        <span class="fragment" data-fragment-index="135">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▲</span>
+    </b>
+    <br>
+    <b style="color:#999;">
+        <span class="fragment" data-fragment-index="15">protokol</span>
+        <span class="fragment" data-fragment-index="42">&nbsp; doména</span>
+        <span class="fragment" data-fragment-index="43">&nbsp; TLD</span>
+        <span class="fragment" data-fragment-index="85">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; soubor</span>
+        <span class="fragment" data-fragment-index="135">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fragment</span>
+    </b>
 </p>
 
 
@@ -116,15 +116,15 @@ URL je zkratka z Uniform Resource Locator a určuje unikátní umístění zdroj
 * doména 3. řádu: pokud si zaregistrujete doménu, můžete si domén třetího a vyššího řádu definovat kolik chcete.
 * doména: registrujete si u registrátorů domén, obvykle za roční registrační poplatek
 * top-level doména
-	* generické: .net, .info, .org, .com, … 
-	* národní: ty spravuje pro každou zemi národní správce domény (u nás CZ.NIC)
-	* sponzorované TLD: které spravují organizace, které si je v centrálním registru IANA zaplatily (například .aero, .coop, .jobs, .travel a další) 
+    * generické: .net, .info, .org, .com, … 
+    * národní: ty spravuje pro každou zemi národní správce domény (u nás CZ.NIC)
+    * sponzorované TLD: které spravují organizace, které si je v centrálním registru IANA zaplatily (například .aero, .coop, .jobs, .travel a další) 
 * složka
 * soubor
 * parametry: v příkladu jsou dva, `a` má hodnotu `10` a `b` má hodnotu `ten`
 * fragment: za znakem `#` často se používá k identifikace pozice v dokumentu
 
-V URL (adrese) se smí používat jen základní znaky: malá a velká písmena latinské abecedy (tj. písmena od `a` do `z` a od `A` do `Z`), číslice a dále znaky `!` `*` `'` `(` `)` `;` `:` `@` `&` `=` `+` `$` `,` `/` `?` `#` `[` `]` `-`	`_`	`.`	`~`. Všechny ostatní speciální znaky se zapisují jako tzv. _URL encoded_. Například mezera jako `%20` a prozatím se jim v názvech souborů a složek vyhýbej, ušetříš si tím spoustu problémů.
+V URL (adrese) se smí používat jen základní znaky: malá a velká písmena latinské abecedy (tj. písmena od `a` do `z` a od `A` do `Z`), číslice a dále znaky `!` `*` `'` `(` `)` `;` `:` `@` `&` `=` `+` `$` `,` `/` `?` `#` `[` `]` `-`    `_`    `.`    `~`. Všechny ostatní speciální znaky se zapisují jako tzv. _URL encoded_. Například mezera jako `%20` a prozatím se jim v názvech souborů a složek vyhýbej, ušetříš si tím spoustu problémů.
 
 ---
 
