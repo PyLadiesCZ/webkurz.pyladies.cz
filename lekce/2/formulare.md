@@ -479,10 +479,10 @@ a který umožňuje vybrat více možností najednou.
 <select multiple><option>Možnost</option><option>Jiná možnost<option>Taky možnost</option></select>
 </div>
 
-Více možností lze vybrat, pokud uživatel přidrží klávesu <kbd>Ctrl</kbd> (na macOS <kbd>Cmd</kbd>).
-To ale běžný uživatel internetu vůbec neví, takže na ovládací prvek `<select multiple>` většinou spíše
-kouká jako puk a neví, co s ním dělat (popřípadě vybere jen jednu možnost). Proto je lepší se této variantě
-spíše vyhnout.
+Více možností lze vybrat pomocí tažení nebo pokud uživatel přidrží klávesu <kbd>Ctrl</kbd> (na macOS <kbd>Cmd</kbd>), tak lze vybrat i položky, které spolu nesousedí.
+To ale uživatel většinou neví, takže na v `<select multiple>` vybere stejně jen jednu možnost nebo se musí psát instrukce.
+Proto je lepší se této variantě spíše vyhnout, pokud ji [https://select2.github.io](pomocí javascriptu) nevylepšíme na něco, co uživatelé chápou lépe.
+
 
 ### Atributy
 
