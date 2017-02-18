@@ -24,7 +24,11 @@ gulp develop
 
 ## Content writing
 
-There is no automatic generation of pages. You have to specify which .md file get's loaded where and all the links.
+You have to name .md file the same as .html file so the content gets loaded. 
+Also don't forget to add links to new files to `/lekce/_menu.html`.
+
+
+### Inside .md
 
 Top sections are divided by `\n---\n` while subsections are divided by `\n----\n`.
  
