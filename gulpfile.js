@@ -39,7 +39,6 @@ gulp.task('jsconcat', ['jsclean'], function(){
 	return gulp.src([
 		'src/js/highlight.pack.js',
 		'src/js/jquery-3.1.1.min.js',
-		// 'src/js/toc.min.js',
 		'src/js/marked.js',
 		'src/js/flat-file.js'
 	])
