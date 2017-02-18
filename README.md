@@ -1,5 +1,7 @@
 # webkurz.pyladies.cz
 
+This is more or less temporary website based on older materials from different sources. That's why it's software architecture is a bit weird.
+
 
 ## Install
 
@@ -48,3 +50,5 @@ gulp deploy
 ```
 
 Note: you need to have access to surge account (just ask Dan Srb).
+
+
