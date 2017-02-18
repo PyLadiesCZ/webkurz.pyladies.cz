@@ -24,6 +24,9 @@ Enjoy automatic refreshing of everything by running.
 gulp develop
 ```
 
+The website will run on [http://localhost:3030](http://localhost:3030).
+
+
 ## Content writing
 
 Add .md files in subfolders of `/lekce/`. Required HTML files are created automatically.
