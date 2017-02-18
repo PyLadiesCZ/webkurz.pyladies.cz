@@ -24,8 +24,9 @@ gulp develop
 
 ## Content writing
 
-You have to name .md file the same as .html file so the content gets loaded. 
-Also don't forget to add links to new files to `/lekce/_menu.html`.
+Add .md files in subfolders of `/lekce/`. Required HTML files are created automatically.
+
+Don't forget to add/remove links to files to `/_menu.html` and to `/index.html`. 
 
 
 ### Inside .md

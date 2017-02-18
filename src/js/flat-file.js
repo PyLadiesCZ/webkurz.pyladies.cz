@@ -12,13 +12,13 @@ $(document).ready(
 		 */
 
 		// Load menu
-		$('.c-menu').load('/lekce/_menu.html');
+		$('.c-menu').load('/_menu.html');
 
 		var $nextChapter = '';
 
 		// set current menu item
 		$(document).ajaxComplete(function(event, xhr, settings){
-			if (settings.url === '/lekce/_menu.html'){
+			if (settings.url === '/_menu.html'){
 
 				var $menuLinks = $('.menu a');
 
