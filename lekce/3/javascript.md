@@ -79,13 +79,13 @@ I přesto, že je mezi zápisy obou jazyků spousta rozdílů, jsi schopná prog
 
 ----
 
-Velkým rozdílem mezi oběma jazyky je skutečnost, že v případě JavaScriptu je odsazení pouze k tomu, aby se program lépe četl. Žádný jiný význam nemá.
+Velkým rozdílem mezi oběma jazyky je skutečnost, že v případě JavaScriptu slouží odsazení pouze k tomu, aby se program lépe četl lidem. Žádný jiný význam nemá.
+
+Tento program bude fungovat úplně stejně, jako úvodní příklad:
 
 ```js
 function isUkulele(stringsCount) { if (stringsCount == 4) { return true; } else { return false; } }; console.log(isUkulele(6));
 ```
-
-Program výše bude fungovat úplně stejně, jako úvodní příklad.
 
 ---
 
