@@ -123,7 +123,7 @@ if __name__ == '__main__':
 
 Šablonovacích jazyků je více. Ten, který používá Flask, se nazývá [Jinja2][] a je poměrně oblíbený. Syntaxe
 s `{{ proměnná }}` a `{% program %}` je ale velmi rozšířená a můžete se s ní setkat i v mnoha dalších
-šablonovacích jazycích. Například Django má svůj [vlastní šablonovací jazyk][django-templates], 
+šablonovacích jazycích. Například Django má svůj [vlastní šablonovací jazyk][django-templates],
 ale na první pohled vypadá úplně stejně.
 
 [Jinja2]: http://jinja.pocoo.org/docs/templates/
@@ -273,7 +273,7 @@ V šabloně:
 
 ----
 
-V textu, který se vkládá do šablon, jsou automaticky nahrazeny znaky, které mají v HTML speciální význam. 
+V textu, který se vkládá do šablon, jsou automaticky nahrazeny znaky, které mají v HTML speciální význam.
 Zabraňuje se tak bezpečnostním rizikům, kdy se vstup od uživatele interpretuje jako HTML.
 
 Představ si, že bys měla následující routu a šablonu:
@@ -289,11 +289,11 @@ def hello(name):
 ```
 
 Nějaký zákeřný útočník by mohl zkusit do stránky vložit JavaScript tak,
-že ho zkusí vepsat jako součást svého jména: `/hello/<img src="." onerror="alert('Bu bu bu!')">` Jenže
+že ho zkusí vepsat jako součást svého jména: `/hello/<img src="." onerror="window.alert('Bu bu bu!')">` Jenže
 Jinja2 nás ochrání a výsledné HTML bude následující:
 
 ```html
-<p>Ahoj &lt;img src=&#34;.&#34; onerror=&#34;alert(&#39;Bu bu bu!&#39;)&#34;&gt;!</p>
+<p>Ahoj &lt;img src=&#34;.&#34; onerror=&#34;window.alert(&#39;Bu bu bu!&#39;)&#34;&gt;!</p>
 ```
 
 ----
@@ -305,7 +305,7 @@ Zkuste si vytvořit HTML stránku, která obsahuje následující kód a otevřt
 
 ```html
 <p>
-    Ahoj <img src="." onerror="alert('Bu bu bu!')">!
+    Ahoj <img src="." onerror="window.alert('Bu bu bu!')">!
 </p>
 ```
 
@@ -318,9 +318,9 @@ To se dá zajistit dvěma způsoby. Nejjednodušší je vestavěný filtr `safe`
 
 Představ si, že v proměnné `april_date` máš řetězec `1. dubna`. Pokud by sis dostatečně zmenšila okno prohlížeče
 a text `1. dubna` by se na stránce ocitl na konci řádku, mohl by se škaredě zalomit tak, že `1.` zůstane
-na jednom řádku a `dubna` skočí na druhý. To se špatně čte. HTML nám umožňuje zabránit zalamování tím, 
-že místo běžné mezery použijeme značku `&nbsp;` (tzv. _entitu_) pro [nedělitelnou mezeru][nbsp]. 
-Můžeš si tedy datum uložit jako `1.&nbsp;dubna`. Jenže pokud budeš chtít takový text vypsat v šabloně, 
+na jednom řádku a `dubna` skočí na druhý. To se špatně čte. HTML nám umožňuje zabránit zalamování tím,
+že místo běžné mezery použijeme značku `&nbsp;` (tzv. _entitu_) pro [nedělitelnou mezeru][nbsp].
+Můžeš si tedy datum uložit jako `1.&nbsp;dubna`. Jenže pokud budeš chtít takový text vypsat v šabloně,
 Jinja2 nás opět ochrání:
 
 [nbsp]: https://cs.wikipedia.org/wiki/Nezlomiteln%C3%A1_mezera
@@ -361,11 +361,11 @@ Apríl je {{ '1. dubna'|nowrap }}
 
 #### Entity
 
-Entity prohlížeč _zobrazí_, jako by tam byly znaky, které mají v HTML speciální význam (`<`, `>`, `&` atd.) 
-nebo by se špatně psaly. Zobrazí je, ale nechová se k nim jako by tam opravdu byly, 
-proto se z nich nestanou například tagy. Entita vždy začíná `&` a končí `;` 
+Entity prohlížeč _zobrazí_, jako by tam byly znaky, které mají v HTML speciální význam (`<`, `>`, `&` atd.)
+nebo by se špatně psaly. Zobrazí je, ale nechová se k nim jako by tam opravdu byly,
+proto se z nich nestanou například tagy. Entita vždy začíná `&` a končí `;`
 
-Některé se dají zapsat také písmeny. Třeba nedělitelná mezera jako `&nbsp;` (zkratka z&nbsp;_Non-Breaking SPace_) 
+Některé se dají zapsat také písmeny. Třeba nedělitelná mezera jako `&nbsp;` (zkratka z&nbsp;_Non-Breaking SPace_)
 a pro některé existuje jen číselná varianta (pro nedělitelnou mezeru je to `&#160;`.
 
 ---
@@ -427,7 +427,7 @@ nepotřebujeme nijak generovat, ale stačí je vzít jako soubor a poslat
 uživateli do prohlížeče, nazýváme je v kontextu dynamických webových stránek
 _statickými soubory_.
 
-Podobně jako máš ve Flasku složku na šablony pojmenovanou `templates`, udělej 
+Podobně jako máš ve Flasku složku na šablony pojmenovanou `templates`, udělej
 si vedle ní složku i na statické soubory, `static`. Z Pythonu nebo ze šablony se
 pak na soubory v této složce můžeš odkázat následovně:
 
@@ -443,7 +443,7 @@ do hlavičky následující řádek:
 ```
 
 Prohlížeč tak dostane v `href` vygenerovanou cestu `static/style.css`
-kde CSS najde, pokud ho tam umístíš. 
+kde CSS najde, pokud ho tam umístíš.
 
 S obrázky to funguje obdobně:
 
