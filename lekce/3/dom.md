@@ -41,7 +41,7 @@ function addText() {
 window.onload = addText;
 ```
 
-V JavaScriptu je několik objektů, které máš k dispozici kdekoliv ve svém programu a proto se jim říká _globální_. Zpřístupňují určité věci z prohlížeče. S objektem `window` ses již setkala, ten představuje okno prohlížeče (nebo spíš prohlížeč jako takový). K tagům na stránce se můžeš dostat přes jiný globální objekt, `document`.
+V JavaScriptu je několik objektů, které máš k dispozici kdekoliv ve svém programu a proto se jim říká _globální_. Zpřístupňují určité věci z prohlížeče. S&nbsp;objektem `window` ses již setkala, ten představuje okno prohlížeče (nebo spíš prohlížeč jako takový). K tagům na stránce se můžeš dostat přes jiný globální objekt, `document`.
 
 Funkce `document.getElementsByTagName()` přijímá název tagu a vrátí pole všech tagů toho názvu, jaké najde na stránce. My víme, že máme na stránce jeden tag s názvem `p`, tak si z pole vytáhneme první prvek a změníme mu následně text, který obsahuje. To se dělá přiřazením do vlastnosti `innerText`.
 
@@ -74,7 +74,7 @@ Když se podíváš do zdrojového kódu stránky (<kbd>Ctrl + U</kbd>, popříp
 
 Pokud bys chtěla vidět i změny, které provedl JavaScript, musíš si v prohlížeči otevřít vývojářské nástroje a přepnout se v menu na _Elements_.
 
-<figure class="image"><img src="live-dom.png" class="c-sr-only" width="100%" style="max-height:70vh;width:auto;" alt="DOM naživo"></figure>
+<figure class="image"><img src="live-dom.png" style="max-height:70vh;width:auto;" alt="DOM naživo"></figure>
 
 ---
 

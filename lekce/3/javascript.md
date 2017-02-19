@@ -69,9 +69,9 @@ Všimni si zejména následujících rozdílů:
 
 - Místo odsazení a dvojteček označuje bloky kódu dvojice závorek: `{` a `}`
 - Příkazy se ukončují středníkem. Nebo také ne. Je nepovinný. Vývojáři se o to, zda v JavaScriptu středníky psát nebo ne, přou po staletí.
-- Zatímco v Pythonu je zvykem pojmenovávat proměnné a funkce s podtržítkem mezi slovy, v JavaScriptu se používá tzv. _camelCase_ konvence.
+- Zatímco v Pythonu je _zvykem_ pojmenovávat proměnné a funkce s podtržítkem mezi slovy, v JavaScriptu se používá tzv. _camelCase_ konvence.
 
-I přesto, že je mezi zápisy obou jazyků spousta rozdílů, jsi schopná program v JavaScriptu přečíst a do jisté míry mu porozumět. Není tedy čeho se bát, je to jako bys uměla Italsky a zajela si na dovolenou do Barcelony. Něco vyloženě znáš, základy tušíš, složitější věci si vyhledáš.
+I přesto, že je mezi zápisy obou jazyků spousta rozdílů, jsi schopná program v JavaScriptu přečíst a do jisté míry mu porozumět. Není tedy čeho se bát, je to jako bys uměla italsky a zajela si na dovolenou do Barcelony. Něco vyloženě znáš, základy tušíš, složitější věci si vyhledáš.
 
 ---
 
@@ -97,7 +97,7 @@ Když si chceš vyzkoušet kousky Pythonu, můžeš použít interaktivní `pyth
 
 Otevři si prohlížeč Google Chrome a použij klávesovou zkratku <kbd>Ctrl + Shift + J</kbd> (na Macu <kbd>Cmd + Alt + J</kbd>). Měla by se ti otevřít _vývojářská konzole_, kde můžeme spouštět JavaScript.
 
-<figure class="image"><img src="console.png" class="c-sr-only" width="100%" style="max-height:70vh;width:auto;" alt="konzole v Google Chrome"></figure>
+<figure class="image"><img src="console.png" style="max-height:70vh;width:auto;" alt="konzole v Google Chrome"></figure>
 
 Tam, kde ti bliká kurzor, vlož následující kód:
 
@@ -110,6 +110,7 @@ Stiskni <kbd>Enter</kbd>. Stránka se tě zeptá na jméno (funkce `window.promp
 Můžeš zkusit vložit i jednořádkový kód, jenž jsme si ukázali v předchozí sekci tohoto návodu, a ověřit tak, že opravdu i bez odsazování bude program fungovat. Dostaneš výsledek volání funkce `console.log(isUkulele(6))`, tedy `false` (ukulele má struny čtyři, ne šest).
 
 ----
+
 <!-- .slide: data-state="c-slide-task" -->
 
 ## Cvičení
@@ -132,7 +133,7 @@ Když si chceme v Pythonu nastavit nějakou novou proměnnou, stačí nám uděl
 strings_count = 4
 ```
 
-Proměnná bez hodnoty nemůže existovat. V JavaScriptu je to trochu jinak. Máme klíčové slovo `var` (jako _variable_, angl. proměnná), jímž v programu říkáme: "Vytvoř mi novou proměnnou s tímto názvem." Volitelně můžeme přidat i počáteční hodnotu. Ukažme si to třeba na funkci, která z hodiny umí poznat, zda je den, nebo noc.
+Proměnná bez hodnoty nemůže existovat. V JavaScriptu je to trochu jinak. Máme klíčové slovo `var` (jako _variable_, angl. proměnná), jímž v programu říkáme: „Vytvoř mi novou proměnnou s tímto názvem.“ Volitelně můžeme přidat i počáteční hodnotu. Ukažme si to třeba na funkci, která z hodiny umí poznat, zda je den nebo noc.
 
 ```js
 function getTimePeriod(now) {
@@ -158,6 +159,7 @@ console.log(getTimePeriod(now));
 Proměnnou `timePeriod` jsme vytvořili prázdnou, a až později jsme do ní přiřadili nějakou hodnotu. Proměnnou `hour` jsme ale vytvořili už rovnou s nějakou počáteční hodnotou. Způsob, jakým v JavaScriptu fungují proměnné, je složitější, ale toto nám bude prozatím stačit.
 
 ---
+
 <!-- .slide: data-state="c-slide-task" -->
 
 ## Cvičení
@@ -264,6 +266,7 @@ window.alert('Hello!');
 Funkce `window.alert()` vytvoří vyskakovací tabulku s textem, který ji předáme. Uživatel bude muset tabulku potvrdit tlačítkem <button>OK</button>, jinak nezmizí.
 
 ----
+
 <!-- .slide: data-state="c-slide-task" -->
 
 ## Cvičení
@@ -273,6 +276,7 @@ Funkce [`window.alert()`][alert] je asi nejznámější funkcí JavaScriptu vůb
 [alert]: https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
 [confirm]: https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm
 [prompt]: https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt
+
 
 ---
 
@@ -286,7 +290,7 @@ S JavaScriptem v prohlížeči je to o něco složitější. Prohlížečů je v
 
 [Nejucelenější dokumentace k JavaScriptu][js-doc] je na MDN, což je web pro vývojáře od organizace Mozilla, která stojí za prohlížečem [Firefox][]. Na každé stránce pojednávající o nějaké části JavaScriptu je vždy dole tabulka, jak si vysvětlovaná funkcionalita stojí z hlediska podpory v různých prohlížečích.
 
-<figure class="image"><img src="compatibility.png" class="c-sr-only" width="100%" style="max-height:70vh;width:auto;margin-bottom:1em;" alt="kompatibilita v prohlížečích"></figure>
+<figure class="image"><img src="compatibility.png" style="max-height:70vh;width:auto;margin-bottom:1em;" alt="kompatibilita v prohlížečích"></figure>
 
 Hodit se může i již zmiňované [caniuse.com][caniuse], kde jsou kromě HTML a CSS pokryty některé oblasti JavaScriptu.
 
