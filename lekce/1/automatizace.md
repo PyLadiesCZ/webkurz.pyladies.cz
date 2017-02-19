@@ -20,7 +20,7 @@ Nástroj, který umí stránku obnovit za tebe tak, že v podstatě okamžitě p
 
 ### Node.js
 
-Protože je _Browsersync_ napsaný v _Javascriptu_, potřebuješ si nejdřív nainstalovat prostředí pro jeho běh na tvém počítači, které se jmenuje _Node.js_.
+Protože je _Browsersync_ napsaný v _JavaScriptu_, potřebuješ si nejdřív nainstalovat prostředí pro jeho běh na tvém počítači, které se jmenuje _Node.js_.
 
 Stáhni si a nainstaluj si nejnovější _Node.js_ (aktuálně 7.5.0) z [oficiálních stránek](https://nodejs.org/).
 
@@ -110,10 +110,10 @@ Když spustíš příkaz `gulp`, hledá soubor `gulpfile.js` ve stejné složce,
 
 Vytvoř si `gulpfile.js` ve stejné složce, kde máš `index.html`.
 
-Úkoly v Gulpu se píšou v Javascriptu, kterému se budeme věnovat v jedné z příštích lekcí, tak si zatím zkopíruj tuhle předpřipravenou konfiguraci, není potřeba rozumět každé závorce. Přesto v něm najdeš komentáře, které vysvětlují, co se v něm zhruba děje.
+Úkoly v Gulpu se píšou v JavaScriptu, kterému se budeme věnovat v jedné z příštích lekcí, tak si zatím zkopíruj tuhle předpřipravenou konfiguraci, není potřeba rozumět každé závorce. Přesto v něm najdeš komentáře, které vysvětlují, co se v něm zhruba děje.
 
 ```javascript
-// Tenhle řádek je řádkový komentář v Javascriptu
+// Tenhle řádek je řádkový komentář v JavaScriptu
 // cokoli za // nic nedělá 
 
 // načteme gulp

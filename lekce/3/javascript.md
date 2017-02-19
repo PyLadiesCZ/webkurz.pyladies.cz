@@ -1,4 +1,4 @@
-# Javascript 
+# JavaScript
 
 v prohlížeči
 
@@ -6,7 +6,7 @@ cilem je hlavně měnit DOM
 
 ----
 
-## Javascript versus Python
+## JavaScript versus Python
 
 Klíčový pro rychlý pochopení, nechcem nějak moc programovat, takže ano, pochopit jak se dělaj proměnný a že středníky…
 
@@ -20,7 +20,7 @@ TBD
 
 ---
 
-## Jak něco v DOMu vybrat 
+## Jak něco v DOMu vybrat
 
 ----
 
@@ -45,11 +45,11 @@ TBD
 
 ----
 
-Možná v ní jen napsat skoro to samý 
+Možná v ní jen napsat skoro to samý
 
 ---
 
-## XHR 
+## XHR
 
 ----
 
@@ -64,7 +64,7 @@ Knihovna se používá takhle
 
 nalinkuješ js, css
 
-nějak zavoláš 
+nějak zavoláš
 
 nebo dokonce jen napíšeš data atributy a knihovna si to najde a zpracuje
 
