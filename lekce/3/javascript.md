@@ -137,9 +137,12 @@ strings_count = 4
 Proměnná bez hodnoty nemůže existovat. V JavaScriptu je to trochu jinak. Máme klíčové slovo `var` (jako _variable_, angl. proměnná), jímž v programu říkáme: "Vytvoř mi novou proměnnou s tímto názvem." Volitelně můžeme přidat i počáteční hodnotu. Ukažme si to třeba na funkci, která z hodiny umí poznat, zda je den, nebo noc.
 
 ```js
-function getTimePeriod(hour) {
+function getTimePeriod(now) {
     // nová proměnná, bez hodnoty
     var timePeriod;
+
+    // nová proměnná, s počáteční hodnotou
+    var hour = now.getHours();
 
     if (hour > 6 && hour < 22) {
         timePeriod = 'day';
@@ -150,14 +153,34 @@ function getTimePeriod(hour) {
     return timePeriod;
 }
 
-// nové proměnné, s počáteční hodnotou
-var currentTime = new Date();
-var hour = currentTime.getHours();
-
-getTimePeriod(hour);
+var now = new Date();
+console.log(getTimePeriod(now));
 ```
 
-Způsob, jakým v JavaScriptu fungují proměnné, je složitější, ale toto nám bude prozatím stačit.
+Proměnnou `timePeriod` jsme vytvořili prázdnou, a až později jsme do ní přiřadili nějakou hodnotu. Proměnnou `hour` jsme ale vytvořili už rovnou s nějakou počáteční hodnotou. Způsob, jakým v JavaScriptu fungují proměnné, je složitější, ale toto nám bude prozatím stačit.
+
+---
+<!-- .slide: data-state="c-slide-task" -->
+
+## Cvičení
+
+[`new Date()`][js-now] vytváří objekt s aktuálním datem a časem. Je to něco jako [`datetime.now()`][py-now] v Pythonu. Představ si, že máš web vytvořený ve Flasku a v šabloně budeš do HTML vypisovat výsledek `datetime.now()`. Na té samé stránce budeš spouštět `new Date()` v JavaScriptu. Web budeš provozovat na nějakém serveru v ČR. Bude se nějak lišit výsledek `new Date()` a `datetime.now()`,
+
+- když si stránku načteš z Českých Budějovic?
+- když si stránku načteš z Tokia?
+
+[js-now]: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date
+[py-now]: https://docs.python.org/3/library/datetime.html#datetime.datetime.now
+
+<details>
+    <summary>Řešení</summary>
+    <p>
+        Protože JavaScript běží u návštěvníka stránek v prohlížeči, dostaneme vždy čas, jaký má nastavený uživatelův počítač. To znamená, že ve stejný okamžik dostane tvůj program v JavaScriptu jiný čas, pokud jej načte uživatel v ČR a pokud jej načte uživatel v Japonsku.
+    </p>
+    <p>
+        Oproti tomu Python pracuje vždy s časem na serveru. Když pojedou naše stránky na serveru, který se nachází v ČR a má nastavený středoevropský čas, budeme všem uživatelům na světě ukazovat stále stejný, středoevropský čas.
+    </p>
+</details>
 
 ---
 
@@ -172,21 +195,21 @@ JavaScript nemá seznamy a slovníky. Místo toho má [pole][] (angl. _array_) a
 
 ```js
 var clothes = [
-  'shoes',
-  't-shirt',
-  'hat',
-  'skirt',
-  'socks',
+    'shoes',
+    't-shirt',
+    'hat',
+    'skirt',
+    'socks',
 ];
-console.log(clothes[1]); // vypíše 't-shirt'
+console.log(clothes[1]); // vypíše t-shirt
 
 var angryBirdsScore = {
-  'veronika': 6810,
-  'dan': 4245,
-  'zuzka': 29233,
-  'honza': 3824,
+    'veronika': 6810,
+    'dan': 4245,
+    'zuzka': 29233,
+    'honza': 3824,
 };
-console.log(angryBirdsScore['honza']); // vypíše '3824'
+console.log(angryBirdsScore['honza']); // vypíše 3824
 ```
 
 Jak je vidět, na první pohled vypadají stejně. Občas se ale chovají trochu jinak, takže je dobré vždy ověřit, co přesně s nimi můžeš dělat a jak.
@@ -200,8 +223,8 @@ var population = {
   'frydek-mistek': 56945,
 };
 console.log(population.karvina); // vypíše 65141
-console.log(population['ostrava']); // vypíše 294200
-console.log(population['frydek-mistek']); // vypíše 56945
+console.log(population['ostrava']); // 294200
+console.log(population['frydek-mistek']); // 56945
 ```
 
 ---
@@ -263,10 +286,12 @@ Když programuješ v Pythonu, měla by sis hlídat verzi jazyka, jakou použív�
 
 S JavaScriptem v prohlížeči je to o něco složitější. Prohlížečů je více (Chrome, Safari, Firefox, a další) a každý z nich může JavaScript interpretovat trochu jinak. Není tedy až tolik podstatná verze jazyka, ale zda tu kterou funkcionalitu daný prohlížeč podporuje a třeba i do jaké míry.
 
-[Nejucelenější dokumentace k JavaScriptu][js-doc] je na MDN, což je web pro vývojáře od organizace Mozilla, která stojí za prohlížečem [Firefox][]. Na každé stránce pojednávající o nějaké části JavaScriptu je vždy dole tabulka, jak si vysvětlovaná funkcionalita stojí z hlediska podpory v různých prohlížečích. Pro kontrolu lze ale použít i již zmiňované [caniuse.com][caniuse].
+[Nejucelenější dokumentace k JavaScriptu][js-doc] je na MDN, což je web pro vývojáře od organizace Mozilla, která stojí za prohlížečem [Firefox][]. Na každé stránce pojednávající o nějaké části JavaScriptu je vždy dole tabulka, jak si vysvětlovaná funkcionalita stojí z hlediska podpory v různých prohlížečích.
 
-<figure class="image"><img src="compatibility.png" class="c-sr-only" width="100%" style="max-height:70vh;width:auto;" alt="kompatibilita v prohlížečích"></figure>
+<figure class="image"><img src="compatibility.png" class="c-sr-only" width="100%" style="max-height:70vh;width:auto;margin-bottom:1em;" alt="kompatibilita v prohlížečích"></figure>
+
+Hodit se může i již zmiňované [caniuse.com][caniuse], kde jsou kromě HTML a CSS pokryty některé oblasti JavaScriptu.
 
 [js-doc]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [Firefox]: https://www.mozilla.org/cs/firefox/products/
-[caniuse]: http://caniuse.com/
+[caniuse]: http://caniuse.com/#cats=JS%20API
