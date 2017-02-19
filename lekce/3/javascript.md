@@ -22,8 +22,6 @@ HTML, CSS a JavaScript se interpretují v prohlížeči u uživatele, takže se 
 
 ----
 
-Stránka může…
-
 - reagovat na to, že uživatel pohne myší, posouvá stránku, označí text.
 - jakkoliv měnit strukturu HTML a CSS vlastnosti dané stránky:
     - animovat věci na stránce
