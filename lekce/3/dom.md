@@ -197,7 +197,9 @@ Dnes prohlížeče interpretují JavaScript každý vcelku stejně a navíc už 
 
 Jeden z kovbojů, John Resig, se pokusil o nastolení pořádku a vytvořil knihovnu [jQuery][], která se snažila práci s DOMem usnadnit a také ji sjednotit mezi jednotlivými prohlížeči. Získala si obrovskou popularitu mezi lidmi po celém světě a ovlivnila i vývoj jazyka samotného. Třeba metody `querySelector()` a `querySelectorAll()` v dnešním JavaScriptu jsou jednoznačně dědictvím jQuery.
 
-Ačkoliv je jQuery stále to první, po čem mnoho lidí sáhne, dá se dnes již pohodlně programovat i bez této knihovny. Jednoznačně ale stále patří mezi základní okruh znalostí frontendového vývojáře. Je dobré vědět, že jQuery existuje, tušit, jak kód v jQuery vypadá, a umět jej alespoň trochu číst.
+Ačkoliv se dnes dá mnoho věcí v prohlížeči programovat pohodlně i bez této knihovny, stále je mnohdy jQuery to první, po čem spousta lidí sáhne. Je to balíček základních věcí, díky kterým lze bez velkých znalostí rozpohybovat webové stránky.
+
+Proto by se snad i dalo říci, že v jQuery umí pracovat víc lidí, než kolik jich doopravdy zná JavaScript. Jednoznačně tedy jQuery patří mezi základní okruh znalostí frontendového vývojáře. Je dobré vědět, že existuje, tušit, jak kód v jQuery vypadá, umět jej číst.
 
 [jQuery]: https://jquery.com/
 
