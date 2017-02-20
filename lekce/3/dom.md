@@ -174,14 +174,191 @@ document.querySelector('.heading');
 document.querySelectorAll('.heading');
 ```
 
+----
+
+<!-- .slide: data-state="c-slide-task" -->
+
+## Cvičení
+
+Jdi na stránky [pyladies.cz](http://pyladies.cz/), otevři si v prohlížeči konzoli a zkoušej vybírat různé prvky na stránce. Jako první můžeš zkusit najít například všechny odkazy, které se nacházejí v menu:
+
+```js
+document.querySelectorAll('.nav a');
+```
+
+Kolik jich je na stránce? Délka pole se dá zjistit přes vlastnost `length`:
+
+```js
+document.querySelectorAll('.nav a').length;
+```
+
+Kolik je na stránce obrázků `<img>`?
+
+---
+
+## Reagujeme na události
+
+----
+
+V JavaScriptu existují tzv. události (angl. _event_), na které může tvůj program čekat a když se stanou, může něco vykonat. Je to dobré na to, abys mohla stránku ovlivňovat i v jiný okamžik, než když se načte.
+
+Už jsi se setkala s událostí `windows.onload`. Vlastnost `onload` je ale jen taková zkratka. Standardně se s událostmi pracuje následovně:
+
+```js
+function onLoad() {
+    console.log('Načetla se stránka!');
+}
+window.addEventListener('load', onLoad);
+```
+
+Tedy na objektu, u kterého chceš na událost číhat, použiješ metodu `addEventListener()` se dvěma parametry, a to názvem události a funkcí, která má událost obsloužit, když nastane. Zajímavější událost může vypadat takto:
+
+```html
+<input type="submit" value="Klikni na mě">
+```
+
+```js
+function onClick() {
+    window.alert('Baf!');
+}
+
+function onLoad() {
+    var input = document.querySelector('input');
+    input.addEventListener('click', onClick);
+}
+
+window.addEventListener('load', onLoad);
+```
+
+Na stránce máš tlačítko. Samo o sobě nic nedělá, protože není ve formuláři. Pomocí JavaScriptu ale můžeme nastavit, že pokud na něj uživatel stránek klikne (událost `click`), spustí se tvoje funkce `onClick()`. Celý kód pak bylo opět potřeba spustit až ve chvíli, kdy na objektu `window` proběhne událost `load`.
+
+----
+
+<!-- .slide: data-state="c-slide-task" -->
+
+## Cvičení
+
+Událostí je na stránce k dispozici [mnoho][events-doc]. Zkus vymyslet, jak bys mohla využít událost `keyup` (uživatel stiskl libovolnou klávesu) s tagem `<textarea>`.
+
+[events-doc]: https://developer.mozilla.org/en-US/docs/Web/Events
+
+---
+
+### Anonymní funkce
+
+----
+
+Program, který je v předešlé sekci, by se dal zapsat i následovně:
+
+```js
+window.addEventListener('load', function () {
+  var input = document.querySelector('input');
+
+  input.addEventListener('click', function () {
+      window.alert('Baf!');
+  });
+});
+```
+
+V JavaScriptu lze totiž funkce vytvářet i bez toho, abychom jim dávali jméno. Jsou to potom tzv. _anonymní funkce_, jednorázové.
+
 ---
 
 ## Měníme DOM
 
 ----
 
-### změnit/přidat/odebrat třídy
-čímž dostanou možnost vizuálně čarovat s tím
+### Změna třídy
+
+Umět změnit třídu HTML tagu je zásadní, protože tím můžeš ovlivnit, jaká CSS pravidla se na něj budou aplikovat. Ulož si následující HTML:
+
+```html
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>PyLadies</title>
+        <script src="dom.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <p>
+            Žilo jednou jedno děvčátko
+            a to dostalo od babičky
+            k narozeninám dárek – červenou
+            čepičku. Rádo ji nosilo, a proto
+            jí říkali Červená karkulka.
+        </p>
+    </body>
+</html>
+```
+
+Do připojeného souboru `dom.js` vytvoř program, který přidá odstavci třídu `red`, pokud na něj uživatel stránky najede kurzorem:
+
+```js
+window.addEventListener('load', function () {
+    var p = document.querySelector('p');
+
+    p.addEventListener('mouseover', function () {
+        p.className = 'red';
+    });
+
+    p.addEventListener('mouseout', function () {
+        p.className = '';
+    });
+});
+```
+
+Když si stránku načteš v prohlížeči a zkusíš jezdit kurzorem na odstavec a z něj, neuvidíš žádnou změnu. Ale pokud si otevřeš vývojářské nástroje a přepneš se na záložku _Elements_, uvidíš, že se hodnota atributu `<p class="...">` s pohybem kurzoru mění.
+
+Možná sis všimla, že k HTML v tomto příkladu byl připojen i CSS soubor `style.css`, ale ten zatím neexistuje. Vytvoř ho tedy a přiřaď v něm třídě `red` nějaké vlastnosti.
+
+```css
+p {
+    padding: 10px;
+}
+
+.red {
+    background: red;
+    color: white;
+}
+```
+
+Aby se po odstavci trochu lépe jezdilo myší, přidali jsme mu nějakou vnitřní výplň po okrajích (`padding`). Nyní zkus stránku obnovit v prohlížeči. Kurzor myši by měl měnit barvu odstavce.
+
+## Více tříd
+
+Běžně tagy nemají jen jednu třídu, ale několik. Vlastnost `className` je potom poněkud nepraktická:
+
+```html
+<p class="big warning">Nesahat!</p>
+```
+
+```js
+var p = document.querySelector('p');
+console.log(p.className); // 'big warning'
+```
+
+Proto je v nových prohlížečích k dispozici i jiný způsob pro práci s třídami:
+
+```js
+var p = document.querySelector('p');
+console.log(p.classList); // ['big', 'warning']
+```
+
+[Vlastnost `classList`][classlist] má navíc metody na přidávání, odebírání a "přepínání" tříd:
+
+```js
+var p = document.querySelector('p');
+
+p.classList.add('red'); // ['big', 'warning', 'red']
+p.classList.remove('big'); // ['warning', 'red']
+p.classList.contains('big'); // false
+
+p.classList.toggle('warning'); // ['red']
+p.classList.toggle('warning'); // ['warning', 'red']
+```
+
+[classlist]: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 
 ----
 
@@ -204,8 +381,6 @@ Proto by se snad i dalo říci, že v jQuery umí pracovat víc lidí, než koli
 [jQuery]: https://jquery.com/
 
 TBD
-
----
 
 <!--
 nejaky priklady a zakladni srandy ve vanilla js, ktery dneska uz umi skoro vsechno co jquery... pak zminit ze existuji veci, na ktery se muzou podivat dal - jquery, pripadne nejaky dnesni srandy
