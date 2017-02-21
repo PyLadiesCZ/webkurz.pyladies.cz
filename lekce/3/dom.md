@@ -360,33 +360,3 @@ p.classList.toggle('warning'); // ['warning', 'red']
 
 [classlist]: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 
-----
-
-### Změnit nějaký kus HTML (vygenerovat/upravit/smazat)
-
----
-
-## Knihovna jQuery
-
-----
-
-Dnes prohlížeče interpretují JavaScript každý vcelku stejně a navíc už existuje spousta užitečných metod na práci s DOMem. Jenže za dávných časů tomu tak nebylo. Svět programování v prohlížeči připomínal spíše nebezpečný divoký západ.
-
-Jeden z kovbojů, John Resig, se pokusil o nastolení pořádku a vytvořil knihovnu [jQuery][], která se snažila práci s DOMem usnadnit a také ji sjednotit mezi jednotlivými prohlížeči. Získala si obrovskou popularitu mezi lidmi po celém světě a ovlivnila i vývoj jazyka samotného. Třeba metody `querySelector()` a `querySelectorAll()` v dnešním JavaScriptu jsou jednoznačně dědictvím jQuery.
-
-Ačkoliv se dnes dá mnoho věcí v prohlížeči programovat pohodlně i bez této knihovny, stále je mnohdy jQuery to první, po čem spousta lidí sáhne. Je to balíček základních věcí, díky kterým lze bez velkých znalostí rozpohybovat webové stránky.
-
-Proto by se snad i dalo říci, že v jQuery umí pracovat víc lidí, než kolik jich doopravdy zná JavaScript. Jednoznačně tedy jQuery patří mezi základní okruh znalostí frontendového vývojáře. Je dobré vědět, že existuje, tušit, jak kód v jQuery vypadá, umět jej číst.
-
-[jQuery]: https://jquery.com/
-
-TBD
-
-<!--
-nejaky priklady a zakladni srandy ve vanilla js, ktery dneska uz umi skoro vsechno co jquery... pak zminit ze existuji veci, na ktery se muzou podivat dal - jquery, pripadne nejaky dnesni srandy
-
-ale pak začít (asi) se základní magií, tedy vybrat prvek/prvky a změnit/přidat/odebrat třídu
-čímž dostanou možnost vizuálně čarovat s tím
-
-asi bych si představoval pak ukázat jQuery (možná v ní jen napsat skoro to samé)
--->
