@@ -7,7 +7,7 @@ Tento kurz je rozšířením základního kurzu, takže to, co z něj už znáš
 ## Obsah kurzu
 
 
-V kurzu se dozvíš to nejdůležitější z HTML, CSS i programovacího jazyka Javascript, aby sis uměla vytvořit jednoduchou webovou stránku a zveřejnit ji na internet. Taky se naučíš, jak do toho zapojit Python.
+V kurzu se dozvíš to nejdůležitější z HTML, CSS i programovacího jazyka JavaScript, aby sis uměla vytvořit jednoduchou webovou stránku a zveřejnit ji na internet. Taky se naučíš, jak do toho zapojit Python.
 
 Kurz je poměrně krátký, a tak se často spokojíme s popisem, který není úplně přesný a nezahrnuje všechny možnosti. Postihuje ale to nejobvyklejší a pro praxi podstatné.
   
