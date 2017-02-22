@@ -20,6 +20,7 @@ Vytvoř si HTML stránku s několika tagy a připojeným souborem `dom.js`:
 <!DOCTYPE HTML>
 <html>
     <head>
+     	<meta charset="UTF-8">
         <title>PyLadies</title>
         <script src="dom.js"></script>
     </head>
@@ -33,12 +34,12 @@ Vytvoř si HTML stránku s několika tagy a připojeným souborem `dom.js`:
 Náš první JavaScriptový program, který pracuje s DOMem, bude vypadat následovně:
 
 ```js
-function addText() {
-    var tags = document.getElementsByTagName('p');
-    var p = tags[0];
-    p.innerText = 'JavaScript je fajn!';
+function pridejText() {
+    var odstavce = document.getElementsByTagName('p');
+    var prvniOdstavec = odstavce[0];
+    prvniOdstavec.innerText = 'JavaScript je fajn!';
 }
-window.onload = addText;
+window.onload = pridejText;
 ```
 
 V JavaScriptu je několik objektů, které máš k dispozici kdekoliv ve svém programu a proto se jim říká _globální_. Zpřístupňují určité věci z prohlížeče. S&nbsp;objektem `window` ses již setkala, ten představuje okno prohlížeče (nebo spíš prohlížeč jako takový). K tagům na stránce se můžeš dostat přes jiný globální objekt, `document`.
@@ -53,7 +54,7 @@ Jeho metoda `getElementsByTagName()` přijímá název tagu a vrátí pole všec
 
 Kód, který manipuluje s DOMem, je dobré spouštět až ve chvíli, kdy má prohlížeč celé HTML přečtené a všechny tagy zobrazené. Když se prohlížeč snaží zobrazit HTML stránku, čte totiž HTML tagy postupně, shora dolů. JavaScript připojujeme ke stránce dřív, než se na ní vyskytuje tag `<p></p>`, takže by se mohlo stát, že v době spuštění našeho programu ještě prohlížeč o žádném `p` nebude vědět. Potom by metoda `getElementsByTagName('p')` mohla vrátit prázdné pole a program by nefungoval.
 
-Naštěstí lze tomuto předejít. Ve chvíli, kdy má prohlížeč celou stránku zpracovanou, spustí funkci, která bude přiřazená do vlastnosti `windows.onload`. Toho je využito i v příkladu výše.
+Naštěstí lze tomuto předejít. Ve chvíli, kdy má prohlížeč celou stránku zpracovanou, spustí funkci, která bude přiřazená do vlastnosti `window.onload`. Toho je využito i v příkladu výše.
 
 ---
 
@@ -74,8 +75,9 @@ Když se podíváš do zdrojového kódu stránky (<kbd>Ctrl + U</kbd>, popříp
 <!DOCTYPE HTML>
 <html>
     <head>
+     	<meta charset="UTF-8">
         <title>PyLadies</title>
-        <script src="hello.js"></script>
+        <script src="dom.js"></script>
     </head>
     <body>
         <h1>PyLadies</h1>
@@ -131,7 +133,9 @@ document.getElementsByClassName('odd');
 
 ### getElementById()
 
-Kromě tříd lze tagům přiřadit i tzv. ID, tedy nějaký identifikátor. Ten musí být v rámci jedné HTML stránky jedinečný. Metoda, která hledá tagy podle ID, tedy nevrací pole, ale právě jeden výsledek.
+Kromě tříd lze tagům přiřadit i tzv. ID, tedy nějaký identifikátor. Ten musí být v rámci jedné HTML stránky jedinečný, tedy dva prvky nesmí mít stejné ID. 
+
+Metoda, která hledá tagy podle ID, tedy nevrací pole, ale právě jeden výsledek.
 
 ```html
 <h1>O Popelce<h1>
@@ -151,27 +155,51 @@ var id = 'kapitola-prevlekala-se-za-jine-lidi';
 document.getElementById(id);
 ```
 
+----
+
+
+#### Identifikátor
+
+Malá odbočka: atribut `id` se dá použít i pro odkazování na část stránky.
+
+Odkaz v rámci jedné stránky na nadpis z příkladu výše by vypadal takto:  
+
+```html
+<a href="#kapitola-mluvila-na-zviratka">…</a>
+```
+Kdybychom odkazovali z jiné stránky a tato se jmenovala `o-popelce.html`, vypadalo by to takto.
+
+```html
+<a href="o-popelce.html#kapitola-mluvila-na-zviratka">…</a>
+```
+
+Po otevření takového odkazu, prohlížeč odskroluje stránku tak, aby byl vidět začátek elementu s daným ID.
+
+ID lze použít i v selektorech v CSS `#nejake-id { color: red; }`, ale má to spoustu nevýhod a proto to se tomu vyhni. 
+
+
+
 ### querySelector(), querySelectorAll()
 
 S těmito metodami můžeme použít na hledání tagů celý CSS selektor.
 
 ```html
-<h1 class="heading">O Popelce<h1>
+<h1 class="nadpis">O Popelce<h1>
 <div>
-    <h2 class="heading">Mluvila na zvířátka</h2>
+    <h2 class="nadpis">Mluvila na zvířátka</h2>
     <p>Doktor diagnostikoval samomluvu.</p>
 </div>
 ```
 
 ```js
 // vrátí objekt pro právě jeden tag, nadpis <h2>
-document.querySelector('div .heading');
+document.querySelector('div .nadpis');
 
 // vrátí objekt pro právě jeden tag, nadpis <h1>
-document.querySelector('.heading');
+document.querySelector('.nadpis');
 
 // vrátí pole objektů, nadpisy <h1> a <h2>
-document.querySelectorAll('.heading');
+document.querySelectorAll('.nadpis');
 ```
 
 ----
@@ -202,13 +230,13 @@ Kolik je na stránce obrázků `<img>`?
 
 V JavaScriptu existují tzv. události (angl. _event_), na které může tvůj program čekat a když se stanou, může něco vykonat. Je to dobré na to, abys mohla stránku ovlivňovat i v jiný okamžik, než když se načte.
 
-Už jsi se setkala s událostí `windows.onload`. Vlastnost `onload` je ale jen taková zkratka. Standardně se s událostmi pracuje následovně:
+Už jsi se setkala s událostí `window.onload`. Vlastnost `onload` je ale jen taková zkratka. Standardně se s událostmi pracuje následovně:
 
 ```js
-function onLoad() {
+function poNacteni() {
     console.log('Načetla se stránka!');
 }
-window.addEventListener('load', onLoad);
+window.addEventListener('load', poNacteni);
 ```
 
 Tedy na objektu, u kterého chceš na událost číhat, použiješ metodu `addEventListener()` se dvěma parametry, a to názvem události a funkcí, která má událost obsloužit, když nastane. Zajímavější událost může vypadat takto:
@@ -218,19 +246,19 @@ Tedy na objektu, u kterého chceš na událost číhat, použiješ metodu `addEv
 ```
 
 ```js
-function onClick() {
+function vystrasUzivatele() {
     window.alert('Baf!');
 }
 
-function onLoad() {
-    var input = document.querySelector('input');
-    input.addEventListener('click', onClick);
+function poNacteni() {
+    var cudlik = document.querySelector('input');
+    cudlik.addEventListener('click', vystrasUzivatele);
 }
 
-window.addEventListener('load', onLoad);
+window.addEventListener('load', poNacteni);
 ```
 
-Na stránce máš tlačítko. Samo o sobě nic nedělá, protože není ve formuláři. Pomocí JavaScriptu ale můžeme nastavit, že pokud na něj uživatel stránek klikne (událost `click`), spustí se tvoje funkce `onClick()`. Celý kód pak bylo opět potřeba spustit až ve chvíli, kdy na objektu `window` proběhne událost `load`.
+Na stránce máš tlačítko. Samo o sobě nic nedělá, protože není ve formuláři. Pomocí JavaScriptu ale můžeme nastavit, že pokud na něj uživatel stránek klikne (událost `click`), spustí se tvoje funkce `vystrasUzivatele()`. Celý kód pak bylo opět potřeba spustit až ve chvíli, kdy na objektu `window` proběhne událost `load`.
 
 ----
 
@@ -252,9 +280,9 @@ Program, který je v předešlé sekci, by se dal zapsat i následovně:
 
 ```js
 window.addEventListener('load', function () {
-  var input = document.querySelector('input');
+  var cudlik = document.querySelector('input');
 
-  input.addEventListener('click', function () {
+  cudlik.addEventListener('click', function () {
       window.alert('Baf!');
   });
 });
@@ -276,6 +304,7 @@ Umět změnit třídu HTML tagu je zásadní, protože tím můžeš ovlivnit, j
 <!DOCTYPE HTML>
 <html>
     <head>
+    	<meta charset="UTF-8">
         <title>PyLadies</title>
         <script src="dom.js"></script>
         <link rel="stylesheet" href="style.css">
@@ -296,14 +325,14 @@ Do připojeného souboru `dom.js` vytvoř program, který přidá odstavci tří
 
 ```js
 window.addEventListener('load', function () {
-    var p = document.querySelector('p');
+    var odstavec = document.querySelector('p');
 
-    p.addEventListener('mouseover', function () {
-        p.className = 'red';
+    odstavec.addEventListener('mouseover', function () {
+        odstavec.className = 'red';
     });
 
-    p.addEventListener('mouseout', function () {
-        p.className = '';
+    odstavec.addEventListener('mouseout', function () {
+        odstavec.className = '';
     });
 });
 ```
@@ -315,6 +344,7 @@ Možná sis všimla, že k HTML v tomto příkladu byl připojen i CSS soubor `s
 ```css
 p {
     padding: 10px;
+    background-color: skyblue;
 }
 
 .red {
@@ -323,40 +353,135 @@ p {
 }
 ```
 
-Aby se po odstavci trochu lépe jezdilo myší, přidali jsme mu nějakou vnitřní výplň po okrajích (`padding`). Nyní zkus stránku obnovit v prohlížeči. Kurzor myši by měl měnit barvu odstavce.
+Aby se po odstavci trochu lépe jezdilo myší, přidali jsme mu nějakou vnitřní výplň po okrajích (`padding`) a pozadí, aby bylo vidět, kde končí. Nyní zkus stránku obnovit v prohlížeči. 
+Najetí a odjetí kurzoru myši by mělo měnit barvu odstavce.
 
-## Více tříd
+----
 
-Běžně tagy nemají jen jednu třídu, ale několik. Vlastnost `className` je potom poněkud nepraktická:
+### Více tříd
+
+Často elementy nemají jen jednu třídu, ale několik. 
+Vlastnost `className` je potom poněkud nepraktická:
 
 ```html
 <p class="big warning">Nesahat!</p>
 ```
 
 ```js
-var p = document.querySelector('p');
-console.log(p.className); // 'big warning'
+var odstavec = document.querySelector('p');
+console.log(odstavec.className); // 'big warning'
 ```
 
-Proto je v nových prohlížečích k dispozici i jiný způsob pro práci s třídami:
+Proto je v moderních prohlížečích k dispozici i jiný způsob pro práci s třídami:
 
 ```js
-var p = document.querySelector('p');
-console.log(p.classList); // ['big', 'warning']
+var odstavec = document.querySelector('p');
+console.log(odstavec.classList); // ['big', 'warning']
 ```
 
-[Vlastnost `classList`][classlist] má navíc metody na přidávání, odebírání a "přepínání" tříd:
+[Vlastnost `classList`][classlist] má navíc metody na přidávání (`add`), odebírání (`remove`). 
+Metoda `toggle` dělá to co `add`, pokud třída není a to co `remove`, když třída je.
+
+Metoda `contains` pak vrací `true` nebo `false` podle toho, zda element třídu má nebo ne, to se může hodit třeba pro zjištění, v jakém stavu nějaký prvek je. 
 
 ```js
-var p = document.querySelector('p');
+var odstavec = document.querySelector('p');
 
-p.classList.add('red'); // ['big', 'warning', 'red']
-p.classList.remove('big'); // ['warning', 'red']
-p.classList.contains('big'); // false
+odstavec.classList.add('red'); // ['big', 'warning', 'red']
 
-p.classList.toggle('warning'); // ['red']
-p.classList.toggle('warning'); // ['warning', 'red']
+odstavec.classList.remove('big'); // ['warning', 'red']
+
+odstavec.classList.toggle('warning'); // ['red']
+odstavec.classList.toggle('warning'); // ['warning', 'red']
+
+odstavec.classList.contains('big'); // false
 ```
 
 [classlist]: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 
+
+---
+
+<!-- .slide: data-state="c-slide-task" -->
+
+## Cvičení 
+
+----
+
+<!-- .slide: data-state="c-slide-task" -->
+
+Přechozí příklad, kdy jsi měnila třídu přímo na prvku by šel snadněji udělat jen pomocí CSS takto:
+
+```css
+p {
+    padding: 10px;
+    background-color: skyblue;
+}
+
+p:hover {
+    background: red;
+    color: white;
+}
+```
+
+Co by ale jen pomocí CSS udělat už nešlo, je tlačítko, na které klikneš a změní se barva jiného prvku.
+
+----
+
+<!-- .slide: data-state="c-slide-task-solution" -->
+
+### Řešení
+
+Přidej si tedy do dokumentu tlačítko:
+
+```html
+<!DOCTYPE HTML>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+        <title>PyLadies</title>
+        <script src="dom.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    	<input type="submit" value="Přepni barvu">
+        <p>
+            Žilo jednou jedno děvčátko
+            a to dostalo od babičky
+            k narozeninám dárek – červenou
+            čepičku. Rádo ji nosilo, a proto
+            jí říkali Červená karkulka.
+        </p>
+    </body>
+</html>
+```
+
+JavaScript, který na klik bude přidávat a odebírat třídu a tedy měnit vzhled odstavce bude vypadat takto:
+
+```js
+window.addEventListener('load', function () {
+	var cudlik = document.querySelector('input');
+	var odstavec = document.querySelector('p');
+
+	cudlik.addEventListener('click', function () {
+		odstavec.classList.toggle('red');
+	});
+});
+```
+
+Pro zajímavost, úplně stejnou funkčnost by měl i tento kód. 
+
+```js
+window.addEventListener('load', function() {
+    document
+        .querySelector('input')
+        .addEventListener('click', function() {
+            document
+                .querySelector('p')
+                .classList
+                .toggle('red');
+        });
+});
+```
+
+Pro větší přehlednost je před tečkou zalomeno a odsazeno. 

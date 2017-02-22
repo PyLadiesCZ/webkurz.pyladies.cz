@@ -44,34 +44,36 @@ HTML, CSS a JavaScript se interpretují v prohlížeči u uživatele, takže se 
 Jednoduchý program v JavaScriptu a ekvivalentní program v Pythonu mohou vypadat třeba takto:
 
 ```js
-function isUkulele(stringsCount) {
-    if (stringsCount == 4) {
+function jeUkulele(pocetStrun) {
+    if (pocetStrun == 4) {
        return true;
     } else {
        return false;
     }
 }
 
-console.log(isUkulele(6)); // asi spíš kytara
+console.log(jeUkulele(6)); // asi spíš kytara
 ```
 
 ```python
-def is_ukulele(strings_count):
-    if strings_count == 4:
+def je_ukulele(pocet_strun):
+    if pocet_strun == 4:
         return True
     else:
         return False
 
-print(is_ukulele(6))  # asi spíš kytara
+print(je_ukulele(6)) # asi spíš kytara
 ```
 
 Všimni si zejména následujících rozdílů:
 
 - Místo odsazení a dvojteček označuje bloky kódu dvojice závorek: `{` a `}`
-- Příkazy se ukončují středníkem. Nebo také ne. Je nepovinný. Vývojáři se o to, zda v JavaScriptu středníky psát nebo ne, přou po staletí.
+- Příkazy se ukončují středníkem. Nebo také ne. Je nepovinný.
 - Zatímco v Pythonu je _zvykem_ pojmenovávat proměnné a funkce s podtržítkem mezi slovy, v JavaScriptu se používá tzv. _camelCase_ konvence.
 
 I přesto, že je mezi zápisy obou jazyků spousta rozdílů, jsi schopná program v JavaScriptu přečíst a do jisté míry mu porozumět. Není tedy čeho se bát, je to jako bys uměla italsky a zajela si na dovolenou do Barcelony. Něco vyloženě znáš, základy tušíš, složitější věci si vyhledáš.
+
+Takže když si třeba řekneš, že bys potřebovala v JavaScriptu třeba cykly, jistě nebudeš mít problém je najít a porozumět tomu jak fungují. Samozřejmě některé detaily se budou lišit.
 
 ---
 
@@ -84,7 +86,7 @@ Velkým rozdílem mezi oběma jazyky je skutečnost, že v případě JavaScript
 Tento program bude fungovat úplně stejně, jako úvodní příklad:
 
 ```js
-function isUkulele(stringsCount) { if (stringsCount == 4) { return true; } else { return false; } }; console.log(isUkulele(6));
+function jeUkulele(pocetStrun) { if (pocetStrun == 4) { return true; } else { return false; } }; console.log(jeUkulele(6));
 ```
 
 ---
@@ -107,7 +109,7 @@ console.log('Hello, ' + window.prompt('Please, enter your name') + '!');
 
 Stiskni <kbd>Enter</kbd>. Stránka se tě zeptá na jméno (funkce `window.prompt()`) a vypíše jej s pozdravem (funkce `console.log`).
 
-Můžeš zkusit vložit i jednořádkový kód, jenž jsme si ukázali v předchozí sekci tohoto návodu, a ověřit tak, že opravdu i bez odsazování bude program fungovat. Dostaneš výsledek volání funkce `console.log(isUkulele(6))`, tedy `false` (ukulele má struny čtyři, ne šest).
+Můžeš zkusit vložit i jednořádkový kód, jenž jsme si ukázali v předchozí sekci tohoto návodu, a ověřit tak, že opravdu i bez odsazování bude program fungovat. Dostaneš výsledek volání funkce `console.log(jeUkulele(6))`, tedy `false` (ukulele má struny čtyři, ne šest).
 
 ----
 
@@ -115,7 +117,7 @@ Můžeš zkusit vložit i jednořádkový kód, jenž jsme si ukázali v předch
 
 ## Cvičení
 
-Zkoušej zadávat i další věci. Do konzole lze vypisovat pomocí `console.log()`, ale budou fungovat i výrazy jako `7 * 6` a i další věci, které už znáš z Pythonu. Nemusíš psát vše na jeden řádek, konzole podporuje i víceřádkový vstup a dokonce se ti pokusí i napovídat (nápovědy lze odsouhlasit a použít pomocí <kbd>Tab</kbd>), podobně jako to umí `ipython`.
+Vyzkoušej si zadávat i další věci. Do konzole lze vypisovat pomocí `console.log()`, ale budou fungovat i výrazy jako `7 * 6` a i další věci, které už znáš z Pythonu. Nemusíš psát vše na jeden řádek, konzole podporuje i víceřádkový vstup a dokonce se ti pokusí i napovídat (nápovědy lze odsouhlasit a použít pomocí <kbd>Tab</kbd>), podobně jako to umí `ipython`.
 
 Všimni si, že nad konzolí je menu, přes které se můžeš dostat i na další vývojářské nástroje. Ty slouží k tomu, abys mohla různě prozkoumávat aktuálně načtenou webovou stránku. Konzole a i všechny další vývojářské nástroje v Google Chrome [mají svou dokumentaci][chrome-console], kde se můžeš dovědět více.
 
@@ -127,7 +129,7 @@ Všimni si, že nad konzolí je menu, přes které se můžeš dostat i na dalš
 
 ----
 
-Když si chceme v Pythonu nastavit nějakou novou proměnnou, stačí nám udělat toto:
+Když si chceme v Pythonu nastavit nějakou novou proměnnou, stačí udělat toto:
 
 ```python
 strings_count = 4
@@ -136,33 +138,38 @@ strings_count = 4
 Proměnná bez hodnoty nemůže existovat. V JavaScriptu je to trochu jinak. Máme klíčové slovo `var` (jako _variable_, angl. proměnná), jímž v programu říkáme: „Vytvoř mi novou proměnnou s tímto názvem.“ Volitelně můžeme přidat i počáteční hodnotu. Ukažme si to třeba na funkci, která z hodiny umí poznat, zda je den nebo noc.
 
 ```js
-function getTimePeriod(now) {
+function denNeboNoc(cas) {
     // nová proměnná, bez hodnoty
-    var timePeriod;
+    var denniDoba;
 
     // nová proměnná, s počáteční hodnotou
-    var hour = now.getHours();
+    var hodina = cas.getHours();
 
-    if (hour > 6 && hour < 22) {
-        timePeriod = 'day';
+    if (hodina > 6 && hodina < 22) {
+        denniDoba = 'den';
     } else {
-        timePeriod = 'night';
+        denniDoba = 'noc';
     }
 
-    return timePeriod;
+    return denniDoba;
 }
 
-var now = new Date();
-console.log(getTimePeriod(now));
+var praveJe = new Date();
+
+console.log(denNeboNoc(praveJe));
 ```
 
-Proměnnou `timePeriod` jsme vytvořili prázdnou, a až později jsme do ní přiřadili nějakou hodnotu. Proměnnou `hour` jsme ale vytvořili už rovnou s nějakou počáteční hodnotou. Způsob, jakým v JavaScriptu fungují proměnné, je složitější, ale toto nám bude prozatím stačit.
+Proměnnou `denniDoba` jsme vytvořili prázdnou, a až později jsme do ní přiřadili nějakou hodnotu. Proměnnou `hodina` jsme ale vytvořili už rovnou s nějakou počáteční hodnotou. Způsob, jakým v JavaScriptu fungují proměnné, je složitější, ale toto nám bude prozatím stačit.
 
 ---
 
 <!-- .slide: data-state="c-slide-task" -->
 
 ## Cvičení
+
+----
+
+<!-- .slide: data-state="c-slide-task" -->
 
 [`new Date()`][js-now] vytváří objekt s aktuálním datem a časem. Je to něco jako [`datetime.now()`][py-now] v Pythonu. Představ si, že máš web vytvořený ve Flasku a v šabloně budeš do HTML vypisovat výsledek `datetime.now()`. Na té samé stránce budeš spouštět `new Date()` v JavaScriptu. Web budeš provozovat na nějakém serveru v ČR. Bude se nějak lišit výsledek `new Date()` a `datetime.now()`,
 
@@ -172,15 +179,15 @@ Proměnnou `timePeriod` jsme vytvořili prázdnou, a až později jsme do ní p�
 [js-now]: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date
 [py-now]: https://docs.python.org/3/library/datetime.html#datetime.datetime.now
 
-<details>
-    <summary>Řešení</summary>
-    <p>
-        Protože JavaScript běží u návštěvníka stránek v prohlížeči, dostaneme vždy čas, jaký má nastavený uživatelův počítač. To znamená, že ve stejný okamžik dostane tvůj program v JavaScriptu jiný čas, pokud jej načte uživatel v ČR a pokud jej načte uživatel v Japonsku.
-    </p>
-    <p>
-        Oproti tomu Python pracuje vždy s časem na serveru. Když pojedou naše stránky na serveru, který se nachází v ČR a má nastavený středoevropský čas, budeme všem uživatelům na světě ukazovat stále stejný, středoevropský čas.
-    </p>
-</details>
+----
+
+<!-- .slide: data-state="c-slide-task-solution" -->
+
+### Řešení
+
+Protože JavaScript běží u návštěvníka stránek v prohlížeči, dostaneme vždy čas, jaký má nastavený uživatelův počítač. To znamená, že ve stejný okamžik dostane tvůj program v JavaScriptu jiný čas, pokud jej načte uživatel v ČR a pokud jej načte uživatel v Japonsku.
+        
+Oproti tomu Python pracuje vždy s časem na serveru. Když pojedou naše stránky na serveru, který se nachází v ČR a má nastavený středoevropský čas, budeme všem uživatelům na světě ukazovat stále stejný, středoevropský čas.
 
 ---
 
@@ -194,14 +201,13 @@ JavaScript nemá seznamy a slovníky. Místo toho má [pole][] (angl. _array_) a
 [objekty]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 
 ```js
-var clothes = [
-    'shoes',
-    't-shirt',
-    'hat',
-    'skirt',
-    'socks',
+var nakoupit = [
+    'mléko',
+    'mouka',
+    'miňonky',
+    'máslo',
 ];
-console.log(clothes[1]); // vypíše t-shirt
+console.log(nakoupit[1]); // vypíše mouka
 
 var angryBirdsScore = {
     'veronika': 6810,
@@ -217,14 +223,14 @@ Jak je vidět, na první pohled vypadají stejně. Občas se ale chovají trochu
 Například pokud název vlastnosti objektu neobsahuje žádné speciální znaky, můžeš ho zapisovat i bez uvozovek a přistupovat k nim přes tečku:
 
 ```js
-var population = {
+var pocetObyvatel = {
   karvina: 65141,
   ostrava: 294200,
   'frydek-mistek': 56945,
 };
-console.log(population.karvina); // vypíše 65141
-console.log(population['ostrava']); // 294200
-console.log(population['frydek-mistek']); // 56945
+console.log(pocetObyvatel.karvina); // vypíše 65141
+console.log(pocetObyvatel['ostrava']); // 294200
+console.log(pocetObyvatel['frydek-mistek']); // 56945
 ```
 
 ---
@@ -239,6 +245,7 @@ Podobně jako CSS, i JavaScript můžeš uložit do souboru a připojit k webov�
 <!DOCTYPE HTML>
 <html>
     <head>
+     	<meta charset="UTF-8">
         <title>PyLadies</title>
         <script src="hello.js"></script>
     </head>
@@ -263,13 +270,13 @@ Když si stránku otevřeš v prohlížeči a podíváš se do konzole, uvidíš
 window.alert('Hello!');
 ```
 
-Funkce `window.alert()` vytvoří vyskakovací tabulku s textem, který ji předáme. Uživatel bude muset tabulku potvrdit tlačítkem <button>OK</button>, jinak nezmizí.
+Funkce `window.alert()` přiměje prohlížeč, aby se objevilo okno s textem, který mu předáme. Uživatel bude muset okno zavřít tlačítkem <button>OK</button>, jinak nezmizí.
 
 ----
 
-<!-- .slide: data-state="c-slide-task" -->
+<!-- .slide: data-state="c-slide-task-home" -->
 
-## Cvičení
+## Cvičení na doma
 
 Funkce [`window.alert()`][alert] je asi nejznámější funkcí JavaScriptu vůbec a použita byla i ve _Cvičení pro odvážné_, v lekci o šablonách. [`window.prompt()`][prompt], která umí načíst vstup od uživatele, se zase objevila jen o něco výš v této lekci, při vysvětlování konzole v prohlížeči. Zkus použít tyto dvě uvedené funkce a sama prozkoumej, co dělá třetí podobná, [`window.confirm()`][confirm].
 
@@ -293,6 +300,9 @@ S JavaScriptem v prohlížeči je to o něco složitější. Prohlížečů je v
 <figure class="image"><img src="compatibility.png" style="max-height:70vh;width:auto;margin-bottom:1em;" alt="kompatibilita v prohlížečích"></figure>
 
 Hodit se může i již zmiňované [caniuse.com][caniuse], kde jsou kromě HTML a CSS pokryty některé oblasti JavaScriptu.
+
+Prakticky je potřeba si funkčnost všeho v prohlížečích, které chceš podporovat, otestovat. I ostřílený frontendista, který z hlavy ví, co si kde může a nemůže dovolit použít, občas narazí na nepříjemné překvapení.
+
 
 [js-doc]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [Firefox]: https://www.mozilla.org/cs/firefox/products/
