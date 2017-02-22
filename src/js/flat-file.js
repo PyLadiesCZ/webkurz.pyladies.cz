@@ -7,6 +7,7 @@ $(document).ready(
 
 		var $main = $('[data-markdown]'); // main content element
 
+		var mdPath = window.location.pathname.split('/').slice(-1)[0] + '.md';
 		/*
 		 * Navigation
 		 */
@@ -54,6 +55,23 @@ $(document).ready(
 						'</em></a></div></div>';
 					$main.after(nextLink);
 				}
+
+
+			} else if (settings.url === mdPath){
+
+				$('.c-slide-task-solution').each(function(){
+					$(this)
+						.find('.content > *')
+						.first()
+						.wrapInner('<summary />')
+						.children(0)
+						.unwrap();
+
+					$(this)
+						.find('.content > *')
+						.wrapAll('<details />');
+
+				});
 			}
 		});
 
@@ -84,7 +102,7 @@ $(document).ready(
 		/*
 		 * Load and render data
 		 */
-		$.get(window.location.pathname.split('/').slice(-1)[0] + '.md', function(data){
+		$.get(mdPath, function(data){
 
 			var result = '';
 
@@ -95,7 +113,9 @@ $(document).ready(
 				jQuery.each(subcontent, function(subkey, subvalue){
 					var className = '';
 
-					if (subvalue.match(/^<!-- .slide: data-state="(.+?)" -->$/m)) className = subvalue.match(/^<!-- .slide: data-state="(.+?)" -->$/m);
+					if (subvalue.match(/^<!-- .slide: data-state="(.+?)" -->$/m)){
+						className = subvalue.match(/^<!-- .slide: data-state="(.+?)" -->$/m);
+					}
 
 					if (subkey === 0){
 						result += '<div class="tile"><div class="tile is-parent ';
