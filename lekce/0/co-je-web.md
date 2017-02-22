@@ -122,7 +122,7 @@ URL je zkratka z Uniform Resource Locator a určuje unikátní umístění zdroj
 * složka
 * soubor
 * parametry: v příkladu jsou dva, `a` má hodnotu `10` a `b` má hodnotu `ten`
-* fragment: za znakem `#` často se používá k identifikace pozice v dokumentu
+* fragment: za znakem `#` často se používá k identifikaci pozice v dokumentu
 
 V URL (adrese) se smí používat jen základní znaky: malá a velká písmena latinské abecedy (tj. písmena od `a` do `z` a od `A` do `Z`), číslice a dále znaky `!` `*` `'` `(` `)` `;` `:` `@` `&` `=` `+` `$` `,` `/` `?` `#` `[` `]` `-`    `_`    `.`    `~`. Všechny ostatní speciální znaky se zapisují jako tzv. _URL encoded_. Například mezera jako `%20` a prozatím se jim v názvech souborů a složek vyhýbej, ušetříš si tím spoustu problémů.
 
