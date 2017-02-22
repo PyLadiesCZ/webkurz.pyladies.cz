@@ -113,6 +113,8 @@ Tuto metodu už sis vyzkoušela. Hodí se, pokud chceš nějakým způsobem upra
 document.getElementsByTagName('h2');
 ```
 
+----
+
 ### getElementsByClassName()
 
 Metoda vrací všechny tagy na stránce, které mají danou třídu.
@@ -130,6 +132,9 @@ Metoda vrací všechny tagy na stránce, které mají danou třídu.
 // vrátí objekty pro první a třetí <li>
 document.getElementsByClassName('odd');
 ```
+
+----
+
 
 ### getElementById()
 
@@ -155,9 +160,6 @@ var id = 'kapitola-prevlekala-se-za-jine-lidi';
 document.getElementById(id);
 ```
 
-----
-
-
 #### Identifikátor
 
 Malá odbočka: atribut `id` se dá použít i pro odkazování na část stránky.
@@ -177,7 +179,7 @@ Po otevření takového odkazu, prohlížeč odskroluje stránku tak, aby byl vi
 
 ID lze použít i v selektorech v CSS `#nejake-id { color: red; }`, ale má to spoustu nevýhod a proto to se tomu vyhni. 
 
-
+----
 
 ### querySelector(), querySelectorAll()
 
