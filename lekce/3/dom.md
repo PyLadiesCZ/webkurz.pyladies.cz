@@ -20,7 +20,7 @@ Vytvoř si HTML stránku s několika tagy a připojeným souborem `dom.js`:
 <!DOCTYPE HTML>
 <html>
     <head>
-     	<meta charset="UTF-8">
+        <meta charset="UTF-8">
         <title>PyLadies</title>
         <script src="dom.js"></script>
     </head>
@@ -75,7 +75,7 @@ Když se podíváš do zdrojového kódu stránky (<kbd>Ctrl + U</kbd>, popříp
 <!DOCTYPE HTML>
 <html>
     <head>
-     	<meta charset="UTF-8">
+        <meta charset="UTF-8">
         <title>PyLadies</title>
         <script src="dom.js"></script>
     </head>
@@ -306,7 +306,7 @@ Umět změnit třídu HTML tagu je zásadní, protože tím můžeš ovlivnit, j
 <!DOCTYPE HTML>
 <html>
     <head>
-    	<meta charset="UTF-8">
+        <meta charset="UTF-8">
         <title>PyLadies</title>
         <script src="dom.js"></script>
         <link rel="stylesheet" href="style.css">
@@ -440,13 +440,13 @@ Přidej si tedy do dokumentu tlačítko:
 <!DOCTYPE HTML>
 <html>
     <head>
-    	<meta charset="UTF-8">
+        <meta charset="UTF-8">
         <title>PyLadies</title>
         <script src="dom.js"></script>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    	<input type="submit" value="Přepni barvu">
+        <input type="submit" value="Přepni barvu">
         <p>
             Žilo jednou jedno děvčátko
             a to dostalo od babičky
@@ -462,12 +462,12 @@ JavaScript, který na klik bude přidávat a odebírat třídu a tedy měnit vzh
 
 ```js
 window.addEventListener('load', function () {
-	var cudlik = document.querySelector('input');
-	var odstavec = document.querySelector('p');
+    var cudlik = document.querySelector('input');
+    var odstavec = document.querySelector('p');
 
-	cudlik.addEventListener('click', function () {
-		odstavec.classList.toggle('red');
-	});
+    cudlik.addEventListener('click', function () {
+        odstavec.classList.toggle('red');
+    });
 });
 ```
 

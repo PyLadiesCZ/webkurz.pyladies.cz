@@ -245,7 +245,7 @@ Podobně jako CSS, i JavaScript můžeš uložit do souboru a připojit k webov�
 <!DOCTYPE HTML>
 <html>
     <head>
-     	<meta charset="UTF-8">
+        <meta charset="UTF-8">
         <title>PyLadies</title>
         <script src="hello.js"></script>
     </head>
