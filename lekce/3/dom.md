@@ -426,7 +426,7 @@ p:hover {
 }
 ```
 
-Co by ale jen pomocí CSS udělat už nešlo, je tlačítko, na které klikneš a změní se barva jiného prvku.
+Co by ale jen pomocí CSS udělat už nešlo, je tlačítko, na které klikneš a změní se barva jiného prvku. Zkus si takové na stránku přidat.
 
 ----
 
