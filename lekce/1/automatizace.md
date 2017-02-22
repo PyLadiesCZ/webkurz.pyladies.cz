@@ -234,8 +234,7 @@ Přidej si do sledování kromě HTML souborů i CSS soubory.
 
 <details>
   <summary>Řešení</summary>
-  <p>Tam, kde máš v `gulpfile.js` napsáno `['*.html']` přidej ještě CSS soubory takto: `['*.html','*.css']`
-</p>
+  <p>Tam, kde máš v `gulpfile.js` napsáno `['*.html']` přidej ještě CSS soubory takto: `['*.html','*.css']`</p>
 </details>
 
 Zkus si teď něco změnit v tvém CSS souboru. Browserync dokonce ani neobnovuje celou stránku, ale jen vymění CSS za nové.
