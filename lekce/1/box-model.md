@@ -470,7 +470,7 @@ Libovolný element se začne chovat jako řádkový s některými vlastnostmi bl
 ```css
 p {
     display: inline-block;
-    width:30%;
+    width: 30%;
     background-color: yellow;
     margin: 10%;
 }
@@ -513,9 +513,9 @@ p {
 ```
 
 ```html
-<div>Jsem div a jsem vidět.</div>
+<div>Jsem div a jsem vidět</div>
 <p>Já jsem odstavec o kterém ani netušíte, že tu je.</p>
-<div>Já mám v sobě <span>neviditelného</span> muže</div>
+<div>Já mám v sobě něco <span>neviditelného</span>, to koukáte.</div>
 ```
 
 <div class="c-example example-display-none-visibility-hidden">
