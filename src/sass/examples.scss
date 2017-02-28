@@ -292,3 +292,29 @@
         left: 30px;
     }
 }
+
+.example-float {
+    p { background-color: skyblue; }
+
+    img { float: left; }
+
+    .clearfix::after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+}
+
+.example-flexbox {
+    .testimonials {
+        display: flex;
+        background-color: skyblue;
+    }
+
+    .testimonials div {
+        margin: 10px;
+        padding: 10px;
+        font-size: 70%;
+        background-color: greenyellow;
+    }
+}
