@@ -1,3 +1,7 @@
+# Seznam vlastností
+
+TBD
+
 ----
 
 ### Box properties
