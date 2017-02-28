@@ -256,3 +256,13 @@
         padding: 10px;
     }
 }
+
+.example-stacking {
+    * { padding: 10px; }
+
+    div { background-color: skyblue; }
+
+    p { background-color: lightsalmon; }
+
+    strong { background-color: yellow; }
+}
