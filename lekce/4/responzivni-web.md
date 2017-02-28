@@ -1,7 +1,1 @@
 # Responzivní web
-
-TBD
-
-----
-
-## TBD
