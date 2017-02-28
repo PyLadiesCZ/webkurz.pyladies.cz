@@ -88,6 +88,11 @@
             @include c-side-mark("výsledek");
             background-color: lightyellow;
         }
+        &::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
     }
 
     code {
