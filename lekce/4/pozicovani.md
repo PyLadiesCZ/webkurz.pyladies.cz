@@ -71,16 +71,6 @@ Změna pozice pomocí `position: relative;` nemá na tok dokumentu vliv.
 
 ----
 
-When the position is set to absolute, an element can move according to the first positioned ancestor.
-
-“Positioned?? What is a positioned element?”
-
-A positioned element is one whose position value is either relative, absolute or fixed. So unless the position is not set or static, an element is positioned.
-
-The characteristic of a positioned element is that it can act as a reference point for its child elements.
-
-Let’s imagine a simple hierarchy:
-
 ```html
 <div>
     Já jsem relativně pozicovaný.
@@ -94,11 +84,13 @@ Let’s imagine a simple hierarchy:
 div {
     background: skyblue;
     height: 200px;
+    
     position: relative;
 }
 
 p {
     background: orange;
+    
     position: absolute; 
     bottom: 10px; 
     left: 30px; 
