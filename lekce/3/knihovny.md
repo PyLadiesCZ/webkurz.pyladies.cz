@@ -90,7 +90,7 @@ Klasickou knihovnou, která lightbox umí vytvořit je _Lightbox2_. Neobsahuje j
 
 Nejdřív si vytvoř stránku, do které galerii přidáme.
 
-Pěkné a velké obázky s vhodnou licencí najdeš na (https://unsplash.com/)[Unsplash], několik si jich vyber a stáhni si do složky kde máš soubor s HTML.
+Pěkné a velké obázky s vhodnou licencí najdeš na [Unsplash](https://unsplash.com/), několik si jich vyber a stáhni si do složky kde máš soubor s HTML.
 
 Přidej si do HTML **odkazy** na jednotlivé obrázky.
 
@@ -113,7 +113,7 @@ Přidej si do HTML **odkazy** na jednotlivé obrázky.
 
 ### Lightbox2
 
-Na stránce projektu (http://lokeshdhakar.com/projects/lightbox2/)[Lightbox2] si stáhni vše v jednom archívu _zip_ a obsah složky `dist` si zkopíruj do složky, kde máš html a obrázky.
+Na stránce projektu [Lightbox2](http://lokeshdhakar.com/projects/lightbox2/) si stáhni vše v jednom archívu _zip_ a obsah složky `dist` si zkopíruj do složky, kde máš html a obrázky.
 
 Dál můžeš postupovat podle návodu přímo na stránce knihovny.
 
