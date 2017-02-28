@@ -266,3 +266,29 @@
 
     strong { background-color: yellow; }
 }
+
+.example-relative {
+    p { background-color: silver; }
+
+    .uvod {
+        background-color: skyblue;
+        position: relative;
+        left: -1em;
+        top: 0.5em;
+    }
+}
+
+.example-absolute {
+    div {
+        background: skyblue;
+        height: 200px;
+        position: relative;
+    }
+
+    p {
+        background: orange;
+        position: absolute;
+        bottom: 10px;
+        left: 30px;
+    }
+}
