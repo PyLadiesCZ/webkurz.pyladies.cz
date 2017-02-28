@@ -39,10 +39,10 @@ Elementy se řadí nad sebe.
 <div>
     Rodič v pozadí
     <p>
-		Jsem vnořený element 
-		<strong>a ještě vnořený</strong>
-		element.
-	</p>
+        Jsem vnořený element 
+        <strong>a ještě vnořený</strong>
+        element.
+    </p>
 </div>
 ```
 
@@ -50,10 +50,10 @@ Elementy se řadí nad sebe.
 <div>
     Rodič v pozadí
     <p>
-		Jsem vnořený element 
-		<strong>a ještě vnořený</strong>
-		element.
-	</p>
+        Jsem vnořený element 
+        <strong>a ještě vnořený</strong>
+        element.
+    </p>
 </div>
 </div>
 
