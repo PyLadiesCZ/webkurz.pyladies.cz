@@ -481,7 +481,7 @@ a který umožňuje vybrat více možností najednou.
 
 Více možností lze vybrat pomocí tažení nebo pokud uživatel přidrží klávesu <kbd>Ctrl</kbd> (na macOS <kbd>Cmd</kbd>), tak lze vybrat i položky, které spolu nesousedí.
 To ale uživatel většinou neví, takže na v `<select multiple>` vybere stejně jen jednu možnost nebo se musí psát instrukce.
-Proto je lepší se této variantě spíše vyhnout, pokud ji [https://select2.github.io](pomocí javascriptu) nevylepšíme na něco, co uživatelé chápou lépe.
+Proto je lepší se této variantě spíše vyhnout, pokud ji [pomocí javascriptu](https://select2.github.io) nevylepšíme na něco, co uživatelé chápou lépe.
 
 
 ### Atributy
