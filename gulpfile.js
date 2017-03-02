@@ -42,7 +42,8 @@ gulp.task('jsconcat', ['jsclean'], function(){
 		'src/js/highlight.pack.js',
 		'src/js/jquery-3.1.1.min.js',
 		'src/js/marked.js',
-		'src/js/flat-file.js'
+		'src/js/flat-file.js',
+		'src/js/gitter.js'
 	])
 		.pipe(concat('all.js'))
 		.pipe(gulp.dest('dist'))

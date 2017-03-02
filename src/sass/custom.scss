@@ -148,3 +148,14 @@
     details[open] { background-color: hsla(0, 0%, 100%, 0.5); }
 
 }
+
+.gitter-open-chat-button {
+    bottom: auto;
+    top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.gitter-open-chat-button.is-collapsed {
+    transform: translateY(-120%);
+}
