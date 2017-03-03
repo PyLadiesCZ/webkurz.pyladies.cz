@@ -88,6 +88,32 @@ $(document).ready(
 			return `<h${level}>${text}</h${level}>`;
 		};
 
+		// custom code rendering so we have contenteditable tru
+		renderer.code = function(code, lang, escaped){
+			if (this.options.highlight){
+				var out = this.options.highlight(code, lang);
+				if (out != null && out !== code){
+					escaped = true;
+					code = out;
+				}
+			}
+
+			if (!lang){
+				return '<pre><code contenteditable="true">'
+					+ (escaped ? code : escape(code, true))
+					+ '\n</code></pre>';
+			}
+
+			return '<pre><code contenteditable="true" class="'
+				+ this.options.langPrefix
+				+ escape(lang, true)
+				+ '">'
+				+ (escaped ? code : escape(code, true))
+				+ '\n</code></pre>\n';
+		};
+
+
+
 		// set options
 		marked.setOptions({
 			renderer: renderer,
