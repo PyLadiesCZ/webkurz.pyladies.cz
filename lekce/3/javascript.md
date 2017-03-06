@@ -22,18 +22,22 @@ HTML, CSS a JavaScript se interpretují v prohlížeči u uživatele, takže se 
 
 ----
 
-- reagovat na to, že uživatel pohne myší, posouvá stránku, označí text.
-- jakkoliv měnit strukturu HTML a CSS vlastnosti dané stránky:
+- reagovat na to, že uživatel pohne myší, posouvá stránku, označí text, píše do inputu (textového pole), atd.
+- měnit strukturu HTML a CSS vlastnosti dané stránky:
     - animovat věci na stránce
     - posouvat věci, skrývat, odkrývat, přebarvovat
     - zmenšovat nebo zvětšovat prvky na stránce
-    - přidávat nové HTML i s textem, přepisovat existující
+    - přidávat nové HTML i s textem, měnit existující
 - přistupovat k informacím, které poskytuje prohlížeč:
     - datum a čas u uživatele
     - jestli je uživatel ve tmě nebo na světle, kolik má baterky
     - ovládat audio a video na stránce
     - jakým směrem je natočeno jeho zařízení, GPS pozice
 - získávat informace ze serveru i bez nového načtení stránky
+
+Je toho dokonce ještě mnohem víc, toto je jen výběr pro ilustraci. Souhrnně se tyto možnosti označují jako [JavaScript Web APIs][].
+
+[JavaScript Web APIs]: https://developer.mozilla.org/en/docs/Web/API
 
 ---
 
@@ -45,7 +49,7 @@ Jednoduchý program v JavaScriptu a ekvivalentní program v Pythonu mohou vypada
 
 ```js
 function jeUkulele(pocetStrun) {
-    if (pocetStrun == 4) {
+    if (pocetStrun === 4) {
        return true;
     } else {
        return false;
@@ -186,7 +190,7 @@ Proměnnou `denniDoba` jsme vytvořili prázdnou, a až později jsme do ní př
 ### Řešení
 
 Protože JavaScript běží u návštěvníka stránek v prohlížeči, dostaneme vždy čas, jaký má nastavený uživatelův počítač. To znamená, že ve stejný okamžik dostane tvůj program v JavaScriptu jiný čas, pokud jej načte uživatel v ČR a pokud jej načte uživatel v Japonsku.
-        
+
 Oproti tomu Python pracuje vždy s časem na serveru. Když pojedou naše stránky na serveru, který se nachází v ČR a má nastavený středoevropský čas, budeme všem uživatelům na světě ukazovat stále stejný, středoevropský čas.
 
 ---
