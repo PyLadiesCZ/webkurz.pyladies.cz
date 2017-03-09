@@ -10,7 +10,9 @@ Výchozí chování elementů na HTML stránce je v podstatě logické a přiroz
 
 ----
 
-Obsah se sám přizpůsobuje rozměrům prohlížeče. Všechny blokové elementy jsou fluidní.
+Všechny blokové elementy jsou fluidní.
+
+Obsah se sám přizpůsobuje rozměrům prohlížeče. 
 
 Výchozí šířka je `width: 100%;`, proto se element roztáhne na celou šířku.
 
@@ -26,6 +28,17 @@ Výška je automatická: `height: auto`, přizpůsobuje se podle toho, kolik obs
 ----
 
 Obsah se řadí tak, jak je v kódu napsaný. První element v `<body>` je první zobrazen na stránce.
+
+```html
+<p>První třída kašička.</p>
+<p>Druhý třída myšička.</p>
+```
+
+<div class="c-example">
+<p>První třída kašička.</p>
+<p>Druhý třída myšička.</p>
+</div>
+
 
 ---
 
