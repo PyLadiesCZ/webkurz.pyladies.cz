@@ -9,7 +9,9 @@ Vlastnost `position` umožňuje nastavit nebo změnit pozici elementu.
 * `absolute`
 * `fixed`
 
-Často je používáme společně se 4 vlastnostmi, které určují souřadnice: `left`, `right`, `top` a `bottom`. Obvykle využíváme jen jednu pro svislou pozici a druhou pro vodorovnou.
+Často se používají společně se 4 vlastnostmi, které určují souřadnice: `left`, `right`, `top` a `bottom`. 
+
+Obvykle se ale využívá jen dvě zároveň: jedna pro svislou pozici a druhá pro vodorovnou.
 
 ---
 
@@ -17,7 +19,7 @@ Vlastnost `position` umožňuje nastavit nebo změnit pozici elementu.
 
 ----
 
-Výchozí hodnota, prvky s tímhle pozicováním fungují přirozeně a jsou součástí toku dokumentu.
+Výchozí hodnota: prvky s tímhle pozicováním se chovají „přirozeně“: jsou součástí toku dokumentu.
 
 ---
 
@@ -25,7 +27,7 @@ Výchozí hodnota, prvky s tímhle pozicováním fungují přirozeně a jsou sou
 
 ----
 
-Když nastavíš hodnotu na `relative`, element se pohne vzhledem ke svojí stávající pozici.
+Když nastavíš hodnotu na `relative`, element se pohne relativně vzhledem ke svojí původní pozici.
 
 
 ```html
@@ -58,7 +60,17 @@ p { background-color: silver; }
 
 První odstavec je posunutý doleva, protože má zleva nastavenou negativní pozici a taký dolů, protože shora je kladná hodnota `top`.
 
+
+----
+
+<!-- .slide: data-state="c-slide-task" -->
+
+### Cvičení
+
 Vyzkoušej si pomocí inspektoru _Developer Tools_ (<kbd>Ctrl+Shift+C</kbd> nebo na <kbd>Cmd+Shift+C</kbd> na Macu), jak se budou prvky chovat, když zkusíš prvnímu odstavci změnit hodnoty `top` a `left`. Tip: lze to i pomocí šipky nahoru a dolů na klávesnici a to ve chvíli, kdy hodnotu edituješ.
+
+
+----
 
 Všimni si, že ostatní odstavce jsou tam, kde by byly, kdyby první neměl nastavenou relativní pozici. Ostatní prvky jako by nevěděly, že se něco změnilo.
 
@@ -74,9 +86,7 @@ Změna pozice pomocí `position: relative;` nemá na tok dokumentu vliv.
 ```html
 <div>
     Já jsem relativně pozicovaný.
-    <p>
-        Já jsem pozicován absolutně.
-    </p>
+    <p>Já jsem pozicován absolutně.</p>
 </div>
 ```
 
@@ -108,9 +118,16 @@ p {
 
 Modrý `div` je pozicovaný relativně. To kromě možnosti ho posunout znamená ještě jednu věc: vytvoření nového souřadnicového systému, který platí pro všechny jeho potomky.
 
-Protože oranžový odstavec je pozicován absolutně, můžeš ho umístit kam chceš a je to všechno absolutně vůči modrému divu.
+Protože odstavec je pozicován absolutně, můžeš ho umístit kam chceš a je to všechno absolutně vůči modrému divu.
 
-Opět si zkus změnit nastavené hodnoty souřadnic, tentokrát pro oba elementy.
+
+----
+
+<!-- .slide: data-state="c-slide-task" -->
+
+### Cvičení
+
+Opět si zkus pomocí _Developer Tools_ změnit nastavené hodnoty souřadnic, tentokrát pro oba elementy.
 
 Zkus si také jiné jednotky, třeba procenta.
 
@@ -122,3 +139,67 @@ Zkus si také jiné jednotky, třeba procenta.
 ----
 
 Tahle pozice funguje jako absolutní, ale rozdíl je v tom, že souřadnicovým systémem je _viewport_, tedy vnitřek okna prohlížeče. Prvek tedy zůstane zafixovaný v daném místě bez ohledu na to, jestli se díváš na začátek nebo konec dokumentu.
+
+----
+
+<!-- .slide: data-state="c-slide-task" -->
+
+### Cvičení
+
+Zkus si v inspektoru _Developer Tools_ změnit pozici odstavce v předchozím cvičení na `fixed`.
+
+---
+
+## `z-index`
+
+----
+
+Prvky skládají nad sebe v pořadí, v jak jsou v kódu napsané a to by znamenalo, že má-li něco být pozicováno 
+
+```html
+<div>
+    <p class="prvni">První!</p>
+    <p class="druhy">Druhý!</p>
+</div>
+```
+
+```css
+div {
+    background-color: forestgreen;
+    position: relative;
+    height:6em;
+}
+
+p {
+    position: absolute;
+    width: 5em;
+    height: 3em;
+}
+
+.prvni {
+    background-color: orange;
+    left: 1em;
+    top: 1em;
+}
+
+.druhy {
+    background-color: skyblue;
+    left: 2em;
+    top: 2em;
+}
+```
+
+<div class="c-example example-zindex">
+<div>
+    <p class="prvni">První!</p>
+    <p class="druhy">Druhý!</p>
+</div>
+</div>
+
+----
+
+<!-- .slide: data-state="c-slide-task" -->
+
+### Cvičení
+
+V inspektoru _Developer Tools_ změň z-index druhého odstavce tak, aby se zobrazil pod prvním.

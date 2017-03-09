@@ -318,3 +318,29 @@
         background-color: greenyellow;
     }
 }
+
+.example-zindex {
+    div {
+        background-color: forestgreen;
+        position: relative;
+        height:6em;
+    }
+
+    p {
+        position: absolute;
+        width: 5em;
+        height: 3em;
+    }
+
+    .prvni {
+        background-color: orange;
+        left: 1em;
+        top: 1em;
+    }
+
+    .druhy {
+        background-color: skyblue;
+        left: 2em;
+        top: 2em;
+    }
+}
