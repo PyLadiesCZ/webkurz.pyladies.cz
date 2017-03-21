@@ -306,24 +306,60 @@
 }
 
 .example-flexbox {
-    .testimonials {
+    .doporuceni {
         display: flex;
         background-color: skyblue;
     }
 
-    .testimonials div {
+    .doporuceni div {
         margin: 10px;
         padding: 10px;
         font-size: 70%;
-        background-color: greenyellow;
+        background-color: gold;
     }
+}
+
+.example-flexbox-extended1 {
+    .doporuceni {
+        display: flex;
+        background-color: skyblue;
+    }
+
+    .doporuceni div {
+        flex: 1;
+        margin: 10px;
+        padding: 10px;
+        font-size: 70%;
+        background-color: gold;
+    }
+
+    .doporuceni .prvni { flex: 2; }
+}
+
+
+.example-flexbox-extended2 {
+    .doporuceni {
+        display: flex;
+        background-color: skyblue;
+        flex-direction: row-reverse;
+    }
+
+    .doporuceni div {
+        flex: 1;
+        margin: 10px;
+        padding: 10px;
+        font-size: 70%;
+        background-color: gold;
+    }
+
+    .doporuceni .prvni { flex: 2; }
 }
 
 .example-zindex {
     div {
         background-color: forestgreen;
         position: relative;
-        height:6em;
+        height: 6em;
     }
 
     p {
