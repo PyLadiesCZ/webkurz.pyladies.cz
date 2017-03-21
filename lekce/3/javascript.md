@@ -299,15 +299,31 @@ Když programuješ v Pythonu, měla by sis hlídat verzi jazyka, jakou použív�
 
 S JavaScriptem v prohlížeči je to o něco složitější. Prohlížečů je více (Chrome, Safari, Firefox, a další) a každý z nich může JavaScript interpretovat trochu jinak. Není tedy až tolik podstatná verze jazyka, ale zda tu kterou funkcionalitu daný prohlížeč podporuje a třeba i do jaké míry.
 
+----
+
+#### Dokumentace
+
 [Nejucelenější dokumentace k JavaScriptu][js-doc] je na MDN, což je web pro vývojáře od organizace Mozilla, která stojí za prohlížečem [Firefox][]. Na každé stránce pojednávající o nějaké části JavaScriptu je vždy dole tabulka, jak si vysvětlovaná funkcionalita stojí z hlediska podpory v různých prohlížečích.
 
 <figure class="image"><img src="compatibility.png" style="max-height:70vh;width:auto;margin-bottom:1em;" alt="kompatibilita v prohlížečích"></figure>
 
 Hodit se může i již zmiňované [caniuse.com][caniuse], kde jsou kromě HTML a CSS pokryty některé oblasti JavaScriptu.
 
-Prakticky je potřeba si funkčnost všeho v prohlížečích, které chceš podporovat, otestovat. I ostřílený frontendista, který z hlavy ví, co si kde může a nemůže dovolit použít, občas narazí na nepříjemné překvapení.
-
-
 [js-doc]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [Firefox]: https://www.mozilla.org/cs/firefox/products/
 [caniuse]: http://caniuse.com/#cats=JS%20API
+
+----
+
+#### Testovat, testovat a testovat
+
+Prakticky je potřeba si funkčnost všeho v prohlížečích, které chceš podporovat, otestovat. I ostřílený frontendista, který z hlavy ví, co si kde může a nemůže dovolit použít, občas narazí na nepříjemné překvapení.
+
+----
+<!-- .slide: data-state="c-slide-extra-info" -->
+
+#### Polyfill
+
+I když nějakou funkcionalitu nepodporuje dostatečné množství prohlížečů, lze často najít _polyfill_, tedy javascriptový kód, kterým funkcionalitu do starších prohlížečů můžeš na svojí stránce doplnit. 
+
+Některé polyfilly přidávají i jinou, než čistě javascriptovou funkčnost včetně moderního CSS a HTML.
