@@ -51,8 +51,6 @@ Only hides element visually. This is still read by screenreaders.
 
 [Free course on flexbox](https://flexbox.io) (free account required)
 
-
-<!-- .slide: data-state="c-slide-inter" -->
 ----
 
 ----
@@ -101,8 +99,6 @@ The following are especially useful in combination with [generated content](http
 ----
 
 ----
-
-<!-- .slide: data-state="c-slide-inter" -->
 
 # Shorthand
 ## zkrácený zápis
