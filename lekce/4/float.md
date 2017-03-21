@@ -2,16 +2,24 @@
 
 ----
 
-Float je asi nejdivnější vlasnost. Co se stane, když ho nastavíš nedává často smysl a není to co chceš.
+Float je asi nejdivnější vlastnost. To, co co se stane, když ji použiješ nedává často na první pohled smysl a není to co chceš.
 
-Přesto to je, a po léta byl, hlavní způsob jak dělat layouty (rozložení) stránek.
+Přesto to je, a hlavně po léta byl, hlavní způsob jak dělat layouty (rozložení) stránek. Naštěstí dnes jde layout vytvořit pomocí _flexboxu_.
 
-Float je komplikovaný v tom, že mění nejen chování samotného prvku, který ho má zaplý, ale ovlivňuje předky, sourozence, potomky a prvky, které následují po něm. 
+Float je komplikovaný v tom, že mění nejen chování samotného prvku, který ho má nastavený, ale ovlivňuje předky, sourozence, potomky a prvky, které následují po něm. 
 
-Přestože je s ním tolik legrace, `float` má jen 3 možné hodnoty: 
+Vlastnost `float` má jen 3 možné hodnoty: 
 
 * `left` a `right` floatování zapnou 
 * `none` floatování vypne
+
+---
+
+### Floatování zapne `display: block;`
+
+----
+
+Floatované prvky jsou automaticky blokové.
 
 ---
 
@@ -19,8 +27,9 @@ Přestože je s ním tolik legrace, `float` má jen 3 možné hodnoty:
 
 ----
 
-Hlavním smyslem floatu je prvek dát na jednu stranu a nechat text, aby ho obtékal. Pro tvorbu layoutů byl spíš zneužíván díky nedostatku lepších nástrojů. 
+Float je stále často používán pro tvorbu layoutů. To se ale pomalu stává minulostí, díky poměrně široké podpoře _flexboxu_ ve většině dnešních prohlížečů.
 
+Hlavním smyslem floatu zůstává umístění prvku na jednu stranu a nechat text, aby ho obtékal. 
 
 ```html
 <p>
@@ -42,7 +51,6 @@ img { float:left; }
 </p>
 </div>
 
-
 ---
 
 ## Clearfix
@@ -58,11 +66,19 @@ Zatím to vypadá celkem v pohodě, ne? A co kdyby textu bylo méně?
 </p>
 </div>
 
-Uf. Protože floatovaný prvek je z toku dokumentu vyjmut, jeho rodič o něm neví.
+Uf. Protože floatovaný prvek je z toku dokumentu vyjmut, jeho rodič o něm „neví“ a proto se roztáhne jen na výšku obsahu. 
 
-Pokud na tom záleží a chceš, aby rodič vždy „věděl“ o svém potomku, je potřeba za něj umístit další blokový element s vlastností `clear: left;`.
+----
 
-Protože nechceš do HTML přidávat nové prvky, dělá se to v praxi pomocí generovaného obsahu.
+Teď je na řadě představit vlastnost `clear`, která umožňuje nastavit chování prvku tak, že se posune až za floatovaný prvek. Pozor: funguje to jen pro blokový element.
+
+Pokud na tom záleží a chceš, aby rodič vždy „věděl“ o svém potomku, je potřeba za něj tedy potřeba umístit další blokový element s vlastností `clear: both;`. 
+ 
+Ve skutečnosti bude „vědět“ právě o tomhle novém elementu, který bude vždy za tím floatovaným, ale výsledek bude stejný.
+
+----
+
+Protože nechceš do HTML přidávat nové prvky, dělá se to v praxi pomocí generovaného obsahu takto:
 
 ```css
 .clearfix::after {
@@ -86,4 +102,4 @@ Protože nechceš do HTML přidávat nové prvky, dělá se to v praxi pomocí g
 </p>
 </div>
 
-Třídu `clearfix` přiřadíš libovolnému prvku, který je rodičem a tím máš hotovo.
+Třídu `clearfix` přiřadíš libovolnému prvku, který je rodičem a tím je hotovo.
