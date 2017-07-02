@@ -19,21 +19,21 @@
   },
   "homepage": "https://github.com/PyLadiesCZ/webkurz.pyladies.cz#readme",
   "devDependencies": {
-    "autoprefixer": "^6.7.2",
-    "browser-sync": "^2.18.7",
-    "bulma": "^0.4.0",
+    "autoprefixer": "^7.1.1",
+    "browser-sync": "^2.18.12",
+    "bulma": "^0.4.2",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
     "gulp-copy": "^1.0.0",
     "gulp-debug": "^3.1.0",
     "gulp-filenames": "^4.0.1",
-    "gulp-postcss": "^6.3.0",
+    "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.4.1",
+    "gulp-sourcemaps": "^2.6.0",
     "gulp-surge": "^0.1.0",
     "gulp-watch": "^4.3.11",
-    "highlight.js": "^9.9.0"
+    "highlight.js": "^9.12.0"
   }
 }
