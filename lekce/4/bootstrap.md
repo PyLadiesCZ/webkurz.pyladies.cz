@@ -13,7 +13,7 @@ Poslouží ale velmi dobře i jako základ vizuálně komplexnějších webů.
 
 ---
 
-## Boostrap 3 nebo 4?
+## Boostrap&nbsp;3 nebo&nbsp;4?
 
 ----
 
