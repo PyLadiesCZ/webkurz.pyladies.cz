@@ -148,6 +148,14 @@
 
     details[open] { background-color: hsla(0, 0%, 100%, 0.5); }
 
+    .c-color-swatch {
+        display: inline-block;
+        width: 1em;
+        height: 1.35em;
+        margin-bottom: -0.1em;
+        vertical-align: text-bottom;
+    }
+
 }
 
 .gitter-open-chat-button {

@@ -130,13 +130,29 @@ body {
 
 ### Některé funkce na změnu barev
 
-- `lighten($color, $amount)` Vrátí světlější odstín, např. `lighten(red, 20%)` je `#ff6666`.
-- `darken($color, $amount)` Vrátí tmavější odstín, např. `darken(red, 20%)` je `#990000`.
-- `saturate($color, $amount)`  Vrátí sytější barvu, např. `saturate(skyblue, 20%)` je `#79d4f9`.
-- `desaturate($color, $amount)` Vrátí méně sytou barvu, např. `desaturate(skyblue, 20%)` je `#95c8dd`.
-- `grayscale($color)` Odebere úplně barevnou složku, např. `grayscale(skyblue)` je `#b9b9b9`.
-- `adjust-hue($color, $degrees)` Vrátí odstín barvy posunutý o daný počet stupňů (0 až 360°), např. `adjust-hue(red, 60deg)` je `yellow`.
-- `complement($color)` Vrátí komplementární barvu , např. `grayscale(red)` je `cyan`.
+#### `lighten($color, $amount)`
+
+Vrátí světlější odstín, např. `lighten(red, 30%)`<i class="c-color-swatch" style="background-color:red;"></i> je `#ff9999`<i class="c-color-swatch" style="background-color:#ff9999;"></i>.
+
+#### `darken($color, $amount)`
+
+Vrátí tmavější odstín, např. `darken(red, 20%)`<i class="c-color-swatch" style="background-color:red;"></i> je `#990000`<i class="c-color-swatch" style="background-color:#990000;"></i>.
+
+#### `saturate($color, $amount)`
+
+Vrátí sytější barvu, např. `saturate(steelblue, 40%)`<i class="c-color-swatch" style="background-color:steelblue;"></i> je `#1487e6`<i class="c-color-swatch" style="background-color:#1487e6;"></i>.
+
+#### `desaturate($color, $amount)`
+
+Vrátí méně sytou barvu, např. `desaturate(magenta, 80%)`<i class="c-color-swatch" style="background-color:magenta;"></i> je `#bf40bf`<i class="c-color-swatch" style="background-color:#bf40bf;"></i>.
+
+#### `grayscale($color)`
+
+Odebere úplně barevnou složku, např. `grayscale(red)`<i class="c-color-swatch" style="background-color:red;"></i> je `gray`<i class="c-color-swatch" style="background-color:gray;"></i>.
+
+#### `complement($color)`
+
+Vrátí komplementární barvu, např. `grayscale(red)`<i class="c-color-swatch" style="background-color:red;"></i> je `cyan`<i class="c-color-swatch" style="background-color:cyan;"></i>.
 
 
 ----
