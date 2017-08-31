@@ -16,9 +16,9 @@ Tato syntaxe má tu výhodu, že je nadstavbou, takže píšeš standardní CSS 
 
 ## K čemu se hodí
 
-_Sass_ je mocný nástroj, který umožňuje spoustu programování, ale nenechte se jeho silou příliš zlákat. 
+_Sass_ je mocný nástroj, který umožňuje CSS generovat pomocí opravdu složitého kódu, ale nenech se jeho silou příliš zlákat. 
 
-**Pro naprostou většinu běžných webů stačí využít následující funkcionalitu.** 
+**Pro naprostou většinu běžných webů stačí využít funkcionalitu popsanou níže.** 
 
 ----
 
