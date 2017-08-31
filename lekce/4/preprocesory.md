@@ -113,18 +113,18 @@ p { padding: 40px; }
 Barvy lze ztmavit, zesvětlit, zvětšit nebo zmenšit jejich sytost atd.
 
 ```scss
-$hlavni-barva: skyblue;
+$zakladni-barva: #eeeeee;
 
 body { 
-    background-color: $hlavni-barva;
-    color: darken($hlavni-barva, 40%); 
+    background-color: $zakladni-barva;
+    color: darken($zakladni-barva, 20%); 
 }
 ``` 
 
 ```css
 body {
-  background-color: skyblue;
-  color: #186c8e;
+  background-color: #eeeeee;
+  color: #bbbbbb;
 }
 ```
 
