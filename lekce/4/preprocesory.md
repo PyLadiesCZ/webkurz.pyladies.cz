@@ -53,19 +53,19 @@ Výsledné CSS pak bude vypadat jako bys postupně ručně zkopírovala obsah je
 Někdy se hodnoty opakují a může tak být vhodné je nadefinovat jednou a pak jen odkazovat na tuto definici. 
 
 ```scss
-$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
-$standard-border-width: 2px;
+$zakladni-pismo: Helvetica, sans-serif;
+$zakladni-barva: #333;
+$standardni-sirka-okraje: 2px;
 
 body {
-  font: 100% $font-stack;
-  color: $primary-color;
+  font: 100% $zakladni-pismo;
+  color: $zakladni-barva;
 }
 
 input {
     border-style: solid;
-    border-color: $primary-color;
-    border-width: $standard-border-width;
+    border-color: $zakladni-barva;
+    border-width: $standardni-sirka-okraje;
 }
 ```
 
@@ -84,7 +84,7 @@ input {
 }
 ```
 
-Využívej proměnné opravdu pouze tam, kde spolu hodnoty skutečně souvisí. 
+Využívej proměnné pouze tam, kde se daná hodnota opakuje a kde spolu hodnoty skutečně souvisí.  
 
 ----
 
