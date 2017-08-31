@@ -108,54 +108,6 @@ p { padding: 40px; }
 
 ----
 
-### Manipulace s barvami
-
-Barvy lze ztmavit, zesvětlit, zvětšit nebo zmenšit jejich sytost atd.
-
-```scss
-$zakladni-barva: #eeeeee;
-
-body { 
-    background-color: $zakladni-barva;
-    color: darken($zakladni-barva, 20%); 
-}
-``` 
-
-```css
-body {
-  background-color: #eeeeee;
-  color: #bbbbbb;
-}
-```
-
-### Některé funkce na změnu barev
-
-#### `lighten($color, $amount)`
-
-Vrátí světlější odstín, např. `lighten(red, 30%)`<i class="c-color-swatch" style="background-color:red;"></i> je `#ff9999`<i class="c-color-swatch" style="background-color:#ff9999;"></i>.
-
-#### `darken($color, $amount)`
-
-Vrátí tmavější odstín, např. `darken(red, 20%)`<i class="c-color-swatch" style="background-color:red;"></i> je `#990000`<i class="c-color-swatch" style="background-color:#990000;"></i>.
-
-#### `saturate($color, $amount)`
-
-Vrátí sytější barvu, např. `saturate(steelblue, 40%)`<i class="c-color-swatch" style="background-color:steelblue;"></i> je `#1487e6`<i class="c-color-swatch" style="background-color:#1487e6;"></i>.
-
-#### `desaturate($color, $amount)`
-
-Vrátí méně sytou barvu, např. `desaturate(magenta, 80%)`<i class="c-color-swatch" style="background-color:magenta;"></i> je `#bf40bf`<i class="c-color-swatch" style="background-color:#bf40bf;"></i>.
-
-#### `grayscale($color)`
-
-Odebere úplně barevnou složku, např. `grayscale(red)`<i class="c-color-swatch" style="background-color:red;"></i> je `gray`<i class="c-color-swatch" style="background-color:gray;"></i>.
-
-#### `complement($color)`
-
-Vrátí komplementární barvu, např. `grayscale(red)`<i class="c-color-swatch" style="background-color:red;"></i> je `cyan`<i class="c-color-swatch" style="background-color:cyan;"></i>.
-
-
-----
 
 ### Vnořování (nesting)
 
@@ -221,6 +173,55 @@ Výsledné CSS.
     }
 }
 ```
+
+----
+
+### Manipulace s barvami
+
+Barvy lze ztmavit, zesvětlit, zvětšit nebo zmenšit jejich sytost atd.
+
+```scss
+$zakladni-barva: #eeeeee;
+
+body { 
+    background-color: $zakladni-barva;
+    color: darken($zakladni-barva, 20%); 
+}
+``` 
+
+```css
+body {
+  background-color: #eeeeee;
+  color: #bbbbbb;
+}
+```
+
+### Některé funkce na změnu barev
+
+#### `lighten($color, $amount)`
+
+Vrátí světlější odstín, např. `lighten(red, 30%)`<i class="c-color-swatch" style="background-color:red;"></i> je `#ff9999`<i class="c-color-swatch" style="background-color:#ff9999;"></i>.
+
+#### `darken($color, $amount)`
+
+Vrátí tmavější odstín, např. `darken(red, 20%)`<i class="c-color-swatch" style="background-color:red;"></i> je `#990000`<i class="c-color-swatch" style="background-color:#990000;"></i>.
+
+#### `saturate($color, $amount)`
+
+Vrátí sytější barvu, např. `saturate(steelblue, 40%)`<i class="c-color-swatch" style="background-color:steelblue;"></i> je `#1487e6`<i class="c-color-swatch" style="background-color:#1487e6;"></i>.
+
+#### `desaturate($color, $amount)`
+
+Vrátí méně sytou barvu, např. `desaturate(magenta, 80%)`<i class="c-color-swatch" style="background-color:magenta;"></i> je `#bf40bf`<i class="c-color-swatch" style="background-color:#bf40bf;"></i>.
+
+#### `grayscale($color)`
+
+Odebere úplně barevnou složku, např. `grayscale(red)`<i class="c-color-swatch" style="background-color:red;"></i> je `gray`<i class="c-color-swatch" style="background-color:gray;"></i>.
+
+#### `complement($color)`
+
+Vrátí komplementární barvu, např. `grayscale(red)`<i class="c-color-swatch" style="background-color:red;"></i> je `cyan`<i class="c-color-swatch" style="background-color:cyan;"></i>.
+
 
 ---
 
