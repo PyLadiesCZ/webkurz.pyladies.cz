@@ -35,7 +35,7 @@ Není příliš přehledné mít rozsáhlejší CSS v jednom dlouhém souboru a 
 
 Takový zápis ale zpomalí načítání stránky, proto je lepší mít všechno CSS v jednom souboru. (Výjimkou jsou weby na serverech, které využívají _http/2_.)
 
-Proto je lepší využít rozšíření _Sass_ pro standardní CSS `@import` a jediném souboru (např. `ìndex.scss`) mít:
+Proto je lepší využít rozšíření _Sass_ pro standardní CSS `@import` a jediném souboru (např. `index.scss`) mít:
 
 ```scss
 @import 'zaklad';
