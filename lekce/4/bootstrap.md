@@ -93,7 +93,8 @@ Vždy je potřeba začít kontejnerem, do něj dát řádek (řádky) a teprve d
 </div>
 ```
 
-Pokud bys chtěla, aby byl kontejner vždy až do kraje, použij třídu `container-fluid`.
+Pokud bys chtěla, aby byl kontejner přes celou šířku okna prohlížeče, použij třídu `container-fluid`.
+
 
 ----
 
