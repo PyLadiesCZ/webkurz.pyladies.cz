@@ -6,7 +6,9 @@ World wide web je informační prostor, kde jsou dokumenty a další zdroje iden
 
 ## Co je taky web?
 
-Web ale není jen to, co vidíte v prohlížeči. Web používají často i uživatelé, kteří nejsou zdraví a nemají k dispozici nejnovejší technologie v ideálních podmínkách. Je dobré na ně myslet, když web děláte.
+Web ale není jen to, co vidíš v tvém prohlížeči. Web totiž používají i uživatelé, kterým počítač web předčítá nebo používají prohlížeč, který stejný kód z různých důvodů zobrazuje jinak.  
+ 
+Je dobré na ně myslet, když web děláte.
 
 ----
 
