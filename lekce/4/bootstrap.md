@@ -11,6 +11,8 @@ Velkou výhodou je detailní dokumentace a také k němu najdeš hotové kompone
 Bootstrap je ideální tam, kde se není příliš nutné zabývat vzhledem, třeba u administračních rozhraní nebo u prototypů. 
 Poslouží ale velmi dobře i jako základ vizuálně komplexnějších webů.
 
+_Na webu Vzhůru dolů si můžeš přečíst [detailnější rozbor, kdy se Bootstrap hodí a kdy ne](https://www.vzhurudolu.cz/blog/11-bootstrap-pomuze) (přestože je pro verzi 3, platí to samé o Bootstrap 4)._
+
 ---
 
 ## Boostrap&nbsp;3 nebo&nbsp;4?
