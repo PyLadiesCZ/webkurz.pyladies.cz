@@ -91,18 +91,14 @@ Podmínky mohou být i komplexnější (maximální šířka, logické operátor
 
 ### Mobile first
 
-_Mobile first_ je přístup návrhový i technologický  <span class="tag is-warning">bude doplněno</span>
+_Mobile first_ je přístup návrhový (designový) i technologický. Vymyslet jak bude web vypadat na velkém displeji a teprve potom začít přemýšlet o tom, jak to všechno vtěsnat na malou obrazovku je skoro vždy více práce než to řešit naopak. Často je to i nemožné, protože některé prvky ani nejde zmenšit tak, aby šly ještě používat. Výhodou je i to, že díky takovému přístupu je stránka obvykle jednodušší, obsahuje toho prostě méně, díky čemuž se i lépe používá.  
+
+Technicky to se to dělá tak, že nejdřív napíšeš styly pro nejmenší velikost displejů (obvykle šířka 320 pixelů) a postupně roztahuješ okno, aby bylo širší. Jakmile stránka vypadá špatně, podíváš se na šířku okna, vytvoříš breakpoint pomocí media query (např. `@media (min-width: 480px) { … }`) a přidáš CSS vlastnosti, které to vyřeší, tedy způsobí, že to od tohoto bodu bude vše zas vypadat jak má. Například ze dvou prvků, které jsou pod sebou a mají 100% šířku uděláš dva stejně široké vedle sebe.
+
+_Tip: Pro roztahování je praktické využít [Device mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/) v Developer Tools prohlížeče Chrome, které ti i ukazuje šířku viewportu._
 
 ----
 
-### Prakticky
+### Knihovny
 
-Otevři si stránku v prohlížeči. Nastav si šířku okna na cca 300 pixelů a postupně okno dělej širší. Jakmile to vypadá špatně, napiš nějaké CSS, které to vyřeší.
-
-_Tip: Pro roztahování je praktické využít [Device mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/) v Developer Tools prohlížeče Chrome._
-
-----
-
-### Frameworky
-
-<span class="tag is-warning">bude doplněno</span>
+V praxi ti s responzivitou pomůže např. knihovna Bootstrap o kterém je následující kapitola a který má již prvky navržené právě podle přístupu _mobile first_.
