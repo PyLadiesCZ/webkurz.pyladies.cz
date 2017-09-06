@@ -22,7 +22,7 @@ Nástroj, který umí stránku obnovit za tebe tak, že v podstatě okamžitě p
 
 Protože je _Browsersync_ napsaný v _JavaScriptu_, potřebuješ si nejdřív nainstalovat prostředí pro jeho běh na tvém počítači, které se jmenuje _Node.js_.
 
-Stáhni si a nainstaluj si nejnovější _Node.js_ (aktuálně 7.5.0) z [oficiálních stránek](https://nodejs.org/).
+Stáhni si a nainstaluj si nejnovější _Node.js_ (aktuálně 8.4.0) z [oficiálních stránek](https://nodejs.org/).
 
 Pokud používáš pro instalace balíčkovací systém (apt-get, Homebrew apod.), můžeš si Node.js nainstalovat přes něj ([najdi si návod pro ten tvůj](https://nodejs.org/en/download/package-manager/)).
 
