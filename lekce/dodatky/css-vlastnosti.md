@@ -4,7 +4,7 @@ CSS vlastností je ke dvěma stovkám. Prakticky si ale většinou vystačíš s
 
 Neznamená to, že se je musíš naučit nazpamět, ale pokud budeš mít přehled o tom, že něco takového existuje, není problém si přesné názvy a možné hodnoty dohledat až něco takového budeš potřebovat na webu nastylovat.
 
-_Odkazy vedou na (cssreference.io)[http://cssreference.io], které hezky demonstruje, co která vlastnost dělá, pokud odkaz vede jinam, je to protože cssreference.io neobsahuje úplně vše._
+_Odkazy vedou na [cssreference.io](http://cssreference.io), které hezky demonstruje, co která vlastnost dělá, pokud odkaz vede jinam, je to protože cssreference.io neobsahuje úplně vše._
 
 ----
 
