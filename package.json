@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/PyLadiesCZ/webkurz.pyladies.cz#readme",
   "devDependencies": {
-    "autoprefixer": "^7.1.3",
+    "autoprefixer": "^7.1.4",
     "browser-sync": "^2.18.13",
     "bulma": "^0.5.1",
     "gulp": "^3.9.1",
