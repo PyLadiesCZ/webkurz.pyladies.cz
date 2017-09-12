@@ -34,7 +34,7 @@ Zkus všechny použít na prvky v tvém `index.html`.
 
 Velikost písma můžeš nastavit pomocí spousty jednotek, zatím si vystačíme s pixely (`px`) a procenty `%`.
 
-Hodnota `100%` znamnená velikost písma rodiče.
+Hodnota `100%` znamená velikost písma rodiče.
 
 ```css
 h1 { font-size: 20px; }
