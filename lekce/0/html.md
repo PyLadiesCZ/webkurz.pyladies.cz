@@ -330,7 +330,8 @@ V souboru s kódováním UTF-8 můžeš napsat v podstatě jakékoli znaky a vš
 
 #### Cvičení
 
-Definuj svému HTML kódo
+Definuj svému HTML kódování a název stránky.
+
 ---
 
 ## Další tagy
