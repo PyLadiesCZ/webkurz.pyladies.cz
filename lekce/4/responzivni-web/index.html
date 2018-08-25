@@ -23,7 +23,107 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Responzivní web</h1></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Přestože se statistiky návštěvnosti různých webů mohou výrazně lišit, neexistuje asi dnes žádný web, na který by nechodilo nezanedbatelné množství návštěvníků s&nbsp;jiným zařízením než je klasický počítač s&nbsp;myší a velkou obrazovkou.</p>
+                                                <p>Responzivní návrh webu se snaží tuto skutečnost brát v potaz.</p>
+                                                <p>Je potřeba si uvědomit, že displeje zařízení s prohlížečem jsou všech velikostí: od opravdu malých po obrovské monitory. A liší se nejen velikostí, ale i jemností (počet fyzických pixelů na cm²) a také tím, zda jsou dotykové nebo ne.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Jak to tedy řešit?</h2>
+                                                <p>Ještě stále se lze setkat se starším způsobem, kdy na jiné adrese (typu m.example.com) existuje „mobilní“ web s jiným HTML, CSS a často i obrázky, na který je po detekci zařízení prohlížeč přesměrován. Tuto cestu nelze doporučit z více důvodů, jedním z&nbsp;hlavních je to, že řeší fungování jen na omezeném množství zařízení.</p>
+                                                <p>Proto je lepší cestou responzivní web, který má stejný kód pro všechna zařízení a umí se chovat tak, jak je potřeba, pro všechny velikosti okna prohlížeče.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Pružný layout</h3>
+                                                <p>Pružný layout mění rozměry podle velikosti okna, proto se často definuje v procentech. Je to pro blokové prvky vlastně normální stav, protože jejich výchozí šířka je 100 % šířky rodičovského elementu.</p>
+                                                <p>V pružném layoutu kromě šířek v procentech často využiješ i maximální a minimální šířku a flexbox.</p>
+                                                <h4>Viewporty</h4>
+                                                <p>Protože historicky prohlížeče na menších zařízeních musí vycházet z toho, že stránka je vytvořena pro „desktopové“ rozlišení, vykreslují web jako by obrazovka měla 980 pixelů šířky (nejčastěji). To vede k titěrné velikosti stránky a nutí uživatele si ji zvětšovat. Je potřeba prohlížeči „říct“, že je vyrobený i pro něj a to v hlavně v HTML, přímo v hlavičce. </p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1"</span>&gt;</span>
+    …
+</code></pre>
+                                                <p>A pro Windows Phone i v CSS.</p>
+                                                <pre><code class="lang-css">@-ms-viewport { <span class="hljs-attribute">width</span>: device-width; }
+</code></pre>
+                                                <p><em>Na Vzhůru dolů si můžeš přečíst víc o <a href="http://www.vzhurudolu.cz/prirucka/viewport-mobily">viewportech</a> a značce <a href="http://www.vzhurudolu.cz/prirucka/viewport-meta">meta viewport</a>, prakticky si ale dlouho vystačíš s prostým zkopírováním těch dvou kousků kódu.</em></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Pružné obrázky</h3>
+                                                <p>Text se v pružném layoutu přizpůsobí sám, „nateče“ do definovaných šířek, ale obrázky samy od sebe ne. Proto je potřeba přizpůsobit je šířce layoutu. To úplně nejjednodušší řešení je nastavit jim <code>max-width: 100%;</code>, čímž se nestane, že by se obrázek roztáhnul nad jeho skutečnou velikost a <code>height: auto;</code>, čímž se zajistí zachování poměru stran.</p>
+                                                <p><em>Více k <a href="http://www.vzhurudolu.cz/prirucka/responzivni-obrazky">responzivním obrázkům</a> na Vzhůru dolů</em></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Media Queries: podmínky pro změny layoutu</h3>
+                                                <p>Jen pomocí pružného layoutu jde sice nějaký ten jednodušší web udělat, ale u komplikovanějšího layoutu narazíš na potřebu změnit něco, co „nejde“. V takové chvíli je čas sáhnout po <em>media queries</em>, což jsou v podstatě podmínky v CSS, při jejichž splnění se aplikuje CSS, které je v nich uzavřené.</p>
+                                                <p>Podmínky se mohou týkat mnoha vlastností, nejčastěji ale šířky okna prohlížeče.</p>
+                                                <pre><code class="lang-css">@<span class="hljs-keyword">media</span> (min-width: 640px) {
+    <span class="hljs-comment">/* CSS které platí pouze pokud je okno prohlížeče široké 640px a více */</span>
+}
+</code></pre>
+                                                <p>Prakticky se to používá takto.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-number">14px</span>; }
+
+@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">640px</span>) {
+    <span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>; }
+}
+</code></pre>
+                                                <p>Protože je zároveň další definice velikosti písma pro <code>body</code> až druhá, „přebije“ v případě splnění podmínky tu první.
+                                                    Písmo tedy bude 14px do šířky 639px a od 640px pak 16px. Obdobně můžeš předefinovat jakoukoli CSS vlastnost libovolného prvku.</p>
+                                                <p>Šířka 640px by se v tomto příkladu stala tzv. bodem zlomu (anglicky <em>breakpoint</em>). Obvykle má responzivní webová stránka breakpointů několik.</p>
+                                                <p>Podmínky mohou být i komplexnější (maximální šířka, logické operátory, negace atd.). <em>Více o <a href="http://www.vzhurudolu.cz/prirucka/css3-media-queries">Media Queries</a> najdeš na Vzhůru dolů</em></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Jak na to prakticky?</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Mobile first</h3>
+                                                <p><em>Mobile first</em> je přístup návrhový (designový) i technologický. Vymyslet jak bude web vypadat na velkém displeji a teprve potom začít přemýšlet o tom, jak to všechno vtěsnat na malou obrazovku je skoro vždy více práce než to řešit naopak. Často je to i nemožné, protože některé prvky ani nejde zmenšit tak, aby šly ještě používat. Výhodou je i to, že díky takovému přístupu je stránka obvykle jednodušší, obsahuje toho prostě méně, díky čemuž se i lépe používá. </p>
+                                                <p>Technicky to se to dělá tak, že nejdřív napíšeš styly pro nejmenší velikost displejů (obvykle šířka 320 pixelů) a postupně roztahuješ okno, aby bylo širší. Jakmile stránka vypadá špatně, podíváš se na šířku okna, vytvoříš breakpoint pomocí media query (např. <code>@media (min-width: 480px) { … }</code>) a přidáš CSS vlastnosti, které to vyřeší, tedy způsobí, že to od tohoto bodu bude vše zas vypadat jak má. Například ze dvou prvků, které jsou pod sebou a mají 100% šířku uděláš dva stejně široké vedle sebe.</p>
+                                                <p><em>Tip: Pro roztahování je praktické využít <a href="https://developers.google.com/web/tools/chrome-devtools/device-mode/">Device mode</a> v Developer Tools prohlížeče Chrome, které ti i ukazuje šířku viewportu.</em></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Knihovny</h3>
+                                                <p>V praxi ti s responzivitou pomůže např. knihovna Bootstrap o kterém je následující kapitola a který má již prvky navržené právě podle přístupu <em>mobile first</em>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

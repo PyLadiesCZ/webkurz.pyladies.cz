@@ -23,7 +23,122 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Tok dokumentu</h1></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Výchozí chování elementů na HTML stránce je v podstatě logické a přirozené. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Tekutý obsah (fluid)</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Všechny blokové elementy jsou fluidní.</p>
+                                                <p>Obsah se sám přizpůsobuje rozměrům prohlížeče. </p>
+                                                <p>Výchozí šířka je <code>width: 100%;</code>, proto se element roztáhne na celou šířku.</p>
+                                                <p>Zalamování řádků je povoleno: <code>word-wrap: normal;</code></p>
+                                                <p>Výška je automatická: <code>height: auto</code>, přizpůsobuje se podle toho, kolik obsahu element má.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Řazení</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Obsah se řadí tak, jak je v kódu napsaný. První element v <code>&lt;body&gt;</code> je první zobrazen na stránce.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>První třída kašička.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Druhý třída myšička.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example">
+                                                    <p>První třída kašička.</p>
+                                                    <p>Druhý třída myšička.</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Skládání</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Elementy se řadí nad sebe.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    Rodič v pozadí
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        Jsem vnořený element
+        <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>a ještě vnořený<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+        element.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example example-stacking">
+                                                    <div>
+                                                        Rodič v pozadí
+                                                        <p>
+                                                            Jsem vnořený element
+                                                            <strong>a ještě vnořený</strong>
+                                                            element.
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <p>Potomci se zobrazují nad jejich rodiči. Čím je tedy prvek víc zanořený, tím je výše.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Rozbití toku dokumentu</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Ne všechno by se ale takto dalo udělat, proto máme nástroje, tedy CSS vlastnosti, které tok naruší.</p>
+                                                <ul>
+                                                    <li><code>height</code> a <code>width</code> mění fluiditu</li>
+                                                    <li><code>float</code> naruší chování prvku i jeho okolí</li>
+                                                    <li><code>position: absolute</code> a <code>position: fixed</code> odeberou element z toku</li>
+                                                    <li><code>z-index</code> umí změnit pořadí v kterém jsou elemnty naskládány na sebe</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

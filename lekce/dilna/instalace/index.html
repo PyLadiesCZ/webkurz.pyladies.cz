@@ -23,7 +23,99 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent ">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Instalace</h2></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Django</h3>
+                                            <p>Předpokládám, že máš Python 3 i venv už nainstalovaný.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><pre><code class="lang-shell">python -m venv venv
+</code></pre>
+                                                <p>Na Linuxu</p>
+                                                <pre><code class="lang-shell">source venv/bin/<span class="hljs-built_in">activate</span>
+</code></pre>
+                                                <p>Na Windows</p>
+                                                <pre><code class="lang-shell">venv\Scripts\<span class="hljs-built_in">activate</span>
+</code></pre>
+                                                <p>A dále ve virtual envu</p>
+                                                <pre><code class="lang-shell">(venv) git <span class="hljs-keyword">clone</span> https:<span class="hljs-comment">//github.com/benabraham/goldenking.git</span>
+Cloning into <span class="hljs-string">'goldenking'</span>...
+remote: Counting objects: <span class="hljs-number">40</span>, done.
+remote: Compressing objects: <span class="hljs-number">100</span>% (<span class="hljs-number">30</span>/<span class="hljs-number">30</span>), done.
+remote: Total <span class="hljs-number">40</span> (delta <span class="hljs-number">7</span>), reused <span class="hljs-number">36</span> (delta <span class="hljs-number">5</span>), pack-reused <span class="hljs-number">0</span>
+Unpacking objects: <span class="hljs-number">100</span>% (<span class="hljs-number">40</span>/<span class="hljs-number">40</span>), done.
+</code></pre>
+                                                <pre><code class="lang-shell">(venv) <span class="hljs-built_in">cd</span> goldenking
+</code></pre>
+                                                <pre><code class="lang-shell">(venv) pip install -r requirements<span class="hljs-selector-class">.txt</span>
+Collecting Django==<span class="hljs-number">1.10</span>.<span class="hljs-number">6</span> (from -r requirements<span class="hljs-selector-class">.txt</span> (line <span class="hljs-number">1</span>))
+  Using cached Django-<span class="hljs-number">1.10</span>.<span class="hljs-number">6</span>-py2<span class="hljs-selector-class">.py3-none-any</span><span class="hljs-selector-class">.whl</span>
+Installing collected packages: Django
+Successfully installed Django-<span class="hljs-number">1.10</span>.<span class="hljs-number">6</span>
+</code></pre>
+                                                <pre><code class="lang-shell">(<span class="hljs-selector-tag">venv</span>) <span class="hljs-selector-tag">python</span> <span class="hljs-selector-tag">manage</span><span class="hljs-selector-class">.py</span> <span class="hljs-selector-tag">migrate</span>
+<span class="hljs-selector-tag">Operations</span> <span class="hljs-selector-tag">to</span> <span class="hljs-selector-tag">perform</span>:
+  <span class="hljs-selector-tag">Apply</span> <span class="hljs-selector-tag">all</span> <span class="hljs-selector-tag">migrations</span>: <span class="hljs-selector-tag">admin</span>, <span class="hljs-selector-tag">auth</span>, <span class="hljs-selector-tag">contenttypes</span>, <span class="hljs-selector-tag">donations</span>, <span class="hljs-selector-tag">sessions</span>
+<span class="hljs-selector-tag">Running</span> <span class="hljs-selector-tag">migrations</span>:
+  <span class="hljs-selector-tag">Applying</span> <span class="hljs-selector-tag">contenttypes</span><span class="hljs-selector-class">.0001_initial</span>... <span class="hljs-selector-tag">OK</span>
+  …
+  <span class="hljs-selector-tag">Applying</span> <span class="hljs-selector-tag">sessions</span><span class="hljs-selector-class">.0001_initial</span>... <span class="hljs-selector-tag">OK</span>
+</code></pre>
+                                                <pre><code class="lang-shell">(venv) python manage<span class="hljs-selector-class">.py</span> loaddata fixtures<span class="hljs-selector-class">.json</span>
+Installed <span class="hljs-number">32</span> object(s) from <span class="hljs-number">1</span> fixture(s)
+</code></pre>
+                                                <pre><code class="lang-shell">(venv) python manage.py runserver
+
+Performing system checks...
+
+System <span class="hljs-keyword">check</span> <span class="hljs-keyword">identified</span> <span class="hljs-keyword">no</span> issues (<span class="hljs-number">0</span> silenced).
+March <span class="hljs-number">10</span>, <span class="hljs-number">2017</span> - <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>
+Django <span class="hljs-keyword">version</span> <span class="hljs-number">1.10</span><span class="hljs-number">.6</span>, <span class="hljs-keyword">using</span> <span class="hljs-keyword">settings</span> <span class="hljs-string">'goldenking.settings'</span>
+<span class="hljs-keyword">Starting</span> development <span class="hljs-keyword">server</span> <span class="hljs-keyword">at</span> <span class="hljs-keyword">http</span>://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">8000</span>/
+Quit the <span class="hljs-keyword">server</span> <span class="hljs-keyword">with</span> CTRL-BREAK.
+</code></pre>
+                                                <p>Na adrese <a href="http://127.0.0.1:8000/admin/">http://127.0.0.1:8000/admin/</a></p>
+                                                <p>se dá přihlasit jako uživatel <code>admin</code> heslem <code>adminadmin</code></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Node.js</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Protože máš hotovou konfiguraci v <code>package.json</code>, nainstaluj si balíčky přes <code>npm</code>:</p>
+                                                <pre><code class="lang-shell"><span class="hljs-built_in">npm</span> install
+</code></pre>
+                                                <p>Nyní by měl jít spustit <code>gulp</code>, který ti zároveň spustí devserver:</p>
+                                                <pre><code class="lang-shell">gulp
+</code></pre>
+                                                <p>A na <a href="http://localhost:3000/">http://localhost:3000/</a> budeš mít verzi, na které se bude automaticky obnovovat po změnách, kompilovat CSS ze scss a další příjemnosti.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

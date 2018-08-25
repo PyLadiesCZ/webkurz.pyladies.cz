@@ -23,7 +23,187 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Flask</h1>
+                                            <p>Aneb jak může s webovými stránkami pomoci Python.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Statické a dynamické stránky</h2>
+                                                <p>Zatím jsi dělala webové stránky, na kterých mohou být texty nebo obrázky,
+                                                    tedy tzv. <em>statické stránky</em>. Takové stránky slouží především k informačním účelům -
+                                                    něco na ně napíšeme, aby si to mohl někdo jiný zase přečíst.</p>
+                                                <p>Pokud ale chceš, aby stránky dokázaly reagovat na své okolí, musíme je generovat
+                                                    nějakým programovacím jazykem. Takovým stránkám se říká <em>dynamické</em>. Ukážeme si,
+                                                    jak na to použít Python, ale v zásadě je možné stránky generovat i jakýmkoliv
+                                                    jiným jazykem.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Co je v dynamických stránkách možné?</h2>
+                                                <p>Stránka může…</p>
+                                                <ul>
+                                                    <li>reagovat na to, že uživatel někam klikne, někde něco vyplní, odešle.</li>
+                                                    <li>vypisovat něco z databáze, přidávat do ní, odebírat.</li>
+                                                    <li>díky programovacímu jazyku vědět, jaký je aktuální čas, den, měsíc, rok…</li>
+                                                    <li>cokoliv jiného! Z různých zdrojů může naše stránka zjišťovat třeba aktuální počasí nebo kurzovní lístek, a podle toho se měnit.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Framework</h2>
+                                                <p>Generování webových stránek usnadňuje <em>webový framework</em>. Python jich má více, mezi nejznámější patří <a href="https://www.djangoproject.com/">Django</a> a <a href="http://flask.pocoo.org/">Flask</a>. Pokud se budeš v budoucnu o tvorbu webů zajímat dál, rozhodně se podívej na Django (<a href="http://tutorial.djangogirls.org/">DjangoGirls mají pěkné výukové materiály</a>), ale pro naše účely použijeme Flask, protože je nejrychlejší na pochopení. Na Flasku je také postavena většina webů české Python komunity, jako <a href="https://python.cz">python.cz</a>, <a href="https://pyvo.cz">pyvo.cz</a>, <a href="https://pyladies.cz">pyladies.cz</a>, …</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Začínáme s Flaskem</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Vytvoř si ve složce se svým projektem <em>virtualenv</em>, aktivuj si jej a nainstaluj si
+                                                <code>flask</code>:</p>
+                                                <pre><code class="lang-shell">(venv)$ python -m pip <span class="hljs-keyword">install</span> flask
+</code></pre>
+                                                <p>Následující kód si ulož do souboru. Pojmenuj ho např. <code>web.py</code>:</p>
+                                                <pre><code class="lang-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask
+app = Flask(__name__)
+
+<span class="hljs-meta">@app.route('/')</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'PyLadies jsou nejlepší!'</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    app.run(debug=<span class="hljs-keyword">True</span>)
+</code></pre>
+                                                <p>A je to. Zkus si svůj zbrusu nový, Pythonem poháněný web spustit:</p>
+                                                <pre><code class="lang-shell">(env)$ python web.py
+ * Running <span class="hljs-literal">on</span> http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">5000</span>/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger <span class="hljs-keyword">is</span> active!
+ * Debugger pin code: <span class="hljs-number">189</span><span class="hljs-number">-972</span><span class="hljs-number">-345</span>
+</code></pre>
+                                                <p>Na zmíněné adrese <a href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a> bys měla v prohlížeči vidět použitý text.</p>
+                                                <div class="c-example">
+                                                    PyLadies jsou nejlepší!
+                                                </div>
+
+                                                <p>Pomocí <code>app.run()</code> jsi aplikaci spustila na lokálním počítači. Parametrem <code>debug</code>
+                                                    Flasku říkáš, že chceš zjednodušit <em>debugování</em> (tzn. hledání a opravování chyb). Díky tomu uvidíš případné výjimky
+                                                    přímo v prohlížeči a tvůj <em>vývojový server</em> se bude sám obnovovat, pokud něco změníš v souboru <code>web.py</code>.
+                                                    Abys ale změnu viděla i v prohlížeči, budeš muset stránku vždy obnovit (tzn. dotázat
+                                                    se tvého serveru na její aktuální podobu). Jak je zmíněno i v konzoli, server lze vypnout
+                                                    pomocí <kbd>Ctrl + C</kbd>.</p>
+                                                <p>V případě reálného nasazení bys aplikaci předala nějakému plnohodnotnému webovému serveru.
+                                                    Režim <code>debug</code> bys v tom případě nezapínala kvůli bezpečnosti i dopadům na výkon.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Routy</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Podle příkladu sis vytvořila flaskovou aplikaci (<code>app</code>) a pomocí dekorátoru
+                                                <code>@app.route</code> jsi vytvořila takzvanou <em>routu</em> (cestu). Říkáš tím, že na adrese
+                                                <code>/</code> bude k dispozici obsah, který vrátí definovaná funkce.
+                                                Více různých cest lze vytvořit jednoduše přidáním další funkce:</p>
+                                                <pre><code class="lang-python"><span class="hljs-meta">@app.route('/kontakt')</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">contact</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'''
+      PyLadies přijdou, když si v nouzi,
+      když tě Python ze sna vzbouzí,
+      zavolat jen stačí heslo: PyLady, úú!
+    '''</span>
+</code></pre>
+                                                <p>Nově přidaná routa bude na adrese <a href="http://127.0.0.1:5000/kontakt">http://127.0.0.1:5000/kontakt</a> vracet
+                                                    text, který popisuje, jak snadné je kontaktovat PyLadies.</p>
+                                                <div class="c-example">
+                                                    PyLadies přijdou, když si v nouzi, když tě Python ze sna vzbouzí, zavolat jen stačí heslo: PyLady, úú!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h4>Dynamické routy</h4></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Když vytváříš dynamický web, ne vždy znáš všechny cesty dopředu, abys
+                                                ke každé zvlášť mohla přiřadit funkci.</p>
+                                                <p>Dejme tomu, že chceš mít samostatnou stránku o každé PyLady a přitom máš
+                                                    seznam všech PyLadies v nějaké databázi. Situaci lze vyřešit pomocí cest s proměnnou částí:</p>
+                                                <pre><code class="lang-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> abort
+
+pyladies_db = {
+  <span class="hljs-string">'zuzejk'</span>: {<span class="hljs-string">'name'</span>: <span class="hljs-string">'Zuzka'</span>, <span class="hljs-string">'color'</span>: <span class="hljs-string">'zelená'</span>},
+  <span class="hljs-string">'lspdv'</span>: {<span class="hljs-string">'name'</span>: <span class="hljs-string">'Veronika'</span>, <span class="hljs-string">'color'</span>: <span class="hljs-string">'modrá'</span>},
+  <span class="hljs-string">'benabraham'</span>: {<span class="hljs-string">'name'</span>: <span class="hljs-string">'Dan'</span>, <span class="hljs-string">'color'</span>: <span class="hljs-string">'růžová'</span>},
+}
+
+<span class="hljs-meta">@app.route('/users/&lt;user_name&gt;')</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">user_profile</span><span class="hljs-params">(user_name)</span>:</span>
+    <span class="hljs-keyword">try</span>:
+        user = pyladies_db[user_name]
+    <span class="hljs-keyword">except</span> KeyError:
+        <span class="hljs-keyword">return</span> abort(<span class="hljs-number">404</span>)  <span class="hljs-comment"># kód 404 znamená "stránka neexistuje"</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'''
+
+        PyLady {name}! Oblíbená barva: {color}
+
+    '''</span>.format(name=user[<span class="hljs-string">'name'</span>], color=user[<span class="hljs-string">'color'</span>])
+</code></pre>
+                                                <p>Jak můžeš vidět, v našem příkladu jsme použili velmi „sofistikovanou“ databázi, Python slovník. Část cesty jsme si pojmenovali a ohraničili lomenými závorkami: <code>'/users/&lt;user_name&gt;'</code> Tím jsme dali
+                                                    Flasku najevo, že je proměnná a její hodnoty chceme dostávat jako parametr funkce.</p>
+                                                <p>Když tedy v prohlížeči otevřeš adresu <a href="http://127.0.0.1:5000/users/zuzejk">http://127.0.0.1:5000/users/zuzejk</a>, objeví se řetězec <code>zuzejk</code> v proměnné <code>user_name</code> a můžeš s ním dále pracovat. Protože klíč <code>zuzejk</code> v našem slovníku je, vypíše se profil dané PyLady.</p>
+                                                <div class="c-example">
+                                                    PyLady Zuzka! Oblíbená barva: zelená
+                                                </div>
+
+                                                <p>Kdybys do adresy vepsala uživatelské jméno, které v databázi není, např. <a href="http://127.0.0.1:5000/users/nesmysl">http://127.0.0.1:5000/users/nesmysl</a>, zavolá aplikace funkci <code>abort</code> z Flasku a vrátí chybu <em>404 Not Found</em>. To je standardní způsob, jak dát na internetu druhé straně najevo, že se v daných místech nic nenachází.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent ">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><p>Tento text jsme upravili z <a href="https://github.com/cvut/MI-PYT/blob/master/tutorials/02_flask.md">tutoriálu</a> dostupného pod licencí <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>, autorů Petra Viktorina a Miro Hrončoka a <a href="https://github.com/cvut/MI-PYT/graphs/contributors">dalších</a>, proto je pod stejnou licencí dostupný i text na této stránce.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

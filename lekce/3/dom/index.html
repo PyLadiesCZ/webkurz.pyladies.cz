@@ -23,7 +23,469 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>DOM</h1></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Jak bylo už zmíněno, JavaScript umí přistupovat k HTML prvkům na stránce a měnit je. Jak to funguje?</p>
+                                                <p>Prohlížeč přečte HTML a zobrazí všechny tagy uživateli. Zároveň ale pro každý tag vytvoří i JavaScriptový objekt, se kterým můžeš pracovat ve svém programu. Pokud na něm uděláš jakékoliv změny, prohlížeč je okamžitě aplikuje i v tom, jak tag zobrazuje.</p>
+                                                <p>Tomuto systému se říká DOM, <em>Document Object Model</em>. Tato lekce tě naučí, jak s ním lze pracovat.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>První příklad</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Vytvoř si HTML stránku s několika tagy a připojeným souborem <code>dom.js</code>:</p>
+                                                <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"dom.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                                                <p>Náš první JavaScriptový program, který pracuje s DOMem, bude vypadat následovně:</p>
+                                                <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pridejText</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> odstavce = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">'p'</span>);
+    <span class="hljs-keyword">var</span> prvniOdstavec = odstavce[<span class="hljs-number">0</span>];
+    prvniOdstavec.innerText = <span class="hljs-string">'JavaScript je fajn!'</span>;
+}
+<span class="hljs-built_in">window</span>.onload = pridejText;
+</code></pre>
+                                                <p>V JavaScriptu je několik objektů, které máš k dispozici kdekoliv ve svém programu a proto se jim říká <em>globální</em>. Zpřístupňují určité věci z prohlížeče. S&nbsp;objektem <code>window</code> ses již setkala, ten představuje okno prohlížeče (nebo spíš prohlížeč jako takový). K tagům na stránce se můžeš dostat přes jiný globální objekt, <code>document</code>.</p>
+                                                <p>Jeho metoda <code>getElementsByTagName()</code> přijímá název tagu a vrátí pole všech tagů toho názvu, jaké najde na stránce. My víme, že máme na stránce jeden tag s názvem <code>p</code>, tak si z pole vytáhneme první prvek a změníme mu následně text, který obsahuje. To se dělá přiřazením do vlastnosti <code>innerText</code>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Čekání na prohlížeč</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Kód, který manipuluje s DOMem, je dobré spouštět až ve chvíli, kdy má prohlížeč celé HTML přečtené a všechny tagy zobrazené. Když se prohlížeč snaží zobrazit HTML stránku, čte totiž HTML tagy postupně, shora dolů. JavaScript připojujeme ke stránce dřív, než se na ní vyskytuje tag <code>&lt;p&gt;&lt;/p&gt;</code>, takže by se mohlo stát, že v době spuštění našeho programu ještě prohlížeč o žádném <code>p</code> nebude vědět. Potom by metoda <code>getElementsByTagName('p')</code> mohla vrátit prázdné pole a program by nefungoval.</p>
+                                                <p>Naštěstí lze tomuto předejít. Ve chvíli, kdy má prohlížeč celou stránku zpracovanou, spustí funkci, která bude přiřazená do vlastnosti <code>window.onload</code>. Toho je využito i v příkladu výše.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Zobrazení změn v DOMu</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Když si načteme stránku, objeví se nadpis a odstavec s naším dynamicky doplněným textem.</p>
+                                                <div class="c-example">
+                                                    <h1>PyLadies</h1>
+                                                    <p>JavaScript je fajn!</p>
+                                                </div>
+
+                                                <p>Když se podíváš do zdrojového kódu stránky (<kbd>Ctrl + U</kbd>, popřípadě <kbd>Cmd + Alt + U</kbd>), uvidíš stále své původní HTML, kde je <code>&lt;p&gt;&lt;/p&gt;</code> prázdné:</p>
+                                                <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"dom.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                                                <p>Pokud bys chtěla vidět i změny, které provedl JavaScript, musíš si v prohlížeči otevřít vývojářské nástroje a přepnout se v menu na <em>Elements</em>.</p>
+                                                <figure class="image"><img src="live-dom.png" style="max-height:70vh;width:auto;" alt="DOM naživo"></figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Hledání prvků na stránce</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>getElementsByTagName()</h3>
+                                                <p>Tuto metodu už sis vyzkoušela. Hodí se, pokud chceš nějakým způsobem upravit např. všechny prvky stejného typu na stránce. Vrací pole objektů pro všechny nalezené tagy.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>O Popelce<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Mluvila na zvířátka<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Doktor diagnostikoval samomluvu.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Převlékala se za jiné lidi<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Podezření na mnohočetnou poruchu osobnosti.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                                                <pre><code class="lang-js"><span class="hljs-comment">// vrátí objekty pro všechny &lt;h2&gt;</span>
+<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">'h2'</span>);
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>getElementsByClassName()</h3>
+                                                <p>Metoda vrací všechny tagy na stránce, které mají danou třídu.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"odd first"</span>&gt;</span>první<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"even"</span>&gt;</span>druhý<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"odd"</span>&gt;</span>třetí<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"even"</span>&gt;</span>čtvrtý<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+                                                <pre><code class="lang-js"><span class="hljs-comment">// vrátí objekty pro první a třetí &lt;li&gt;</span>
+<span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">'odd'</span>);
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>getElementById()</h3>
+                                                <p>Kromě tříd lze tagům přiřadit i tzv. ID, tedy nějaký identifikátor. Ten musí být v rámci jedné HTML stránky jedinečný, tedy dva prvky nesmí mít stejné ID. </p>
+                                                <p>Metoda, která hledá tagy podle ID, tedy nevrací pole, ale právě jeden výsledek.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>O Popelce<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"kapitola-mluvila-na-zviratka"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Mluvila na zvířátka<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Doktor diagnostikoval samomluvu.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"kapitola-prevlekala-se-za-jine-lidi"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Převlékala se za jiné lidi<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Podezření na mnohočetnou poruchu osobnosti.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                                <pre><code class="lang-js"><span class="hljs-comment">// vrátí druhý tag &lt;div&gt;</span>
+<span class="hljs-keyword">var</span> id = <span class="hljs-string">'kapitola-prevlekala-se-za-jine-lidi'</span>;
+<span class="hljs-built_in">document</span>.getElementById(id);
+</code></pre>
+                                                <h4>Identifikátor</h4>
+                                                <p>Malá odbočka: atribut <code>id</code> se dá použít i pro odkazování na část stránky.</p>
+                                                <p>Odkaz v rámci jedné stránky na nadpis z příkladu výše by vypadal takto: </p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#kapitola-mluvila-na-zviratka"</span>&gt;</span>…<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+                                                <p>Kdybychom odkazovali z jiné stránky a tato se jmenovala <code>o-popelce.html</code>, vypadalo by to takto.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"o-popelce.html#kapitola-mluvila-na-zviratka"</span>&gt;</span>…<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+                                                <p>Po otevření takového odkazu, prohlížeč odskroluje stránku tak, aby byl vidět začátek elementu s daným ID.</p>
+                                                <p>ID lze použít i v selektorech v CSS <code>#nejake-id { color: red; }</code>, ale má to spoustu nevýhod a proto to se tomu vyhni. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>querySelector(), querySelectorAll()</h3>
+                                                <p>S těmito metodami můžeme použít na hledání tagů celý CSS selektor.</p>
+                                                <pre><code class="lang-html">&lt;h1 <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"nadpis"</span>&gt;O Popelce&lt;h1&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nadpis"</span>&gt;</span>Mluvila na zvířátka<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Doktor diagnostikoval samomluvu.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+                                                <pre><code class="lang-js"><span class="hljs-comment">// vrátí objekt pro právě jeden tag, nadpis &lt;h2&gt;</span>
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'div .nadpis'</span>);
+
+<span class="hljs-comment">// vrátí objekt pro právě jeden tag, nadpis &lt;h1&gt;</span>
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.nadpis'</span>);
+
+<span class="hljs-comment">// vrátí pole objektů, nadpisy &lt;h1&gt; a &lt;h2&gt;</span>
+<span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.nadpis'</span>);
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h2>Cvičení</h2>
+                                                <p>Jdi na stránky <a href="http://pyladies.cz/">pyladies.cz</a>, otevři si v prohlížeči konzoli a zkoušej vybírat různé prvky na stránce. Jako první můžeš zkusit najít například všechny odkazy, které se nacházejí v menu:</p>
+                                                <pre><code class="lang-js"><span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.nav a'</span>);
+</code></pre>
+                                                <p>Kolik jich je na stránce? Délka pole se dá zjistit přes vlastnost <code>length</code>:</p>
+                                                <pre><code class="lang-js"><span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.nav a'</span>).length;
+</code></pre>
+                                                <p>Kolik je na stránce obrázků <code>&lt;img&gt;</code>?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Reagujeme na události</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>V JavaScriptu existují tzv. události (angl. <em>event</em>), na které může tvůj program čekat a když se stanou, může něco vykonat. Je to dobré na to, abys mohla stránku ovlivňovat i v jiný okamžik, než když se načte.</p>
+                                                <p>Už jsi se setkala s událostí <code>window.onload</code>. Vlastnost <code>onload</code> je ale jen taková zkratka. Standardně se s událostmi pracuje následovně:</p>
+                                                <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">poNacteni</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Načetla se stránka!'</span>);
+}
+<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, poNacteni);
+</code></pre>
+                                                <p>Tedy na objektu, u kterého chceš na událost číhat, použiješ metodu <code>addEventListener()</code> se dvěma parametry, a to názvem události a funkcí, která má událost obsloužit, když nastane. Zajímavější událost může vypadat takto:</p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"submit"</span> value=<span class="hljs-string">"Klikni na mě"</span>&gt;
+</code></pre>
+                                                <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">vystrasUzivatele</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'Baf!'</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">poNacteni</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> cudlik = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'input'</span>);
+    cudlik.addEventListener(<span class="hljs-string">'click'</span>, vystrasUzivatele);
+}
+
+<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, poNacteni);
+</code></pre>
+                                                <p>Na stránce máš tlačítko. Samo o sobě nic nedělá, protože není ve formuláři. Pomocí JavaScriptu ale můžeme nastavit, že pokud na něj uživatel stránek klikne (událost <code>click</code>), spustí se tvoje funkce <code>vystrasUzivatele()</code>. Celý kód pak bylo opět potřeba spustit až ve chvíli, kdy na objektu <code>window</code> proběhne událost <code>load</code>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h2>Cvičení</h2>
+                                                <p>Událostí je na stránce k dispozici <a href="https://developer.mozilla.org/en-US/docs/Web/Events">mnoho</a>. Zkus vymyslet, jak bys mohla využít událost <code>keyup</code> (uživatel stiskl libovolnou klávesu) s tagem <code>&lt;textarea&gt;</code>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Anonymní funkce</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Program, který je v předešlé sekci, by se dal zapsat i následovně:</p>
+                                                <pre><code class="lang-js"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> cudlik = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'input'</span>);
+
+  cudlik.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'Baf!'</span>);
+  });
+});
+</code></pre>
+                                                <p>V JavaScriptu lze totiž funkce vytvářet i bez toho, abychom jim dávali jméno. Jsou to potom tzv. <em>anonymní funkce</em>, jednorázové.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Měníme DOM</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Změna třídy</h3>
+                                                <p>Umět změnit třídu HTML tagu je zásadní, protože tím můžeš ovlivnit, jaká CSS pravidla se na něj budou aplikovat. Ulož si následující HTML:</p>
+                                                <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"dom.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"style.css"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+            Žilo jednou jedno děvčátko
+            a to dostalo od babičky
+            k narozeninám dárek – červenou
+            čepičku. Rádo ji nosilo, a proto
+            jí říkali Červená karkulka.
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                                                <p>Do připojeného souboru <code>dom.js</code> vytvoř program, který přidá odstavci třídu <code>red</code>, pokud na něj uživatel stránky najede kurzorem:</p>
+                                                <pre><code class="lang-js"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> odstavec = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'p'</span>);
+
+    odstavec.addEventListener(<span class="hljs-string">'mouseover'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        odstavec.className = <span class="hljs-string">'red'</span>;
+    });
+
+    odstavec.addEventListener(<span class="hljs-string">'mouseout'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        odstavec.className = <span class="hljs-string">''</span>;
+    });
+});
+</code></pre>
+                                                <p>Když si stránku načteš v prohlížeči a zkusíš jezdit kurzorem na odstavec a z něj, neuvidíš žádnou změnu. Ale pokud si otevřeš vývojářské nástroje a přepneš se na záložku <em>Elements</em>, uvidíš, že se hodnota atributu <code>&lt;p class="..."&gt;</code> s pohybem kurzoru mění.</p>
+                                                <p>Možná sis všimla, že k HTML v tomto příkladu byl připojen i CSS soubor <code>style.css</code>, ale ten zatím neexistuje. Vytvoř ho tedy a přiřaď v něm třídě <code>red</code> nějaké vlastnosti.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">background-color</span>: skyblue;
+}
+
+<span class="hljs-selector-class">.red</span> {
+    <span class="hljs-attribute">background</span>: red;
+    <span class="hljs-attribute">color</span>: white;
+}
+</code></pre>
+                                                <p>Aby se po odstavci trochu lépe jezdilo myší, přidali jsme mu nějakou vnitřní výplň po okrajích (<code>padding</code>) a pozadí, aby bylo vidět, kde končí. Nyní zkus stránku obnovit v prohlížeči.
+                                                    Najetí a odjetí kurzoru myši by mělo měnit barvu odstavce.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Více tříd</h3>
+                                                <p>Často elementy nemají jen jednu třídu, ale několik.
+                                                    Vlastnost <code>className</code> je potom poněkud nepraktická:</p>
+                                                <pre><code class="lang-html">&lt;p <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"big warning"</span>&gt;Nesahat!<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+</code></pre>
+                                                <pre><code class="lang-js"><span class="hljs-keyword">var</span> odstavec = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'p'</span>);
+<span class="hljs-built_in">console</span>.log(odstavec.className); <span class="hljs-comment">// 'big warning'</span>
+</code></pre>
+                                                <p>Proto je v moderních prohlížečích k dispozici i jiný způsob pro práci s třídami:</p>
+                                                <pre><code class="lang-js">var odstavec = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'p'</span>);
+<span class="hljs-built_in">console</span>.log(odstavec.classList); <span class="hljs-regexp">//</span> [<span class="hljs-string">'big'</span>, <span class="hljs-string">'warning'</span>]
+</code></pre>
+                                                <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">Vlastnost <code>classList</code></a> má navíc metody na přidávání (<code>add</code>), odebírání (<code>remove</code>).
+                                                    Metoda <code>toggle</code> dělá to co <code>add</code>, pokud třída není a to co <code>remove</code>, když třída je.</p>
+                                                <p>Metoda <code>contains</code> pak vrací <code>true</code> nebo <code>false</code> podle toho, zda element třídu má nebo ne, to se může hodit třeba pro zjištění, v jakém stavu nějaký prvek je. </p>
+                                                <pre><code class="lang-js">var odstavec = document.querySelector(<span class="hljs-string">'p'</span>);
+
+odstavec.classList.add(<span class="hljs-string">'red'</span>); <span class="hljs-regexp">//</span> [<span class="hljs-string">'big'</span>, <span class="hljs-string">'warning'</span>, <span class="hljs-string">'red'</span>]
+
+odstavec.classList.remove(<span class="hljs-string">'big'</span>); <span class="hljs-regexp">//</span> [<span class="hljs-string">'warning'</span>, <span class="hljs-string">'red'</span>]
+
+odstavec.classList.toggle(<span class="hljs-string">'warning'</span>); <span class="hljs-regexp">//</span> [<span class="hljs-string">'red'</span>]
+odstavec.classList.toggle(<span class="hljs-string">'warning'</span>); <span class="hljs-regexp">//</span> [<span class="hljs-string">'warning'</span>, <span class="hljs-string">'red'</span>]
+
+odstavec.classList.contains(<span class="hljs-string">'big'</span>); <span class="hljs-regexp">//</span> <span class="hljs-literal">false</span>
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification c-slide-task">
+                                        <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                            <h2>Cvičení</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <p>Přechozí příklad, kdy jsi měnila třídu přímo na prvku by šel snadněji udělat jen pomocí CSS takto:</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">background-color</span>: skyblue;
+}
+
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">background</span>: red;
+    <span class="hljs-attribute">color</span>: white;
+}
+</code></pre>
+                                                <p>Co by ale jen pomocí CSS udělat už nešlo, je tlačítko, na které klikneš a změní se barva jiného prvku. Zkus si takové na stránku přidat.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task-solution">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task-solution" -->
+                                                <details>
+                                                    <summary>Řešení</summary>
+                                                    <p>Přidej si tedy do dokumentu tlačítko:</p>
+                                                    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"dom.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"style.css"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Přepni barvu"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+            Žilo jednou jedno děvčátko
+            a to dostalo od babičky
+            k narozeninám dárek – červenou
+            čepičku. Rádo ji nosilo, a proto
+            jí říkali Červená karkulka.
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                                                    <p>JavaScript, který na klik bude přidávat a odebírat třídu a tedy měnit vzhled odstavce bude vypadat takto:</p>
+                                                    <pre><code class="lang-js"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> cudlik = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'input'</span>);
+    <span class="hljs-keyword">var</span> odstavec = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'p'</span>);
+
+    cudlik.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        odstavec.classList.toggle(<span class="hljs-string">'red'</span>);
+    });
+});
+</code></pre>
+                                                    <p>Pro zajímavost, úplně stejnou funkčnost by měl i tento kód. </p>
+                                                    <pre><code class="lang-js"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">document</span>
+        .querySelector(<span class="hljs-string">'input'</span>)
+        .addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-built_in">document</span>
+                .querySelector(<span class="hljs-string">'p'</span>)
+                .classList
+                .toggle(<span class="hljs-string">'red'</span>);
+        });
+});
+</code></pre>
+                                                    <p>Pro větší přehlednost je před tečkou zalomeno a odsazeno. </p></details>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

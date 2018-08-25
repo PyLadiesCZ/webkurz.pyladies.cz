@@ -23,7 +23,211 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Třídy</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Jak odlišit elementy?</h3>
+                                                <p>Udělat text všech odstavců modře už umíš.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A víte, že…?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ještě jeden odstavec<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">p</span> { <span class="hljs-attribute">color</span>: blue; }
+</code></pre>
+                                                <div class="c-example example-classes-1">
+                                                    <p>A víte, že…?</p>
+                                                    <p>Ještě jeden odstavec</p>
+                                                </div>
+
+
+                                                <p>Ale co kdybych chtěl udělat jen první odstavec modrý?</p>
+                                                <p>Řešením je přidat třídu, která umožňuje se zaměřit v CSS přesněji. Třída se v HTML přidává jako atribut <code>class</code>…</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tip"</span>&gt;</span>A víte, že…?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ještě jeden odstavec<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                                                <p>… a v CSS se zapíše s tečkou na začátku</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.tip</span> { <span class="hljs-attribute">color</span>: blue; }
+</code></pre>
+                                                <div class="c-example example-classes-2">
+                                                    <p class="tip">A víte, že…?</p>
+                                                    <p>Ještě jeden odstavec</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Jednu třídu lze použít pro více elementů</h3>
+                                                <p>Třídu můžeš přiřadit libovolnému počtu prvků.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tip"</span>&gt;</span>Tip<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tip"</span>&gt;</span>A víte, že…?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ještě jeden odstavec<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.tip</span> { <span class="hljs-attribute">color</span>: blue; }
+</code></pre>
+                                                <div class="c-example example-classes-2">
+                                                    <h1 class="tip">Tip</h1>
+                                                    <p class="tip">A víte, že…?</p>
+                                                    <p>Ještě jeden odstavec</p>
+                                                </div>
+
+
+                                                <p>Třída se tedy použije pokud má nějaký prvek speciální vlastnosti nebo se skupina vlastností opakuje a chceme si tak ušetřit opakovaný zápis v CSS.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Třída jen pro určitý element</h2>
+                                                <p>Můžeš se setkat i s tímto zápisem:</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">h1</span><span class="hljs-selector-class">.tip</span> { <span class="hljs-attribute">color</span>: blue; }
+
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.tip</span> { <span class="hljs-attribute">color</span>: deepskyblue; }
+</code></pre>
+                                                <div class="c-example example-classes-3">
+                                                    <h1 class="tip">Tip</h1>
+                                                    <p class="tip">A víte, že…?</p>
+                                                </div>
+
+                                                <p>První selektor vybere pouze <code>&lt;h1&gt;</code> s třídou <code>tip</code> a druhý pouze odstavce s toutéž třídou. Je dobré o tom vědět, ale příliš nepoužívat, protože se snadno stane, že je potřeba typ prvku v HTML změnit a pak musíš přepisovat i CSS.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Vícenásobné třídy</h2>
+                                                <p>Tříd můžeme jednomu prvku přiřadit více najednou, oddělujeme je mezerou.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.tip</span> { <span class="hljs-attribute">color</span>: red; }
+
+<span class="hljs-selector-class">.cool</span> { <span class="hljs-attribute">background-color</span>: skyblue; }
+</code></pre>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tip"</span>&gt;</span>Jsem Tip<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cool"</span>&gt;</span>Já jsem cool<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cool tip"</span>&gt;</span>Já jsem oboje, heč.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tip cool"</span>&gt;</span>To je toho, já taky.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example example-multiple-classes-1">
+                                                    <p class="tip">Jsem Tip</p>
+                                                    <p class="cool">Já jsem cool</p>
+                                                    <p class="cool tip">Já jsem oboje, heč.</p>
+                                                    <div class="tip cool">To je toho, já taky.</div>
+                                                </div>
+
+                                                <p>Aby toho nebylo málo, lze také vybrat pouze prvky, které mají třídy zároveň.</p>
+                                                <p>Když pro stejné HTML napíšeme tohle CSS </p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.tip</span> { <span class="hljs-attribute">color</span>: red; }
+
+<span class="hljs-selector-class">.cool</span> { <span class="hljs-attribute">background-color</span>: skyblue; }
+
+<span class="hljs-selector-class">.tip</span><span class="hljs-selector-class">.cool</span> { <span class="hljs-attribute">text-align</span>: center; }
+</code></pre>
+                                                <div class="c-example example-multiple-classes-2">
+                                                    <p class="tip">Jsem Tip</p>
+                                                    <p class="cool">Já jsem cool</p>
+                                                    <p class="cool tip">Já jsem oboje, heč.</p>
+                                                    <div class="tip cool">To je toho, já taky.</div>
+                                                </div>
+
+                                                <p>Tak se vycentruje text pouze pro elementy, které mají obě třídy zároveň. A opět platí, že na pořadí nezaleží. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h3>Cvičení</h3>
+                                                <p>Zkus si změnit stylování v tvém dokumentu pomocí elementů na stylování pouze pomocí tříd.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Pseudotřídy</h2>
+                                            <p>Pseudotřídy vybírají prvky v různých stavech.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><pre><code class="lang-css"><span class="hljs-selector-tag">a</span> { <span class="hljs-attribute">color</span>: navy; }
+
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:link</span> { <span class="hljs-attribute">color</span>: blue; } <span class="hljs-comment">/* nenavštívený */</span>
+
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span> { <span class="hljs-attribute">color</span>: purple; } <span class="hljs-comment">/* navštívený */</span>
+
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> { <span class="hljs-attribute">color</span>: red; } <span class="hljs-comment">/* najetí myší */</span>
+
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> { <span class="hljs-attribute">color</span>: green; } <span class="hljs-comment">/* aktivace klávesnicí nebo myší */</span>
+
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:active</span> { <span class="hljs-attribute">color</span>: yellow; } <span class="hljs-comment">/* při aktivaci (např. kliknutím) */</span>
+</code></pre>
+                                                <div class="c-example example-link" id="link"><a href="#link">Zkus si mě</a></div>
+
+
+                                                <p>Zatímco třídy si definuješ jako autor kódu ty, pseudotřídy jsou dané.</p>
+                                                <p>Narozdíl od tříd se zapisují jen do CSS, na HTML není třeba sahat.</p>
+                                                <p>Je potřeba dodržet pořadí jejich zápisu v CSS, aby fungovaly správně.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Pseudoelementy</h2>
+                                            <p>Podobný zápis mají i pseudoelementy, tedy selektory, které vybírají specifikací definované části elementu. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Jejich syntaxe je podobná jako u pseudotříd, jen se u nich píšou dvě dvojtečky.</p>
+                                                <p>Například jde vybrat první písmeno (<code>::first-letter</code>). </p>
+                                                <p>Asi nejpraktičtější je ale generovaný obsah přes <code>::after</code> a <code>::before</code> a využití definice obsahu pomocí vlastnosti <code>content</code>: </p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Haló<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.example-before-after</span><span class="hljs-selector-pseudo">::before</span> {
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">'☎'</span>;
+    <span class="hljs-attribute">color</span>: red;
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">0.3em</span>;
+}
+
+<span class="hljs-selector-class">.example-before-after</span><span class="hljs-selector-pseudo">::after</span> {
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">1em</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">10em</span>;
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">background-color</span>: green;
+    <span class="hljs-attribute">vertical-align</span>: middle;
+}
+</code></pre>
+                                                <div class="c-example example-before-after"><p>Haló</p></div>
+
+                                                <p>Přes <code>::before</code> je vložen element s obsahem ikony a je obarven červeně.</p>
+                                                <p>Přes <code>::after</code> je vložen prázdný element, který je obarvený a má nastaveny rozměry.</p>
+                                                <p>Můžeš díky tomu mít čistý HTML kód, do kterého tyto vizuální prvky přidáváš jen pomocí CSS. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

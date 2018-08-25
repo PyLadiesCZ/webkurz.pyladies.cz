@@ -23,7 +23,123 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent ">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Knihovny</h1></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Knihovna jQuery</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Dnes prohlížeče interpretují JavaScript každý vcelku stejně a navíc už existuje spousta užitečných metod na práci s DOMem. Jenže za dávných časů tomu tak nebylo. Svět programování v prohlížeči připomínal spíše nebezpečný divoký západ.</p>
+                                                <p>Jeden z kovbojů, John Resig, se pokusil o nastolení pořádku a vytvořil knihovnu <a href="https://jquery.com/">jQuery</a>, která se snažila práci s DOMem usnadnit a také ji sjednotit mezi jednotlivými prohlížeči. Získala si obrovskou popularitu mezi lidmi po celém světě a ovlivnila i vývoj jazyka samotného. Třeba metody <code>querySelector()</code> a <code>querySelectorAll()</code> v dnešním JavaScriptu jsou jednoznačně dědictvím jQuery.</p>
+                                                <p>Ačkoliv se dnes dá mnoho věcí v prohlížeči programovat pohodlně i bez této knihovny, stále je mnohdy jQuery to první, po čem spousta lidí sáhne. Je to balíček základních věcí, díky kterým lze bez velkých znalostí rozpohybovat webové stránky.</p>
+                                                <p>Proto by se snad i dalo říci, že v jQuery umí pracovat víc lidí, než kolik jich doopravdy zná JavaScript. Jednoznačně tedy jQuery patří mezi základní okruh znalostí frontendového vývojáře. Je dobré vědět, že existuje, tušit, jak kód v jQuery vypadá, umět jej číst.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Ukázka JavaScriptu s jQuery</h3>
+                                                <p>Nejdříve je potřeba jQuery načíst.
+                                                    Jedna z možností je si soubor s jQuery stáhnout a připojit ho:</p>
+                                                <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"style.css"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Přepni barvu"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+            Žilo jednou jedno děvčátko
+            a to dostalo od babičky
+            k narozeninám dárek – červenou
+            čepičku. Rádo ji nosilo, a proto
+            jí říkali Červená karkulka.
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"jquery-3.1.1.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"dom.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                                                <p>Všimni si, že soubory s JavaScriptem dáváme až před uzavírací tag <code>&lt;/body&gt;</code>. To je vhodnější způsob
+                                                    než v <code>&lt;head&gt;</code>, protože prohlížeč v takovém případě nečeká s vykreslením stránky na stažení JavaScriptu, které může znamenat pomalejší zobrazení pro uživatele.</p>
+                                                <p>Ostatní HTML už znáš z posledního cvičení v kapitole o DOM. Jak by vypadal JavaScript, který bude dělat to samé co v tomtéž cvičení, tedy měnit barvu elementu po kliku na tlačítko, ale s využitím jQuery?</p>
+                                                <pre><code class="lang-js">$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    $(<span class="hljs-string">'input'</span>).first().on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        $(<span class="hljs-string">'p'</span>).first().toggleClass(<span class="hljs-string">'red'</span>);
+    })
+});
+</code></pre>
+                                                <p>Jen stručný popis toho, co se v kódu výš děje: <code>$(document).ready(function(){</code> je ekvivalent <code>window.addEventListener('load', function() {</code>, tedy ošetření toho, aby se kód spustil až když je DOM v prohlížeči připravený. </p>
+                                                <p>Základem je funkce <code>$()</code>, která má jako parametr selektor, tedy ekvivalent <code>document.querySelectorAll()</code>, proto následuje metoda <code>.first()</code>, která dál předá jen první prvek, který byl nalezen pomocí selektoru. </p>
+                                                <p>Metoda <code>.on()</code> přidává k elementu čekání na událost (event handler), tady konkrétně na <code>click</code>, na který se má vykonat anonymní funkce. Ta dělá jen dvě věci: opět pomocí funkce <code>$()</code> vybere všechny odstavce, z nich vezme jen první a odebere nebo přidá mu třídu <code>red</code>, podle toho, zda ji má nebo nemá přiřazenou. </p>
+                                                <p>Pokud bys odebrala <code>.first()</code>, tak by to fungovalo pro stránku s jedním inputem a jedním odstavcem stejně. Pokud by ale stránka obsahovala víc inputů nebo odstavců, kód v jQuery bez použití <code>.first()</code> by se aplikoval na všechny inputy a všechny odstavce. V čistém JavaScriptu by taková funkčnost byla pracnější.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Lightbox</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Pro zvětšování obrázků se používá často tzv. lightbox, kdy z malého náhledu kliknutím otevřeš obrázek přes celé okno.</p>
+                                                <p>Není to jistě nejtěžší věc, kterou v JavaScriptu můžeš napsat, ale je zbytečné programovat něco, co už je v mnoha verzích hotovo. Hotové a mnoha lidmi používáné knihovny jsou navíc důkladně otestované mnoha lidmi a tedy odladěné a také mají kvalitní dokumentaci.</p>
+                                                <p>Klasickou knihovnou, která lightbox umí vytvořit je <em>Lightbox2</em>. Neobsahuje jen JavaScriptový kód, ale i potřebné obrázky a CSS.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Obyčejné HTML</h3>
+                                                <p>Nejdřív si vytvoř stránku, do které galerii přidáme.</p>
+                                                <p>Pěkné a velké obázky s vhodnou licencí najdeš na <a href="https://unsplash.com/">Unsplash</a>, několik si jich vyber a stáhni si do složky kde máš soubor s HTML.</p>
+                                                <p>Přidej si do HTML <strong>odkazy</strong> na jednotlivé obrázky.</p>
+                                                <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Galerie<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Galerie<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"kocicka.jpg"</span>&gt;</span>Kočička<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"krajina.jpg"</span>&gt;</span>Krajina<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Lightbox2</h3>
+                                                <p>Na stránce projektu <a href="http://lokeshdhakar.com/projects/lightbox2/">Lightbox2</a> si stáhni vše v jednom archívu <em>zip</em> a obsah složky <code>dist</code> si zkopíruj do složky, kde máš html a obrázky.</p>
+                                                <p>Dál můžeš postupovat podle návodu přímo na stránce knihovny.</p>
+                                                <p>Všimni si, že pro incializaci knihovny vlastně nepotřebuješ znát vůbec JavaScript i když pro pokročilejší konfiguraci chování se nějaká znalost hodí. </p>
+                                                <p>Jde to protože se potřebná nastavení (co se má stát prvkem s lightbox efektem, které prvky tvoří galerii nebo jaký mají popisek) provádí přes atributy <code>data-</code>, které umožňují si nadefinovat pro prvky vlastní atributy a pak je lze číst třeba právě pomocí JavaScriptu, což Lightbox2 využívá.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

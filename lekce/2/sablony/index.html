@@ -23,7 +23,419 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Šablony</h1></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Zatím jsou naše webové stránky poměrně nudné, protože nepoužívají HTML.
+                                                Klidně bychom mohli udělat něco jako:</p>
+                                                <pre><code class="lang-python">@app.route(<span class="hljs-string">'/'</span>)
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">()</span></span>:
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'&lt;html&gt;&lt;head&gt;&lt;title&gt;…'</span>
+</code></pre>
+                                                <p>… ale asi by to nebylo příliš praktické. Lepší je použít <em>šablony</em>:</p>
+                                                <pre><code class="lang-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> render_template
+
+<span class="hljs-meta">@app.route('/')</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">'index.html'</span>)
+</code></pre>
+                                                <p>Pak je potřeba si vedle souboru <code>web.py</code> vytvořit složku <code>templates</code>
+                                                    a v ní <code>index.html</code>:</p>
+                                                <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>PyLadies jsou <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>nejlepší<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                                                <p>Na adrese <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a> teď bude o něco zábavnější verze úvodní stránky.</p>
+                                                <div class="c-example">
+                                                    <h1>PyLadies</h1>
+                                                    <p>PyLadies jsou <strong>nejlepší</strong>!</p>
+                                                </div>
+
+                                                <p>Zatím jsi ale šablony vlastně moc nepoužila. To, co se běžně myslí pod pojmem šablony,
+                                                    je totiž <em>šablonovací jazyk</em>, který se dá kombinovat přímo s HTML a umožňuje v něm používat
+                                                    základní programování, jako podmínky nebo cykly. Ukažme si to na seznamu PyLadies:</p>
+                                                <pre><code class="lang-python">@app.route(<span class="hljs-string">'/users/'</span>)
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">users</span><span class="hljs-params">()</span></span>:
+    user_names = pyladies_db.keys()
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">'users.html'</span>, user_names=user_names)
+</code></pre>
+                                                <p>V souboru <code>templates/users.html</code> je:</p>
+                                                <pre><code class="lang-html"><span class="xml"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Seznam PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            </span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">for</span></span> user_name in user_names %}</span><span class="xml">
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><span class="hljs-template-variable">{{ user_name }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            </span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">endfor</span></span> %}</span><span class="xml">
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span>
+</code></pre>
+                                                <p>Na <a href="http://127.0.0.1:5000/users">http://127.0.0.1:5000/users</a> přibude seznam všech PyLadies, které máme v databázi.</p>
+                                                <div class="c-example">
+                                                    <h1>Seznam PyLadies</h1>
+                                                    <ul>
+                                                        <li>zuzejk</li>
+                                                        <li>lspdv</li>
+                                                        <li>benabraham</li>
+                                                    </ul>
+                                                </div>
+
+                                                <p>Vždy, když chceš v šabloně použít nějaká data, musíš jí je poslat přes parametry funkce <code>render_template()</code>,
+                                                    stejně jako jsi to udělala s <code>user_names</code>. Šablona jinak nemá o zbytku programu nejmenší ponětí.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h2>Cvičení pro masochisty</h2>
+                                                <p>Kdybychom neměli šablony, museli bychom HTML poskládat přímo v Python funkci. Jak by to asi vypadalo?</p>
+                                                <p><strong>Řešení</strong></p>
+                                                <pre><code class="lang-python">@app.route('/users/')
+def users():
+    ul = '<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>'
+    for user_name in pyladies_db.keys():
+        ul += '<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>{}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>'.format(user_name)
+    ul += '<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>'
+
+    return '''<span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Seznam PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>{}<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+    '''.format(ul)
+</code></pre>
+                                                <p>Jak vidíš, vypadalo by to ošklivě! Nikdy se touto cestou nevydávej.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Pro snazší debugování je ve Flasku vhodné nastavit automatické načítání změn šablon:</p>
+                                                <pre><code class="lang-python"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    app.config[<span class="hljs-string">'TEMPLATES_AUTO_RELOAD'</span>] = <span class="hljs-keyword">True</span>
+    app.run(debug=<span class="hljs-keyword">True</span>)
+</code></pre>
+                                                <p>Šablonovacích jazyků je více. Ten, který používá Flask, se nazývá <a href="http://jinja.pocoo.org/docs/templates/">Jinja2</a> a je poměrně oblíbený. Syntaxe
+                                                    s <code>{{ proměnná }}</code> a <code>{% program %}</code> je ale velmi rozšířená a můžete se s ní setkat i v mnoha dalších
+                                                    šablonovacích jazycích. Například Django má svůj <a href="https://docs.djangoproject.com/en/1.10/topics/templates/#the-django-template-language">vlastní šablonovací jazyk</a>,
+                                                    ale na první pohled vypadá úplně stejně.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Získání URL</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Největším kouzlem webových stránek je možnost mezi nimi cestovat pomocí odkazů.
+                                                Pojďme tedy nějaké odkazy přidat. Flask má funkci <code>url_for()</code>, která umí vyrobit
+                                                URL z názvu cílové funkce a jejích parametrů:</p>
+                                                <pre><code class="lang-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> url_for
+…
+url_for(<span class="hljs-string">'user_profile'</span>, user_name=<span class="hljs-string">'benabraham'</span>)
+<span class="hljs-comment"># vrátí /users/benabraham</span>
+</code></pre>
+                                                <p>Možná si říkáš, proč tu cestu prostě nevytvořit ručně, ale mohla bys narazit
+                                                    na problém, pokud cestu později změníš.</p>
+                                                <p>Funkci <code>url_for()</code> lze použít i přímo v šablonách. Pojďme přidat odkazy do
+                                                    seznamu PyLadies:</p>
+                                                <pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Seznam PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    </span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">for</span></span> user_name in user_names %}</span><span class="xml">
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ url_for('user_profile', user_name=user_name) }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
+                </span><span class="hljs-template-variable">{{ user_name }}</span><span class="xml">
+            <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    </span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">endfor</span></span> %}</span><span class="xml">
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
+</code></pre>
+                                                <p>Tímto bys měla na stránce <a href="http://127.0.0.1:5000/users">http://127.0.0.1:5000/users</a> získat seznam PyLadies,
+                                                    kde každá položka bude zároveň odkazem na profilovou stránku dané PyLady.</p>
+                                                <div class="c-example">
+                                                    <h1>Seznam PyLadies</h1>
+                                                    <ul>
+                                                        <li><a href="http://127.0.0.1:5000/zuzejk">zuzejk</a></li>
+                                                        <li><a href="http://127.0.0.1:5000/lspdv">lspdv</a></li>
+                                                        <li><a href="http://127.0.0.1:5000/benabraham">benabraham</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Filtry</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Jak jsme si ukázali ve cvičení pro masochisty, je dobré oddělit <em>programování</em>
+                                                v Pythonu od <em>zobrazování výsledku</em> v HTML. Jenže co když si potřebuješ i při
+                                                tom zobrazování trochu pomoci?</p>
+                                                <p>Od toho jsou tu filtry. Filtr je funkce, kterou lze použít v šabloně pro nějakou
+                                                    užitečnou transformaci. Jinja2 má spoustu filtrů rovnou zabudovaných, např. <code>capitalize</code>:</p>
+                                                <pre><code class="lang-html"><span class="xml"></span><span class="hljs-template-variable">{{ user_name|<span class="hljs-keyword">capitalize</span> }}</span><span class="xml"></span>
+</code></pre>
+                                                <p>Místo <code>zuzejk</code> tato značka vypíše <code>Zuzejk</code>. Pohrajme si s profily jednotlivých PyLadies:</p>
+                                                <pre><code class="lang-python"><span class="hljs-meta">@app.route('/users/&lt;user_name&gt;')</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">user_profile</span><span class="hljs-params">(user_name)</span>:</span>
+    <span class="hljs-comment"># toto už máme</span>
+    <span class="hljs-keyword">try</span>:
+        user = pyladies_db[user_name]
+    <span class="hljs-keyword">except</span> KeyError:
+        <span class="hljs-keyword">return</span> abort(<span class="hljs-number">404</span>)  <span class="hljs-comment"># kód 404 znamená "stránka neexistuje"</span>
+
+    <span class="hljs-comment"># tady nově použijeme šablonu:</span>
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">'user_profile.html'</span>, user=user)
+</code></pre>
+                                                <p>Do <code>user_profile.html</code> ve složce <code>templates</code> si ulož následující šablonu:</p>
+                                                <pre><code class="lang-html"><span class="xml"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>PyLady: </span><span class="hljs-template-variable">{{ user.name|<span class="hljs-keyword">capitalize</span> }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>PyLady: </span><span class="hljs-template-variable">{{ user.name|<span class="hljs-keyword">capitalize</span> }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Oblíbená barva: </span><span class="hljs-template-variable">{{ user.color }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ url_for('users') }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>Zpět na seznam<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span>
+</code></pre>
+                                                <p>Jak vidíš, v Jinja2 se k atributům slovníku přistupuje přes tečku. Jména PyLadies
+                                                    prohnaná přes <code>capitalize</code> filtry budou s prvním písmenem verzálkou. Zakomponovali jsme také
+                                                    odkaz zpět na seznam.</p>
+                                                <p>Můžeš si ale přidávat i vlastní filtry. Když budeš mít v databázi rok narození, ale chceš zobrazovat věk:</p>
+                                                <pre><code class="lang-python">pyladies_db = {
+  <span class="hljs-string">'zuzejk'</span>: {<span class="hljs-string">'name'</span>: <span class="hljs-string">'Zuzka'</span>, <span class="hljs-string">'color'</span>: <span class="hljs-string">'zelená'</span>, <span class="hljs-string">'born'</span>: <span class="hljs-number">1420</span>},
+  <span class="hljs-string">'lspdv'</span>: {<span class="hljs-string">'name'</span>: <span class="hljs-string">'Veronika'</span>, <span class="hljs-string">'color'</span>: <span class="hljs-string">'modrá'</span>, <span class="hljs-string">'born'</span>: <span class="hljs-number">1492</span>},
+  <span class="hljs-string">'benabraham'</span>: {<span class="hljs-string">'name'</span>: <span class="hljs-string">'Dan'</span>, <span class="hljs-string">'color'</span>: <span class="hljs-string">'růžová'</span>, <span class="hljs-string">'born'</span>: <span class="hljs-number">1415</span>},
+}
+</code></pre>
+                                                <p>Filtr, který načte rok a vrátí aktuální věk můžeš napsat takto:</p>
+                                                <pre><code class="lang-python"><span class="hljs-keyword">import</span> datetime
+
+<span class="hljs-meta">@app.template_filter('age')</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calculate_age</span><span class="hljs-params">(year)</span>:</span>
+    <span class="hljs-string">"""Calculate number of years since given year till today"""</span>
+    <span class="hljs-keyword">return</span> datetime.datetime.now().year - year
+</code></pre>
+                                                <p>V šabloně:</p>
+                                                <pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>PyLady: </span><span class="hljs-template-variable">{{ user.name|<span class="hljs-keyword">capitalize</span> }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Oblíbená barva: </span><span class="hljs-template-variable">{{ user.color }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Věk: </span><span class="hljs-template-variable">{{ user.born|age }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span></span>
+</code></pre>
+                                                <div class="c-example">
+                                                    <h1>PyLady: Zuzka</h1>
+                                                    <ul>
+                                                        <li>Oblíbená barva: zelená</li>
+                                                        <li>Věk: 597</li>
+                                                        <ul>
+                                                        </ul>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Escaping</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>V textu, který se vkládá do šablon, jsou automaticky nahrazeny znaky, které mají v HTML speciální význam.
+                                                Zabraňuje se tak bezpečnostním rizikům, kdy se vstup od uživatele interpretuje jako HTML.</p>
+                                                <p>Představ si, že bys měla následující routu a šablonu:</p>
+                                                <pre><code class="lang-python">@app.route(<span class="hljs-string">'/hello/&lt;name&gt;'</span>)
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hello</span><span class="hljs-params">(name)</span></span>:
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">'hello.html'</span>, name=name)
+</code></pre>
+                                                <pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ahoj </span><span class="hljs-template-variable">{{ name }}</span><span class="xml">!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+</code></pre>
+                                                <p>Nějaký zákeřný útočník by mohl zkusit do stránky vložit JavaScript tak,
+                                                    že ho zkusí vepsat jako součást svého jména: <code>/hello/&lt;img src="." onerror="window.alert('Bu bu bu!')"&gt;</code> Jenže
+                                                    Jinja2 nás ochrání a výsledné HTML bude následující:</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ahoj &amp;lt;img src=&amp;#34;.&amp;#34; onerror=&amp;#34;window.alert(&amp;#39;Bu bu bu!&amp;#39;)&amp;#34;&amp;gt;!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h2>Cvičení pro odvážné</h2>
+                                                <p>Zkuste si vytvořit HTML stránku, která obsahuje následující kód a otevřte si ji v prohlížeči.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    Ahoj <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"."</span> <span class="hljs-attr">onerror</span>=<span class="hljs-string">"window.alert('Bu bu bu!')"</span>&gt;</span>!
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Vložení HTML do stránky</h3>
+                                                <p>Někdy je ovšem potřeba do stránky opravdu HTML vložit.
+                                                    To se dá zajistit dvěma způsoby. Nejjednodušší je vestavěný filtr <code>safe</code>.</p>
+                                                <p>Představ si, že v proměnné <code>april_date</code> máš řetězec <code>1. dubna</code>. Pokud by sis dostatečně zmenšila okno prohlížeče
+                                                    a text <code>1. dubna</code> by se na stránce ocitl na konci řádku, mohl by se škaredě zalomit tak, že <code>1.</code> zůstane
+                                                    na jednom řádku a <code>dubna</code> skočí na druhý. To se špatně čte. HTML nám umožňuje zabránit zalamování tím,
+                                                    že místo běžné mezery použijeme značku <code>&amp;nbsp;</code> (tzv. <em>entitu</em>) pro <a href="https://cs.wikipedia.org/wiki/Nezlomiteln%C3%A1_mezera">nedělitelnou mezeru</a>.
+                                                    Můžeš si tedy datum uložit jako <code>1.&amp;nbsp;dubna</code>. Jenže pokud budeš chtít takový text vypsat v šabloně,
+                                                    Jinja2 nás opět ochrání:</p>
+                                                <pre><code class="lang-html"><span class="xml">Apríl je </span><span class="hljs-template-variable">{{ april_date }}</span><span class="xml"></span>
+</code></pre>
+                                                <p>Výsledné HTML bude <code>Apríl je 1.&amp;amp;nbsp;dubna</code> a v prohlížeči se zobrazí <code>1.&amp;nbsp;dubna</code>. Proto použijeme filtr <code>safe</code>, čímž ochranu pro tento řetězec vypneme:</p>
+                                                <pre><code class="lang-html"><span class="xml">Apríl je </span><span class="hljs-template-variable">{{ april_date|safe }}</span><span class="xml"></span>
+</code></pre>
+                                                <p>Nejlepší je ale opravdu nemíchat HTML s daty ještě před tím, než je vypíšeš.
+                                                    Data by se měla ukládat jako běžný text a nedělitelné mezery je nejlepší přidat až v šabloně.</p>
+                                                <p>Napiš si na to tedy vlastní filtr. Jenže jak v něm označit výsledek jako „bezpečný“?
+                                                    Můžeš použít třídu <a href="http://jinja.pocoo.org/docs/api/#jinja2.Markup">jinja2.Markup</a>:</p>
+                                                <pre><code class="lang-python"><span class="hljs-keyword">from</span> jinja2 <span class="hljs-keyword">import</span> Markup
+
+<span class="hljs-meta">@app.template_filter('nowrap')</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">convert_spaces</span><span class="hljs-params">(text)</span>:</span>
+    <span class="hljs-string">"""Convert normal spaces to non-breaking spaces"""</span>
+    converted_text = text.replace(<span class="hljs-string">' '</span>, <span class="hljs-string">'&amp;nbsp;'</span>)
+    <span class="hljs-keyword">return</span> Markup(converted_text)
+</code></pre>
+                                                <p>Tento filtr dostane text a běžné mezery v něm nahradí za nedělitelné mezery.</p>
+                                                <pre><code><span class="xml">Apríl je </span><span class="hljs-template-variable">{{ '1. dubna'|nowrap }}</span><span class="xml"></span>
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h4>Entity</h4>
+                                                <p>Entity prohlížeč <em>zobrazí</em>, jako by tam byly znaky, které mají v HTML speciální význam (<code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code> atd.)
+                                                    nebo by se špatně psaly. Zobrazí je, ale nechová se k nim jako by tam opravdu byly,
+                                                    proto se z nich nestanou například tagy. Entita vždy začíná <code>&amp;</code> a končí <code>;</code></p>
+                                                <p>Některé se dají zapsat také písmeny. Třeba nedělitelná mezera jako <code>&amp;nbsp;</code> (zkratka z&nbsp;<em>Non-Breaking SPace</em>)
+                                                    a pro některé existuje jen číselná varianta (pro nedělitelnou mezeru je to <code>&amp;#160;</code>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Kombinování šablon</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Chceš-li jednotlivým stránkám dát společné logo, menu, nebo patičku s kontaktními
+                                                informacemi, musela bys mít tyto části nakopírované do každé šablony. To je
+                                                celkem otravné a navíc to vede k chybám. Pokud bys dělala změny, mohla bys
+                                                je zapomenout zanést do jedné ze šablon.</p>
+                                                <p>Jinja2 v tomto ohledu velmi zjednodušuje život. Nejčastěji se takové
+                                                    situace řeší přes <a href="http://jinja.pocoo.org/docs/templates/#template-inheritance">dědění šablon</a>, ale to je na delší vysvětlování,
+                                                    tak si pro začátek ukažme alespoň <code>include</code>, tedy <a href="http://jinja.pocoo.org/docs/templates/#include">vkládání šablon do sebe</a>.</p>
+                                                <p>Vytvoř si šablonu <code>_menu.html</code>, kam dáš jen menu. Šablony, které
+                                                    nepředstavují samostatné stránky, je dobrým zvykem pojmenovávat s podtržítkem na začátku.</p>
+                                                <pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Menu:<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ url_for('index') }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>Hlavní stránka<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> -
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ url_for('users') }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>Seznam<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> -
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ url_for('contact') }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>Kontakty<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+</code></pre>
+                                                <p>Do každé šablony pro samostatnou stránku potom můžeš nahoru vložit menu:</p>
+                                                <pre><code class="lang-html"><span class="xml"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        …
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        </span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">include</span></span> '_menu.html' %}</span><span class="xml">
+        …
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span>
+</code></pre>
+                                                <p>Takto si můžeš do budoucna ušetřit hodně práce.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Statické soubory</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>V HTML je stránka sice zajímavější než jako prostý text, ale pořád tomu něco chybí.
+                                                Většinou chceme do stránky přidat i CSS a obrázky. Jelikož CSS ani obrázky
+                                                nepotřebujeme nijak generovat, ale stačí je vzít jako soubor a poslat
+                                                uživateli do prohlížeče, nazýváme je v kontextu dynamických webových stránek
+                                                <em>statickými soubory</em>.</p>
+                                                <p>Podobně jako máš ve Flasku složku na šablony pojmenovanou <code>templates</code>, udělej
+                                                    si vedle ní složku i na statické soubory, <code>static</code>. Z Pythonu nebo ze šablony se
+                                                    pak na soubory v této složce můžeš odkázat následovně:</p>
+                                                <pre><code class="lang-python"><span class="hljs-function"><span class="hljs-title">url_for</span><span class="hljs-params">(<span class="hljs-string">'static'</span>, filename=<span class="hljs-string">'style.css'</span>)</span></span>
+</code></pre>
+                                                <p>Připojit ke stránce CSS můžeš tedy tak, že do šablony stránky přidáš
+                                                    do hlavičky následující řádek:</p>
+                                                <pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ url_for('static', filename='style.css') }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span></span>
+</code></pre>
+                                                <p>Prohlížeč tak dostane v <code>href</code> vygenerovanou cestu <code>static/style.css</code>
+                                                    kde CSS najde, pokud ho tam umístíš.</p>
+                                                <p>S obrázky to funguje obdobně:</p>
+                                                <pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ url_for('static', filename='daniel.jpg') }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span></span>
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent ">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><p>Tento text jsme upravili z <a href="https://github.com/cvut/MI-PYT/blob/master/tutorials/02_flask.md">tutoriálu</a> dostupného pod licencí <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>, autorů Petra Viktorina a Miro Hrončoka a <a href="https://github.com/cvut/MI-PYT/graphs/contributors">dalších</a>, proto je pod stejnou licencí dostupný i text na této stránce.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,55 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Jak se aplikují styly 2</h1>
+                                            <p>To, která hodnota platí, je o něco složitější, než jen pravidlo, že poslední nastavení hodnoty přepisuje předchozí. Záleží to totiž ještě na <em>specificitě</em>.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Specificita</h2>
+                                                <p>Specificita je síla selektoru.</p>
+                                                <p>Pokud nějakou vlastnost nastavuješ v CSS tomu samému elementu víckrát, tak platí hodnota nastavená pomocí silnějšího (specifičtějšího) selektoru. </p>
+                                                <p>Teprve pokud je specificita selektorů, kterými si vybrala nějaký prvek, stejná, aplikuje se pravidlo o tom, že platí poslední nastavená hodnota. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Jak určit specificitu selektoru?</h3>
+                                                <p>Silnější selektor má více tříd, než selektor slabší.</p>
+                                                <p>Pokud mají dva selektory stejný počet tříd, tak silnější je ten s větším počtem tagů.</p>
+                                                <p>Pokud budeme mít takovéhle HTML, …</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tip"</span>&gt;</span>obsah<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                                <p>… tak element odstavce lze vybrat pomocí těchto tří selektorů:</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.tip</span> { <span class="hljs-attribute">color</span>: red; }
+
+<span class="hljs-selector-tag">p</span> { <span class="hljs-attribute">color</span>: green; <span class="hljs-attribute">background-color</span>: lightgray; }
+
+<span class="hljs-selector-tag">div</span> <span class="hljs-selector-tag">p</span> { <span class="hljs-attribute">color</span>: blue; <span class="hljs-attribute">font-style</span>: italic; }
+</code></pre>
+                                                <div class="c-example example-specificity">
+                                                    <div><p class="tip">obsah</p></div>
+                                                </div>
+
+
+                                                <p>Nejsilnější je ten první (jedna třída), pak ten třetí (žádná třída a dva tagy) a nakonec ten druhý (žádná třída a jeden tag), proto je text červeně, přestože je ta hodnota pro ten samý element přepsána ještě dvakrát.</p>
+                                                <p>Specificita může být ještě složitější, ale zatím by sis měla vystačit s tímto.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

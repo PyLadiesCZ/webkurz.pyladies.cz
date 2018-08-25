@@ -23,7 +23,129 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Flexbox</h1></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>V moderních prohlížečích je naštěstí podporovaná ještě jedna vlastnost a to <code>display: flex;</code>, díky které se dají snadno udělat layouty, které by jinak bylo nutné dělat pomocí floatování nebo pozicování.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Příklad použití</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>V úplně základní podobě vypadá takto:</p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"doporuceni"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"prvni"</span>&gt;Kurz byl ohromně přínosný.&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;<span class="hljs-keyword">div</span>&gt;Kurz byl úplně nejvíc přínosný a dal mi nejvíc.&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;<span class="hljs-keyword">div</span>&gt;Kurz byl rozhodně přínosný.&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.doporuceni</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">background-color</span>: skyblue;
+}
+
+<span class="hljs-selector-class">.doporuceni</span> <span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">70%</span>;
+    <span class="hljs-attribute">background-color</span>: gold;
+}
+</code></pre>
+                                                <div class="c-example example-flexbox">
+                                                    <div class="doporuceni">
+                                                        <div class="prvni">Kurz byl ohromně přínosný.</div>
+                                                        <div>Kurz byl úplně nejvíc přínosný a dal mi nejvíc.</div>
+                                                        <div>Kurz byl rozhodně přínosný.</div>
+                                                    </div>
+                                                </div>
+
+
+                                                <p>Všimni si, že prvky se roztahují podle obsahu.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Výchozí chování lze, podobně jako další chování prvků v elementu s <code>display: flex;</code> změnit.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.doporuceni</span> <span class="hljs-selector-tag">div</span> {
+    …
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-selector-class">.doporuceni</span> <span class="hljs-selector-class">.prvni</span> { <span class="hljs-attribute">flex</span>: <span class="hljs-number">2</span>; }
+</code></pre>
+                                                <div class="c-example example-flexbox-extended1">
+                                                    <div class="doporuceni">
+                                                        <div class="prvni">Kurz byl ohromně přínosný.</div>
+                                                        <div>Kurz byl úplně nejvíc přínosný a dal mi nejvíc.</div>
+                                                        <div>Kurz byl rozhodně přínosný.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Nebo napřklad změnit pořadí zobrazení prvků</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.doporuceni</span> {
+    …
+    <span class="hljs-attribute">flex-direction</span>: row-reverse;
+}
+</code></pre>
+                                                <div class="c-example example-flexbox-extended2">
+                                                    <div class="doporuceni">
+                                                        <div class="prvni">Kurz byl ohromně přínosný.</div>
+                                                        <div>Kurz byl úplně nejvíc přínosný a dal mi nejvíc.</div>
+                                                        <div>Kurz byl rozhodně přínosný.</div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Zdroje k flexboxu</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Možnosti flexboxu jsou široké a i proto je jejich pokrytí nad rámec tohoto kurzu. </p>
+                                                <p>Určitě si je ale vyzkoušej sama, dále najdeš odkazy na stránky, které ti s tím pomůžou.</p>
+                                                <h4>Česky</h4>
+                                                <p><a href="http://www.vzhurudolu.cz/prirucka/css3-flexbox">Článek o flexboxu na Vzhůru dolů</a> a především tamtéž o <a href="http://www.vzhurudolu.cz/prirucka/css3-flexbox-polozky">položkách</a> a <a href="http://www.vzhurudolu.cz/prirucka/css3-flexbox-kontejner">kontejnerech</a>.</p>
+                                                <h4>Anglicky</h4>
+                                                <p><a href="http://flexboxfroggy.com/">Flexbox Froggy</a> je hra, při které se naučíš jednotlivé vlastnosti, kterými můžeš ovlivňovat chování prvků ve flexible boxu.</p>
+                                                <p><a href="http://the-echoplex.net/flexyboxes/">Flexy Boxes</a> je nástroj, kde si můžeš interaktivně měnit vlastnosti a zkoumat co to dělá. Vygenerovaný kód s prefixy pro jednotlivé prohlížeče nepoužívej, lepší je využít <a href="https://github.com/postcss/autoprefixer">autoprefixer</a>.</p>
+                                                <p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox na <em>css-tricks.com</em></a></p>
+                                                <p><a href="https://internetingishard.com/html-and-css/flexbox/">Flexbox tutorial na <em>Interneting Is Hard</em></a></p>
+                                                <p><a href="http://cssreference.io/flexbox/">Flexbox na <em>cssreference.io</em></a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

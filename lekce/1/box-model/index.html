@@ -23,7 +23,554 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Druhy elementů</h2>
+                                            <p>V HTML se převážně potkáš se dvěma typy elementů: <em>blokovými</em> a <em>řádkovými</em>.</p>
+                                            <hr>
+                                            <p>
+                                                <small>Poznámka: V HTML 5 došlo k rozdělení elementů ještě jiným způsobem, ale starší dělení, které tady je tu použito, je snazší na pochopení a hlavně ve většině případů dostatečné.</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Blokové elementy</h3>
+                                                <p>Patří mezi ně <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code> a další nadpisy a taky <code>&lt;div&gt;</code>.</p>
+                                                <ul>
+                                                    <li>zaberou všechno dostupné místo</li>
+                                                    <li>řadí se pod sebe</li>
+                                                </ul>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">background-color</span>: orange;
+}
+
+<span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">background-color</span>: cyan;
+}
+</code></pre>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>div<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>p<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example example-block-elements">
+                                                    <div>div</div>
+                                                    <p>p</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Řádkové elementy</h3>
+                                                <p>Většinou vyznačují jen část textu, patří mezi ně odkazy <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, ale i <code>&lt;img&gt;</code> a řádkový ekvivalent bezvýznamového <code>&lt;div&gt;</code>: element <code>&lt;span&gt;</code>.</p>
+                                                <ul>
+                                                    <li>chovají se jako obyčejný text: zaberou jen tolik místa, kolik potřebují</li>
+                                                    <li>nejsou samostatně na řádku: řadí se za sebou jako slova ve větě</li>
+                                                </ul>
+                                                <p>Je zakázáno do řádkových elementů vkládat blokové.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">span</span> {
+    <span class="hljs-attribute">background-color</span>: orange;
+}
+
+<span class="hljs-selector-tag">strong</span> {
+    <span class="hljs-attribute">background-color</span>: cyan;
+}
+</code></pre>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>span A<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>strong A<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>span B<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>strong B<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example example-inline-elements">
+                                                    <span>span A</span>
+                                                    <strong>strong A</strong>
+
+                                                    <span>span B</span><strong>strong B</strong>
+                                                </div>
+
+                                                <p>Všimni si mezery mezi elementy. Je tam, protože je mezi nimi alespoň jeden <em>whitespace</em> znak (v tomto případě znak nového řádku).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Další typy</h3>
+                                                <p>Je několik výjimek, které se chovají jinak, například položky seznamů nebo prvky tabulek, ale ani jedno není potřeba zatím řešit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Box-model</h1>
+                                            <p>Na stránce je každý element reprezentovaný jako obdélníková krabice. Tvar nemusí být vidět, výchozí pozadí většiny prvků je průhledné (<code>transparent</code>), ale vždy tam je.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Podívej se na video, které velmi zpomaleně zachycuje vykreslování stránky v prohlížeči. Jak vidíš, je tam spousta „krabic“. Pro ilustraci jsou všechny jen obarvené, s rámečkem a poloprůhledné a jejich obsah je neviditelný. Na pozadí vidíš, jak vypadá výsledná stránka.</p>
+                                                <iframe data-autoplay="" width="100%" height="400px" src="https://www.youtube.com/embed/cFxFY0NFCqk" frameborder="0" allowfullscreen=""></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2><a href="https://devdocs.io/css/box-sizing">box-sizing</a></h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p><code>box-sizing</code> je vlastnost, která určuje jaký druh box-modelu použít. </p>
+                                                <p>Ve většině případů chceš bohužel použít variantu <code>border-box</code>, která není v CSS prohlížeče jako výchozí, proto hned na začátek tvého CSS dej následující kód.</p>
+                                                <pre><code class="lang-css">* { <span class="hljs-attribute">box-sizing</span>: border-box; }
+</code></pre>
+                                                <p>Vysvětlení toho, jaký je v tom rozdíl nechme na později. Teď je jen třeba, aby to prohlížeč vykresloval tak, jak čekáš.</p>
+                                                <p>Hvězdička <code>*</code> je selektor, který znamená libovolný, tedy každý, element.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Výška a šířka</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Každá krabice na webu má dva rozměry: šířku a výšku. Ty jsou ve výchozím stavu dynamické: přizpůsobují se obsahu nebo rodiči. Je ale možné je nastavit pomocí CSS.</p>
+                                                <p><img src="box-model-width-height.svg"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Přetékání</h3>
+                                                <p>Pokud si nastavíš dostatečně malé rozměry, zjistíš, že text přetekl ven. To je sice překvapivé, ale správné chování. Přece nechceš schovávat před uživatelem obsah. </p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">background-color</span>: orange;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">110px</span>;
+}
+</code></pre>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span>&gt;Zajímá tě programování v Pythonu? Chtěla <span class="hljs-keyword">by</span> ses <span class="hljs-keyword">to</span> nauč<span class="hljs-keyword">it</span>? PyLadies pořádají pravidelné odpolední srazy a kurzy.&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+                                                <div class="c-example example-overflow">
+                                                    <div>Zajímá tě programování v Pythonu? Chtěla by ses to naučit? PyLadies pořádají pravidelné odpolední srazy a kurzy.</div>
+                                                </div>
+
+
+                                                <p>Pomocí <code>overflow: hidden;</code> ale můžeš obsah přeci jen skrýt. To se hodí v případě, že počítáš se zobrazením obsahu jiným způsobem. </p>
+                                                <div class="c-example example-overflow-hidden">
+                                                    <div>Zajímá tě programování v Pythonu? Chtěla by ses to naučit? PyLadies pořádají pravidelné odpolední srazy a kurzy.</div>
+                                                </div>
+
+
+                                                <p>Další možností je <code>overflow: auto;</code>, který zobrazí scrollbary v případě, že je obsah větší, než se vejde do elementu.</p>
+                                                <div class="c-example example-overflow-auto">
+                                                    <div>Zajímá tě programování v Pythonu? Chtěla by ses to naučit? PyLadies pořádají pravidelné odpolední srazy a kurzy.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Pevné a fluidní rozměry</h3>
+                                                <p>Aplikovat pevné rozměry můžeš, ale je třeba si dát si pozor jak se vše vejde. Proto je často lepší nastavit fluidní rozměry v <code>%</code>, kde <code>100%</code> znamená stejný rozměr jako má rodič. </p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background-color</span>: orange;
+}
+
+<span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background-color</span>: cyan;
+}
+</code></pre>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>div má šířku v %<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>odstavec v pixelech<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example example-fluid">
+                                                    <div>div má šířku v %</div>
+                                                    <p>odstavec v pixelech</p>
+                                                </div>
+
+                                                <p>Tady si musíš změnit šířku okna, abys viděla rozdíl.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Omezení rozměrů</h3>
+                                                <p>Zvlášť při vytváření stránek, které fungují i na mobilech i na velkých displejích (responzivních) se hodí možnost omezit minimální nebo maximální velikost rozměrů.</p>
+                                                <p>To se dělá pomocí <em>přidání</em> vlastností <code>max-width</code> a <code>min-width</code> pro šířku a <code>max-height</code> a <code>min-height</code> pro výšku. </p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">background-color</span>: cyan;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">min-width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">max-width</span>: <span class="hljs-number">300px</span>;
+}
+</code></pre>
+                                                <p>Tento element by tedy byl široký 50%, ale pokud by 50% vyšlo méně, než 100px, nastaví se mu šířka právě těch 100px. Obdobně by nikdy nebyl širší než 300px.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Ohraničení</h2>
+                                            <p>Nebo rámeček kolem prvku se nastavuje pomocí vlastnost <code>border</code>.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p><img src="box-model-border.svg"></p>
+                                                <p>Rámeček má 3 základní vlastnosti:</p>
+                                                <ol>
+                                                    <li>šířku (nebo tloušťku) čáry</li>
+                                                    <li>typ čáry (plná, tečkovaná, čárkovaná, dvojitá apod.)</li>
+                                                    <li>barvu čáry</li>
+                                                </ol>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">border-width</span>: <span class="hljs-number">2px</span>;
+    <span class="hljs-attribute">border-style</span>: solid; <span class="hljs-comment">/* taky dotted, dashed nebo inset */</span>
+    <span class="hljs-attribute">border-color</span>: black;
+}
+</code></pre>
+                                                <p>To samé se dá zapsat zkráceným zápisem (tzv. shorthand)</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid black;
+}
+</code></pre>
+                                                <div class="c-example example-border-simple">
+                                                    <div>Mám černý okraj</div>
+                                                </div>
+
+
+                                                <p>Funguje to tak, že je určeno v jakém pořadí se hodnoty zapisují, v tomto případě je to <code>border-width border-style border-color</code>.</p>
+                                                <h3>Různé hodnoty pro různé strany</h3>
+                                                <p>Pomocí vlastností <code>border-top</code> <code>border-right</code> <code>border-bottom</code> nebo <code>border-left</code> lze nadefinovat různé rámečky pro různé strany elementu.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">background-color</span>: silver;
+
+    <span class="hljs-attribute">border-top</span>: <span class="hljs-number">20px</span> solid red;
+
+    <span class="hljs-attribute">border-bottom-width</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">border-bottom-style</span>: dotted;
+    <span class="hljs-attribute">border-bottom-color</span>: black;
+}
+</code></pre>
+                                                <div class="c-example example-border">
+                                                    <div>Mám různé okraje, o já se mám.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Odsazení obsahu od okraje (od rámečku)</h2>
+                                            <p>Obvykle se nastavuje, aby obsah nebyl „nalepený“ na viditelný rámeček nebo pokud má element pozadí.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p><img src="box-model-padding.svg"></p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid black;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">25px</span>;
+}
+</code></pre>
+                                                <div class="c-example example-padding-simple">
+                                                    <div>Můj obsah není nalepený</div>
+                                                </div>
+
+                                                <h3>Různé hodnoty pro jednotlivé strany elementu</h3>
+                                                <p>Jedna hodnota nastaví shodné odsazení na všech 4 stranách prvku, ale opět funguje <code>padding-top</code> <code>padding-right</code> <code>padding-bottom</code> i <code>padding-left</code>.</p>
+                                                <p>Další možností je využít shorthand, který umožnuje zapsat všechny hodnoty přímo k <code>padding</code></p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid black;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">100px</span>;
+}
+</code></pre>
+                                                <div class="c-example example-padding-2">
+                                                    <div>Nahoře a dole 10px a vpravo a vlevo 100px.</div>
+                                                </div>
+
+                                                <p>Pokud uvedeš 3 hodnoty</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid black;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">100px</span> <span class="hljs-number">50px</span>;
+}
+</code></pre>
+                                                <div class="c-example example-padding-3">
+                                                    <div>Nahoře 10px a vpravo a vlevo 100px a dole 50px.</div>
+                                                </div>
+
+                                                <p>A pro úplnost i všechny 4</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid black;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">100px</span> <span class="hljs-number">50px</span> <span class="hljs-number">200px</span>;
+}
+</code></pre>
+                                                <div class="c-example example-padding-4">
+                                                    <div>Nahoře 10px a vpravo 100px, dole 50px a vlevo 200px.</div>
+                                                </div>
+
+                                                <p>Poslední zápis je totéž, jako tento:</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid black;
+    <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">200px</span>;
+}
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Odsazení od ostatních prvků</h2>
+                                            <p>Určuje to, jak daleko mají být ostatní prvky od rámečku (i kdyby byl nulový).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p><img src="box-model-margin.svg"></p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid black;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">25px</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">40px</span>;
+}
+</code></pre>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>první<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>druhý<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example example-margin-1">
+                                                    <div>první</div>
+                                                    <div>druhý</div>
+                                                </div>
+
+                                                <h3>Slučování odsazení (margin collapsing)</h3>
+                                                <p>Pokud by sis změřila přechozí ukázku, zjistila bys, že mezi okraji je jen na výšku jen 20px a ne 40px. Margin tak vlastně znamená: chci aby od dané strany byly ostatní elementy alespoň tolik. </p>
+                                                <p>Říká se tomu slučování a dochází k němu za některých okolností, kdy se z hodnot margin-bottom horního prvku a margin-top dolního prvku aplikuje jen ta větší nebo pokud jsou stejné, tak jen jedna z nich.</p>
+                                                <p>Za chvíli si ukážeme vlastnosti, jejichž změnou se vypne i slučování.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Box-model a řádkové elementy</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Co se stane, když zkusíš nastavit tyhle vlastnosti řádkovému elementu?</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">span</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background-color</span>: cyan;
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1000px</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">1000px</span>;
+    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">50px</span>;
+}
+</code></pre>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Řádkovému elementu šířku ani výšku nenastavíš!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>O margin-top a margin-bottom nemluvě.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Ostatní ale jde, jen nezmění tok textu<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example example-inline-dimensions">
+                                                    <span>řádkovému elementu šířku ani výšku nenastavíš</span>
+                                                    <span>O margin-top a margin-bottom nemluvě.</span>
+                                                    <span>Ostatní ale jde, jen nezmění tok textu</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Vlastnost <code>display</code></h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Typ elementu můžeš změnit pomocí vlastnosti: <code>display</code>.</p>
+                                                <p>Element se pak bude zobrazovat jako by byl jiného typu. </p>
+                                                <p>Pozor, nenamená to možnost vložit <code>&lt;div&gt;</code> do <code>&lt;span&gt;</code>, změna se týká jen zobrazení.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3><code>display: block;</code></h3>
+                                                <p>Libovolný element se začne chovat jako blokový.</p>
+                                                <p>Lze jim nastavit všechny vlastnosti z box-modelu.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">span</span> {
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">background-color</span>: yellow;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+}
+</code></pre>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Narodil jsem jako obyčejný řádkový prvek, ale pak ze mě udělali blok.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example example-inline2block">
+                                                    <span>Narodil jsem jako obyčejný řádkový prvek, ale pak ze mě udělali blok.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3><code>display: inline;</code></h3>
+                                                <p>Libovolný element se začne chovat jako řádkový.</p>
+                                                <p>Nejde jim pak nastavit některé vlastnosti: šířku, výšku, <code>margin-top</code> a <code>margin-bottom</code>.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">display</span>: inline;
+    <span class="hljs-attribute">background-color</span>: yellow;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span>;
+}
+</code></pre>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Narodil jsem jako blokový prvek, ale pak ze mě udělali řádkový.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example example-block2inline">
+                                                    <div>Narodil jsem jako blokový prvek, ale pak ze mě udělali řádkový.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3><code>display: inline-block;</code></h3>
+                                                <p>Libovolný element se začne chovat jako řádkový s některými vlastnostmi blokového-</p>
+                                                <p>Řadí se za sebou, ale lze mu nastavit šířku, výšku a všechny hodnoty <code>margin</code>.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">30%</span>;
+    <span class="hljs-attribute">background-color</span>: yellow;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">10%</span>;
+}
+</code></pre>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Jsem blokový prvek, ale chovám se jako řádkově blokový.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>To já taky, nic si z toho nedělej.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Výchova není co bývala.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example example-inline-block">
+                                                    <p>Narodil jsem jako blokový prvek, ale pak ze mě udělali řádkově blokový.</p>
+                                                    <p>To já taky, nic si z toho nedělej.</p>
+                                                    <p>Výchova není co bývala.</p>
+                                                </div>
+
+
+                                                <p>Všimni si, že <code>margin</code> je už stejný na šířku i na výšku pixelů, v tomto případě nedochází ke slučování.</p>
+                                                <p>Také není náhoda, že mezi prvky není ani jedna mezera, protože jinak by se při menších velikostech marginů zobrazila a výsledek by vypadal jinak. Jde to vyřešit i v&nbsp;CSS, ale ne úplně snadno a teď si tím nemusíme zabývat. Jak řešit layouty (rozložení prvků na stránce) probereme na poslední hodině.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3><code>display: none;</code></h3>
+                                                <p>Nastavením na <code>none</code> element zmizí. Je to jako by vůbec v dokumentu nebyl, nic neovlivňuje. Čtečky pro nevidomé ho ignorují a stejně tak třeba Google.</p>
+                                                <h4>Viditelnost</h4>
+                                                <p>Jedná se sice o jinou vlastnost, ale hodí se ji zmínit, protože dělá něco podobného jako <code>display:none</code>. Nastavením <code>visibility: hidden;</code> se také element schová, ale zůstane po něm místo přesně tak velké, jaké by zabíral, kdyby měl <code>visibility: visible;</code>.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">span</span> {
+    <span class="hljs-attribute">visibility</span>: hidden;
+    <span class="hljs-attribute">background-color</span>: yellow;
+}
+
+<span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">display</span>: none;
+    <span class="hljs-attribute">background-color</span>: red;
+}
+</code></pre>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Jsem div a jsem vidět<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Já jsem odstavec o kterém ani netušíte, že tu je.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Já mám v sobě něco <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>neviditelného<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>, to koukáte.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example example-display-none-visibility-hidden">
+                                                    <div>Jsem div a jsem vidět</div>
+                                                    <p>Já jsem odstavec o kterém ani netušíte, že tu je.</p>
+                                                    <div>Já mám v sobě něco <span>neviditelného</span>, to koukáte.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Zpět k <code>box-sizing</code></h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Možná sis všimla, že šířka i výška elementu zahrnuje i <code>padding</code> a <code>border</code>. </p>
+                                                <p><img src="box-model-all.svg"></p>
+                                                <p>To ale platí pouze pro elementy s <code>box-sizing: border-box;</code>. </p>
+                                                <p>Pokud by tam byla výchozí hodnota, tedy <code>content-box</code>, tak by <code>width</code> a <code>height</code> byly rozměr pouze obsahu a hodnoty <code>padding</code> a <code>border</code> by prvek zvětšovaly a to je většinou chování, které se v praxi nehodí, proto ten reset na začátku.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">background-color</span>: yellow;
+    <span class="hljs-attribute">display</span>: inline-block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">10px</span> solid black;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+}
+</code></pre>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>první<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>druhý<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example example-border-box">
+                                                    <div>první</div>
+                                                    <div>druhý</div>
+                                                </div>
+
+                                                <p>Ten samý kód s <code>content-box</code>.</p>
+                                                <div class="c-example example-content-box">
+                                                    <div>první</div>
+                                                    <div>druhý</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

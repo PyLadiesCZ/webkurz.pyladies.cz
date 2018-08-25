@@ -23,7 +23,231 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Pre­pro­cesory</h1></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Protože v CSS nejde programovat, nemá například proměnné nebo cykly, rozhodli se programátoři vytvořit syntaxi, která by to umožnila a usnadnila tak psaní komplexnějšího CSS. Říkáme jim <em>preprocesory</em>, protože vzhledem k tomu, že taková syntaxe není v prohlížečích podporována, je třeba z takového kódu CSS nejdřív vytvořit (zkompilovat).</p>
+                                                <p>Díky tomu jde některé věci dělat snáz, ale je potřeba se naučit navíc něco o preprocesorech. Nezapomeň, že vytvořit CSS pro web můžeš samozřejmě i bez preprocesoru.</p>
+                                                <p>Tři nejpoužívanější preprocesory jsou <a href="http://sass-lang.com/">Sass</a>, <a href="http://lesscss.org/">less</a> a <a href="http://stylus-lang.com/">Stylus</a> a svým způsobem k nim patří i <a href="http://postcss.org/">post-css</a>. </p>
+                                                <p>Ukážeme si nejrozšířenější preprocesor <em>Sass</em> a to v syntaxi <em>SCSS</em> (má ještě druhou syntaxi, kterou se zabývat nebudeme).</p>
+                                                <p>Tato syntaxe má tu výhodu, že je nadstavbou, takže píšeš standardní CSS a <em>můžeš</em> využívat funkce, které přidává preprocesor. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>K čemu se hodí</h2>
+                                            <p><em>Sass</em> je mocný nástroj, který umožňuje CSS generovat pomocí opravdu složitého kódu, ale nenech se jeho silou příliš zlákat. </p>
+                                            <p><strong>Pro naprostou většinu běžných webů stačí využít funkcionalitu popsanou níže.</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Spojování do jednoho CSS souboru</h3>
+                                                <p>Není příliš přehledné mít rozsáhlejší CSS v jednom dlouhém souboru a tak se nabízí ho rozdělit do více menších tak, aby například všechno CSS pro patičku webu bylo spolu v jednom souboru. CSS soubory lze připojit do stránky takto:</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"zaklad.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"hlavicka.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"formulare.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"paticka.css"</span>&gt;</span>
+</code></pre>
+                                                <p>Takový zápis ale zpomalí načítání stránky, proto je lepší mít všechno CSS v jednom souboru. (Výjimkou jsou weby na serverech, které využívají <em>http/2</em>.)</p>
+                                                <p>Proto je lepší využít rozšíření <em>Sass</em> pro standardní CSS <code>@import</code> a jediném souboru (např. <code>index.scss</code>) mít:</p>
+                                                <pre><code class="lang-scss">@<span class="hljs-keyword">import</span> <span class="hljs-string">'zaklad'</span>;
+@<span class="hljs-keyword">import</span> <span class="hljs-string">'hlavicka'</span>;
+@<span class="hljs-keyword">import</span> <span class="hljs-string">'formulare'</span>;
+@<span class="hljs-keyword">import</span> <span class="hljs-string">'paticka'</span>;
+</code></pre>
+                                                <p>Výsledné CSS pak bude vypadat jako bys postupně ručně zkopírovala obsah jednotlivých souborů <code>_zaklad.scss</code>, <code>_hlavicka.scss</code>, <code>_formulare.scss</code> a <code>_paticka.scss</code>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Využití proměnných</h3>
+                                                <p>Někdy se hodnoty opakují a může tak být vhodné je nadefinovat jednou a pak jen odkazovat na tuto definici. </p>
+                                                <pre><code class="lang-scss"><span class="hljs-variable">$zakladni-pismo</span>: Helvetica, sans-serif;
+<span class="hljs-variable">$zakladni-barva</span>: <span class="hljs-number">#333</span>;
+<span class="hljs-variable">$standardni-sirka-okraje</span>: <span class="hljs-number">2px</span>;
+
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">font</span>: <span class="hljs-number">100%</span> <span class="hljs-variable">$zakladni-pismo</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-variable">$zakladni-barva</span>;
+}
+
+<span class="hljs-selector-tag">input</span> {
+    <span class="hljs-attribute">border-style</span>: solid;
+    <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$zakladni-barva</span>;
+    <span class="hljs-attribute">border-width</span>: <span class="hljs-variable">$standardni-sirka-okraje</span>;
+}
+</code></pre>
+                                                <p>Výsledné CSS.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">font</span>: <span class="hljs-number">100%</span> Helvetica, sans-serif;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>;
+}
+
+<span class="hljs-selector-tag">input</span> {
+    <span class="hljs-attribute">border-style</span>: solid;
+    <span class="hljs-attribute">border-color</span>: <span class="hljs-number">#333</span>;
+    <span class="hljs-attribute">border-width</span>: <span class="hljs-number">2px</span>;
+}
+</code></pre>
+                                                <p>Využívej proměnné pouze tam, kde se daná hodnota opakuje a kde spolu hodnoty skutečně souvisí. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Výpočty</h3>
+                                                <p>Občas se hodí něco spočítat. Například si nastavíš do proměnné základní velikost mezery mezi prvky a někde je potřeba dvojnásobná.</p>
+                                                <pre><code class="lang-scss"><span class="hljs-variable">$mezera</span>: <span class="hljs-number">20px</span>;
+
+<span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$mezera</span>; }
+
+<span class="hljs-selector-tag">p</span> { <span class="hljs-attribute">padding</span>: <span class="hljs-number">2</span>*<span class="hljs-variable">$mezera</span>; }
+</code></pre>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>; }
+
+<span class="hljs-selector-tag">p</span> { <span class="hljs-attribute">padding</span>: <span class="hljs-number">40px</span>; }
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Vnořování (nesting)</h3>
+                                                <p>Pomocí vnořování si lze usnadnit psaní a zvýšit přehlednost kódu. </p>
+                                                <pre><code class="lang-scss"><span class="hljs-selector-class">.anketa</span> {
+    <span class="hljs-selector-tag">h2</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-number">80%</span>; }
+
+    <span class="hljs-selector-tag">p</span> { <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>; }
+
+    <span class="hljs-selector-tag">a</span> {
+        <span class="hljs-attribute">color</span>: red;
+
+        &amp;:hover { <span class="hljs-attribute">color</span>:blue; }
+    }
+}
+</code></pre>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.anketa</span> <span class="hljs-selector-tag">h2</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-number">80%</span>; }
+
+<span class="hljs-selector-class">.anketa</span> <span class="hljs-selector-tag">p</span> { <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>; }
+
+<span class="hljs-selector-class">.anketa</span> <span class="hljs-selector-tag">a</span> { <span class="hljs-attribute">color</span>: red; }
+
+<span class="hljs-selector-class">.anketa</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> { <span class="hljs-attribute">color</span>: blue; }
+</code></pre>
+                                                <p>S vnořováním to ale nepřeháněj! Tři úrovně, jako jsou v ukázce, jsou většinou dostatečné, s dalším vnořováním se přehlednost kódu spíš ztrácí. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Media queries</h3>
+                                                <p>Sass umožňuje i pohodlnější a přehlednější zápis media queries. </p>
+                                                <p>Media queries v CSS vyžadují nejprve napsat samotnou media query a dovnitř pak CSS, které se za té podmínky má splnit.
+                                                    To je poměrně nepohodlné, protože je nutno znovu kopírovat selektory. </p>
+                                                <p>V Sassu je to snazší, stačí vnořit media query.</p>
+                                                <pre><code class="lang-scss"><span class="hljs-selector-class">.foo</span> {
+    <span class="hljs-attribute">color</span>: red;
+
+    @<span class="hljs-keyword">media</span> (min-width:<span class="hljs-number">300px</span>){
+        <span class="hljs-attribute">color</span>: blue;
+    }
+}
+</code></pre>
+                                                <p>Výsledné CSS.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.foo</span> {
+    <span class="hljs-attribute">color</span>: red;
+}
+
+@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">300px</span>) {
+    <span class="hljs-selector-class">.foo</span> {
+        <span class="hljs-attribute">color</span>: blue;
+    }
+}
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Manipulace s barvami</h3>
+                                                <p>Barvy lze ztmavit, zesvětlit, zvětšit nebo zmenšit jejich sytost atd.</p>
+                                                <pre><code class="lang-scss"><span class="hljs-variable">$zakladni-barva</span>: <span class="hljs-number">#eeeeee</span>;
+
+<span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$zakladni-barva</span>;
+    <span class="hljs-attribute">color</span>: darken(<span class="hljs-variable">$zakladni-barva</span>, <span class="hljs-number">20%</span>);
+}
+</code></pre>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#eeeeee</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#bbbbbb</span>;
+}
+</code></pre>
+                                                <h3>Některé funkce na změnu barev</h3><h4><code>lighten($color, $amount)</code></h4>
+                                                <p>Vrátí světlější odstín, např. <code>lighten(red, 30%)</code><i class="c-color-swatch" style="background-color:red;"></i> je <code>#ff9999</code><i class="c-color-swatch" style="background-color:#ff9999;"></i>.</p>
+                                                <h4><code>darken($color, $amount)</code></h4>
+                                                <p>Vrátí tmavější odstín, např. <code>darken(red, 20%)</code><i class="c-color-swatch" style="background-color:red;"></i> je <code>#990000</code><i class="c-color-swatch" style="background-color:#990000;"></i>.</p>
+                                                <h4><code>saturate($color, $amount)</code></h4>
+                                                <p>Vrátí sytější barvu, např. <code>saturate(steelblue, 40%)</code><i class="c-color-swatch" style="background-color:steelblue;"></i> je <code>#1487e6</code><i class="c-color-swatch" style="background-color:#1487e6;"></i>.</p>
+                                                <h4><code>desaturate($color, $amount)</code></h4>
+                                                <p>Vrátí méně sytou barvu, např. <code>desaturate(magenta, 80%)</code><i class="c-color-swatch" style="background-color:magenta;"></i> je <code>#bf40bf</code><i class="c-color-swatch" style="background-color:#bf40bf;"></i>.</p>
+                                                <h4><code>grayscale($color)</code></h4>
+                                                <p>Odebere úplně barevnou složku, např. <code>grayscale(red)</code><i class="c-color-swatch" style="background-color:red;"></i> je <code>gray</code><i class="c-color-swatch" style="background-color:gray;"></i>.</p>
+                                                <h4><code>complement($color)</code></h4>
+                                                <p>Vrátí komplementární barvu, např. <code>grayscale(red)</code><i class="c-color-swatch" style="background-color:red;"></i> je <code>cyan</code><i class="c-color-swatch" style="background-color:cyan;"></i>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Vyzkoušej si online</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Online nástroj <a href="http://www.sassmeister.com/">Sassmeister</a> ti umožní zkusit si napsat něco v scss a hned vidět výsledné CSS.</p>
+                                                <p><em>Poznámka: funkce pracující se soubory jako <code>@import</code> ti tam fungovat nebudou, protože tam není možnost dát další soubor, ale ostatní věci si vyzkoušet můžeš.</em></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Sass a automatizace</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>V praxi se pro kompilaci CSS z scss využívá automatizace, kdy se při každé změně v scss provede automaticky kompilace. </p>
+                                                <p>Jak konkrétně se to udělá, si ukážeme na závěrečném workshopu. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

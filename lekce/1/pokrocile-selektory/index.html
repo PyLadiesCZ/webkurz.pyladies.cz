@@ -25,6 +25,128 @@
                     <div class="tile is-vertical">
                         <div class="tile is-vertical" data-markdown></div>
                     </div>
+                    <div class="tile is-vertical" data-markdown="">
+                        <div class="tile">
+                            <div class="tile is-parent is-3">
+                                <div class="tile is-child notification undefined">
+                                    <div class="content"><h2>Pokročilé selektory</h2>
+                                        <p>Základní jednoduchý selektor, tedy to, co napíšeš v CSS před složené závorky, už znáš. </p>
+                                        <p>Často se ale hodí použít i komplexnější varianty, které umožňují jednodušeji nebo přesněji zacílit na elementy, které potřebuješ nastylovat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile is-vertical">
+                                <div class="tile is-parent">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Vícenásobný selektor</h3>
+                                            <p>Při psaní CSS jsou způsoby, jak si ušetřit opakování znovu a znovu.</p>
+                                            <pre><code class="lang-css"><span class="hljs-selector-tag">h1</span>,
+<span class="hljs-selector-tag">h2</span> { <span class="hljs-attribute">color</span>: green; }
+</code></pre>
+                                            <p>Selektor říká: <em>všechny nadpisy h1 a všechny nadpisy h2</em></p>
+                                            <p>Obarví nadpisy 1. a 2. úrovně na zeleno.</p>
+                                            <div class="c-example example-mutliple-selectors">
+                                                <h1>Já jsem nadpis první úrovně</h1>
+                                                <h2>Já jsem nadpis druhé úrovně</h2>
+                                            </div>
+
+                                            <p>Jednotlivé selektory odděluj čárkou.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-parent">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Kontextový selektor</h3>
+                                            <p>Někdy potřebuješ nastavit vlastnosti jen prvkům v určité části stránky, na to se hodí kontextový selektor. </p>
+                                            <pre><code class="lang-css"><span class="hljs-selector-class">.tip</span> <span class="hljs-selector-tag">h2</span> { <span class="hljs-attribute">color</span>: blue; }
+</code></pre>
+                                            <p>Selektor říká: <em>všechny nadpisy h2, pokud je nějaký jejich rodič libovolný element s třídou h2</em></p>
+                                            <p>Obarví se nadpisy 2. úrovně na modro, pokud jsou v prvku s třídou <code>.tip</code></p>
+                                            <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Já jsem výchozí barvou<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tip"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Já jsem modrý<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Já, já, já jsem taky modrý<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                            <div class="c-example example-context-selectors">
+                                                <h2>Já jsem výchozí barvou</h2>
+                                                <div class="tip">
+                                                    <h2>Já jsem modrý</h2>
+                                                    <div>
+                                                        <h2>Já, já, já jsem taky modrý</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <p>Samozřejmě to funguje i jen s tagy nebo jen s třídami. </p>
+                                            <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> <span class="hljs-selector-tag">h2</span> { <span class="hljs-attribute">color</span>: red; }
+
+<span class="hljs-selector-class">.tip</span> <span class="hljs-selector-class">.nadpis</span> { <span class="hljs-attribute">color</span>: blue; }
+</code></pre>
+                                            <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Já jsem výchozí barvou<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tip"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nadpis"</span>&gt;</span>Já jsem modrý<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nadpis"</span>&gt;</span>Já, já, já jsem taky modrý<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                            <div class="c-example example-context-selectors">
+                                                <h2>Já jsem výchozí barvou</h2>
+                                                <div class="tip">
+                                                    <h2 class="nadpis">Já jsem modrý</h2>
+                                                    <div>
+                                                        <h2 class="nadpis">Já, já, já jsem taky modrý</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <p>A taky lze definovat více zanořených prvků, ale tomu se radši vyhni. Nesnaž se kopírovat strukturu HTML do selektorů, není to dobrá praxe a přináší to spíš problémy, protože při každé změně HTML pak musíš měnit i CSS. </p>
+                                            <p>Ostatně většina metodik pro psaní CSS doporučuje v maximální míře stylovat pouze přes třídy i kdyby vícenásobné.</p>
+                                            <pre><code class="lang-css"><span class="hljs-comment">/* takto ne */</span>
+<span class="hljs-selector-tag">body</span> <span class="hljs-selector-class">.tip</span> <span class="hljs-selector-class">.jaja</span> { <span class="hljs-attribute">color</span>: blue; }
+</code></pre>
+                                            <p>I zde platí ze <em>Zen of Python</em>: <q>Simple is better than complex.</q> a <q>Flat is better than nested</q>.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile">
+                            <div class="tile is-parent is-3">
+                                <div class="tile is-child notification undefined">
+                                    <div class="content"><h3>Další selektory</h3></div>
+                                </div>
+                            </div>
+                            <div class="tile is-vertical">
+                                <div class="tile is-parent">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><p>Existují i další druhy selektorů, ale ve valné většině případů se bez nich obejdeš.</p>
+                                            <p>Lze vybírat pouze přímé potomky (<code>div &gt; p</code>) nebo pouze prvky, které mají společného rodiče a před sebou nějaký jiný prvek těsně (<code>h2 + p</code>) nebo kdekoli (<code>h2 ~ p</code>).</p>
+                                            <p>Prvky lze také vybírat podle atributu (<code>img[alt]</code>), či hodnot atributů (<code>img[src="pylady.jpg"]</code>) nebo dokonce jen jejich částí.</p>
+                                            <p>Jde také pomocí pseudotříd vybrat každý druhý (<code>:nth-child(2n)</code>) nebo třetí nebo prostě n-tý prvek, to se může hodit třeba na stylování proužkovaných tabulek.</p>
+                                            <p>Pokud tě zajímají, podívej se na <a href="http://jecas.cz/css-selektory">český</a> nebo <a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector">anglický</a> přehled selektorů.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile">
+                            <div class="tile is-parent ">
+                                <div class="tile is-child notification undefined">
+                                    <div class="content"><h2>Úprava nastavení <code>box-sizing</code></h2>
+                                        <p>Protože teď už znáš jak pseudoelementy, tak vícenásobné selektory, uprav si nastavení <code>box-sizing</code> na začátku tvého CSS tak, aby zahrnovalo i všechny generované prvky.</p>
+                                        <pre><code class="lang-css">*,
+*<span class="hljs-selector-pseudo">::before</span>,
+*<span class="hljs-selector-pseudo">::after</span> { <span class="hljs-attribute">box-sizing</span>: border-box; }
+</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

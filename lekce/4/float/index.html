@@ -23,7 +23,132 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Float</h1></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Float je asi nejdivnější vlastnost. To, co co se stane, když ji použiješ nedává často na první pohled smysl a není to co chceš.</p>
+                                                <p>Přesto to je, a hlavně po léta byl, hlavní způsob jak dělat layouty (rozložení) stránek. Naštěstí dnes jde layout vytvořit pomocí <em>flexboxu</em>.</p>
+                                                <p>Float je komplikovaný v tom, že mění nejen chování samotného prvku, který ho má nastavený, ale ovlivňuje předky, sourozence, potomky a prvky, které následují po něm. </p>
+                                                <p>Vlastnost <code>float</code> má jen 3 možné hodnoty: </p>
+                                                <ul>
+                                                    <li><code>left</code> a <code>right</code> floatování zapnou</li>
+                                                    <li><code>none</code> floatování vypne</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Floatování zapne <code>display: block;</code></h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Floatované prvky jsou automaticky blokové.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Kdy float použít</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Float je stále často používán pro tvorbu layoutů. To se ale pomalu stává minulostí, díky poměrně široké podpoře <em>flexboxu</em> ve většině dnešních prohlížečů.</p>
+                                                <p>Hlavním smyslem floatu zůstává umístění prvku na jednu stranu a nechat text, aby ho obtékal. </p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://satyr.io/200x200/orange?text=Verča Š."</span>&gt;</span>
+    Kurz Pythonu u pražských Pyladies byl skvělý - komplexní, dobře vystavěný a srozumitelně prezentovaný. Vyžadoval pozornou účast a aktivní domácí práci, ale nikdy jsme v tom nebyly samy; k dispozici byli koučové, kteří ochotně zodpověděli všechny dotazy a pomohli překonat nástrahy učení, online i offline. Super způsob, jak se seznámit se základy programování a začlenit se do místní pythonovské komunity.
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">p</span> { <span class="hljs-attribute">background-color</span>: skyblue; }
+
+<span class="hljs-selector-tag">img</span> { <span class="hljs-attribute">float</span>:left; }
+</code></pre>
+                                                <div class="c-example example-float">
+                                                    <p>
+                                                        <img src="http://satyr.io/200x200/orange?text=Verča Š.">
+                                                        Kurz Pythonu u pražských Pyladies byl skvělý - komplexní, dobře vystavěný a srozumitelně prezentovaný. Vyžadoval pozornou účast a aktivní domácí práci, ale nikdy jsme v tom nebyly samy; k dispozici byli koučové, kteří ochotně zodpověděli všechny dotazy a pomohli překonat nástrahy učení, online i offline. Super způsob, jak se seznámit se základy programování a začlenit se do místní pythonovské komunity.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Clearfix</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Zatím to vypadá celkem v pohodě, ne? A co kdyby textu bylo méně?</p>
+                                                <div class="c-example example-float">
+                                                    <p>
+                                                        <img src="http://satyr.io/200x200/orange?text=Pavlína F.">
+                                                        Kurz byl pro mě ohromně přínosný.
+                                                    </p>
+                                                </div>
+
+                                                <p>Uf. Protože floatovaný prvek je z toku dokumentu vyjmut, jeho rodič o něm „neví“ a proto se roztáhne jen na výšku obsahu. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Teď je na řadě představit vlastnost <code>clear</code>, která umožňuje nastavit chování prvku tak, že se posune až za floatovaný prvek. Pozor: funguje to jen pro blokový element.</p>
+                                                <p>Pokud na tom záleží a chceš, aby rodič vždy „věděl“ o svém potomku, je potřeba za něj tedy potřeba umístit další blokový element s vlastností <code>clear: both;</code>. </p>
+                                                <p>Ve skutečnosti bude „vědět“ právě o tomhle novém elementu, který bude vždy za tím floatovaným, ale výsledek bude stejný.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Protože nechceš do HTML přidávat nové prvky, dělá se to v praxi pomocí generovaného obsahu takto:</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">::after</span> {
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+    <span class="hljs-attribute">clear</span>: both;
+}
+</code></pre>
+                                                <pre><code class="lang-html">&lt;p <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"clearfix"</span>&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://satyr.io/200x200/orange?text=Pavlína F."</span>&gt;</span>
+    Kurz byl pro mě ohromně přínosný.
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+</code></pre>
+                                                <div class="c-example example-float">
+                                                    <p class="clearfix">
+                                                        <img src="http://satyr.io/200x200/orange?text=Pavlína F.">
+                                                        Kurz byl pro mě ohromně přínosný.
+                                                    </p>
+                                                </div>
+
+                                                <p>Třídu <code>clearfix</code> přiřadíš libovolnému prvku, který je rodičem a tím je hotovo.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

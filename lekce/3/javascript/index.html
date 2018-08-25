@@ -23,7 +23,369 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Základy JavaScriptu</h1></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Už umíš vytvořit <em>statické</em> stránky pomocí HTML a CSS. V minulé lekci jsi se navíc dověděla, že nemusíš psát všechno HTML ručně a ukládat do souborů, ale že jej lze <em>dynamicky</em> generovat na serveru, třeba zrovna Pythonem.</p>
+                                                <p>Programování webových stránek se však může odehrávat nejen na straně serveru, ale i přímo u návštěvníka stránek, tedy v jeho prohlížeči. Jen jeden jazyk umí jet přímo v prohlížeči a měnit stránku u uživatele bez toho, aby bylo potřeba ji znovu načíst ze serveru. Tím jazykem je JavaScript a pro webovou tvorbu je velmi důležitý. V této lekci se naučíš jeho základy.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Backend nebo frontend?</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Python jede na serveru, generuje stránky, a posílá je uživateli do prohlížeče. Jakmile je hotové odešle, už je nijak změnit neumí. Proto se jedná o <em>backend</em>. Jako <em>backend</em> se také označuje i všechno ostatní, co jede na serveru a uživatel to nemůže přímo vidět, jako např. databáze.</p>
+                                                <p>HTML, CSS a JavaScript se interpretují v prohlížeči u uživatele, takže se jedná o <em>frontend</em>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Co je v JavaScriptu možné?</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content">
+                                                <ul>
+                                                    <li>reagovat na to, že uživatel pohne myší, posouvá stránku, označí text, píše do inputu (textového pole), atd.</li>
+                                                    <li>měnit strukturu HTML a CSS vlastnosti dané stránky:
+                                                        <ul>
+                                                            <li>animovat věci na stránce</li>
+                                                            <li>posouvat věci, skrývat, odkrývat, přebarvovat</li>
+                                                            <li>zmenšovat nebo zvětšovat prvky na stránce</li>
+                                                            <li>přidávat nové HTML i s textem, měnit existující</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>přistupovat k informacím, které poskytuje prohlížeč:
+                                                        <ul>
+                                                            <li>datum a čas u uživatele</li>
+                                                            <li>jestli je uživatel ve tmě nebo na světle, kolik má baterky</li>
+                                                            <li>ovládat audio a video na stránce</li>
+                                                            <li>jakým směrem je natočeno jeho zařízení, GPS pozice</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>získávat informace ze serveru i bez nového načtení stránky</li>
+                                                </ul>
+                                                <p>Je toho dokonce ještě mnohem víc, toto je jen výběr pro ilustraci. Souhrnně se tyto možnosti označují jako <a href="https://developer.mozilla.org/en/docs/Web/API">JavaScript Web APIs</a>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>JavaScript vs. Python</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Jednoduchý program v JavaScriptu a ekvivalentní program v Pythonu mohou vypadat třeba takto:</p>
+                                                <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jeUkulele</span>(<span class="hljs-params">pocetStrun</span>) </span>{
+    <span class="hljs-keyword">if</span> (pocetStrun === <span class="hljs-number">4</span>) {
+       <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> {
+       <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+}
+
+<span class="hljs-built_in">console</span>.log(jeUkulele(<span class="hljs-number">6</span>)); <span class="hljs-comment">// asi spíš kytara</span>
+</code></pre>
+                                                <pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">je_ukulele</span><span class="hljs-params">(pocet_strun)</span>:</span>
+    <span class="hljs-keyword">if</span> pocet_strun == <span class="hljs-number">4</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+
+print(je_ukulele(<span class="hljs-number">6</span>)) <span class="hljs-comment"># asi spíš kytara</span>
+</code></pre>
+                                                <p>Všimni si zejména následujících rozdílů:</p>
+                                                <ul>
+                                                    <li>Místo odsazení a dvojteček označuje bloky kódu dvojice závorek: <code>{</code> a <code>}</code></li>
+                                                    <li>Příkazy se ukončují středníkem. Nebo také ne. Je nepovinný.</li>
+                                                    <li>Zatímco v Pythonu je <em>zvykem</em> pojmenovávat proměnné a funkce s podtržítkem mezi slovy, v JavaScriptu se používá tzv. <em>camelCase</em> konvence.</li>
+                                                </ul>
+                                                <p>I přesto, že je mezi zápisy obou jazyků spousta rozdílů, jsi schopná program v JavaScriptu přečíst a do jisté míry mu porozumět. Není tedy čeho se bát, je to jako bys uměla italsky a zajela si na dovolenou do Barcelony. Něco vyloženě znáš, základy tušíš, složitější věci si vyhledáš.</p>
+                                                <p>Takže když si třeba řekneš, že bys potřebovala v JavaScriptu třeba cykly, jistě nebudeš mít problém je najít a porozumět tomu jak fungují. Samozřejmě některé detaily se budou lišit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Odsazení</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Velkým rozdílem mezi oběma jazyky je skutečnost, že v případě JavaScriptu slouží odsazení pouze k tomu, aby se program lépe četl lidem. Žádný jiný význam nemá.</p>
+                                                <p>Tento program bude fungovat úplně stejně, jako úvodní příklad:</p>
+                                                <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jeUkulele</span>(<span class="hljs-params">pocetStrun</span>) </span>{ <span class="hljs-keyword">if</span> (pocetStrun == <span class="hljs-number">4</span>) { <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>; } <span class="hljs-keyword">else</span> { <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; } }; <span class="hljs-built_in">console</span>.log(jeUkulele(<span class="hljs-number">6</span>));
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Konzole</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Když si chceš vyzkoušet kousky Pythonu, můžeš použít interaktivní <code>python</code> nebo <code>ipython</code> v příkazové řádce. Jak si ale můžeš vyzkoušet JavaScript, který by se měl spouštět v prohlížeči?</p>
+                                                <p>Otevři si prohlížeč Google Chrome a použij klávesovou zkratku <kbd>Ctrl + Shift + J</kbd> (na Macu <kbd>Cmd + Alt + J</kbd>). Měla by se ti otevřít <em>vývojářská konzole</em>, kde můžeme spouštět JavaScript.</p>
+                                                <figure class="image"><img src="console.png" style="max-height:70vh;width:auto;" alt="konzole v Google Chrome"></figure>
+
+                                                <p>Tam, kde ti bliká kurzor, vlož následující kód:</p>
+                                                <pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hello, '</span> + <span class="hljs-built_in">window</span>.prompt(<span class="hljs-string">'Please, enter your name'</span>) + <span class="hljs-string">'!'</span>);
+</code></pre>
+                                                <p>Stiskni <kbd>Enter</kbd>. Stránka se tě zeptá na jméno (funkce <code>window.prompt()</code>) a vypíše jej s pozdravem (funkce <code>console.log</code>).</p>
+                                                <p>Můžeš zkusit vložit i jednořádkový kód, jenž jsme si ukázali v předchozí sekci tohoto návodu, a ověřit tak, že opravdu i bez odsazování bude program fungovat. Dostaneš výsledek volání funkce <code>console.log(jeUkulele(6))</code>, tedy <code>false</code> (ukulele má struny čtyři, ne šest).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h2>Cvičení</h2>
+                                                <p>Vyzkoušej si zadávat i další věci. Do konzole lze vypisovat pomocí <code>console.log()</code>, ale budou fungovat i výrazy jako <code>7 * 6</code> a i další věci, které už znáš z Pythonu. Nemusíš psát vše na jeden řádek, konzole podporuje i víceřádkový vstup a dokonce se ti pokusí i napovídat (nápovědy lze odsouhlasit a použít pomocí <kbd>Tab</kbd>), podobně jako to umí <code>ipython</code>.</p>
+                                                <p>Všimni si, že nad konzolí je menu, přes které se můžeš dostat i na další vývojářské nástroje. Ty slouží k tomu, abys mohla různě prozkoumávat aktuálně načtenou webovou stránku. Konzole a i všechny další vývojářské nástroje v Google Chrome <a href="https://developers.google.com/web/tools/chrome-devtools/">mají svou dokumentaci</a>, kde se můžeš dovědět více.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Proměnné</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Když si chceme v Pythonu nastavit nějakou novou proměnnou, stačí udělat toto:</p>
+                                                <pre><code class="lang-python"><span class="hljs-attr">strings_count</span> = <span class="hljs-number">4</span>
+</code></pre>
+                                                <p>Proměnná bez hodnoty nemůže existovat. V JavaScriptu je to trochu jinak. Máme klíčové slovo <code>var</code> (jako <em>variable</em>, angl. proměnná), jímž v programu říkáme: „Vytvoř mi novou proměnnou s tímto názvem.“ Volitelně můžeme přidat i počáteční hodnotu. Ukažme si to třeba na funkci, která z hodiny umí poznat, zda je den nebo noc.</p>
+                                                <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">denNeboNoc</span>(<span class="hljs-params">cas</span>) </span>{
+    <span class="hljs-comment">// nová proměnná, bez hodnoty</span>
+    <span class="hljs-keyword">var</span> denniDoba;
+
+    <span class="hljs-comment">// nová proměnná, s počáteční hodnotou</span>
+    <span class="hljs-keyword">var</span> hodina = cas.getHours();
+
+    <span class="hljs-keyword">if</span> (hodina &gt; <span class="hljs-number">6</span> &amp;&amp; hodina &lt; <span class="hljs-number">22</span>) {
+        denniDoba = <span class="hljs-string">'den'</span>;
+    } <span class="hljs-keyword">else</span> {
+        denniDoba = <span class="hljs-string">'noc'</span>;
+    }
+
+    <span class="hljs-keyword">return</span> denniDoba;
+}
+
+<span class="hljs-keyword">var</span> praveJe = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+
+<span class="hljs-built_in">console</span>.log(denNeboNoc(praveJe));
+</code></pre>
+                                                <p>Proměnnou <code>denniDoba</code> jsme vytvořili prázdnou, a až později jsme do ní přiřadili nějakou hodnotu. Proměnnou <code>hodina</code> jsme ale vytvořili už rovnou s nějakou počáteční hodnotou. Způsob, jakým v JavaScriptu fungují proměnné, je složitější, ale toto nám bude prozatím stačit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification c-slide-task">
+                                        <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                            <h2>Cvičení</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <p><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date"><code>new Date()</code></a> vytváří objekt s aktuálním datem a časem. Je to něco jako <a href="https://docs.python.org/3/library/datetime.html#datetime.datetime.now"><code>datetime.now()</code></a> v Pythonu. Představ si, že máš web vytvořený ve Flasku a v šabloně budeš do HTML vypisovat výsledek <code>datetime.now()</code>. Na té samé stránce budeš spouštět <code>new Date()</code> v JavaScriptu. Web budeš provozovat na nějakém serveru v ČR. Bude se nějak lišit výsledek <code>new Date()</code> a <code>datetime.now()</code>,</p>
+                                                <ul>
+                                                    <li>když si stránku načteš z Českých Budějovic?</li>
+                                                    <li>když si stránku načteš z Tokia?</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task-solution">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task-solution" -->
+                                                <details>
+                                                    <summary>Řešení</summary>
+                                                    <p>Protože JavaScript běží u návštěvníka stránek v prohlížeči, dostaneme vždy čas, jaký má nastavený uživatelův počítač. To znamená, že ve stejný okamžik dostane tvůj program v JavaScriptu jiný čas, pokud jej načte uživatel v ČR a pokud jej načte uživatel v Japonsku.</p>
+                                                    <p>Oproti tomu Python pracuje vždy s časem na serveru. Když pojedou naše stránky na serveru, který se nachází v ČR a má nastavený středoevropský čas, budeme všem uživatelům na světě ukazovat stále stejný, středoevropský čas.</p></details>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Datové struktury</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>JavaScript nemá seznamy a slovníky. Místo toho má <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections">pole</a> (angl. <em>array</em>) a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">objekty</a> (angl. <em>object</em>).</p>
+                                                <pre><code class="lang-js"><span class="hljs-keyword">var</span> nakoupit = [
+    <span class="hljs-string">'mléko'</span>,
+    <span class="hljs-string">'mouka'</span>,
+    <span class="hljs-string">'miňonky'</span>,
+    <span class="hljs-string">'máslo'</span>,
+];
+<span class="hljs-built_in">console</span>.log(nakoupit[<span class="hljs-number">1</span>]); <span class="hljs-comment">// vypíše mouka</span>
+
+<span class="hljs-keyword">var</span> angryBirdsScore = {
+    <span class="hljs-string">'veronika'</span>: <span class="hljs-number">6810</span>,
+    <span class="hljs-string">'dan'</span>: <span class="hljs-number">4245</span>,
+    <span class="hljs-string">'zuzka'</span>: <span class="hljs-number">29233</span>,
+    <span class="hljs-string">'honza'</span>: <span class="hljs-number">3824</span>,
+};
+<span class="hljs-built_in">console</span>.log(angryBirdsScore[<span class="hljs-string">'honza'</span>]); <span class="hljs-comment">// vypíše 3824</span>
+</code></pre>
+                                                <p>Jak je vidět, na první pohled vypadají stejně. Občas se ale chovají trochu jinak, takže je dobré vždy ověřit, co přesně s nimi můžeš dělat a jak.</p>
+                                                <p>Například pokud název vlastnosti objektu neobsahuje žádné speciální znaky, můžeš ho zapisovat i bez uvozovek a přistupovat k nim přes tečku:</p>
+                                                <pre><code class="lang-js"><span class="hljs-keyword">var</span> pocetObyvatel = {
+  <span class="hljs-attr">karvina</span>: <span class="hljs-number">65141</span>,
+  <span class="hljs-attr">ostrava</span>: <span class="hljs-number">294200</span>,
+  <span class="hljs-string">'frydek-mistek'</span>: <span class="hljs-number">56945</span>,
+};
+<span class="hljs-built_in">console</span>.log(pocetObyvatel.karvina); <span class="hljs-comment">// vypíše 65141</span>
+<span class="hljs-built_in">console</span>.log(pocetObyvatel[<span class="hljs-string">'ostrava'</span>]); <span class="hljs-comment">// 294200</span>
+<span class="hljs-built_in">console</span>.log(pocetObyvatel[<span class="hljs-string">'frydek-mistek'</span>]); <span class="hljs-comment">// 56945</span>
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Připojení JS</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Podobně jako CSS, i JavaScript můžeš uložit do souboru a připojit k webové stránce v jejím HTML. Vytvoř si do prázdné složky jednoduchou webovou stránku, pojmenovanou třeba <code>index.html</code>:</p>
+                                                <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"hello.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>PyLadies<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>PyLadies jsou <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>nejlepší<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                                                <p>Nyní si vedle ní vytvoř soubor <code>hello.js</code>:</p>
+                                                <pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hello!'</span>);
+</code></pre>
+                                                <p>Když si stránku otevřeš v prohlížeči a podíváš se do konzole, uvidíš, že se v ní objevilo <code>Hello!</code>. Prohlížeč si spolu se stránkou stáhl i tvůj soubor s JavaScriptem a spustil jej jako program.</p>
+                                                <p>Úvod lekce zmiňoval animace a další zábavné věci. Pozdravy vypsané do konzole, přiznejme si to, ostřílenou PyLady už moc nenadchnou. Zkus tedy místo <code>console.log()</code> použít funkci <code>window.alert()</code>:</p>
+                                                <pre><code class="lang-js"><span class="hljs-built_in">window</span>.alert(<span class="hljs-string">'Hello!'</span>);
+</code></pre>
+                                                <p>Funkce <code>window.alert()</code> přiměje prohlížeč, aby se objevilo okno s textem, který mu předáme. Uživatel bude muset okno zavřít tlačítkem
+                                                    <button>OK</button>
+                                                    , jinak nezmizí.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task-home">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task-home" -->
+                                                <h2>Cvičení na doma</h2>
+                                                <p>Funkce <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/alert"><code>window.alert()</code></a> je asi nejznámější funkcí JavaScriptu vůbec a použita byla i ve <em>Cvičení pro odvážné</em>, v lekci o šablonách. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt"><code>window.prompt()</code></a>, která umí načíst vstup od uživatele, se zase objevila jen o něco výš v této lekci, při vysvětlování konzole v prohlížeči. Zkus použít tyto dvě uvedené funkce a sama prozkoumej, co dělá třetí podobná, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm"><code>window.confirm()</code></a>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Různé prohlížeče, různý JavaScript</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Když programuješ v Pythonu, měla by sis hlídat verzi jazyka, jakou používáš. Možná víš, že pokud vytvoříš program, který lze spustit na Pythonu verze 3, nemusí jít spustit např. na verzi 2.7.</p>
+                                                <p>S JavaScriptem v prohlížeči je to o něco složitější. Prohlížečů je více (Chrome, Safari, Firefox, a další) a každý z nich může JavaScript interpretovat trochu jinak. Není tedy až tolik podstatná verze jazyka, ale zda tu kterou funkcionalitu daný prohlížeč podporuje a třeba i do jaké míry.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h4>Dokumentace</h4>
+                                                <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Nejucelenější dokumentace k JavaScriptu</a> je na MDN, což je web pro vývojáře od organizace Mozilla, která stojí za prohlížečem <a href="https://www.mozilla.org/cs/firefox/products/">Firefox</a>. Na každé stránce pojednávající o nějaké části JavaScriptu je vždy dole tabulka, jak si vysvětlovaná funkcionalita stojí z hlediska podpory v různých prohlížečích.</p>
+                                                <figure class="image"><img src="compatibility.png" style="max-height:70vh;width:auto;margin-bottom:1em;" alt="kompatibilita v prohlížečích"></figure>
+
+                                                <p>Hodit se může i již zmiňované <a href="http://caniuse.com/#cats=JS%20API">caniuse.com</a>, kde jsou kromě HTML a CSS pokryty některé oblasti JavaScriptu.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h4>Testovat, testovat a testovat</h4>
+                                                <p>Prakticky je potřeba si funkčnost všeho v prohlížečích, které chceš podporovat, otestovat. I ostřílený frontendista, který z hlavy ví, co si kde může a nemůže dovolit použít, občas narazí na nepříjemné překvapení.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-extra-info">
+                                            <div class="content"><!-- .slide: data-state="c-slide-extra-info" -->
+                                                <h4>Polyfill</h4>
+                                                <p>I když nějakou funkcionalitu nepodporuje dostatečné množství prohlížečů, lze často najít <em>polyfill</em>, tedy javascriptový kód, kterým funkcionalitu do starších prohlížečů můžeš na svojí stránce doplnit. </p>
+                                                <p>Některé polyfilly přidávají i jinou, než čistě javascriptovou funkčnost včetně moderního CSS a HTML.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

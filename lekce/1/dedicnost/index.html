@@ -23,7 +23,165 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent ">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>CSS</h1>
+                                            <p>Zatím jsme si ukázali z CSS jen malou část. Dnes si znalosti CSS rozšíříme.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Vlastnosti textu</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><pre><code class="lang-css"><span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">font-style</span>: italic;  <span class="hljs-comment">/* nebo normal */</span>
+
+    <span class="hljs-attribute">font-weight</span>: bold; <span class="hljs-comment">/* nebo normal */</span>
+
+    <span class="hljs-attribute">font-family</span>: sans-serif; <span class="hljs-comment">/* nebo serif */</span>
+
+    <span class="hljs-attribute">text-align</span>: center; <span class="hljs-comment">/* nebo left nebo right */</span>
+}
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h4>Cvičení</h4>
+                                                <p>Zkus všechny použít na prvky v tvém <code>index.html</code>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Velikost textu</h3>
+                                                <p>Velikost písma můžeš nastavit pomocí spousty jednotek, zatím si vystačíme s pixely (<code>px</code>) a procenty <code>%</code>.</p>
+                                                <p>Hodnota <code>100%</code> znamená velikost písma rodiče.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">h1</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>; }
+
+<span class="hljs-selector-tag">p</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-number">150%</span>; }
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Jak se aplikují styly</h1>
+                                            <p>Zjednodušíme si zatím situaci tím, že všechno CSS máme jen v jednom souboru a nikde jinde.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Na pořadí záleží</h2>
+                                                <p>Platí poslední nastavená hodnota vlastnosti.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">color</span>: red;
+    <span class="hljs-attribute">background-color</span>: pink;
+}
+
+<span class="hljs-selector-tag">p</span> { <span class="hljs-attribute">color</span>: green; }
+</code></pre>
+                                                <div class="c-example example-overriding">
+                                                    <p>Jakou mám barvu?</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Výchozí styly prohlížeče (User Agent stylesheet)</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Každý prohlížeč má v sobě zabudované výchozí CSS.</p>
+                                                <p>Proto má každý HTML dokument „bez CSS“ například nadpisy, které jsou tučně a větším písmem než odstavce. </p>
+                                                <p>Tvoje CSS se aplikuje až za nimi a tak vlastně přepisuješ vlastnosti zabudované v prohlížeči.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Dědičnost <em>(inheritance)</em></h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Rodič je element do kterého je nějaký element zanořen. Například rodičem <code>&lt;body&gt;</code> je <code>&lt;html&gt;</code>.</p>
+                                                <p>Některé vlastnosti se dědí, tedy přenášejí z rodičů na potomky. Typicky jsou to právě ty, které nastavují vlastnosti textu. Nastavíš-li například druh písma pro <code>&lt;body&gt;</code>, nastavuješ ho v podstatě celému dokumentu, protože všechny prvky v dokumentu jsou potomky <code>&lt;body&gt;</code>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h4>Cvičení</h4>
+                                                <p>Zkus si zjistit a ověřit dědičnost vlastností, které jsme už probírali, v tvém dokumentu <code>index.html</code>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Prvek bez významu</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Barvu pozadí už nastavit umíš: </p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">background-color</span>: green;
+}
+</code></pre>
+                                                <p>Co ale když chceš přidat pozadí pod několik elementů zároveň? K tomu je potřeba přidat extra prvek.
+                                                    Protože tento prvek nemá žádný jiný význam, použij <code>&lt;div&gt;</code>, prvek bez významu.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Nejnovější novinka<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Dnes je spoustu nového…<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"detail.html"</span>&gt;</span>celá novinka<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h4>Cvičení</h4>
+                                                <p>V tvém dokumentu <code>index.html</code> obal několik prvků do <code>&lt;div&gt;</code> a dej mu nějaké pěkné pozadí nebo třeba všem nastav jiné písmo jen s pomocí dědičnosti.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

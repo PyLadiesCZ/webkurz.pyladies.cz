@@ -23,7 +23,529 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Formuláře</h1>
+                                            <p>Jak vytvořit opravdovou webovou aplikaci - tedy stránku, která umí
+                                                komunikovat s uživatelem a měnit se podle toho, co jí pošle.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Formuláře v HTML</h2>
+                                                <p>K tomu, aby mohl uživatel něco stránce poslat, se používají <em>formuláře</em>. Jedná
+                                                    se o speciální sadu tagů v HTML. Základem jsou <code>&lt;form&gt;</code> a <code>&lt;input&gt;</code>:</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+        e-mail
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Odeslat"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example">
+                                                    <form action="" method="post">
+                                                        <label>
+                                                            e-mail
+                                                            <input type="text" name="email">
+                                                        </label>
+                                                        <input type="submit" value="Odeslat">
+                                                    </form>
+                                                </div>
+
+                                                <p>Tímto zápisem na stránku dostaneme formulář, který obsahuje jedno políčko s popiskem a jedno tlačítko.</p>
+                                                <p>Prvek <code>&lt;form&gt;</code>
+                                                    budeš v prohlížeči hledat marně, v základu je totiž neviditelný a jen seskupuje <code>&lt;input&gt;</code> prvky, které se mají odesílat společně. </p>
+                                                <p>Co naopak vidět můžeš, je že prvek <code>&lt;input&gt;</code>, který představuje vstup od uživatele,
+                                                    může nabývat poměrně rozličných podob podle toho, jaký má <code>type</code>.</p>
+                                                <p>Všimni si, že při kliknutí na text popisku („e-mail“) se objeví kurzor v <code>inputu</code>. </p>
+                                                <p>Způsob zápisu <code>&lt;label&gt;</code> tak, jak ho vidíš, je jeden ze dvou možných. Ten druhý si ukážeme později.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Odesílací tlačítko</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Prvek <code>input</code> typu <code>submit</code> je trochu speciální, představuje totiž tlačítko k odeslání formuláře. Když na něj
+                                                uživatel klikne, tak vše, co do té doby do formuláře vyplnil, prohlížeč vezme a odešle na server. Tlačítku budeš chtít nastavit vlastní popisek přes atribut <code>value</code>:</p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"submit"</span> value=<span class="hljs-string">"Jdu do toho!"</span>&gt;
+</code></pre>
+                                                <div class="c-example">
+                                                    <input type="submit" value="Jdu do toho!">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Jména políček</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Jak si můžeš v prvním příkladu formuláře všimnout, pole pro zadání e-mailu má atribut <code>name</code> s hodnotou <code>email</code>.
+                                                To je velmi důležité pro to, abys mohla na straně serveru s daty něco dělat. Představ si
+                                                formulářová data jako Python slovník. Hodnoty, které uživatel vepíše do políček, budeš moci získat
+                                                přes jejich jména z atributu <code>name</code>.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+        Jméno <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"first_name"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+        Příjmení <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"last_name"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Odeslat"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+                                                <p>Představ si, že do uvedeného formuláře uživatel zadá <code>Jára</code> jako jméno a <code>Cimrman</code> jako příjmení.
+                                                    Kdyby jej potom odeslali tlačítkem, na serveru obržíš něco, co bude připomínat následující slovník:</p>
+                                                <pre><code class="lang-python">{
+  <span class="hljs-string">'first_name'</span>: <span class="hljs-string">'Jára'</span>,
+  <span class="hljs-string">'last_name'</span>: <span class="hljs-string">'Cimrman'</span>,
+}
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Kam odesílat?</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Formuláři můžeš přidat atribut <code>action</code>, který upřesňuje, kam se mají poslat vyplněná data:</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"/kontaktni-formular"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span>&gt;</span>
+    …
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+                                                <p>Takový formulář pošle svá data na cestu <code>/kontaktni-formular</code>, kde si je bude moci
+                                                    vyzvednout a zpracovat náš server napsaný v Pythonu. Pokud necháme atribut <code>action</code> prázdný, odešle se formulář na tutéž stránku, na které
+                                                    se nachází.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span>&gt;</span>
+    …
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+                                                <p>Jestliže se uvedený formulář bude nacházet na cestě <code>/kontakt</code>, bude se na ni také odesílat.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Jak odesílat?</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Formulář můžeš nechat odesílat dvěma různými metodami. Metoda se nastavuje přes atribut
+                                                <code>method</code> a je lepší nenechávat prohlížeč na pochybách a vždy ji uvést.</p>
+                                                <p>Když uživatel odešle formulář metodou <code>GET</code>, objeví se všechno, co do něj vyplnil, v adrese cílové stránky
+                                                    jako <em>parametry</em> za otazníkem.</p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">form</span> action=<span class="hljs-string">"/vyhledavani"</span> method=<span class="hljs-string">"get"</span>&gt;
+    &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"text"</span> name=<span class="hljs-string">"vyraz"</span>&gt;
+    &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"submit"</span> value=<span class="hljs-string">"Hledat"</span>&gt;
+&lt;/form&gt;
+</code></pre>
+                                                <p>Napíše-li do políčka v uvedeném formuláři slovo <code>PyLadies</code> a pak klikne na tlačítko, dostane se na cestu <code>/vyhledavani?vyraz=PyLadies</code>. Klidně bys mohla místo formuláře rovnou udělat odkaz na <code>/vyhledavani?vyraz=PyLadies</code> a výsledek by byl stejný. Rozdíl je jen v tom, že odkaz je ve stránce napevno, kdežto formulář odesílaný pomocí <code>GET</code> umožňuje uživateli výslednou adresu „sestrojit“ z toho, co zadá do políček.</p>
+                                                <p><code>get</code> je totiž způsob, jak server poprosit o jakoukoliv běžnou stránku. Doteď jsi tuto metodu používala, jen jsi o tom netušila. Když jsi třeba do adresního řádku napsala <code>http://127.0.0.1:5000/kontakt</code> (nebo klikla na odkaz), prohlížeč poslal serveru <em>požadavek</em> <code>GET /kontakt</code>. Jak si za chvíli ukážeme, ve Flasku v základu každá cesta reaguje právě na požadavky <code>get</code>, aniž by se to muselo někam psát, takže vše fungovalo a o metodách jsi nepotřebovala vědět.</p>
+                                                <p>Metoda <code>GET</code> se určitě někdy hodí i u formulářů, například když chceš mít na stránkách vyhledávání, ale pro odesílání dat chceš použít jinou metodu, zvanou <code>POST</code>:</p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">form</span> action=<span class="hljs-string">"/kontaktni-formular"</span> method=<span class="hljs-string">"post"</span>&gt;
+    &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"text"</span> name=<span class="hljs-string">"email"</span>&gt;
+    &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"submit"</span> value=<span class="hljs-string">"Odeslat"</span>&gt;
+&lt;/form&gt;
+</code></pre>
+                                                <p>Takto odesílaný formulář nijak výslednou cestu neovlivňuje, takže se na cílovou stránku
+                                                    zpětně nedá nijak odkázat. Veškerá data pošle „tajně“, někde bokem.
+                                                    Může díky tomu odesílat hesla nebo mnohem více dat, než by se vešlo na adresní řádek prohlížeče.</p>
+                                                <p>Většinou je jedno, zda je název metody napsán velkými nebo malými písmeny. V kontextu serverového
+                                                    zpracování je zvykem psát je velkými, v HTML šablonách se ale ustálilo psát je malými.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Formuláře a Flask</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Zatím jsme si ukazovali jak napsat formuláře v prostém HTML, ale takový formulář
+                                                vlastně nic nedělá. Data sice odešle, ale není nic, co by je zpracovalo a udělalo
+                                                s nimi něco užitečného. Pojďme si tedy konečně ukázat, jak data odchytit na straně
+                                                serveru a něco s nimi v Pythonu provést.</p>
+                                                <p>V naší Flask aplikaci z minulé lekce si vytvoř novou cestu a šablonu s formulářem:</p>
+                                                <pre><code class="lang-python">@app.route(<span class="hljs-string">'/teplota'</span>)
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">temperature</span><span class="hljs-params">()</span></span>:
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">'temperature.html'</span>)
+</code></pre>
+                                                <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Převodník teplot<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Převodník teplot<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"farenheit"</span>&gt;</span>°F
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Převést na °C"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example">
+                                                    <h1>Převodník teplot</h1>
+                                                    <form action="" method="post">
+                                                        <input type="text" name="farenheit">°F
+                                                        <input type="submit" value="Převést na °C">
+                                                    </form>
+                                                </div>
+
+                                                <p>Stránka bude užitečná pro PyLadies, které se dostaly na stáž do USA a rády
+                                                    by věděly, jestli 42°F na teploměru znamená, že si mají vzít svetr, nebo jim stačí
+                                                    tričko.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Povolujeme přijímání hodnot z formuláře</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Spusť si přes <code>python web.py</code> server a zobraz si formulář v prohlížeči.</p>
+                                                <p>Když si zkusíš formulář odeslat, tak zjistíš, že Flask vrátí chybu
+                                                    <em>405 Method Not Allowed</em>. Tím se ti snaží naznačit, že pro cestu
+                                                    <code>/teplota</code> jsi nepovolila metodu <code>POST</code>, kterou se formulář odesílá.
+                                                    Všechny běžné stránky fungují přes <code>GET</code>, takže tato metoda je ve Flasku
+                                                    na každé cestě povolená od základu, ale <code>POST</code> musíš přidat.
+                                                    Dělá se to následovně:</p>
+                                                <pre><code class="lang-python">@app.route(<span class="hljs-string">'/teplota'</span>, methods=[<span class="hljs-string">'GET'</span>, <span class="hljs-string">'POST'</span>])
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">temperature</span><span class="hljs-params">()</span></span>:
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">'temperature.html'</span>)
+</code></pre>
+                                                <p>Když odešleš formulář nyní, už bude fungovat. Tedy jak se to vezme –
+                                                    sice nedostaneš chybu, ale vypadá to, jako by se po odeslání vlastně vůbec
+                                                    nic nedělo. To je proto, že funkce <code>temperature()</code> opravdu zatím s daty nic
+                                                    nedělá a vrátí vždy znovu jen náš formulář.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Zpracování přijaté hodnoty</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Vzorec pro výpočet stupňů Celsia ze stupňů Farenheita je <code>C = (F - 32) * 5 / 9</code>.
+                                                Na převod stupňů si napiš samostatnou funkci:</p>
+                                                <pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">to_celsius</span><span class="hljs-params">(farenheit)</span>:</span>
+    <span class="hljs-keyword">return</span> (farenheit - <span class="hljs-number">32</span>) * <span class="hljs-number">5</span> / <span class="hljs-number">9</span>
+</code></pre>
+                                                <p>Abychom se dostali k vyplněným údajům, musíme si z Flasku importovat
+                                                    objekt <code>request</code>. Ten obsahuje slovník <code>form</code>, v němž se po odeslání formuláře
+                                                    nachází všechny vyplněné hodnoty z políček.</p>
+                                                <pre><code class="lang-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> request
+
+<span class="hljs-meta">@app.route('/teplota', methods=['GET', 'POST'])</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">temperature</span><span class="hljs-params">()</span>:</span>
+    form = request.form
+
+    <span class="hljs-keyword">if</span> form.get(<span class="hljs-string">'farenheit'</span>):
+        farenheit = int(form[<span class="hljs-string">'farenheit'</span>])
+        celsius = to_celsius(farenheit)
+    <span class="hljs-keyword">else</span>:
+        farenheit = <span class="hljs-keyword">None</span>
+        celsius = <span class="hljs-keyword">None</span>
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">'temperature.html'</span>,
+                           farenheit=farenheit, celsius=celsius)
+</code></pre>
+                                                <p>Protože funkce <code>temperature()</code> se vykoná i když se formulář jen poprvé načítá
+                                                    a ještě nebyl odeslán, musíš počítat také s tím, že se ve slovníku <code>form</code> nemusí
+                                                    nacházet vůbec nic. Proto se nejdřív přes <code>form.get()</code> kontroluje, zda
+                                                    je k dispozici hodnota ve farenheitech. Že se má objevit pod klíčem <code>farenheit</code> víš díky tomu, že políčko ve formuláři má <code>name="farenheit"</code>.</p>
+                                                <p>Pokud je hodnota přítomna, převede se do stupňů Celsia. Protože podobně jako
+                                                    u programů v konzoli i zde dostáváš vstup od uživatele v podobě řetězce, musíš
+                                                    nejdříve počet stupňů přetypovat na číslo funkcí <code>int()</code>.</p>
+                                                <p>Jestliže program žádné Farenheity neobdržel, nastaví se proměnné pro obě teplotní škály
+                                                    na <code>None</code>. Následně výsledky dostane šablona.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Zobrazujeme výsledky</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Sice už počítáš stupně Celsia, ale uživatel se zatím pořád nemá jak o výsledku dovědět.
+                                                Musíš ho zobrazit v šabloně. Opět je počítej i s možností, kdy ještě nebylo nic odesláno.</p>
+                                                <pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Převodník teplot<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">if</span></span> celsius is number %}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Výsledek<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        Pokud máš na teploměru </span><span class="hljs-template-variable">{{ farenheit }}</span><span class="xml">°F,
+        tak to znamená, že je </span><span class="hljs-template-variable">{{ celsius | int }}</span><span class="xml">°C.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">endif</span></span> %}</span><span class="xml">
+
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"farenheit"</span>&gt;</span>°F
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Převést na °C"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span>
+</code></pre>
+                                                <p>Přidali jsme podmínku, kde se zjištuje, zda je k dispozici nějaký výsledek. Jinja2 v podmínkách umožňuje jednoduše otestovat, co přesně se nachází v proměnné. Jedním z takových testů je <code>is number</code>, který zaručí, že výsledek bude uživateli prezentován pouze pokud je v <code>celsius</code> uloženo nějaké číslo.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h4>Otázka k zamyšlení</h4>
+                                                <p>Proč v podmínce nestačí <code>{% if celsius %}</code>?</p>
+                                                <details>
+                                                    <summary>Řešení</summary>
+                                                    <p>
+                                                        Pokud by výsledkem bylo nula stupňů Celsia (zkuste zadat 32°F), podmínka by neprošla a nic by se nezobrazilo.
+                                                        V Pythonu (a v šablonovacím jazyku Jinja2 také) se totiž <code>if 0</code> vyhodnotí stejně jako <code>if False</code>.
+                                                    </p>
+                                                </details>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Při vypisování počtu stupňů celsia se využívá filtr <code>int</code>, který dělá totéž co funkce <code>int</code> v Pythonu – převede
+                                                vstup na celé číslo. Díky tomu budeme místo vypočítané hodnoty -5.555555555555555°C zobrazovat čitelnější a užitečnější variantu: -5°C</p>
+                                                <div class="c-example">
+                                                    <h1>Převodník teplot</h1>
+                                                    <h2>Výsledek</h2>
+                                                    <p>
+                                                        Pokud máš na teploměru 42°F,
+                                                        tak to znamená, že je 5°C.
+                                                    </p>
+                                                    <form action="" method="post">
+                                                        <input type="text" name="farenheit">°F
+                                                        <input type="submit" value="Převést na °C">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h3>Funkční formulář</h3></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>A je to! Teď už umíš navrhnout v HTML jednoduchý formulář, odeslat jej na server a tam zpracovat vyplněná data. Umíš data vložit do šablony, tam je nějak hezky odprezentovat uživateli, a výsledné HTML odeslat zpátky do prohlížeče.</p>
+                                                <p>Pokud se ti to zdá složité, tak věz, že to složité opravdu je! Na druhou stranu, právě díky formulářům může web komunikovat s uživatelem a není to jen pasivní médium jako noviny, rádio nebo televize.</p>
+                                                <p>Webové stránky jsou formuláři často přímo prošpikované, takže se jim nelze vyhnout. Na druhou stranu ale nejsme první lidé na planetě Zemi, kteří s formuláři zápasí. Webové frameworky se proto většinou snaží jejich tvorbu zjednodušit. Django má v tomto ohledu zabudovanou <a href="django-forms">spoustu nástrojů</a>, k Flasku se nejčastěji doinstaluje knihovna <a href="https://flask-wtf.readthedocs.io/">WTForms</a>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h4>Cvičení</h4>
+                                                <p>Zkus na novou stránku doplnit formulář, který bude převádět stupně Celsia na stupně Farenheita.
+                                                    Až za námi zase přiletí Washingtonská PyLady <a href="https://github.com/jackiekazil">Jackie Kazil</a>,
+                                                    jistě jej ocení.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Druhy formulář­ových prvků</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Nejčastěji používanými druhy, kromě textového <code>type="text"</code> jsou:</p>
+                                                <h3><code>type="password"</code></h3>
+                                                <p>Pro hesla, je jako <code>text</code>, ale místo znaků jsou vidět jen nějaké zástupné znaky.</p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"password"</span> value=<span class="hljs-string">"velice tajne heslo"</span>&gt;
+</code></pre>
+                                                <div class="c-example">
+                                                    <input type="password" value="velice tajne heslo">
+                                                </div>
+
+                                                <h3><code>type="checkbox"</code></h3>
+                                                <p>Zaškrtávátko pro výběr jedné nebo více hodnot zároveň.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Oblíbené barvy<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"yellow"</span> <span class="hljs-attr">checked</span>&gt;</span> žlutá<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"red"</span> <span class="hljs-attr">checked</span>&gt;</span> červená<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example">
+                                                    <p>Oblíbené barvy</p>
+                                                    <div><label><input type="checkbox" value="yellow" checked=""> žlutá</label></div>
+                                                    <div><label><input type="checkbox" value="red" checked=""> červená</label></div>
+                                                </div>
+
+                                                <h3><code>type="radio"</code></h3>
+                                                <p>Zaškrtávátko pro výběr jediné hodnoty. Smysl má, pokud se použijí nejméně dvě společně. "Společně" znamená,
+                                                    že mají stejný atribut <code>name</code>.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Velikost trička<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"demo"</span>&gt;</span>S<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"demo"</span> <span class="hljs-attr">checked</span>&gt;</span>M<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"demo"</span>&gt;</span>L<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example">
+                                                    <p>Velikost trička</p>
+                                                    <div><label><input type="radio" name="demo"> S</label></div>
+                                                    <div><label><input type="radio" name="demo" checked=""> M</label></div>
+                                                    <div><label><input type="radio" name="demo"> L</label></div>
+                                                </div>
+
+
+                                                <h3><code>type="file"</code></h3>
+                                                <p>Používá se pro nahrávání souborů. Je zde uveden spíše pro úplnost. Abys jej
+                                                    mohla ve formuláři opravdu použít a soubory zpracovat, je potřeba <a href="http://flask.pocoo.org/docs/0.12/patterns/fileuploads/">trocha
+                                                        speciálního zacházení</a> jak na straně HTML, tak na straně serveru.</p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"file"</span>&gt;
+</code></pre>
+                                                <div class="c-example">
+                                                    <input type="file">
+                                                </div>
+
+                                                <h3><code>&lt;textarea&gt;</code></h3>
+                                                <p>Stejně jako následující prvek se už nejedná o změnu pomocí parametru <code>type</code>, ale o&nbsp;samostatný párový tag.
+                                                    Používá se pro zadání víceřádkového, libovolně dlouhého textu.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span>&gt;</span>Moje první haiku
+je první.<span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example">
+<textarea>Moje první haiku
+je první.</textarea>
+                                                </div>
+
+                                                <h3><code>&lt;select&gt;</code></h3>
+                                                <p>Podobně jako <code>&lt;input type="radio"&gt;</code> umožňuje výběr z více možností. Místo
+                                                    zaškrtávátek vykreslí takzvané <em>drop-down menu</em>.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Možnost<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jiná možnost<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Taky možnost<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example">
+                                                    <select>
+                                                        <option>Možnost</option>
+                                                        <option>Jiná možnost</option>
+                                                        <option>Taky možnost</option>
+                                                    </select>
+                                                </div>
+
+                                                <p>Tag <code>&lt;select&gt;</code> lze přepnout do režimu, který připomíná <code>&lt;input type="checkbox"&gt;</code>
+                                                    a který umožňuje vybrat více možností najednou.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Možnost<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jiná možnost<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Taky možnost<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+                                                <div class="c-example">
+                                                    <select multiple="">
+                                                        <option>Možnost</option>
+                                                        <option>Jiná možnost</option>
+                                                        <option>Taky možnost</option>
+                                                    </select>
+                                                </div>
+
+                                                <p>Více možností lze vybrat pomocí tažení nebo pokud uživatel přidrží klávesu <kbd>Ctrl</kbd> (na macOS <kbd>Cmd</kbd>), tak lze vybrat i položky, které spolu nesousedí.
+                                                    To ale uživatel většinou neví, takže na v <code>&lt;select multiple&gt;</code> vybere stejně jen jednu možnost nebo se musí psát instrukce.
+                                                    Proto je lepší se této variantě spíše vyhnout, pokud ji <a href="https://select2.github.io">pomocí javascriptu</a> nevylepšíme na něco, co uživatelé chápou lépe.</p>
+                                                <h3>Atributy</h3>
+                                                <p>Každý druh formulářového prvku má mnoho možných atributů: vždy se podívej do nějaké reference.</p>
+                                                <p>V HTML 5 jich ještě spousta přibyla, hodně z nich má spojitost s validací, tedy ověřením toho, zda vstup, který uživatel zadal, je opravdu to, co zadat měl.</p>
+                                                <h3>Nové typy v HTML5</h3>
+                                                <p>V HTML5 jsou nově i speciální prvky např. pro datum, barvu, e-mail, číslo apod. Podpora v prohlížečích se liší, proto je dobré si ji před jejich použitím ověřit na <a href="http://caniuse.com">Can I use</a>. Velmi praktické bývají na mobilních zařízeních s virtuální klávesnicí, kde třeba u <code>type="number"</code> zobrazí klávesnici jen s čísly.</p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"number"</span>&gt;
+</code></pre>
+                                                <div class="c-example">
+                                                    <input type="number">
+                                                </div>
+
+                                                <p>Pokud si ukázku otevřeš na mobilu a zkusíš do ní psát, nejspíš ti bude nabídnuta číselná klávesnice. Na počítači se ti prohlížeč může také pokusit zjednodušit psaní čísel. Pokud to neumí (např. nějaké starší verze prohlížečů), bude se v něm prvek chovat jako by to byl obyčejný <code>&lt;input type="text"&gt;</code>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent ">
+                                    <div class="tile is-child notification c-slide-task">
+                                        <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                            <h4>Cvičení</h4>
+                                            <p>Existují národy, které pro zápis svého jazyka nepoužívají latinku, ale jiné písmo. Asi se vám vybaví Čína nebo Japonsko, ale i v Evropě se jich několik najde - např. Řecko nebo Rusko. Když chceme uvést řecké nebo ruské slovo v českém textu, musíme ho takzvaně <em>transliterovat</em>, tedy nějakým způsobem foneticky přepsat do latinky. Díky tomu pak můžeme psát Tolstoj a ne Толстой.</p>
+                                            <p>V Pythonu je k tomuto účelu knihovna <a href="https://pypi.python.org/pypi/transliterate/">transliterate</a>, kterou lze nainstalovat standardním způsobem:</p>
+                                            <pre><code class="lang-shell">(venv)$ python -m pip <span class="hljs-keyword">install</span> transliterate
+</code></pre>
+                                            <p>S ní potom můžeme dělat následující převody (ukázka v interaktivním Pythonu):</p>
+                                            <pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> transliterate <span class="hljs-keyword">import</span> translit
+<span class="hljs-meta">&gt;&gt;&gt; </span>translit(<span class="hljs-string">'Jagr'</span>, <span class="hljs-string">'ru'</span>)
+Ягр
+<span class="hljs-meta">&gt;&gt;&gt; </span>translit(<span class="hljs-string">'Ягр'</span>, <span class="hljs-string">'ru'</span>, reversed=<span class="hljs-keyword">True</span>)
+Jagr
+</code></pre>
+                                            <p>Jak víme z <a href="https://www.google.cz/search?q=jagr+russia+jersey&amp;source=lnms&amp;tbm=isch">ruských hokejových dresů Jaromíra Jágra</a>, tato transliterace je správně. Na stránce knihovny jsou další příklady a lze tam zjistit i kódy jiných jazyků, které umí knihovna převádět.</p>
+                                            <p>Zkuste vytvořit formulář, který od uživatele přijme libovolně dlouhý text (tag <code>&lt;textarea&gt;</code>), nechá jej vybrat jazyk (tag <code>&lt;select&gt;</code> nebo <code>&lt;input type="radio"&gt;</code>), směr transliterace (jestli převádíme z latinky nebo do latinky - opět se bude hodit <code>&lt;select&gt;</code> nebo <code>&lt;input type="radio"&gt;</code>), a po odeslání text podle zadaných parametrů převede a zobrazí uživateli výsledek.</p>
+                                            <p>Jako zdroj zkušebních textů můžete použít <a href="https://el.wikipedia.org/wiki/%CE%91%CE%B8%CE%AE%CE%BD%CE%B1">řecké</a> nebo <a href="https://ru.wikipedia.org/wiki/%D0%AF%D0%B3%D1%80,_%D0%AF%D1%80%D0%BE%D0%BC%D0%B8%D1%80">ruské</a> články na Wikipedii.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

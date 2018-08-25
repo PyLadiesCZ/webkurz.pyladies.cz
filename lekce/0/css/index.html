@@ -23,7 +23,80 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>CSS</h1>
+                                            <p>CSS je jazyk popisující vzhled a někdy i chování <em>elementů</em> webové stránky.</p>
+                                            <p>Elementy jsou části stránky, které už umíš definovat pomocí tagů v HTML, takže třeba nadpisy, odstavce ale i celé body.</p>
+                                            <p>V HTML je obsah stránky a také je v něm popsáno, jaká je struktura tohoto obsahu. Dále se v něm definuje, jaké má stránka obsahovat obrázky a případné další součásti. Naproti tomu CSS říká, jak mají jednotlivé prvky stránky vypadat, tedy jaká bude jejich forma. Díky tomu dochází k oddělení formy od obsahu, i když v praxi se ta hranice občas stírá.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Připojení CSS</h2>
+                                                <p>Je více způsobů, jak aplikovat CSS. My použijeme nejběžnější a nejpraktičtější, a to samostatný CSS soubor, připojený pomocí tagu <code>&lt;link&gt;</code> v hlavičce (<code>&lt;head&gt;</code>).</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"nazevsouboru.css"</span>&gt;</span>
+</code></pre>
+                                                <!-- .element: class="c-text-lg stretch" contenteditable="true" -->
+                                                <p><code>link</code> je další nepárový tag (nemá co obalovat, pouze říká, odkud se má soubor s CSS načíst)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Anatomie CSS</h2>
+                                                <p>Musíš říct 3 věci: <em>kdo</em> se má změnit, <em>co</em> se na něm má změnit a <em>jak</em> se to má změnit. V CSS to řekneš takto: </p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">kdo</span> {
+    <span class="hljs-attribute">co</span>: jak;
+}
+</code></pre>
+                                                <p>Výše je jen jeden <em>rule-set</em>, v CSS píšeme rulesety jeden za druhým.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">selektor</span> {
+    <span class="hljs-attribute">vlastnost</span>: hodnota;
+    <span class="hljs-attribute">property</span>: value; <span class="hljs-comment">/* tohle je komentar v CSS */</span>
+}
+</code></pre>
+                                                <p><em>Selektor</em> je část, kterou říkáme, <em>kdo</em> se má změnit, tedy jakému elementu chceme něco měnit.</p>
+                                                <p>Ve složených závorkách jsou jednotlivé <em>deklarace</em>. V příkladu jsou dvě, každá na svém řádku. Taková úprava opět není nutná, ale vhodná, stejně jako odsazení. Každá deklarace se skládá ze dvou částí:</p>
+                                                <ol>
+                                                    <li><em>vlastnost</em> říká <em>co</em> chceš změnit a je to jedna ze standardem definovaných vlastností, třeba barva nebo velikost písma.</li>
+                                                    <li><em>hodnota</em> říká <em>jak</em> chceš změnit <em>vlastnost</em> a píše se za název vlastnosti a dvojtečku, každá vlastnost má různé povolené hodnoty, za hodnotu vždy piš středník.</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>CSS vlastnosti</h2>
+                                                <h3>Barva</h3>
+                                                <p>Zkusme si rovnou obarvit text.</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">color</span>: white;
+    <span class="hljs-attribute">background-color</span>: black;
+}
+</code></pre>
+                                                <p>Selektor říká, co chceme měnit, v tomto případě odstavec. Deklarace pak říká, kterou vlastnost chceme měnit, a také na jakou hodnotu. V tomto případě nastavujeme barvu textu na bílou a barvu pozadí na černou (aby text byl vůbec vidět).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h4>Cvičení</h4>
+                                                <p>Zkus si sama připojit vlastní CSS soubor k dříve vytvořenému HTML dokumentu <code>index.html</code>.</p>
+                                                <p>Nastyluj si odstavec a hlavní nadpis jinou barvou.</p>
+                                                <p>Zkus taky nastavit jinou barvu pozadí celé stránce.</p>
+                                                <p>Nezapomeň na čitelnost textu.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

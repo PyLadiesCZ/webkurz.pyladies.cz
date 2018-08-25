@@ -23,7 +23,257 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Automatizace</h1>
+                                            <p>Celý web můžeš napsat ručně a nepotřebuješ k tomu nic jiného, než základní textový editor, ale jsou tu nástroje, které ti ušetří spoustu času a i když dá nějakou práci se je naučit a nakonfigurovat, dlouhodobě se to vyplatí. </p>
+                                            <p>Rozchodíme si tedy základní automatizaci, která ti ušetří ruční opakování stále stejných úkolů.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Automatické obnovení stránky</h2>
+                                                <p>Nejčastějším úkonem při psaní frontendu je asi obnovování stránky v prohlížeči. Po každé změně se musíš přepnout do prohlížeče a stránku obnovit. To je nejen otravné, ale i pomalé.</p>
+                                                <p>Nástroj, který umí stránku obnovit za tebe tak, že v podstatě okamžitě po uložení změnu uvidíš, se jmenuje <em>Browsersync</em>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2><em>Node.js</em> a <em>npm</em></h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Node.js</h3>
+                                                <p>Protože je <em>Browsersync</em> napsaný v <em>JavaScriptu</em>, potřebuješ si nejdřív nainstalovat prostředí pro jeho běh na tvém počítači, které se jmenuje <em>Node.js</em>.</p>
+                                                <p>Stáhni si a nainstaluj si nejnovější <em>Node.js</em> (aktuálně 8.4.0) z <a href="https://nodejs.org/">oficiálních stránek</a>.</p>
+                                                <p>Pokud používáš pro instalace balíčkovací systém (apt-get, Homebrew apod.), můžeš si Node.js nainstalovat přes něj (<a href="https://nodejs.org/en/download/package-manager/">najdi si návod pro ten tvůj</a>).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>npm</h3>
+                                                <p>Společně s <em>Node.js</em> se ti nainstaloval i jeho balíčkovací systém (package manager) <em>npm</em>.</p>
+                                                <p>Používá se na instalaci balíčků (programů) pro <em>Node.js</em>. Taky je s jeho pomocí můžeš aktualizovat a odinstalovávat.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Instalace <em>Gulp</em></h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Teď už bys mohla nainstalovat <em>Browsersync</em> a přes <em>Node.js</em> ho spustit. Není to ale tak pohodlné jako využít <em>Gulp</em>, který je určen právě na spouštění takových úkolů.</p>
+                                                <p>Nainstaluj si tedy nejprve příkaz <em>gulp</em> pomocí <em>npm</em>:</p>
+                                                <p>Otevři si příkazovou řádku (na Windows jako Administrátor), a spusť příkaz <code>install</code> takto.</p>
+                                                <pre><code class="lang-shell"><span class="hljs-built_in">npm</span> install gulp-cli -g
+</code></pre>
+                                                <p>Parametr <code>-g</code> jeho instalaci udělá globální, to znamená, že gulp bude dostupný všude v tvém systému a nebudeš ho muset instalovat znovu. </p>
+                                                <p>Na Macu je potřeba v tomto případě, tedy při globální instalaci, před celý příkaz dát ještě <code>sudo</code>.</p>
+                                                <p>Je možné, že při instalaci uvidíš nějaká varování <code>WARN …</code>, to je v pořádku. Problém je pouze pokdu se objeví chyba <code>ERR …</code>. V tom případě se zeptej kouče.</p>
+                                                <p>Po instalaci na Windows je potřeba zavřít a otevřít příkazovou řádku (raději znovu jako Administrátor). Je to nutné, protože o změnách, které proběhly v systému, ta otevřená nemá tušení.</p>
+                                                <p>Instalaci si můžeš ověřit pomocí spuštění příkazu <code>gulp</code>, tohle by měl být výsledek:</p>
+                                                <pre><code class="lang-shell">gulp
+[<span class="hljs-number">11</span>:<span class="hljs-number">55</span>:<span class="hljs-number">00</span>] Local gulp <span class="hljs-keyword">not</span> found <span class="hljs-keyword">in</span> …
+[<span class="hljs-number">11</span>:<span class="hljs-number">55</span>:<span class="hljs-number">02</span>] Try running: <span class="hljs-built_in">npm</span> install gulp
+</code></pre>
+                                                <p>Je třeba ještě nainstalovat lokální Gulp.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2><code>package.json</code></h2>
+                                            <p>Informace o tom, jaké balíčky má pro daný projekt <em>npm</em> nainstalovat, se ukládají do souboru <code>package.json</code>. Je nejprve nutné ho vytvořit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Mohla bys ho napsat ručně, je to textový soubor, ale znamenalo by to naučit se dost o jeho struktuře a nebudeme to potřebovat. Proto je snazší použít příkaz <code>init</code>, který na to v <em>npm</em> je. </p>
+                                                <ol>
+                                                    <li>Příkazovou řádku už máš otevřenou.</li>
+                                                    <li>Otevři v ní složku, kde je tvůj <code>index.html</code>.</li>
+                                                    <li>Zadej příkaz <code>npm init</code>.</li>
+                                                    <li>Vyplň jednotlivé hodnoty. Na většině teď nezáleží, stačí potvrdit výchozí hodnotu Enterem.</li>
+                                                    <li>Nakonec ti ukáže jak <em>package.json</em> bude vypadat a potvrď opět Enterem jeho vytvoření.</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Instalace lokálního Gulpu</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><pre><code class="lang-shell">npm <span class="hljs-keyword">install</span> gulp <span class="hljs-comment">--save-dev</span>
+</code></pre>
+                                                <p>Parametr <code>--save-dev</code> zajistí, že se uloží informace do <code>package.json</code>. To se bude hodit později, až budeš chtít stejné balíčky použít v jiném projektu.</p>
+                                                <p>Všimni si, že ti vedle <code>index.html</code> přibyla složka <code>node_modules</code>, do které <em>npm</em> ukládá všechny nainstalované balíčky. Pokud bys používala pro takový projekt <em>git</em>, určitě si přidej <code>node_modules</code> do <code>.gitignore</code>, je to spousta dat, která verzovat v gitu nechceš.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2><code>gulpfile.js</code></h2>
+                                            <p>Když spustíš příkaz <code>gulp</code>, hledá soubor <code>gulpfile.js</code> ve stejné složce, aby zjistil, jaké jsou v něm zadané úkoly, a spustil je.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Vytvoř si <code>gulpfile.js</code> ve stejné složce, kde máš <code>index.html</code>.</p>
+                                                <p>Úkoly v Gulpu se píšou v JavaScriptu, kterému se budeme věnovat v jedné z příštích lekcí, tak si zatím zkopíruj tuhle předpřipravenou konfiguraci, není potřeba rozumět každé závorce. Přesto v něm najdeš komentáře, které vysvětlují, co se v něm zhruba děje.</p>
+                                                <pre><code class="lang-javascript"><span class="hljs-comment">// Tenhle řádek je řádkový komentář v JavaScriptu</span>
+<span class="hljs-comment">// cokoli za // nic nedělá </span>
+
+<span class="hljs-comment">// načteme gulp</span>
+<span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+<span class="hljs-comment">// nadefinujeme úkol</span>
+gulp.task(
+
+    <span class="hljs-comment">// nadefinujeme jméno úkolu</span>
+    <span class="hljs-string">'default'</span>, <span class="hljs-comment">// úkol, který se jmenuje default se spouští implicitně</span>
+
+    <span class="hljs-comment">// další parametr je funkce, která obsahuje vše, co má daný úkol udělat</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+         <span class="hljs-comment">// zatím do ní dáme jen javascriptový ekvivalent print,</span>
+         <span class="hljs-comment">// vypíše do konzole Hello World</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hello World'</span>);
+    }
+);
+</code></pre>
+                                                <p>Teď si můžeš spustit první úkol v gulpu.</p>
+                                                <pre><code class="lang-shell">gulp
+</code></pre>
+                                                <p>Vypsání <em>Hello World</em> je dobré pro kontrolu, že vše funguje jak má, ale teď ho konečně nahradíme spuštěním <em>Browserync</em>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Browsersync</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Instalace</h3>
+                                                <p>Už známým příkazem nainstaluj Browsersync a ulož informaci do <code>package.json</code></p>
+                                                <pre><code class="lang-shell">npm <span class="hljs-keyword">install</span> browser-<span class="hljs-keyword">sync</span> <span class="hljs-comment">--save-dev</span>
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3><em>Browsersync</em> do <code>gulpfile.js</code></h3>
+                                                <p>Abys mohla spustit <em>Browsersync</em> pomocí <em>gulpu</em>, musíme ho přidat do <code>gulpfile.js</code></p>
+                                                <p>Nejdříve ho načti</p>
+                                                <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
+</code></pre>
+                                                <p>A pak umísti celé spuštění Browsersyncu místo <code>console.log('Hello World')</code></p>
+                                                <pre><code class="lang-javascript"><span class="hljs-selector-tag">browserSync</span><span class="hljs-selector-class">.init</span>({ <span class="hljs-comment">// inicializace Browsersync</span>
+    <span class="hljs-comment">// nastavit jaké soubory se budou používat</span>
+    <span class="hljs-attribute">server</span>: {
+        <span class="hljs-attribute">baseDir</span>: <span class="hljs-string">'./'</span> <span class="hljs-comment">// ./ znamená stejná složka, ve které se nachází gulpfile.js</span>
+    },
+    <span class="hljs-attribute">files</span>: [<span class="hljs-string">'*.html'</span>] <span class="hljs-comment">// zde se definují soubory, jejichž změnu má browsersync sledovat</span>
+});
+</code></pre>
+                                                <p>Soubory ke sledování jsou pole (array), syntaxe je stejná jako list v Pythonu.</p>
+                                                <p><code>*</code> znamená cokoli, takže bude sledovat změny v <code>index.html</code> i <code>necojineho.html</code></p>
+                                                <p>Pokud si nejsi jistá, celý výsledek má vypadat takto (tento má vynechány komentáře).</p>
+                                                <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+<span class="hljs-keyword">var</span> browserSync = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browser-sync'</span>).create();
+
+gulp.task(
+    <span class="hljs-string">'default'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        browserSync.init({
+            <span class="hljs-attr">server</span>: {
+                <span class="hljs-attr">baseDir</span>: <span class="hljs-string">'./'</span>
+            },
+            <span class="hljs-attr">files</span>: [<span class="hljs-string">'*.html'</span>]
+        });
+    }
+);
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Spusť Browsersync</h3>
+                                                <p>Protože máš Browserync jako výchozí (default) úkol, stačí spustit takto </p>
+                                                <pre><code class="lang-shell">gulp
+</code></pre>
+                                                <p>Otevře ti automaticky v tvém výchozím prohlížeči adresu, typicky <a href="http://localhost:3000">http://localhost:3000</a>.</p>
+                                                <p>Uspořádej si okna editoru a prohlížeče tak, abys viděla obě a zkus si něco změnit změnit v <code>index.html</code>. Změny by se měly projevit okamžitě po uložení souboru.</p>
+                                                <p>Pokud máš i další soubory, například <code>example.html</code>, najdeš ho na adrese <code>http://localhost:3000/example.html</code>.</p>
+                                                <p>Pro ukončení běhu <em>gulpu</em> zmáčkni <kbd>ctrl+c</kbd> v příkazové řádce.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification c-slide-task">
+                                            <div class="content"><!-- .slide: data-state="c-slide-task" -->
+                                                <h3>Cvičení</h3>
+                                                <p>Přidej si do sledování kromě HTML souborů i CSS soubory.</p>
+                                                <details>
+                                                    <summary>Řešení</summary>
+                                                    <p>Tam, kde máš v <code>gulpfile.js</code> napsáno <code>['*.html']</code> přidej ještě CSS soubory takto: <code>['*.html','*.css']</code></p>
+                                                </details>
+
+                                                <p>Zkus si teď něco změnit v tvém CSS souboru. Browserync dokonce ani neobnovuje celou stránku, ale jen vymění CSS za nové.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h2>Opakovatelnost</h2>
+                                                <p>Tvůj <code>package.json</code> si můžeš zkopírovat do jakéhokoli projektu a jen napsat <code>npm install</code> a vše potřebné se nainstaluje. Stejně tak si zkopíruješ <code>gulpfile.js</code> a pak už stačí spustit <code>gulp</code> a vše bude fungovat stejně.</p>
+                                                <p>Lze tak vše snadno sdílet se spolupracovníky pomocí gitu. Pokud by se stalo, že kolegyně přidá nový balíček, stačí opět napsat <code>npm install</code> a vše potřebné se nainstaluje.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

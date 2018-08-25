@@ -23,7 +23,294 @@
             <div class="tile is-ancestor">
                 <div class="tile">
                     <div class="tile is-vertical">
-                        <div class="tile is-vertical" data-markdown></div>
+                        <div class="tile is-vertical" data-markdown="">
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h1>Bootstrap</h1>
+                                            <p><a href="https://getbootstrap.com">Bootstrap</a> je knihovna především CSS (ale i JavaScriptu), která umožňuje vytvořit stránky snadno, rychle a s jistotou fungování napříč podporovanými prohlížeči.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Kromě toho, že dává lepší výchozí podobu většině HTML prvků, obsahuje i komplexnější komponenty, z nichž můžeš weby snadno poskládat, aniž bys napsala jediný řádek CSS.</p>
+                                                <p>Velkou výhodou je detailní dokumentace a také k němu najdeš hotové komponenty od dalších autorů.</p>
+                                                <p>Bootstrap je ideální tam, kde se není příliš nutné zabývat vzhledem, třeba u administračních rozhraní nebo u prototypů.
+                                                    Poslouží ale velmi dobře i jako základ vizuálně komplexnějších webů.</p>
+                                                <p><em>Na webu Vzhůru dolů si můžeš přečíst <a href="https://www.vzhurudolu.cz/blog/11-bootstrap-pomuze">detailnější rozbor, kdy se Bootstrap hodí a kdy ne</a> (přestože je pro verzi 3, platí to samé o Bootstrap 4).</em></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Boostrap&nbsp;3 nebo&nbsp;4?</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Aktuální stabilní verze je 3, která je sice stále funkční a lze na ní stále weby stavět, ale protože od jejího vydání už uplynulo na webové poměry hodně času, budeme se zabývat modernější verzí 4, je aktuálně v beta verzi, takže už se nebude měnit tolik, abys na ní dnes nemohla začít stavět nové stránky. </p>
+                                                <p>Proti verzi 3 je zatím dokumentace o něco méně dokonalá a také hotových komponent dalších autorů není zatím tolik, ale pro naše účely to není důležité.</p>
+                                                <p>Dalším rozdílem je to, že <em>Bootstrap 4</em> neřeší fungování v Internet Explorerech 8 a 9 a v Safari na iOS 6, což ale není velký problém, protože se jedná, například v ČR, cca o 1 % uživatelů a toto číslo se stále zmenšuje.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Jak začít</h2>
+                                            <p>Protože Bootstrap má opravdu dobrou dokumentaci popíšeme si jen nejkratší cestu k cíli. Ty ostatní už najdeš na <a href="https://getbootstrap.com/docs/4.0/getting-started/">webu Bootstrapu</a>.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>CSS</h3>
+                                                <p>Stačí připojit CSS soubor Bootstrapu z cizího, k tomu účelu zřízeného, serveru:</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span>
+</code></pre>
+                                                <p>Aktuální odkaz najdeš vždy v <a href="https://getbootstrap.com/docs/4.0/getting-started/">dokumentaci Bootstrapu</a>, stačí ho zkopírovat tak jak je. Novým attributům <code>crossorigin</code> a <code>integrity</code> rozumět nemusíš, stačí je zachovat.</p>
+                                                <p>Samozřejmě nic ti nebrání si soubor přidat tam, kde máš ostatní soubory tvého webu a připojit ho odsud.</p>
+                                                <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"bootstrap.min.css"</span>&gt;</span>
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>HTML</h3>
+                                                <p>Bootstrap počítá s tím, že HTML stránky, na které ho používáš má nějakou konkrétní strukturu. Takhle vypadá kód minimální stránky:</p>
+                                                <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"cs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1, shrink-to-fit=no"</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- Dva předchozí tagy mají být první, ostatní obsah hlavičky následuje za nimi. --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Základní HTML stránka<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- Připojení CSS Bootstrapu --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Grid</h2>
+                                            <p><a href="https://getbootstrap.com/docs/4.0/layout/grid/">Grid</a> je asi nejčastěji využívaná komponenta. V BS4 je postaven na využití <em>flexboxu</em> a přístupu <em>mobile-first</em>.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Základní použití</h3>
+                                                <p>Vždy je potřeba začít kontejnerem, do něj dát řádek (řádky) a teprve do této struktury umisťovat sloupce. Nejjednodušší layout se dvěma sloupci tedy vypadá takto: </p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"container"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"row"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"col"</span>&gt;sloupec (column)&lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"col"</span>&gt;sloupec (column)&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+                                                <p>Pokud bys chtěla, aby byl kontejner přes celou šířku okna prohlížeče, použij třídu <code>container-fluid</code>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Šířka sloupců</h3>
+                                                <p>Výchozí chování sloupců je nastaveno tak, že jsou stejně široké, pokud bys chtěla nějaký sloupec užší nebo širší než ostatní, přidává se k třídě <code>col</code> ještě šířka.</p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"container"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"row"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"col-3"</span>&gt;úzký sloupec&lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"col"</span>&gt;sloupec&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+                                                <p>Pokud mají sloupce zůstat na jednom řádku, musí být součet takto nastavených šířek maximálně 12.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Responzivita gridu</h3>
+                                                <p>Bootstrap má předdefinované následující breakpointy: 576px je <em>Small (sm)</em>, 768px <em>Medium (md)</em>, 992px <em>Large (lg)</em> a 1200px <em>Extra large (xl)</em>.</p>
+                                                <p>Přidáním zkratky názvu breakpointu do definice šířky sloupce definuješ, že od této šířky okna prohlížeče má mít sloupec jinou šířku. V příkladu níže bude <em>sloupec A</em> do šířky obrazovky 767 pixelů zabírat 2/3 šířky kontejneru a od 768 pixelů pak 4/5 šířky kontejneru.</p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"container"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"row"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"col-8 col-md-10"</span>&gt;sloupec A&lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"col-4 col-md-2"</span>&gt;sloupec B&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Vnořování</h3>
+                                                <p>Složitější layouty jde také vytvářet pomocí vnořování. Stačí nadefinovat nový řádek (<code>row</code>) uvnitř sloupce (<code>col</code>).</p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"container"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"row"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"col"</span>&gt;
+            &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"row"</span>&gt;
+                &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"col"</span>&gt;vnořený sloupec&lt;/<span class="hljs-keyword">div</span>&gt;
+                &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"col"</span>&gt;vnořený sloupec&lt;/<span class="hljs-keyword">div</span>&gt;
+            &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"col"</span>&gt;sloupec&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Grid má i další možnosti, které najdeš v <a href="https://getbootstrap.com/docs/4.0/layout/grid/">dokumentaci</a>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Další komponenty</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Bootstrap obsahuje další typické součásti webů jako jsou <a href="https://getbootstrap.com/docs/4.0/components/buttons/">tlačítka</a>, <a href="https://getbootstrap.com/docs/4.0/components/forms/">formuláře</a>, <a href="https://getbootstrap.com/docs/4.0/components/navbar/">navigační menu</a>, <a href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">drobečkové navigace</a>, <a href="https://getbootstrap.com/docs/4.0/components/pagination/">stránkování</a> a mnohé další. Určitě si je všechny projdi v <a href="https://getbootstrap.com/docs/4.0/components/">dokumentaci</a>, abys o nich měla tušení, až budeš něco takového potřebovat na webu. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Utilities</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p><a href="https://getbootstrap.com/docs/4.0/utilities/">Utilities</a> jsou pomocné třídy, díky kterým často není potřeba psát příliš vlastního CSS.</p>
+                                                <p>Umožňují nastavovat barvy, padding i margin, vlastnosti flexboxu, pozicování, šířky a mnohé další vlastnosti a to i často responzivně podobně jako u gridu.</p>
+                                                <pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"container"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"row"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"col pt-1 text-danger"</span>&gt;
+            sloupec s horním paddingem velikosti <span class="hljs-number">1</span>
+            a textem s barvou označující nebezpečí (výchozí je červená)
+            &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"col p-1 p-md-3"</span>&gt;
+            sloupec s paddingem velikosti <span class="hljs-number">1</span>,
+            od šířky okna <span class="hljs-number">768</span> px nahoru s paddingem velikosti <span class="hljs-number">3</span>
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+                                                <p>Samozřejmě možnosti těchto tříd jsou omezeny na předdefinované barvy a velikosti, ale na z pohledu designu je konzistence často žádoucí a proto omezený výběr vadit nemusí. Pokud tyto třídy nestačí, je vždy možnost si přidat vlastní CSS.</p>
+                                                <p>Opět si projdi v <a href="https://getbootstrap.com/docs/4.0/utilities/">dokumentaci utilit</a> jaké možnosti mají.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>Úpravy Bootstrapu</h2>
+                                            <p>Základní vzhled Bootstrapu je sice v pořádku, ale často nechceš, aby tvoje stránka vypadala přesně tak, jak to nadesignovali jeho autoři. Jsou v podstatě dvě možnosti jak toho docílit a lze je i kombinovat.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Dodatečné CSS</h3>
+                                                <p>Protože CSS, které sis připojila, je pořád jen CSS, lze libovolnou vlastnost přepsat tvým vlastním CSS. Můžeš, a běžně se to dělá, měnit jak vlastnosti prvků, které Bootstrap nastavuje, tak samozřejmě přidávat nové vlastnosti (včetně nových tříd) pro vlastní prvky, které Bootstrap neobsahuje.</p>
+                                                <p>Stačí když bude soubor s tvým CSS připojený za tím od Bootstrapu: </p>
+                                                <pre><code class="lang-html">        …
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"vlastni-styly.css"</span>&gt;</span>
+        …
+</code></pre>
+                                                <p><code>bootstrap.css</code> obsahuje definici velikosti nadpisu takto:</p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.h1</span>, <span class="hljs-selector-tag">h1</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-number">36px</span>; }
+</code></pre>
+                                                <p>Ve vlastním CSS můžeš tuto vlastnost přepsat a třeba i doplnit o nějakou novou. </p>
+                                                <pre><code class="lang-css"><span class="hljs-selector-class">.h1</span>, <span class="hljs-selector-tag">h1</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">48px</span>;
+    <span class="hljs-attribute">font-style</span>: italic;
+}
+</code></pre>
+                                                <p>Tip: Jakými selektory a co Bootstrap nastavuje nejsnadněji zjistíš pomocí <em>Developer Tools</em>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><h3>Vygenerovaní vlastní verze</h3>
+                                                <p>Při rozsáhlejších změnách je praktičtější si vygenerovat vlastní verzi Bootstrapu. Protože je Bootstrap napsaný v preprocesoru Sass, jde hlavně kompilací CSS nastavit jinak proměnné na základě kterých se celé CSS generuje. </p>
+                                                <p>Je potřeba si stáhnout zdrojové soubory v <em>sass</em> a zprovoznit si kompilaci výsledného CSS. Umožňuje to nejen přepsat výchozí hodnoty proměnných vlastními dle libosti, ale i pěkně verzovat tyto změny v gitu.</p>
+                                                <p>Tato varianta je mimo rozsah tohoto kurzu, ale pokud tě zajímá, můžeš se podívat na <a href="https://github.com/benabraham/bs4-nodejs-static">projekt, který tento přistup používá</a> a který je zamýšlen jako základ (boilerplate) pro tvorbu statického webu na Bootstrapu.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="tile is-parent is-3">
+                                    <div class="tile is-child notification undefined">
+                                        <div class="content"><h2>JavaScript</h2></div>
+                                    </div>
+                                </div>
+                                <div class="tile is-vertical">
+                                    <div class="tile is-parent">
+                                        <div class="tile is-child notification undefined">
+                                            <div class="content"><p>Pokud chceš využít některý z JavaScriptových pluginů Bootstrapu, je potřeba přidat na konec dokumentu, před <code>&lt;/body&gt;</code> připojení tří souborů s JavaScriptem: nejdřív knihovny <em>jQuery</em> a <em>Popper</em>, kterou JavaScript Bootstrapu využívá a potom samotný soubor s JavaScriptem Bootstrapu.</p>
+                                                <p>Opět využij cizí server a nemusíš tak nic stahovat. </p>
+                                                <pre><code class="lang-html">        …
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://code.jquery.com/jquery-3.2.1.slim.min.js"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                                                <p>Skoro všechny javascriptové funkce lze aktivovat snadno přes <code>data-</code> atributy, podobně jako jsme používali knihovnu <em>Lightbox</em>, jiné je třeba volat pomocí vlastního JavaScriptu. Ten v případě jeho potřeby připoj jako poslední.</p>
+                                                <pre><code class="lang-html">        …
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"vlastni-javascript.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                                                <p>Detaily k použití jednotlivých pluginů už si najdi v <a href="https://getbootstrap.com/docs/4.0/">dokumentaci</a>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
