@@ -1,0 +1,1450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/lekce/2/flask.md" description="'''.format(name=user['name'], color=user['color'])" line="154" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c70cc0c4-af7c-418d-b1f3-634e0c3f3dd6" name="Default" comment="refactor: whitespace to spaces">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <ignored path="dist/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1048361591">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gitignore" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Git file" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gitignore" value="3" />
+          <entry key="json" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Git file" value="3" />
+          <entry key="JSON" value="24" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="webkurz.pyladies.cz" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lekce/dodatky/css-vlastnosti.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="44">
+                <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/flat-file.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gulpfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lekce/dodatky/html-tagy.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="176">
+                <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/marked.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>` &lt;</find>
+      <find>nejjednodušíší</find>
+      <find>šířku</find>
+      <find>fluid</find>
+      <find>,</find>
+      <find>&quot;</find>
+      <find>technologie</find>
+      <find>bude dopl</find>
+      <find>cvičení</find>
+      <find>&lt;!-- .slide: data-state=&quot;c-slide-</find>
+      <find>home</find>
+      <find>&lt;code</find>
+      <find>&lt;/a&gt;&lt;/code&gt;</find>
+      <find>7nbsp;</find>
+      <find>\[(.+?)\]\((.+?)\)</find>
+      <find>\]</find>
+      <find>shorthand</find>
+      <find>Developer Tools</find>
+      <find>Instalace</find>
+      <find>.svg</find>
+      <find>většině případů</find>
+      <find>Znamen</find>
+      <find>znamnená</find>
+      <find>mark</find>
+      <find>watch</find>
+      <find>csscompil</find>
+      <find>jsconcat</find>
+      <find>distprep</find>
+      <find>jsclean</find>
+      <find>dist</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;\n    &lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;180x180&quot; href=&quot;/apple-touch-icon.png&quot;&gt;</replace>
+      <replace>&lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;\n&lt;/head&gt;</replace>
+      <replace>lekcecreate</replace>
+      <replace />
+      <replace>hodina</replace>
+      <replace>pocetObyvatel</replace>
+      <replace>obleceni</replace>
+      <replace>&lt;/a&gt;</replace>
+      <replace>doporuceni</replace>
+      <replace>gold</replace>
+      <replace>?**WTF**</replace>
+      <replace>**květnaté**</replace>
+      <replace>:</replace>
+      <replace>`:</replace>
+      <replace>`</replace>
+      <replace>`&lt;</replace>
+      <replace>.,</replace>
+      <replace>,\n</replace>
+      <replace>,</replace>
+      <replace>'</replace>
+      <replace>\n&lt;code</replace>
+      <replace>)</replace>
+      <replace>[$2]($1),</replace>
+      <replace>`]</replace>
+      <replace>css:compil</replace>
+      <replace>lekce:$1</replace>
+      <replace>js:concat</replace>
+      <replace>dist:prep</replace>
+      <replace>js:clean</replace>
+      <replace>docs</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\work\webkurz.pyladies.cz\lekce\1</dir>
+      <dir>C:\work\webkurz.pyladies.cz\</dir>
+      <dir>C:\work\webkurz.pyladies.cz\lekce\</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/lekce/3/hotova-reseni.md" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.js" />
+        <option value="$PROJECT_DIR$/lekce/4/preprocesory.html" />
+        <option value="$PROJECT_DIR$/lekce/2/browsersync.md" />
+        <option value="$PROJECT_DIR$/lekce/3/dom.md" />
+        <option value="$PROJECT_DIR$/lekce/1/box-model.md" />
+        <option value="$PROJECT_DIR$/lekce/0/css.md" />
+        <option value="$PROJECT_DIR$/lekce/0/o-kurzu.md" />
+        <option value="$PROJECT_DIR$/lekce/0/zdroje.md" />
+        <option value="$PROJECT_DIR$/lekce/3/knihovny.md" />
+        <option value="$PROJECT_DIR$/node_modules/bs-recipes/recipes/middleware.css.injection/app/css/main.less" />
+        <option value="$PROJECT_DIR$/lekce/2/formulare.md" />
+        <option value="$PROJECT_DIR$/lekce/2/flask.md" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.txt" />
+        <option value="$PROJECT_DIR$/lekce/sablona.html" />
+        <option value="$PROJECT_DIR$/src/js/gitter.js" />
+        <option value="$PROJECT_DIR$/lekce/2/sablony.md" />
+        <option value="$PROJECT_DIR$/lekce/4/tok.md" />
+        <option value="$PROJECT_DIR$/lekce/4/pozicovani.md" />
+        <option value="$PROJECT_DIR$/lekce/5/cviceni-backend.md" />
+        <option value="$PROJECT_DIR$/lekce/5/django.md" />
+        <option value="$PROJECT_DIR$/lekce/5/instalace.md" />
+        <option value="$PROJECT_DIR$/lekce/3/javascript.md" />
+        <option value="$PROJECT_DIR$/lekce/4/float.md" />
+        <option value="$PROJECT_DIR$/lekce/4/flex.md" />
+        <option value="$PROJECT_DIR$/src/sass/examples.scss" />
+        <option value="$PROJECT_DIR$/lekce/4/temp.md" />
+        <option value="$PROJECT_DIR$/lekce/5/nasazeni.md" />
+        <option value="$PROJECT_DIR$/src/sass/custom.scss" />
+        <option value="$PROJECT_DIR$/lekce/4/preprocesory.md" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.txt" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.json" />
+        <option value="$PROJECT_DIR$/lekce/4/bootstrap.md" />
+        <option value="$PROJECT_DIR$/lekce/0/co-je-web.md" />
+        <option value="$PROJECT_DIR$/lekce/4/responzivni-web.md" />
+        <option value="$PROJECT_DIR$/lekce/1/automatizace.md" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
+        <option value="$PROJECT_DIR$/lekce/0/_demo.md" />
+        <option value="$PROJECT_DIR$/lekce/4/seznam-vlastnosti.md" />
+        <option value="$PROJECT_DIR$/lekce/6/css-vlastnosti.md" />
+        <option value="$PROJECT_DIR$/lekce/6/html-tagy.md" />
+        <option value="$PROJECT_DIR$/lekce/dodatky/html-tagy.md" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/lekce/dodatky/css-vlastnosti.md" />
+        <option value="$PROJECT_DIR$/_menu.html" />
+        <option value="$PROJECT_DIR$/lekce/1/dedicnost.md" />
+        <option value="$PROJECT_DIR$/lekce/0/html.md" />
+        <option value="$PROJECT_DIR$/src/js/flat-file.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <gulpfiles>
+      <GulpfileState>
+        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+      </GulpfileState>
+    </gulpfiles>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="content" pattern="file[webkurz.pyladies.cz]:lekce/*.md||file:lekce/sablona.html" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1836" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <autoscrollToSource Scope="true" />
+      <autoscrollFromSource Scope="true" ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="webkurz.pyladies.cz" type="cbb8eebc:String" user="webkurz.pyladies.cz" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="webkurz.pyladies.cz" type="cbb8eebc:String" user="webkurz.pyladies.cz" />
+              <item name="lekce" type="cbb8eebc:String" user="lekce" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="webkurz.pyladies.cz" type="cbb8eebc:String" user="webkurz.pyladies.cz" />
+              <item name="lekce" type="cbb8eebc:String" user="lekce" />
+              <item name="5" type="cbb8eebc:String" user="5" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="content">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="webkurz.pyladies.cz" type="cbb8eebc:String" user="webkurz.pyladies.cz" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="webkurz.pyladies.cz" type="cbb8eebc:String" user="webkurz.pyladies.cz" />
+              <item name="lekce" type="cbb8eebc:String" user="lekce" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="webkurz.pyladies.cz" type="cbb8eebc:String" user="webkurz.pyladies.cz" />
+              <item name="lekce" type="cbb8eebc:String" user="lekce" />
+              <item name="4" type="cbb8eebc:String" user="4" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="webkurz.pyladies.cz" type="cbb8eebc:String" user="webkurz.pyladies.cz" />
+              <item name="lekce" type="cbb8eebc:String" user="lekce" />
+              <item name="5" type="cbb8eebc:String" user="5" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="webkurz.pyladies.cz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webkurz.pyladies.cz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webkurz.pyladies.cz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webkurz.pyladies.cz" type="462c0819:PsiDirectoryNode" />
+              <item name="lekce" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webkurz.pyladies.cz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webkurz.pyladies.cz" type="462c0819:PsiDirectoryNode" />
+              <item name="lekce" type="462c0819:PsiDirectoryNode" />
+              <item name="0" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webkurz.pyladies.cz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webkurz.pyladies.cz" type="462c0819:PsiDirectoryNode" />
+              <item name="lekce" type="462c0819:PsiDirectoryNode" />
+              <item name="1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webkurz.pyladies.cz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webkurz.pyladies.cz" type="462c0819:PsiDirectoryNode" />
+              <item name="lekce" type="462c0819:PsiDirectoryNode" />
+              <item name="4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webkurz.pyladies.cz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webkurz.pyladies.cz" type="462c0819:PsiDirectoryNode" />
+              <item name="lekce" type="462c0819:PsiDirectoryNode" />
+              <item name="dilna" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webkurz.pyladies.cz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webkurz.pyladies.cz" type="462c0819:PsiDirectoryNode" />
+              <item name="lekce" type="462c0819:PsiDirectoryNode" />
+              <item name="dodatky" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webkurz.pyladies.cz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webkurz.pyladies.cz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webkurz.pyladies.cz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webkurz.pyladies.cz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webkurz.pyladies.cz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webkurz.pyladies.cz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="TEXT&#10;AngularJS&#10;Angular2HTML" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/gulp" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\work\_pyvec\webkurz.pyladies.cz\lekce\6" />
+      <recent name="C:\work\webkurz.pyladies.cz" />
+      <recent name="C:\work\webkurz.pyladies.cz\lekce\5" />
+      <recent name="C:\work\webkurz.pyladies.cz\lekce\4" />
+      <recent name="C:\work\webkurz.pyladies.cz\lekce\0" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DanielSrb\.WebStorm2017.2\config\scratches" />
+      <recent name="C:\work\webkurz.pyladies.cz\lekce\0" />
+      <recent name="C:\work\webkurz.pyladies.cz\lekce" />
+      <recent name="C:\work\webkurz.pyladies.cz\lekce\5" />
+      <recent name="C:\work\webkurz.pyladies.cz\lekce\4" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.develop">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="default" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>default</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="develop" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>develop</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="distprep" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>distprep</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="develop" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="develop" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.develop" />
+      <item itemvalue="Gulp.js.develop" />
+      <item itemvalue="Gulp.js.distprep" />
+      <item itemvalue="Gulp.js.default" />
+      <item itemvalue="npm.deploy" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.deploy" />
+        <item itemvalue="Gulp.js.develop" />
+        <item itemvalue="Gulp.js.default" />
+        <item itemvalue="Gulp.js.distprep" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c70cc0c4-af7c-418d-b1f3-634e0c3f3dd6" name="Default" comment="" />
+      <created>1486556225852</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1486556225852</updated>
+      <workItem from="1486556227324" duration="44853000" />
+      <workItem from="1486686710732" duration="5698000" />
+      <workItem from="1486715649188" duration="16274000" />
+      <workItem from="1486841313770" duration="614000" />
+      <workItem from="1486842331957" duration="33282000" />
+      <workItem from="1486930316485" duration="150000" />
+      <workItem from="1486930474472" duration="20521000" />
+      <workItem from="1487020749129" duration="16575000" />
+      <workItem from="1487107156049" duration="1513000" />
+      <workItem from="1487150432574" duration="468000" />
+      <workItem from="1487247444405" duration="1395000" />
+      <workItem from="1487334818178" duration="46942000" />
+      <workItem from="1487533769382" duration="5254000" />
+      <workItem from="1487583176290" duration="2676000" />
+      <workItem from="1487669400520" duration="5099000" />
+      <workItem from="1487712412284" duration="13871000" />
+      <workItem from="1487759523740" duration="1725000" />
+      <workItem from="1487878673107" duration="2613000" />
+      <workItem from="1488202984709" duration="1298000" />
+      <workItem from="1488282490344" duration="16148000" />
+      <workItem from="1488356612429" duration="7020000" />
+      <workItem from="1488406673087" duration="6029000" />
+      <workItem from="1488542199370" duration="1434000" />
+      <workItem from="1488548823298" duration="77000" />
+      <workItem from="1488740613054" duration="5267000" />
+      <workItem from="1489041426207" duration="7628000" />
+      <workItem from="1489158438816" duration="10998000" />
+      <workItem from="1489507446986" duration="1356000" />
+      <workItem from="1490101968211" duration="11488000" />
+      <workItem from="1490168057568" duration="3650000" />
+      <workItem from="1490317091088" duration="1808000" />
+      <workItem from="1490449328665" duration="1214000" />
+      <workItem from="1490553183373" duration="601000" />
+      <workItem from="1491642028562" duration="135000" />
+      <workItem from="1491642304815" duration="76000" />
+      <workItem from="1491642407063" duration="13863000" />
+      <workItem from="1491685469187" duration="20000" />
+      <workItem from="1491823604705" duration="1206000" />
+      <workItem from="1491909785033" duration="15102000" />
+      <workItem from="1492193450291" duration="1000" />
+      <workItem from="1492193756364" duration="599000" />
+      <workItem from="1492503691186" duration="6280000" />
+      <workItem from="1493214423427" duration="1712000" />
+      <workItem from="1493914680942" duration="1352000" />
+      <workItem from="1498768843345" duration="653000" />
+      <workItem from="1498917613497" duration="8815000" />
+      <workItem from="1499082488985" duration="315000" />
+      <workItem from="1500337542790" duration="114000" />
+      <workItem from="1503399063891" duration="3665000" />
+      <workItem from="1503477516465" duration="3465000" />
+      <workItem from="1503756256605" duration="6890000" />
+      <workItem from="1504002935951" duration="16802000" />
+      <workItem from="1504172491011" duration="1474000" />
+      <workItem from="1504174567145" duration="50000" />
+      <workItem from="1504174708201" duration="490000" />
+      <workItem from="1504175212789" duration="629000" />
+      <workItem from="1504176780887" duration="14964000" />
+      <workItem from="1504260546100" duration="4126000" />
+      <workItem from="1504338963784" duration="3420000" />
+      <workItem from="1504637451792" duration="463000" />
+      <workItem from="1504641858609" duration="1930000" />
+      <workItem from="1504692636865" duration="11382000" />
+      <workItem from="1504829285927" duration="7670000" />
+      <workItem from="1505140424495" duration="4881000" />
+      <workItem from="1505247519972" duration="1819000" />
+      <workItem from="1508715670816" duration="5240000" />
+      <workItem from="1535214044022" duration="829000" />
+    </task>
+    <task id="LOCAL-00131" summary="tok dokumentu ok">
+      <created>1489042085861</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1489042085862</updated>
+    </task>
+    <task id="LOCAL-00132" summary="pozicovani hotovo">
+      <created>1489048360898</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1489048360898</updated>
+    </task>
+    <task id="LOCAL-00133" summary="fix: docasne odstranen custom rendering">
+      <created>1489185101497</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1489185101497</updated>
+    </task>
+    <task id="LOCAL-00134" summary="instalace WIP">
+      <created>1489185330560</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1489185330560</updated>
+    </task>
+    <task id="LOCAL-00135" summary="instalace WIP">
+      <created>1489185344005</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1489185344005</updated>
+    </task>
+    <task id="LOCAL-00136" summary="instalace WIP">
+      <created>1489185962746</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1489185962746</updated>
+    </task>
+    <task id="LOCAL-00137" summary="info k uzavreni">
+      <created>1489508193874</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1489508193875</updated>
+    </task>
+    <task id="LOCAL-00138" summary="odstraneni nepotrebneho typu bloku">
+      <created>1490104444004</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1490104444004</updated>
+    </task>
+    <task id="LOCAL-00139" summary="novy typ bloku">
+      <created>1490106566812</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1490106566812</updated>
+    </task>
+    <task id="LOCAL-00140" summary="pridani informace o zdroji inspirace: marksheet.io">
+      <created>1490106593400</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1490106593400</updated>
+    </task>
+    <task id="LOCAL-00141" summary="rozsireni informaci ke zdrojum a testovani JS">
+      <created>1490106631587</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1490106631587</updated>
+    </task>
+    <task id="LOCAL-00142" summary="float RC1">
+      <created>1490107705549</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1490107705549</updated>
+    </task>
+    <task id="LOCAL-00143" summary="flexbox RC1">
+      <created>1490113641184</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1490113641184</updated>
+    </task>
+    <task id="LOCAL-00144" summary="preprocesory RC1">
+      <created>1504010154102</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1504010154103</updated>
+    </task>
+    <task id="LOCAL-00145" summary="preprocesory RC1">
+      <created>1504010284106</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1504010284106</updated>
+    </task>
+    <task id="LOCAL-00146" summary="mezera pryc">
+      <created>1504027560000</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1504027560000</updated>
+    </task>
+    <task id="LOCAL-00147" summary="prilis dlouho slovo se nyni muze zalomit">
+      <created>1504028139589</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1504028139589</updated>
+    </task>
+    <task id="LOCAL-00148" summary="Bootstrap RC1">
+      <created>1504032370084</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1504032370084</updated>
+    </task>
+    <task id="LOCAL-00149" summary="WIP nasazeni">
+      <created>1504035307311</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1504035307311</updated>
+    </task>
+    <task id="LOCAL-00150" summary="skryt seznam vlastnosti z menu">
+      <created>1504035328923</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1504035328923</updated>
+    </task>
+    <task id="LOCAL-00151" summary="datum pryc">
+      <created>1504035411049</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1504035411049</updated>
+    </task>
+    <task id="LOCAL-00152" summary="bump node.js">
+      <created>1504035649413</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1504035649413</updated>
+    </task>
+    <task id="LOCAL-00153" summary="bump node.js a nahrada conemu za cmder">
+      <created>1504035684172</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1504035684172</updated>
+    </task>
+    <task id="LOCAL-00154" summary="nedelitelny mezery">
+      <created>1504172571100</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1504172571101</updated>
+    </task>
+    <task id="LOCAL-00155" summary="upresneni textu">
+      <created>1504180065593</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1504180065594</updated>
+    </task>
+    <task id="LOCAL-00156" summary="typo">
+      <created>1504180177079</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1504180177079</updated>
+    </task>
+    <task id="LOCAL-00157" summary="konzistentnejsi priklad&#10;+ upresneni textu">
+      <created>1504180488537</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1504180488537</updated>
+    </task>
+    <task id="LOCAL-00158" summary="konzistentnejsi priklad">
+      <created>1504182667846</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1504182667846</updated>
+    </task>
+    <task id="LOCAL-00159" summary="lepsi priklady barev">
+      <created>1504184453860</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1504184453860</updated>
+    </task>
+    <task id="LOCAL-00160" summary="barvy az na konec">
+      <created>1504184625087</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1504184625087</updated>
+    </task>
+    <task id="LOCAL-00161" summary="lepsi text">
+      <created>1504260623057</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1504260623058</updated>
+    </task>
+    <task id="LOCAL-00162" summary="WIP: responzivni web">
+      <created>1504641895883</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1504641895884</updated>
+    </task>
+    <task id="LOCAL-00163" summary="externi link k vhodnosti pouziti Bootstrapu">
+      <created>1504642598594</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1504642598594</updated>
+    </task>
+    <task id="LOCAL-00164" summary="zpresneni textu">
+      <created>1504642953718</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1504642953718</updated>
+    </task>
+    <task id="LOCAL-00165" summary="RC1 responzivni web">
+      <created>1504702140038</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1504702140038</updated>
+    </task>
+    <task id="LOCAL-00166" summary="RC1 responzivni web">
+      <created>1504702174838</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1504702174838</updated>
+    </task>
+    <task id="LOCAL-00167" summary="aktualizace node">
+      <created>1504702254160</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1504702254160</updated>
+    </task>
+    <task id="LOCAL-00168" summary="demo stranka">
+      <created>1504709138846</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1504709138846</updated>
+    </task>
+    <task id="LOCAL-00169" summary="- XHR pryc&#10;- prehledy css a html do samostatnych stranek">
+      <created>1504709944591</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1504709944592</updated>
+    </task>
+    <task id="LOCAL-00170" summary="- prehledy css a html na homepage">
+      <created>1504710209825</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1504710209826</updated>
+    </task>
+    <task id="LOCAL-00171" summary="FIX: odkaz">
+      <created>1504720230911</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1504720230911</updated>
+    </task>
+    <task id="LOCAL-00172" summary="REFACTOR: presun na url dilna">
+      <created>1504720438779</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1504720438779</updated>
+    </task>
+    <task id="LOCAL-00173" summary="bump knihoven">
+      <created>1504736046687</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1504736046687</updated>
+    </task>
+    <task id="LOCAL-00174" summary="bump autoprefixeru">
+      <created>1505141175995</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1505141175996</updated>
+    </task>
+    <task id="LOCAL-00175" summary="FIX: typo">
+      <created>1505223785466</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1505223785467</updated>
+    </task>
+    <task id="LOCAL-00176" summary="FIX: missing package">
+      <created>1505223997503</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1505223997504</updated>
+    </task>
+    <task id="LOCAL-00177" summary="FIX: omylem smazany text zpet">
+      <created>1505224100675</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1505224100675</updated>
+    </task>
+    <task id="LOCAL-00178" summary="bump packages">
+      <created>1508750087538</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1508750087539</updated>
+    </task>
+    <task id="LOCAL-00179" summary="refactor: whitespace to spaces">
+      <created>1508750101308</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1508750101308</updated>
+    </task>
+    <option name="localTasksCounter" value="180" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="435971000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1836" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3271028" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.70247394" weight="0.2875" />
+      <window_info anchor="bottom" id="npm" order="6" sideWeight="0.49283853" weight="0.3287037" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Gulp" order="8" sideWeight="0.29752603" side_tool="true" weight="0.28690228" />
+      <window_info anchor="bottom" id="GfmBrowser" order="9" side_tool="true" weight="0.32999444" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.29752603" side_tool="true" weight="0.2875" />
+      <window_info anchor="bottom" id="File Transfer" order="11" sideWeight="0.4970015" visible="true" weight="0.3301887" />
+      <window_info anchor="bottom" id="REST Client" order="12" weight="0.32987553" />
+      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49739584" weight="0.32916668" />
+      <window_info anchor="bottom" id="Terminal" order="14" sideWeight="0.77994794" weight="0.328125" />
+      <window_info anchor="bottom" id="Messages" order="15" />
+      <window_info anchor="bottom" id="Inspection Results" order="16" weight="0.32917964" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.13515016" />
+      <window_info anchor="right" id="Structure" order="4" weight="0.24874792" />
+      <window_info anchor="right" id="Favorites" order="5" side_tool="true" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3271028" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.70247394" weight="0.2875" />
+      <window_info anchor="bottom" id="npm" order="7" sideWeight="0.49283853" weight="0.3287037" />
+      <window_info anchor="bottom" id="TODO" order="8" />
+      <window_info anchor="bottom" id="Gulp" order="9" sideWeight="0.29752603" side_tool="true" visible="true" weight="0.28690228" />
+      <window_info anchor="bottom" id="GfmBrowser" order="10" side_tool="true" weight="0.32999444" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.29752603" side_tool="true" weight="0.2875" />
+      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4970015" visible="true" weight="0.3301887" />
+      <window_info anchor="bottom" id="REST Client" order="13" weight="0.32987553" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49739584" weight="0.32916668" />
+      <window_info anchor="bottom" id="Terminal" order="15" sideWeight="0.77994794" weight="0.328125" />
+      <window_info anchor="bottom" id="Messages" order="16" />
+      <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.32917964" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.13570634" />
+      <window_info anchor="right" id="Structure" order="4" weight="0.24874792" />
+      <window_info anchor="right" id="Favorites" order="5" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="nedelitelny mezery" />
+    <MESSAGE value="upresneni textu" />
+    <MESSAGE value="typo" />
+    <MESSAGE value="konzistentnejsi priklad&#10;+ upresneni textu" />
+    <MESSAGE value="konzistentnejsi priklad" />
+    <MESSAGE value="lepsi priklady barev" />
+    <MESSAGE value="barvy az na konec" />
+    <MESSAGE value="lepsi text" />
+    <MESSAGE value="WIP: responzivni web" />
+    <MESSAGE value="externi link k vhodnosti pouziti Bootstrapu" />
+    <MESSAGE value="zpresneni textu" />
+    <MESSAGE value="RC1 responzivni web" />
+    <MESSAGE value="aktualizace node" />
+    <MESSAGE value="demo stranka" />
+    <MESSAGE value="- XHR pryc&#10;- prehledy css a html do samostatnych stranek" />
+    <MESSAGE value="- prehledy css a html na homepage" />
+    <MESSAGE value="FIX: odkaz" />
+    <MESSAGE value="REFACTOR: presun na url dilna" />
+    <MESSAGE value="bump knihoven" />
+    <MESSAGE value="bump autoprefixeru" />
+    <MESSAGE value="FIX: typo" />
+    <MESSAGE value="FIX: missing package" />
+    <MESSAGE value="FIX: omylem smazany text zpet" />
+    <MESSAGE value="bump packages" />
+    <MESSAGE value="refactor: whitespace to spaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: whitespace to spaces" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lekce/2/sablony.md" />
+    <entry file="file://$PROJECT_DIR$/lekce/3/dom.md" />
+    <entry file="file://$PROJECT_DIR$/lekce/2/formulare.md" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.css" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/ide/ide-scripting.js" />
+    <entry file="file://$PROJECT_DIR$/src/sass/examples.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4667">
+          <caret line="359" column="38" selection-start-line="359" selection-start-column="38" selection-end-line="359" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/4/float.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/bulma-variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/4/temp.md" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="266">
+            <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/1/box-model-all.svg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/1/box-model-border.svg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/1/box-model-margin.svg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/1/box-model-padding.svg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/1/box-model-width-height.svg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/sablona.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/4/preprocesory.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/4/tok.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/4/responzivni-web.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/4/preprocesory.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="5170">
+            <caret line="235" column="3" selection-start-line="235" selection-start-column="3" selection-end-line="235" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.json" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.txt" />
+    <entry file="file://$PROJECT_DIR$/lekce/dilna/nasazeni.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="440">
+            <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/3/javascript.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="6160">
+            <caret line="280" selection-start-line="280" selection-end-line="281" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/3/xhr.md" />
+    <entry file="file://$PROJECT_DIR$/lekce/3/live-dom.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/6/seznam-vlastnosti.html" />
+    <entry file="file://$PROJECT_DIR$/lekce/dilna/instalace.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1034">
+            <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/custom.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/0/co-je-web.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="506">
+            <caret line="23" selection-start-line="23" selection-end-line="23" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/1/automatizace.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="330">
+            <caret line="15" selection-start-line="15" selection-end-line="15" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/0/_demo.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor>
+            <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/1/box-model.svg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/1/box-model.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="9768">
+            <caret line="444" column="6" selection-start-line="444" selection-start-column="6" selection-end-line="444" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/4/responzivni-web.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1122">
+            <caret line="51" column="305" selection-start-line="51" selection-start-column="196" selection-end-line="51" selection-end-column="305" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/4/pozicovani.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/4/pozicovani.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="3498">
+            <caret line="159" column="5" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="42" column="39" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/4/bootstrap.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="707">
+            <caret line="268" column="7" selection-start-line="268" selection-start-column="7" selection-end-line="268" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/1/dedicnost.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="411">
+            <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/4/flex.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="256">
+            <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/0/html.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="627">
+            <caret line="334" column="3" selection-start-line="334" selection-start-column="3" selection-end-line="334" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/dodatky/css-vlastnosti.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="44">
+            <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/flat-file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/marked.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lekce/dodatky/html-tagy.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="176">
+            <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>content</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.205" />
+              </list>
+            </option>
+          </splitter-proportions>
+          <order>
+            <scope name="content" />
+          </order>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
